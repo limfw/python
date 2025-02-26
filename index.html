@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation Template</title>
+    <style>
+        :root {
+            --main-bg-color: #2c3e50;
+            --sidebar-bg-color: #002060;
+            --header-bg-color: #80c3d8;
+            --footer-bg-color: #ee9a00;
+            --footer-text-color: white;
+            --text-color: white;
+            --hover-color: #f39c12;
+            --quote-border-color: #1abc9c;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--header-bg-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar-bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .menu-item:hover {
+            background: var(--hover-color);
+        }
+        .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+        .sub-menu div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .sub-menu div:hover {
+            background: var(--hover-color);
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+            text-align: justify;
+            margin-left: 0;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content h1 {
+            color: blue;
+        }
+	.orange-accent {
+	    color: #E67E22; 
+	    font-weight: bold; 
+	}
+	.blue-bolt {
+    	    color: #00B9FA; 
+	    font-weight: bold;
+	}
+        .quote {
+            font-style: italic;
+            color: #ee9a00;
+            border-left: 4px solid var(--quote-border-color);
+            padding-left: 15px;
+            margin: 15px auto;
+            font-size: 30px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .quote-source {
+            font-size: 14px;
+            color: gray;
+            display: block;
+            margin-top: 5px;
+            text-align: right;
+            width: 100%;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            margin-top: auto;
+        }
+	.pre, code {
+    	    background: #000; 
+    	    color: #fff; 
+    	    font-family: 'Courier New', monospace; 
+	    font-size: 14px; 
+	    line-height: 1.5; 
+	    padding: 12px; 
+	    border-radius: 6px; 
+	    overflow-x: auto; 
+	    white-space: pre-wrap; 
+	}
+	.code-inline {
+	    font-size: 14px; 
+	    background:  #000; 
+	    padding: 3px 6px; 
+	    border-radius: 4px; 
+	    font-family: 'Courier New', monospace; 
+	    white-space: nowrap; 
+	}
+	.table {
+	    width: 100%;
+	    border-collapse: collapse;
+	}
+	.th, td {
+	    padding: 12px 20px; 
+	    text-align: left; 
+	    border-bottom: 1px solid #ddd; 
+	}
+	.list-item {
+	    display: flex;
+	    align-items: center;
+	}
+
+	.list-label {
+	    display: inline-block; 
+	    min-width: 180px; 
+	    font-weight: bold;
+	}
+
+	.list-description {
+	    flex: 1; 
+	}
+
+    </style>
+</head>
+<body>
+    <div class="header">Unlock your future with learning AI - Quick start with Python Programming</div>
+    <div class="main-container">
+
+        <div class="sidebar">
+            <h2 onclick="showWelcome()" style="cursor: pointer;">Course Content</h2>
+            <div class="menu-item" onclick="toggleSubMenu('Installation')"> Installation</div>
+            <div id="Installation" class="sub-menu">
+                <div onclick="showContent('sub1')">Installation Guide</div>
+                <div onclick="showContent('sub2')">Python Package Setup</div>
+		<div onclick="showContent('sub3')">Setting Up a Code Editor</div>
+		<div onclick="showContent('sub4')">Running Python Code</div>
+		<div onclick="showContent('sub5')">Troubleshooting Common Issues</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('topic3')">  Getting Started with Coding  </div>
+            <div id="topic3" class="sub-menu">
+                <div onclick="showContent('sub11')">Basic Data Types</div>
+                <div onclick="showContent('sub11')">Sequence Data Types - Ordered Collections</div>
+                <div onclick="showContent('sub11')">Set Data Types - Unordered Collections</div>
+                <div onclick="showContent('sub11')">Mapping Data Types</div>
+                <div onclick="showContent('sub11')">Binary Data Types</div>
+                <div onclick="showContent('sub11')">User-Defined & Advanced Data Types</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('Python for Basic Data Analysis')">Basic Data Analysis</div>
+            <div id="Python for Basic Data Analysis" class="sub-menu">
+                <div onclick="showContent('sub6')">Getting Started with Data in Python </div>
+                <div onclick="showContent('sub7')">Data Cleaning and Preprocessing </div>
+                <div onclick="showContent('sub8')">Exploratory Data Analysis & Visualization </div>
+                <div onclick="showContent('sub9')">Basic Data Transformation </div>
+                <div onclick="showContent('sub10')">Analyzing a Sample Dataset </div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('topic5')"> SQL & Database Handling </div>
+            <div id="topic5" class="sub-menu">
+                <div onclick="showContent('sub11')">SQL Basics</div>
+                <div onclick="showContent('sub11')">Data Manipulation, Aggregation & Grouping</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('topic6')">Machine Learning Basics </div>
+            <div id="topic6" class="sub-menu">
+                <div onclick="showContent('sub11')">Supervised Learning</div>
+                <div onclick="showContent('sub11')">Unsupervised Learning</div>
+		<div onclick="showContent('sub11')">Reinforcement Learning</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('topic7')">Nature Language Processing</div>
+            <div id="topic7" class="sub-menu">
+                <div onclick="showContent('sub11')">Text Preprocessing & Representation</div>
+                <div onclick="showContent('sub11')">Syntactic & Semantic Analysis</div>
+		<div onclick="showContent('sub11')">Machine Translation & Text Generation</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('topic8')">Deep Learning Basics </div>
+            <div id="topic8" class="sub-menu">
+                <div onclick="showContent('sub11')">Fundamentals of Deep Learning</div>
+                <div onclick="showContent('sub11')">Neural Networks Basics</div>
+		<div onclick="showContent('sub11')"> Optimization Techniques</div>
+            </div>
+
+
+	    <div class="menu-item" onclick="toggleSubMenu('Learning Materials')">Learning Materials</div>
+            <div id="Learning Materials" class="sub-menu">
+                <div onclick="showContent('sub11')">Online Material</div>
+            </div>
+
+
+        </div>
+       	<div class="content" id="content">
+            <h1>Welcome!</h1>
+            <div class="quote">
+                "Python is a programming language that lets you work quickly and integrate systems more effectively."
+                <span class="quote-source">- Python.org</span>
+            </div>
+
+            <p><strong  class="orange-accent" >Why Learn Python?</strong></p>
+            <p>Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to analyze data efficiently and build scalable solutions.</p>
+           
+	    <p><strong  class="orange-accent">What You’ll Gain</strong></p>
+            <p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
+
+            <p><strong  class="orange-accent">Get Started Today</strong></p>
+            <p>Take the next step in your journey and explore the endless opportunities Python provides in data science. Learn at your own pace with engaging tutorials, practical exercises, and expert guidance. Begin today and transform your skills for the future!</p>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+	<p>Prepare by Lim version 1.0 - 2025 !</p>
+    </div>
+    
+
+
+
+
+    <script>
+        function toggleSubMenu(id) {
+            var submenu = document.getElementById(id);
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+        function showContent(subtopic) {
+            var contentDiv = document.getElementById('content');
+            var contentData = {
+                'sub1': `<div class="content-block">
+		         <h3  class="blue-bolt">Installation Guide for Python Data Science Development</h3>
+			 <p>For data science, we strongly recommend using the <strong>Anaconda Distribution</strong>. Anaconda provides a fully integrated environment for data analysis, machine learning, and scientific computing, offering a streamlined setup with essential libraries and tools.</p>
+		        <h3  class="blue-bolt">Why Anaconda?</h3>
+			<ul>
+			        <li>Pre-installed libraries: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scikit-learn</code>, and more.</li>
+				<li></li>
+			        <li>Jupyter Notebook for interactive data analysis.</li>
+			        <li>Conda package manager for easy library management.</li>
+			        <li>Compatible with Windows, Mac, and Linux.</li>
+		       </ul>
+
+			<h3 class="orange-accent">Step 1: Download & Install Anaconda</h3>
+			<p>1. Visit the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda Official Website</a>.</p>
+   		   	<p>2. Download the latest version of **Anaconda for Python 3.x** (64-bit).</p>
+			<p>3. Run the installer and follow the on-screen instructions.</p>
+		        <p>4. Ensure you select the option to **"Add Anaconda to PATH"** during installation.</p>
+
+			<h3 class="orange-accent">Step 2: Verify Installation</h3>
+    			<p>Once installed, open the **Anaconda Prompt** or **Terminal** and type:</p>
+    			<pre><code>conda --version</code></pre>
+   			<p>If the version appears, the installation was successful.</p>
+
+    			<h3 class="orange-accent">Step 3: Launch Jupyter Notebook</h3>
+    			<p>Jupyter Notebook is an essential tool for data scientists. To start it, enter:</p>
+    			<pre><code>jupyter notebook</code></pre>
+    			<p>This will open Jupyter Notebook in your web browser, allowing you to write and execute Python code interactively.</p>
+
+    			<h3 class="orange-accent">Step 4: Install Additional Libraries (If Needed)</h3>
+    			<p>While Anaconda includes most essential libraries, you can install others using:</p>
+    			<pre><code>conda install library_name</code></pre>
+    			<p>For example, to install TensorFlow:</p>
+    			<pre><code>conda install tensorflow</code></pre>
+
+   			<h3 class="orange-accent">Conclusion</h3>
+    			<p>With Anaconda, you have a complete, ready-to-use Python environment for data science. It simplifies package management, ensures compatibility, and accelerates your workflow.</p>
+			</div>`,
+
+
+
+                'sub2': `<h2 class="blue-bolt">Python Package Setup</h2>
+                         <div class="content-block">
+    			 <h3 class="orange-accent">Step 1: Understanding Python Packages in Anaconda</h3>
+    			 <p>Python packages are collections of modules that provide additional functionalities for data science, machine learning, and software development. In Anaconda, package management is handled through <strong>Conda</strong>, a powerful tool that allows you to install, update, and manage dependencies effortlessly.</p>
+
+		         <h3 class="orange-accent">Step 2: Checking Installed Packages</h3>
+			 <p>To see the list of all installed packages in your Anaconda environment, open the <strong>Anaconda Prompt</strong> or <strong>Terminal</strong> and type:</p>
+		         <pre><code>conda list</code></pre>
+		         <p>This command will display all installed packages along with their versions.</p>
+
+		         <h3 class="orange-accent">Step 3: Installing a New Package</h3>
+			 <p>To install a new package, use the <code>conda install</code> command followed by the package name. For example, to install the pandas library, enter:</p>
+			 <pre><code>conda install pandas</code></pre>
+			 <p>Conda will automatically resolve dependencies and install the correct version.</p>
+
+		         <h3 class="orange-accent">Step 4: Updating an Existing Package</h3>
+			 <p>To update a package to the latest version, use:</p>
+		         <pre><code>conda update package_name</code></pre>
+			 <p>For example, to update NumPy:</p>
+			 <pre><code>conda update numpy</code></pre>
+
+			 <h3 class="orange-accent">Step 5: Removing a Package</h3>
+		         <p>If you no longer need a package, you can remove it with:</p>
+			 <pre><code>conda remove package_name</code></pre>
+			 <p>For example, to remove Matplotlib:</p>
+			 <pre><code>conda remove matplotlib</code></pre>
+
+			 <h3 class="orange-accent">Step 6: Managing Virtual Environments (Optional)</h3>
+			 <p>To keep your projects organized, it's best to use virtual environments. You can create a new environment with a specific Python version using:</p>
+			 <pre><code>conda create --name my_env python=3.9</code></pre>
+		         <p>Activate the environment:</p>
+			 <pre><code>conda activate my_env</code></pre>
+		         <p>To install packages inside this environment:</p>
+		         <pre><code>conda install numpy pandas</code></pre>
+			 <p>To deactivate the environment, use:</p>
+			 <pre><code>conda deactivate</code></pre>
+
+		         <h3 class="orange-accent">Conclusion</h3>
+		         <p>With Conda, package management in Anaconda is efficient and reliable. It allows seamless installation, updating, and environment management, making Python development for data science easier.</p>
+                         </div>`,
+
+
+
+
+                'sub3': `<h2 class="blue-bolt">Setting Up a Code Editor</h2>
+			 <div class="content-block">
+			 <p>To efficiently write and execute Python code, a good code editor is essential. Anaconda provides built-in editors, and you can also use external IDEs for an optimized development experience.</p>
+
+			 <h3 class="orange-accent">Step 1: Understanding Code Editors</h3>
+			 <p>Code editors help developers write, debug, and run Python programs with ease. Features like syntax highlighting, debugging tools, and extensions improve productivity.</p>
+
+			 <h3 class="orange-accent">Step 2: Recommended Code Editors</h3>
+			 <table>
+			       <tr>
+				    <th>Code Editor</th>
+		                    <th>Why Use It?</th>
+			       </tr>
+			       <tr>
+		                    <td><span>Jupyter Notebook </span> </td>
+                                    <td>Best for data analysis & visualization, interactive coding.</td>
+		               </tr>
+                               <tr>
+            			    <td><span>Spyder</span> </td>
+                                    <td>Great for scientific computing (MATLAB-like interface).</td>
+                              </tr>
+                              <tr>
+                                   <td><span>VS Code</span></td>
+                                   <td>Lightweight, supports Jupyter & Conda.</td>
+                              </tr>
+                              <tr>
+                                   <td><span>PyCharm</span></td>
+                                   <td>Powerful, best for large Python projects.</td>
+                             </tr>
+                        </table>
+
+                        <h3 class="orange-accent">Step 3: Launching Jupyter Notebook (Recommended for Beginners)</h3>
+ 			<p>Jupyter Notebook is widely used for data science and machine learning projects.</p>
+                        <p>To start Jupyter Notebook:</p>
+                        <ol>
+			        <li>Open <strong>Anaconda Navigator</strong>.</li>
+			        <li>Click <strong>"Launch"</strong> under <strong>Jupyter Notebook</strong>.</li>
+			        <li>A browser window will open. Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+		        </ol>
+			<p>Alternatively, launch Jupyter from the <strong>Anaconda Prompt</strong>:</p>
+	                <pre><code>jupyter notebook</code></pre>
+
+
+		        <h3 class="orange-accent">Step 4: Setting Up Spyder (For Scientific Computing)</h3>
+		        <p>Spyder is another popular code editor included in Anaconda, preferred by researchers and scientists.</p>
+		        <ol>
+			        <li>Open <strong>Anaconda Navigator</strong>.</li>
+			        <li>Click <strong>"Launch"</strong> under <strong>Spyder</strong>.</li>
+			        <li>The Spyder IDE will open, featuring a code editor and an interactive Python console.</li>
+		       </ol>
+		       <p>To manually open Spyder, use:</p>
+		       <pre><code>spyder</code></pre>
+
+    		       <h3 class="orange-accent">Step 5: Installing & Configuring VS Code for Anaconda (optional)</h3>
+		       <p>If you prefer a modern and lightweight editor, VS Code is a great choice.</p>
+		       <ol>
+			        <li>Download <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> and install it.</li>
+			        <li>Inside VS Code, install the <strong>Python Extension</strong>.</li>
+			        <li>Set **Anaconda as the default Python interpreter** in VS Code.</li>
+		      </ol>
+		      <p>Activate Anaconda in VS Code using:</p>
+		      <pre><code>conda activate base</code></pre>
+		      <p>If working with Jupyter Notebook files, install the <strong>Jupyter Notebook extension</strong> inside VS Code.</p>
+
+
+		      <h3 class="orange-accent">Conclusion</h3>
+		      <p>Choosing the right code editor depends on your needs:</p>
+		      <ul>
+        	  	<li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive data science workflows.</li>
+			<li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Ideal for scientific computing.</li>
+			<li class="list-item"><span class="list-label blue-bolt">VS Code,PyCharm</span>: Great for advanced development,large projects.</li>
+		      </ul>
+                      </div>`,
+
+
+
+
+                'sub4': `<h2 class="blue-bolt">Running Python Code</h2>
+                         <div class="content-block">
+			 <p>Python code can be executed in multiple ways, depending on the environment you are working in. Below are the recommended methods for running Python scripts efficiently.</p>
+
+			    <h3 class="orange-accent">Step 1: Running Python Code in Jupyter Notebook (Recommended for Data Science)</h3>
+		    	    <p>Jupyter Notebook allows interactive execution, making it ideal for data science projects.</p>
+			    <ol>
+			        <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Jupyter Notebook</strong>.</li>
+			        <li>Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+			        <li>Type the following code in a cell and press <strong>Shift + Enter</strong> to execute:</li>
+    			   </ol>
+			   <pre><code>print("Hello, Python for Data Science!")</code></pre>
+
+			    <h3 class="orange-accent">Step 2: Running Python Code in Spyder</h3>
+			
+			    <p>Spyder is another great environment for running Python scripts.</p>
+			    <ol>
+			        <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Spyder</strong>.</li>
+			        <li>Write the following code in the editor:</li>
+			    </ol>
+			    <pre><code>print("Running Python in Spyder!")</code></pre>
+			    <p>Click the <strong>Run</strong> button (green play icon) or press <strong>F5</strong> to execute.</p>
+
+    			    <h3 class="orange-accent">Step 3: Running Python Code in VS Code</h3>
+			    <p>VS Code is a modern and lightweight editor for Python development.</p>
+			    <ol>
+			        <li>Open <strong>VS Code</strong> and install the <strong>Python extension</strong> (if not already installed).</li>
+			        <li>Create a new <code class="code-inline">.py</code> file and write:</li>
+			    </ol>
+			
+			    <pre><code>print("Hello from VS Code!")</code></pre>
+			    <p>Press <strong>Ctrl + Shift + P</strong>, type <strong>Run Python File</strong>, and select it to execute.</p>
+
+  			    <h3 class="orange-accent">Step 4: Running Python Code in Anaconda Prompt (Command Line)</h3>
+			    <p>If you prefer the command line, you can run Python scripts directly.</p>
+			    <ol>
+				<li>Open <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (Mac/Linux).</li>
+			        <li>Navigate to the folder where your script is saved using:</li>
+			    </ol>
+
+			    <pre><code>cd path/to/folder</code></pre>
+			    <p>Then, run your script with:</p>
+			    <pre><code>python script.py</code></pre>
+
+			    <h3 class="orange-accent">Step 5: Running Python Interactively in the Python Shell</h3>
+			    <p>The Python shell allows you to run commands interactively.</p>
+			    <ol>
+			        <li>Open <strong>Anaconda Prompt</strong> or <strong>Terminal</strong>.</li>
+			        <li>Type <code class="code-inline">python</code> and hit <strong>Enter</strong> to open the interactive shell.</li>
+			        <li>Run Python code directly, like:</li>
+			    </ol>
+			    <pre><code>print("This is the Python shell!")</code></pre>
+
+			    <h3class="orange-accent">Conclusion</h3>
+			    <ul>
+			        <li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive execution & data science workflows.</li>
+			        <li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Great for scientific computing & debugging.</li>
+			        <li class="list-item"><span class="list-label blue-bolt">VS Code</span>: Ideal for coding large projects efficiently.</li>
+			        <li class="list-item"><span class="list-label blue-bolt">Command Line / Shell</span>: Quick execution for scripts.</li>
+			    </ul>
+                         </div>`,
+
+
+
+                'sub5': `<h2 class="blue-bolt">Troubleshooting Common Issues</h2>
+			 <div class="content-block">
+		         <p>Encountering errors while using Python or Anaconda? Below are common issues and solutions to keep your development smooth.</p>
+
+		    	 <h3 class="orange-accent">Issue 1: 'conda' or 'python' Command Not Found</h3>
+			 <p><strong>Cause:</strong> Anaconda might not be added to the system’s PATH.</p>
+                         <p><strong>Solution:</strong></p>
+    			 <ol>
+        			<li>Reinstall Anaconda and select <strong>"Add Anaconda to PATH environment variable"</strong> during installation.</li>
+			        <li>Alternatively, manually add it by running:</li>
+			</ol>
+				 <pre><code class="code-inline">
+				 # Windows (Run in Anaconda Prompt)
+				 setx PATH "%PATH%;C:\ProgramData\Anaconda3" </code></pre>
+           			 
+				 <pre><code class="code-inline">
+				 # macOS/Linux (Run in Terminal)
+ 				 export PATH="$HOME/anaconda3/bin:$PATH"</code></pre>
+
+			<h3 class="orange-accent">Issue 2: Jupyter Notebook Won't Launch</h3>
+    			<p><strong>Cause:</strong> Missing or outdated Jupyter installation.</p>
+		        <p><strong>Solution:</strong></p>
+			<ol>
+			        <li>Update Jupyter by running:</li>
+			</ol>
+		        <pre><code>conda update jupyter</code></pre>
+			<ol start="2">
+			        <li>Then, restart Jupyter Notebook:</li>
+		        </ol>
+		        <pre><code>jupyter notebook</code></pre>
+
+			<h3 class="orange-accent">Issue 3: ImportError - 'Module Not Found'</h3>
+			<p><strong>Cause:</strong> The required library is missing or installed in the wrong environment.</p>
+			<p><strong>Solution:</strong></p>
+			<ol>
+        			<li>First, check installed packages:</li>
+		        </ol>
+			<pre><code>conda list</code></pre>
+		        <ol start="2">
+			        <li>If the package is missing, install it using:</li>
+		        </ol>
+			<pre><code>conda install package_name</code></pre>
+			<p>For example, to install NumPy:</p>
+			<pre><code>conda install numpy</code></pre>
+
+			<h3 class="orange-accent">Issue 4: Kernel Error in Jupyter Notebook</h3>
+			<p><strong>Cause:</strong> The Python environment is corrupted or missing dependencies.</p>
+			<p><strong>Solution:</strong></p>
+			<ol>
+			        <li>Activate the correct environment:</li>
+			 </ol>
+			 <pre><code>conda activate base</code></pre>
+		
+			 <ol start="2">
+			        <li>Reinstall the Jupyter kernel:</li>
+			 </ol>
+			 <pre><code>conda install ipykernel</code></pre>
+			 <ol start="3">
+			        <li>Restart Jupyter Notebook.</li>
+			 </ol>
+
+			 <h3 class="orange-accent">Issue 5: Conda Fails to Install Packages</h3>
+		         <p><strong>Cause:</strong> Internet issues, outdated Conda, or broken dependencies.</p>
+		         <p><strong>Solution:</strong></p>
+		         <ol>
+			        <li>Update Conda:</li>
+		        </ol>
+			<pre><code>conda update conda</code></pre>
+			<ol start="2">
+			        <li>If package installation fails, try using:</li>
+    			</ol>
+			<pre><code>conda clean --all</code></pre>
+			<ol start="3">
+			        <li>Then, retry the installation.</li>
+			</ol>
+
+			<h3 class="orange-accent">Conclusion</h3>
+			<ul>
+			<li class="list-item"><span class="list-label blue-bolt">Check Error Message</span>: It often provides useful hints.</li>
+			<li class="list-item"><span class="list-label blue-bolt">Verify Environment</span>: Ensure using the correct Conda environment.</li>
+			<li class="list-item"><span class="list-label blue-bolt">Update Packages</span>: Keep Conda and libraries updated prevents many issues.</li>
+			<li class="list-item"><span class="list-label blue-bolt">Restart Jupyter/ Python</span>: Sometimes, a simple restart fixes the problem.</li>
+		        </ul>
+                        </div>`,
+
+
+
+
+                'sub6': `<h2>Getting Started with Data in Python </h2>
+                         <div class="content-block">
+
+                         </div>`,
+
+
+
+
+                'sub7': `<h2>Data Cleaning and Preprocessing </h2>
+                         <div class="content-block">
+
+                         </div>`,
+
+
+
+
+
+
+                'sub8': `<h2>Exploratory Data Analysis & Visualization </h2>
+                         <div class="content-block">
+
+                         </div>`,
+
+
+
+
+
+
+                'sub9': `<h2>Basic Data Transformation </h2>
+                         <div class="content-block">
+
+                         </div>`,
+
+
+
+
+
+
+
+                'sub10': `<h2>Analyzing a Sample Dataset </h2>
+                         <div class="content-block">
+
+                         </div>`,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                'sub11': `<h3> Page Under Development !!! </h3>
+                         <div class="content-block">
+			 <p>This page is currently under development. Updates will be added soon when time permits. Thank you for your patience!"</p>
+                         </div>`,
+
+            };
+            contentDiv.innerHTML = contentData[subtopic] || '<h2>update Content soon</h2>';
+        }
+        function showWelcome() {
+    		document.getElementById('content').innerHTML = `
+        	<h1>Welcome!</h1>
+	        <div class="quote">
+			"Python is a programming language that lets you work quickly and integrate systems more effectively."
+	        	<span class="quote-source">- Python.org</span>
+        	</div>
+	        <p><strong  class="orange-accent">Why Learn Python?</strong></p>
+        	<p>Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to analyze data efficiently and build scalable solutions.</p>
+
+	        <p><strong  class="orange-accent">What You’ll Gain</strong></p>
+        	<p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
+
+	        <p><strong  class="orange-accent">Get Started Today</strong></p>
+        	<p>Take the next step in your journey and explore the endless opportunities Python provides in data science. Learn at your own pace with engaging tutorials, practical exercises, and expert guidance. Begin today and transform your skills for the future!</p>`;
+	}
+    </script>
+</body>
+</html>
