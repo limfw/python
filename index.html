@@ -124,12 +124,13 @@
     	    background: #000; 
     	    color: #fff; 
     	    font-family: 'Courier New', monospace; 
-	    font-size: 14px; 
-	    line-height: 1.5; 
+	    font-size: 18px; 
+	    line-height: 1.8; 
 	    padding: 12px; 
 	    border-radius: 6px; 
 	    overflow-x: auto; 
 	    white-space: pre-wrap; 
+	    word-wrap: break-word; 
 	}
 	.code-inline {
 	    font-size: 14px; 
@@ -152,17 +153,31 @@
 	    display: flex;
 	    align-items: center;
 	}
-
 	.list-label {
 	    display: inline-block; 
 	    min-width: 180px; 
 	    font-weight: bold;
 	}
-
 	.list-description {
 	    flex: 1; 
 	}
-
+	.python-terminal {
+	    background: #000; 
+	    color: #fff;  
+	    font-family: 'Courier New', monospace; 
+	    font-size: 18px;  
+	    line-height: 1.8;
+	    padding: 12px;  
+	    border-radius: 6px;
+	    overflow-x: auto; 
+	    display: block;
+	    max-width: fit-content;
+	    white-space: pre-wrap; 
+	    word-wrap: break-word;
+	    text-align: left;
+	    margin-left: 0.5 !important;
+	    padding-left: 0.5 !important;
+	}
     </style>
 </head>
 <body>
@@ -181,61 +196,61 @@
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('topic3')">  Getting Started with Coding  </div>
-            <div id="topic3" class="sub-menu">
-                <div onclick="showContent('sub11')">Basic Data Types</div>
-                <div onclick="showContent('sub11')">Sequence Data Types - Ordered Collections</div>
-                <div onclick="showContent('sub11')">Set Data Types - Unordered Collections</div>
-                <div onclick="showContent('sub11')">Mapping Data Types</div>
-                <div onclick="showContent('sub11')">Binary Data Types</div>
+	    <div class="menu-item" onclick="toggleSubMenu('Getting Started with Coding')">  Getting Started with Coding  </div>
+            <div id="Getting Started with Coding" class="sub-menu">
+                <div onclick="showContent('sub6')">Basic Data Types</div>
+                <div onclick="showContent('sub7')">Sequence Data Types - Ordered Collections</div>
+                <div onclick="showContent('sub8')">Set Data Types - Unordered Collections</div>
+                <div onclick="showContent('sub9')">Mapping Data Types</div>
+                <div onclick="showContent('sub10')">Binary Data Types</div>
                 <div onclick="showContent('sub11')">User-Defined & Advanced Data Types</div>
             </div>
 
 
 	    <div class="menu-item" onclick="toggleSubMenu('Python for Basic Data Analysis')">Basic Data Analysis</div>
             <div id="Python for Basic Data Analysis" class="sub-menu">
-                <div onclick="showContent('sub6')">Getting Started with Data in Python </div>
-                <div onclick="showContent('sub7')">Data Cleaning and Preprocessing </div>
-                <div onclick="showContent('sub8')">Exploratory Data Analysis & Visualization </div>
-                <div onclick="showContent('sub9')">Basic Data Transformation </div>
-                <div onclick="showContent('sub10')">Analyzing a Sample Dataset </div>
+                <div onclick="showContent('sub99')">Getting Started with Data in Python </div>
+                <div onclick="showContent('sub99')">Data Cleaning and Preprocessing </div>
+                <div onclick="showContent('sub99')">Exploratory Data Analysis & Visualization </div>
+                <div onclick="showContent('sub99')">Basic Data Transformation </div>
+                <div onclick="showContent('sub99')">Analyzing a Sample Dataset </div>
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('topic5')"> SQL & Database Handling </div>
-            <div id="topic5" class="sub-menu">
-                <div onclick="showContent('sub11')">SQL Basics</div>
-                <div onclick="showContent('sub11')">Data Manipulation, Aggregation & Grouping</div>
+	    <div class="menu-item" onclick="toggleSubMenu('SQL & Database Handling')"> SQL & Database Handling </div>
+            <div id="SQL & Database Handling" class="sub-menu">
+                <div onclick="showContent('sub99')">SQL Basics</div>
+                <div onclick="showContent('sub99')">Data Manipulation, Aggregation & Grouping</div>
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('topic6')">Machine Learning Basics </div>
-            <div id="topic6" class="sub-menu">
-                <div onclick="showContent('sub11')">Supervised Learning</div>
-                <div onclick="showContent('sub11')">Unsupervised Learning</div>
-		<div onclick="showContent('sub11')">Reinforcement Learning</div>
+	    <div class="menu-item" onclick="toggleSubMenu('Machine Learning Basics')">Machine Learning Basics </div>
+            <div id="Machine Learning Basics" class="sub-menu">
+                <div onclick="showContent('sub99')">Supervised Learning</div>
+                <div onclick="showContent('sub99')">Unsupervised Learning</div>
+		<div onclick="showContent('sub99')">Reinforcement Learning</div>
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('topic7')">Nature Language Processing</div>
-            <div id="topic7" class="sub-menu">
-                <div onclick="showContent('sub11')">Text Preprocessing & Representation</div>
-                <div onclick="showContent('sub11')">Syntactic & Semantic Analysis</div>
-		<div onclick="showContent('sub11')">Machine Translation & Text Generation</div>
+	    <div class="menu-item" onclick="toggleSubMenu('Nature Language Processing')">Nature Language Processing</div>
+            <div id="Nature Language Processing" class="sub-menu">
+                <div onclick="showContent('sub99')">Text Preprocessing & Representation</div>
+                <div onclick="showContent('sub99')">Syntactic & Semantic Analysis</div>
+		<div onclick="showContent('sub99')">Machine Translation & Text Generation</div>
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('topic8')">Deep Learning Basics </div>
-            <div id="topic8" class="sub-menu">
-                <div onclick="showContent('sub11')">Fundamentals of Deep Learning</div>
-                <div onclick="showContent('sub11')">Neural Networks Basics</div>
-		<div onclick="showContent('sub11')"> Optimization Techniques</div>
+	    <div class="menu-item" onclick="toggleSubMenu('Deep Learning Basics')">Deep Learning Basics </div>
+            <div id="Deep Learning Basics" class="sub-menu">
+                <div onclick="showContent('sub99')">Fundamentals of Deep Learning</div>
+                <div onclick="showContent('sub99')">Neural Networks Basics</div>
+		<div onclick="showContent('sub99')"> Optimization Techniques</div>
             </div>
 
 
 	    <div class="menu-item" onclick="toggleSubMenu('Learning Materials')">Learning Materials</div>
             <div id="Learning Materials" class="sub-menu">
-                <div onclick="showContent('sub11')">Online Material</div>
+                <div onclick="showContent('sub99')">Online Material</div>
             </div>
 
 
@@ -253,8 +268,8 @@
 	    <p><strong  class="orange-accent">What You’ll Gain</strong></p>
             <p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
 
-            <p><strong  class="orange-accent">Get Started Today</strong></p>
-            <p>Take the next step in your journey and explore the endless opportunities Python provides in data science. Learn at your own pace with engaging tutorials, practical exercises, and expert guidance. Begin today and transform your skills for the future!</p>
+            <p><strong  class="orange-accent">Start Your Python Journey Today!</strong></p>
+            <p>Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your future!</p>
         </div>
 
     </div>
@@ -511,13 +526,9 @@
         			<li>Reinstall Anaconda and select <strong>"Add Anaconda to PATH environment variable"</strong> during installation.</li>
 			        <li>Alternatively, manually add it by running:</li>
 			</ol>
-				 <pre><code class="code-inline">
-				 # Windows (Run in Anaconda Prompt)
-				 setx PATH "%PATH%;C:\ProgramData\Anaconda3" </code></pre>
+				 <pre><code> # Windows (Run in Anaconda Prompt) setx PATH "%PATH%;C:\ProgramData\Anaconda3"</code></pre>
            			 
-				 <pre><code class="code-inline">
-				 # macOS/Linux (Run in Terminal)
- 				 export PATH="$HOME/anaconda3/bin:$PATH"</code></pre>
+				 <pre><code> # macOS/Linux (Run in Terminal) export PATH="$HOME/anaconda3/bin:$PATH" </code></pre>
 
 			<h3 class="orange-accent">Issue 2: Jupyter Notebook Won't Launch</h3>
     			<p><strong>Cause:</strong> Missing or outdated Jupyter installation.</p>
@@ -588,38 +599,414 @@
 
 
 
-                'sub6': `<h2>Getting Started with Data in Python </h2>
-                         <div class="content-block">
+                'sub6': `<h2 class="blue-bolt">Getting Started with Data in Python </h2>
+ 			 <h1 class="orange-accent">Basic Data Types </h1>
+			 <div class="content-block">
+			 <p>Python provides several built-in data types that are fundamental for handling data in data science and programming.</p>
+			 <h3 class="orange-accent">1. Numeric Data Types</h3>
+			 <p>Numeric data types in Python include integers, floating-point numbers, and complex numbers.</p>
 
+			<pre><code class="python-terminal">
+# Integer
+x = 10
+print(type(x))  # Output: &lt;class 'int'&gt;
+
+# Float
+y = 10.5
+print(type(y))  # Output: &lt;class 'float'&gt;
+
+# Complex
+z = 2 + 3j
+print(type(z))  # Output: &lt;class 'complex'&gt;
+			</code></pre>
+
+			<h3 class="orange-accent">2. String Data Type</h3>
+			<p>Strings are used to store text data and can be enclosed in single or double quotes.</p>
+			
+			<pre><code class="python-terminal">
+# String Example
+text = "Hello, Python!"
+print(type(text))  # Output: &lt;class 'String'&gt;
+
+		        </code></pre>
+
+
+		        <h3 class="orange-accent">3. Boolean Data Type</h3>
+			<p>Boolean values represent truth values: <code>True</code> or <code>False</code>.</p>
+
+			<pre><code class="python-terminal">
+# Boolean Example
+is_python_fun = True
+print(type(is_python_fun)) # Output: &lt;class 'bool'&gt 
+		        </code></pre>
+
+			
+		 	<h3 class="orange-accent">4. List Data Type</h3>
+		        <p>Lists are ordered collections of items, which can hold different data types.</p>
+
+			<pre><code class="python-terminal">
+# List Example
+my_list = [1, 2, 3, "Python", True]
+print(type(my_list))  # Output: &lt;class 'list'&gt 
+			</code></pre>
+
+			<h3 class="orange-accent">5. Tuple Data Type</h3>
+			<p>Tuples are similar to lists but are **immutable** (cannot be changed).</p>
+
+			<pre><code class="python-terminal">
+# Tuple Example
+my_tuple = (10, 20, 30, "Data Science")
+print(type(my_tuple))  # Output: &lt;class 'tuple'&gt
+		        </code></pre>
+
+			
+			<h3 class="orange-accent">6. Dictionary Data Type</h3>
+			<p>Dictionaries store data in key-value pairs and are useful for structured data.</p>
+
+			<pre><code class="python-terminal">
+# Dictionary Example
+student = {"name": "Alice", "age": 25, "course": "Python"}
+print(type(student))  # Output: &lt;class 'dict'&gt
+			</code></pre>
+
+			
+			<h3 class="orange-accent">7. Set Data Type</h3>
+			<p>Sets are unordered collections of unique items.</p>
+
+			<pre><code class="python-terminal">
+# Set Example
+my_set = {1, 2, 3, 4, 4, 5}
+print(type(my_set))  # Output: &lt;class 'set'&gt
+			</code></pre>
+
+		
+			<h3 class="orange-accent">Conclusion</h3>
+			<p>Understanding Python's basic data types is essential for data manipulation and analysis. Mastering these will help in working efficiently with data in Python.</p>
+	                </div>`,
+
+
+
+
+                'sub7': `<h2 class="blue-bolt">Sequence Data Types </h2>
+			<div class="content-block">
+		    	<p>Python provides several built-in **ordered collection types** that allow you to store multiple items in a single variable. These include:</p>
+			<h3 class="orange-accent">1. Lists</h3>
+		        <p>Lists are **mutable**, ordered collections that can contain elements of different data types.</p>
+			<pre class="python-terminal"><code>
+# Creating a List
+numbers = [10, 20, 30, 40, 50]
+print(numbers)  # Output: [10, 20, 30, 40, 50]
+
+# Accessing Elements
+print(numbers[0])  # Output: 10
+
+# Modifying Elements
+numbers[2] = 100
+print(numbers)  # Output: [10, 20, 100, 40, 50]
+
+# Adding Elements
+numbers.append(60)
+print(numbers)  # Output: [10, 20, 100, 40, 50, 60]
+
+# Removing Elements
+numbers.remove(40)
+print(numbers)  # Output: [10, 20, 100, 50, 60]
+    			</code></pre>
+
+    			<h3 class="orange-accent">2. Tuples</h3>
+    			<p>Tuples are **immutable**, ordered collections. Once created, their elements **cannot be modified**.</p>
+   			<pre class="python-terminal"><code>
+# Creating a Tuple
+coordinates = (5, 10, 15)
+print(coordinates)  # Output: (5, 10, 15)
+
+# Accessing Elements
+print(coordinates[1])  # Output: 10
+
+# Tuples are immutable, so this will cause an error:
+# coordinates[1] = 20  # TypeError: 'tuple' object does not support item assignment
+   			 </code></pre>
+
+    			<h3 class="orange-accent">3. Strings</h3>
+    			<p>Strings are **immutable sequences of characters** used to store text.</p>
+    			<pre class="python-terminal"><code>
+# Creating a String
+text = "Hello, Python!"
+print(text)  # Output: Hello, Python!
+
+# Accessing Characters
+print(text[0])  # Output: H
+
+# Strings are immutable, so this will cause an error:
+# text[0] = "h"  # TypeError: 'str' object does not support item assignment
+    			</code></pre>
+
+    			<h3 class="orange-accent">Conclusion</h3>
+			<p>Python's **ordered collection types** allow for efficient data storage and manipulation. **Lists** are best when elements need to be changed, while **tuples** are useful for fixed data. **Strings** provide powerful text manipulation features.</p>
                          </div>`,
 
 
 
 
-                'sub7': `<h2>Data Cleaning and Preprocessing </h2>
-                         <div class="content-block">
+                'sub8': `<h2 class="blue-bolt">Set Data Types - Unordered Collections </h2>
+			<div class="content-block">
+        		<p>In Python, a <strong>set</strong> is an <strong>unordered collection</strong> of unique elements. Sets are useful when you need to store items without duplicates and perform operations like union, intersection, and difference.</p>
 
-                         </div>`,
+		        <h3 class="orange-accent">1. Creating a Set</h3>
+	                <p>Sets are defined using curly braces <code>{}</code> or the <code>set()</code> function.</p>
+
+<pre class="python-terminal"><code>
+# Creating a Set
+fruits = {"apple", "banana", "cherry"}
+print(fruits)  # Output: {'apple', 'banana', 'cherry'}
+
+# Creating an Empty Set
+empty_set = set()  # {} creates an empty dictionary, not a set.
+print(type(empty_set))  # Output: <class 'set'>
+</code></pre>
+
+		    <h3 class="orange-accent">2. Adding and Removing Elements</h3>
+		    <p>Elements can be added using <code>.add()</code>  and removed using <code>.remove()</code>  or <code>.discard()</code> .</p>
+		
+<pre class="python-terminal"><code>
+# Adding an Element
+fruits.add("orange")
+print(fruits)  # Output: {'apple', 'banana', 'cherry', 'orange'}
+
+# Removing an Element
+fruits.remove("banana")  # Raises KeyError if item is not found
+print(fruits)  # Output: {'apple', 'cherry', 'orange'}
+
+# Using discard() (No error if element is missing)
+fruits.discard("banana")  # No error
+</code></pre>
+
+		    <h3 class="orange-accent">3. Set Operations</h3>
+		    <p>Python sets support <strong>union, intersection, and difference</strong> operations.</p>
+<pre class="python-terminal"><code>
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# Union (Combine all unique elements)
+print(A | B)  # Output: {1, 2, 3, 4, 5, 6}
+
+# Intersection (Common elements)
+print(A & B)  # Output: {3, 4}
+
+# Difference (Elements in A but not in B)
+print(A - B)  # Output: {1, 2}
+
+# Symmetric Difference (Elements in A or B, but not both)
+print(A ^ B)  # Output: {1, 2, 5, 6}
+</code></pre>
+
+		    <h3 class="orange-accent">4. Checking Membership</h3>
+		    <p>Use the <code>in</code> keyword to check if an element exists in a set.</p>
+		
+<pre class="python-terminal"><code>
+numbers = {10, 20, 30, 40}
+
+print(20 in numbers)  # Output: True
+print(50 in numbers)  # Output: False
+</code></pre>
+
+		    <h3 class="orange-accent">Conclusion</h3>
+        	    <p>Sets provide an efficient way to handle <strong>unique unordered data</strong>. They are useful for <strong>removing duplicates</strong>, performing <strong>mathematical set operations</strong>,and checking <strong>membership efficiently</strong>.</p>
+                    </div>`,
+
+
+
+
+		'sub9': `<h2 class="blue-bolt">Mapping Data Type - Dictionaries</h2>
+			 <div class="content-block">
+		         <p>In Python, a <strong>dictionary</strong> is a collection of key-value pairs. It is an efficient way to store and retrieve data based on a unique key.</p>
+
+		        <h3 class="orange-accent">1. Creating a Dictionary</h3>
+		        <p>Dictionaries are created using curly braces <code>{}</code> or the <code>dict()</code> function.</p>
+
+<pre class="python-terminal"><code>
+# Creating a Dictionary
+student = {"name": "Alice", "age": 20, "grade": "A"}
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A'}
+
+# Using dict() function
+employee = dict(id=101, name="John", role="Engineer")
+print(employee)  # Output: {'id': 101, 'name': 'John', 'role': 'Engineer'}
+</code></pre>
+
+	        <h3 class="orange-accent">2. Accessing Dictionary Values</h3>
+	        <p>Dictionary values can be accessed using keys.</p>
+
+<pre class="python-terminal"><code>
+# Accessing Dictionary Values
+print(student["name"])  # Output: Alice
+print(employee["role"])  # Output: Engineer
+
+# Using .get() to avoid KeyError
+print(student.get("age"))  # Output: 20
+</code></pre>
+
+	        <h3 class="orange-accent">3. Adding & Updating Values</h3>
+	        <p>You can add new key-value pairs or update existing values.</p>
+
+<pre class="python-terminal"><code>
+# Adding a New Key-Value Pair
+student["city"] = "New York"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A', 'city': 'New York'}
+
+# Updating a Value
+student["grade"] = "A+"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+', 'city': 'New York'}
+</code></pre>
+
+		<h3 class="orange-accent">4. Removing Items from a Dictionary</h3>
+		<p>You can remove dictionary items using <code>del</code> or <code>pop()</code>.</p>
+
+<pre class="python-terminal"><code>
+# Removing a Key-Value Pair
+del student["city"]
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+'}
+
+# Using pop()
+grade = student.pop("grade")
+print(grade)  # Output: A+
+print(student)  # Output: {'name': 'Alice', 'age': 20}
+</code></pre>
+
+        		<h3 class="orange-accent">Conclusion</h3>
+        		<p>Dictionaries are powerful data structures in Python that allow efficient data storage and retrieval using keys. They are widely used in data science for **storing metadata, configurations, and structured data mappings**.</p>
+    			</div>`,  
+
+
+
+
+                'sub10': `<h2 class="blue-bolt">Binary Data Types </h2>
+			  <div class="content-block">
+		          <p>Python provides support for handling binary data using the <code>bytes</code>, <code>bytearray</code>, and <code>memoryview</code> types.</p>
+
+		        <h3 class="orange-accent">1. Bytes: Immutable Binary Data</h3>
+		        <p>A <code>bytes</code> object is an immutable sequence of bytes.</p>
+
+<pre class="python-terminal"><code>
+# Creating a Bytes Object
+binary_data = b"Hello"
+print(binary_data)  # Output: b'Hello'
+
+# Accessing Individual Bytes
+print(binary_data[0])  # Output: 72 (ASCII value of 'H')
+</code></pre>
+
+	              <h3 class="orange-accent">2. Bytearray: Mutable Binary Data</h3>
+	              <p>The <code>bytearray</code> type is a mutable sequence of bytes.</p>
+
+<pre class="python-terminal"><code>
+# Creating a Bytearray
+mutable_data = bytearray([65, 66, 67])
+print(mutable_data)  # Output: bytearray(b'ABC')
+
+# Modifying a Byte
+mutable_data[0] = 97  # Change 'A' (65) to 'a' (97)
+print(mutable_data)  # Output: bytearray(b'aBC')
+</code></pre>
+
+	              <h3 class="orange-accent">3. MemoryView: Access Binary Data</h3>
+                      <p>The <code>memoryview</code> function allows direct access to an object’s binary data without copying it.</p>
+
+<pre class="python-terminal"><code>
+# Creating a MemoryView
+mem_view = memoryview(b'Python')
+print(mem_view[0])  # Output: 80 (ASCII value of 'P')
+
+# Slicing MemoryView
+print(mem_view[1:4].tobytes())  # Output: b'yth'
+</code></pre>
+
+        	    <h3 class="orange-accent">Conclusion</h3>
+	            <p>Binary data types are useful for handling **files, images, and low-level memory operations**. They enable efficient **storage, transmission, and processing of binary information** in Python.</p>
+                     </div>`,  
+
+
+
+		'sub11': `<h2 class="blue-bolt">User-Defined & Advanced Data Types</h2>
+			  <div class="content-block">
+		          <p>Python allows users to define their own **custom data types** using classes and advanced structures like **named tuples, enumerations, and dataclasses**. These data types help in organizing complex data structures efficiently.</p>
+
+		          <h3 class="orange-accent">1. Classes: Custom Data Structures</h3>
+		          <p>In Python, a **class** is a blueprint for creating objects with specific properties and methods.</p>
+
+<pre class="python-terminal"><code>
+# Defining a Custom Class
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+
+    def get_details(self):
+        return f"{self.name}, Age: {self.age}, Grade: {self.grade}"
+
+# Creating an Instance
+student1 = Student("Alice", 21, "A")
+print(student1.get_details())  # Output: Alice, Age: 21, Grade: A
+</code></pre>
+
+		        <h3 class="orange-accent">2. Named Tuples: Lightweight Data Structures</h3>
+		        <p>A **named tuple** is an immutable data structure that allows **accessing fields by name**, improving code readability.</p>
+
+<pre class="python-terminal"><code>
+from collections import namedtuple
+
+# Defining a Named Tuple
+Person = namedtuple("Person", ["name", "age", "city"])
+
+# Creating an Instance
+p1 = Person(name="John", age=30, city="New York")
+print(p1.name, p1.city)  # Output: John New York
+</code></pre>
+
+		        <h3 class="orange-accent">3. Enumerations (Enums)</h3>
+		        <p>Enumerations help define a set of **named constants** that improve code clarity.</p>
+
+<pre class="python-terminal"><code>
+from enum import Enum
+
+# Defining an Enum Class
+class Status(Enum):
+    ACTIVE = 1
+    INACTIVE = 0
+    PENDING = -1
+
+print(Status.ACTIVE)  # Output: Status.ACTIVE
+print(Status.ACTIVE.value)  # Output: 1
+</code></pre>
+
+        		<h3 class="orange-accent">4. DataClasses: Simplified Data Storage</h3>
+		        <p>**DataClasses** provide an efficient way to define structured objects without manually writing boilerplate code.</p>
+
+<pre class="python-terminal"><code>
+from dataclasses import dataclass
+
+# Defining a DataClass
+@dataclass
+class Employee:
+    id: int
+    name: str
+    department: str
+
+# Creating an Instance
+e1 = Employee(101, "Alice", "HR")
+print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
+</code></pre>
+
+        		<h3 class="orange-accent">Conclusion</h3>
+       			<p>User-defined and advanced data types like **classes, named tuples, enums, and dataclasses** help in designing **scalable, structured, and maintainable Python programs**. They are widely used in **data modeling, API development, and object-oriented programming**.</p>
+		        </div>`,
 
 
 
 
 
 
-                'sub8': `<h2>Exploratory Data Analysis & Visualization </h2>
-                         <div class="content-block">
-
-                         </div>`,
-
-
-
-
-
-
-                'sub9': `<h2>Basic Data Transformation </h2>
-                         <div class="content-block">
-
-                         </div>`,
 
 
 
@@ -627,30 +1014,7 @@
 
 
 
-                'sub10': `<h2>Analyzing a Sample Dataset </h2>
-                         <div class="content-block">
-
-                         </div>`,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                'sub11': `<h3> Page Under Development !!! </h3>
+                'sub99': `<h3> Page Under Development !!! </h3>
                          <div class="content-block">
 			 <p>This page is currently under development. Updates will be added soon when time permits. Thank you for your patience!"</p>
                          </div>`,
