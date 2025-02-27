@@ -250,7 +250,7 @@
 
 	    <div class="menu-item" onclick="toggleSubMenu('Quiz')"> Quiz</div>
             <div id="Quiz" class="sub-menu">
-                <div onclick="showContent('sub99')">Basic Python</div>
+                <div onclick="showContent('Quiz')">Basic Python</div>
             </div>
 
 
@@ -505,7 +505,7 @@
 			    </ol>
 			    <pre><code>print("This is the Python shell!")</code></pre>
 
-			    <h3class="orange-accent">Conclusion</h3>
+			    <h3 class="orange-accent">Conclusion</h3>
 			    <ul>
 			        <li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive execution & data science workflows.</li>
 			        <li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Great for scientific computing & debugging.</li>
@@ -1457,6 +1457,35 @@ df['family_size'] = df['sibsp'] + df['parch'] + 1
 			 <p>This page is currently under development. Updates will be added soon when time permits. Thank you for your patience!"</p>
                          </div>`,
 
+
+        'Quiz': `<h2 class="blue-bolt">Quiz Time!</h2>
+          <form id="quizForm">
+            <div>
+              <p>1. What is the capital of France?</p>
+              <input type="radio" name="q1" value="Paris" id="q1a"> <label for="q1a">Paris</label><br>
+              <input type="radio" name="q1" value="London" id="q1b"> <label for="q1b">London</label><br>
+              <input type="radio" name="q1" value="Berlin" id="q1c"> <label for="q1c">Berlin</label><br>
+              <input type="radio" name="q1" value="Madrid" id="q1d"> <label for="q1d">Madrid</label><br>
+            </div>
+            <div>
+              <p>2. Which language is used for web page structure?</p>
+              <input type="radio" name="q2" value="JavaScript" id="q2a"> <label for="q2a">JavaScript</label><br>
+              <input type="radio" name="q2" value="CSS" id="q2b"> <label for="q2b">CSS</label><br>
+              <input type="radio" name="q2" value="HTML" id="q2c"> <label for="q2c">HTML</label><br>
+              <input type="radio" name="q2" value="Python" id="q2d"> <label for="q2d">Python</label><br>
+            </div>
+            <div>
+              <p>3. What does CSS stand for?</p>
+              <input type="radio" name="q3" value="Computer Style Sheets" id="q3a"> <label for="q3a">Computer Style Sheets</label><br>
+              <input type="radio" name="q3" value="Cascading Style Sheets" id="q3b"> <label for="q3b">Cascading Style Sheets</label><br>
+              <input type="radio" name="q3" value="Creative Style Sheets" id="q3c"> <label for="q3c">Creative Style Sheets</label><br>
+              <input type="radio" name="q3" value="Colorful Style Sheets" id="q3d"> <label for="q3d">Colorful Style Sheets</label><br>
+            </div>
+            <br>
+            <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+          </form>
+          <div id="quizResult"></div>`,
+
             };
             contentDiv.innerHTML = contentData[subtopic] || '<h2>update Content soon</h2>';
         }
@@ -1474,9 +1503,22 @@ df['family_size'] = df['sibsp'] + df['parch'] + 1
 	        <p><strong  class="orange-accent">What You’ll Gain</strong></p>
         	<p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
 
-	        <p><strong  class="orange-accent">Get Started Today</strong></p>
-        	<p>Take the next step in your journey and explore the endless opportunities Python provides in data science. Learn at your own pace with engaging tutorials, practical exercises, and expert guidance. Begin today and transform your skills for the future!</p>`;
+	        <p><strong  class="orange-accent">Start Your Python Journey Today!</strong></p>
+        	<p>Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your future!</p>`;
 	}
+
+    function checkQuiz() {
+      var score = 0;
+      var total = 3;
+      var form = document.getElementById('quizForm');
+      var q1 = form.q1.value;
+      var q2 = form.q2.value;
+      var q3 = form.q3.value;
+      if (q1 === "Paris") { score++; }
+      if (q2 === "HTML") { score++; }
+      if (q3 === "Cascading Style Sheets") { score++; }
+      document.getElementById('quizResult').innerHTML = "<h3>You scored " + score + " out of " + total + "!</h3>";
+    }
     </script>
 </body>
 </html>
