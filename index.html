@@ -209,11 +209,11 @@
 
 	    <div class="menu-item" onclick="toggleSubMenu('Python for Basic Data Analysis')">Basic Data Analysis</div>
             <div id="Python for Basic Data Analysis" class="sub-menu">
-                <div onclick="showContent('sub99')">Getting Started with Data in Python </div>
-                <div onclick="showContent('sub99')">Data Cleaning and Preprocessing </div>
-                <div onclick="showContent('sub99')">Exploratory Data Analysis & Visualization </div>
-                <div onclick="showContent('sub99')">Basic Data Transformation </div>
-                <div onclick="showContent('sub99')">Analyzing a Sample Dataset </div>
+                <div onclick="showContent('sub12')">Getting Started with Data in Python </div>
+                <div onclick="showContent('sub13')">Data Cleaning and Preprocessing </div>
+                <div onclick="showContent('sub14')">Exploratory Data Analysis & Visualization </div>
+                <div onclick="showContent('sub15')">Basic Data Transformation </div>
+                <div onclick="showContent('sub16')">Analyzing a Sample Dataset </div>
             </div>
 
 
@@ -232,7 +232,7 @@
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('Nature Language Processing')">Nature Language Processing</div>
+	    <div class="menu-item"  onclick="toggleSubMenu('Nature Language Processing')">Nature Language Processing</div>
             <div id="Nature Language Processing" class="sub-menu">
                 <div onclick="showContent('sub99')">Text Preprocessing & Representation</div>
                 <div onclick="showContent('sub99')">Syntactic & Semantic Analysis</div>
@@ -248,9 +248,9 @@
             </div>
 
 
-	    <div class="menu-item" onclick="toggleSubMenu('Learning Materials')">Learning Materials</div>
-            <div id="Learning Materials" class="sub-menu">
-                <div onclick="showContent('sub99')">Online Material</div>
+	    <div class="menu-item" onclick="toggleSubMenu('Others')">Others</div>
+            <div id="Others" class="sub-menu">
+                <div onclick="showContent('sub99')">Others</div>
             </div>
 
 
@@ -275,11 +275,9 @@
     </div>
     
     <div class="footer">
-	<p>Prepare by Lim version 1.0 - 2025 !</p>
+	<p>Prepare by 😀 version 1.0 - 2025 ! </p>
     </div>
     
-
-
 
 
     <script>
@@ -290,6 +288,9 @@
         function showContent(subtopic) {
             var contentDiv = document.getElementById('content');
             var contentData = {
+
+/*--------------------------------------------------------------Section Installation ----------------------------------------------------------------*/
+
                 'sub1': `<div class="content-block">
 		         <h3  class="blue-bolt">Installation Guide for Python Data Science Development</h3>
 			 <p>For data science, we strongly recommend using the <strong>Anaconda Distribution</strong>. Anaconda provides a fully integrated environment for data analysis, machine learning, and scientific computing, offering a streamlined setup with essential libraries and tools.</p>
@@ -597,7 +598,7 @@
                         </div>`,
 
 
-
+/*-----------------------------------------------------Section Basic Data type & Function ----------------------------------------------------------------*/
 
                 'sub6': `<h2 class="blue-bolt">Getting Started with Data in Python </h2>
  			 <h1 class="orange-accent">Basic Data Types </h1>
@@ -1004,6 +1005,426 @@ print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
 
 
 
+/*--------------------------------------------------------------Section Data analysis ----------------------------------------------------------------*/
+
+                'sub12': `<h2 class="blue-bolt">Getting Started with Data in Python</h2>
+			  <div class="content-block">
+			  <p>Data is the backbone of any analysis, and Python provides powerful libraries to work with structured and unstructured data. Whether handling **CSV files, Excel sheets, databases, or web data**, Python makes data manipulation simple and efficient.</p>
+
+			  <h3 class="orange-accent">1. Why Use Python for Data Analysis?</h3>
+			  <p>Python is widely used in **data science and analytics** due to its simplicity and robust libraries like <code class="code-inline">pandas</code>, <code class="code-inline">numpy</code>, and <code class="code-inline">matplotlib</code>. Some key benefits include:</p>
+	
+			  <ul>
+			        <li class="list-item"><span class="list-label blue-bolt">Easy-to-Use</span>: Python syntax is beginner-friendly and intuitive.</li>
+			        <li class="list-item"><span class="list-label blue-bolt">Extensive Libraries</span>: Ready-to-use tools for data processing and visualization.</li>
+			        <li class="list-item"><span class="list-label blue-bolt">Scalability</span>: Can handle small and large datasets efficiently.</li>
+			  </ul>
+
+
+			 <h3 class="orange-accent">2. Installing Essential Data Libraries</h3>
+			 <p>We use **Anaconda** for a complete data science environment. If not installed, refer to the <a href="#">Installation Guide</a>.</p>
+			 <p>To install key data libraries, open **Anaconda Prompt** or **Terminal** and run:</p>
+<pre class="python-terminal"><code>
+# Install Pandas for data handling
+conda install pandas
+
+# Install NumPy for numerical computing
+conda install numpy
+
+# Install Matplotlib for data visualization
+conda install matplotlib
+</code></pre>
+
+			  <h3 class="orange-accent">3. Loading and Viewing Data with Pandas</h3>
+			  <p>Once installed, we can use **pandas** to load and explore datasets.</p>
+
+<pre class="python-terminal"><code>
+import pandas as pd
+
+# Load a CSV file
+df = pd.read_csv("data.csv")
+
+# View first 5 rows
+print(df.head())
+</code></pre>
+
+		    <h3 class="orange-accent">4. Checking Data Structure</h3>
+		    <p>Before analysis, it’s important to check dataset properties.</p>
+<pre class="python-terminal"><code>
+# Check dataset size
+print(df.shape)  # Output: (rows, columns)
+
+# View column names
+print(df.columns)
+
+# Summary statistics
+print(df.describe())
+</code></pre>
+
+		    <h3 class="orange-accent">5. Handling Missing Data</h3>
+		    <p>Data is often incomplete. Use **pandas** to detect and fill missing values.</p>
+<pre class="python-terminal"><code>
+# Check missing values
+print(df.isnull().sum())
+
+# Fill missing values with mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+</code></pre>
+
+		    <h3 class="orange-accent">6. Saving Processed Data</h3>
+		    <p>After cleaning, save the dataset for future use.</p>
+<pre class="python-terminal"><code>
+# Save to a new CSV file
+df.to_csv("cleaned_data.csv", index=False)
+</code></pre>
+
+		    <h3 class="orange-accent">Conclusion</h3>
+		    <p>Python offers a **flexible and powerful** approach to handling data. By using **pandas and NumPy**, we can efficiently load, explore, and clean datasets, preparing them for further analysis.</p>
+		</div>`,
+
+
+
+                'sub13': `<h2 class="blue-bolt">Data Cleaning and Preprocessing</h2>
+			  <div class="content-block">
+			  <p>Data cleaning is an essential step in any data science project. **Raw data often contains missing values, duplicates, and formatting errors.** In this section, we will learn how to clean and preprocess datasets using Python’s <code class="code-inline">pandas</code> library.</p>
+
+		         <h3 class="orange-accent">1. Identifying Missing Data</h3>
+		         <p>Before analysis, we need to check if there are **missing values** in our dataset.</p>
+<pre class="python-terminal"><code>
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+</code></pre>
+
+
+		         <h3 class="orange-accent">2. Handling Missing Values</h3>
+			 <p>We can **fill missing values** with mean/median or **drop rows** with missing data.</p>
+<pre class="python-terminal"><code>
+# Fill missing values with column mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+</code></pre>
+
+
+			 <h3 class="orange-accent">3. Removing Duplicates</h3>
+		         <p>Sometimes datasets have **duplicate records** that need to be removed.</p>
+<pre class="python-terminal"><code>
+# Remove duplicate rows
+df.drop_duplicates(inplace=True)
+</code></pre>
+
+
+			 <h3 class="orange-accent">4. Standardizing Column Names</h3>
+			 <p>Inconsistent column names can cause issues. Standardize them like this:</p>
+<pre class="python-terminal"><code>
+# Convert column names to lowercase and remove spaces
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+</code></pre>
+
+
+		         <h3 class="orange-accent">5. Converting Data Types</h3>
+			 <p>Ensure numerical values are in the correct **integer or float format**.</p>
+<pre class="python-terminal"><code>
+# Convert column to numeric
+df['price'] = pd.to_numeric(df['price'], errors='coerce')
+</code></pre>
+
+			
+			 <h3 class="orange-accent">6. Handling Outliers</h3>
+    			 <p>Outliers can skew analysis. We can **remove or replace them** using statistical techniques.</p>
+<pre class="python-terminal"><code>
+# Remove outliers beyond 3 standard deviations
+df = df[(df['price'] < df['price'].mean() + 3 * df['price'].std())]
+</code></pre>
+
+
+		        <h3 class="orange-accent">Conclusion</h3>
+	                <p>By **cleaning and preprocessing** our data, we ensure that our analysis is **accurate and reliable**. The next step is to explore the cleaned dataset through **Exploratory Data Analysis (EDA) & Visualization**.</p>
+                         </div>`,
+
+
+
+
+
+                'sub14': `<h2 class="blue-bolt">Exploratory Data Analysis (EDA) & Visualization</h2>
+			  <div class="content-block">
+			  <p>Exploratory Data Analysis (EDA) is a crucial step in understanding dataset patterns, detecting anomalies, and summarizing key insights. We use Python libraries like <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> to create effective visualizations.</p>
+
+
+			  <h3 class="orange-accent">1. Import Required Libraries</h3>
+			  <p>Ensure you have <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> installed. If not, install them using:</p>
+<pre class="python-terminal"><code>
+# Install matplotlib & seaborn
+pip install matplotlib seaborn
+</code></pre>
+    
+			    <p>Then, import the required libraries:</p>
+<pre class="python-terminal"><code>
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+</code></pre>
+
+    			<h3 class="orange-accent">2. Load & Preview the Dataset</h3>
+			<p>We first load the dataset and display basic statistical summaries.</p>
+<pre class="python-terminal"><code>
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Display first 5 rows
+print(df.head())
+
+# Get summary statistics
+print(df.describe())
+</code></pre>
+
+    			<h3 class="orange-accent">3. Univariate Analysis (Single Variable)</h3>
+			<p>We analyze the distribution of individual numerical features using histograms and KDE plots.</p>
+<pre class="python-terminal"><code>
+# Histogram of a numerical column
+plt.figure(figsize=(8,5))
+sns.histplot(df['price'], bins=30, kde=True)
+plt.title("Price Distribution")
+plt.show()
+</code></pre>
+
+    			<h3 class="orange-accent">4. Boxplot to Detect Outliers</h3>
+			<p>Boxplots help identify outliers and data spread.</p>
+<pre class="python-terminal"><code>
+# Boxplot to detect outliers
+plt.figure(figsize=(8,5))
+sns.boxplot(x=df['price'])
+plt.title("Price Outliers")
+plt.show()
+</code></pre>
+
+		    <h3 class="orange-accent">5. Bivariate Analysis (Two Variables)</h3>
+		    <p>Scatter plots and correlation heatmaps help us analyze relationships between variables.</p>
+    
+<pre class="python-terminal"><code>
+# Scatter plot (Example: Price vs Area)
+plt.figure(figsize=(8,5))
+sns.scatterplot(x=df['area'], y=df['price'])
+plt.title("Area vs Price")
+plt.xlabel("Area (sq ft)")
+plt.ylabel("Price ($)")
+plt.show()
+</code></pre>
+
+		    <h3 class="orange-accent">6. Correlation Heatmap</h3>
+		    <p>Heatmaps help visualize how features correlate with each other.</p>
+<pre class="python-terminal"><code>
+# Correlation heatmap
+plt.figure(figsize=(10,6))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Feature Correlation Heatmap")
+plt.show()
+</code></pre>
+
+		    <h3 class="orange-accent">7. Categorical Data Visualization</h3>
+		    <p>Bar plots and count plots are useful for analyzing categorical variables.</p>
+    
+<pre class="python-terminal"><code>
+# Count plot for a categorical feature
+plt.figure(figsize=(8,5))
+sns.countplot(x=df['category'])
+plt.title("Category Count")
+plt.show()
+</code></pre>
+		
+		    <h3 class="orange-accent">Conclusion</h3>
+		    <p>EDA helps uncover patterns, trends, and potential issues in the dataset before applying machine learning models. In the next step, we move on to **Data Transformation** to prepare our data for further analysis.</p>
+                    </div>`,
+
+
+
+
+                'sub15': `<h2 class="blue-bolt">Data Transformation & Feature Engineering</h2>
+			 <div class="content-block">
+			 <p>Before applying machine learning models, we need to preprocess and transform data for better performance. This includes handling missing values, scaling numerical data, encoding categorical variables, and feature engineering.</p>
+
+		         <h3 class="orange-accent">1. Handling Missing Values</h3>
+			 <p>Missing values can affect model performance. We use <code class="code-inline">pandas</code> to handle them.</p>
+    
+<pre class="python-terminal"><code>
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Fill missing numerical values with the mean
+df['price'].fillna(df['price'].mean(), inplace=True)
+
+# Fill categorical missing values with the most frequent category
+df['category'].fillna(df['category'].mode()[0], inplace=True)
+
+# Drop rows with missing values (if necessary)
+df.dropna(inplace=True)
+</code></pre>
+
+
+		      <h3 class="orange-accent">2. Scaling Numerical Features</h3>
+		      <p>Feature scaling ensures numerical values are on the same scale, improving model performance.</p>
+
+
+		      <h4 class="orange-accent">Standardization (Z-score normalization)</h4>
+	              <p>Standardization scales data to have a mean of 0 and a standard deviation of 1.</p>
+
+<pre class="python-terminal"><code>
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+</code></pre>
+
+
+		    <h4 class="orange-accent">Min-Max Scaling (Normalization)</h4>
+		    <p>Normalization scales values between 0 and 1.</p>
+
+<pre class="python-terminal"><code>
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+</code></pre>
+
+
+	           <h3 class="orange-accent">3. Encoding Categorical Data</h3>
+		   <p>Machine learning models work better with numerical data. We convert categorical values using one-hot encoding or label encoding.</p>
+  	           <h4 class="orange-accent">One-Hot Encoding</h4>
+		   <p>One-hot encoding creates binary columns for each category.</p>
+
+<pre class="python-terminal"><code>
+df = pd.get_dummies(df, columns=['category'])
+</code></pre>
+
+		  <h4 class="orange-accent">Label Encoding</h4>
+		  <p>Label encoding assigns numerical values to categories.</p>
+
+<pre class="python-terminal"><code>
+from sklearn.preprocessing import LabelEncoder
+
+encoder = LabelEncoder()
+df['category'] = encoder.fit_transform(df['category'])
+</code></pre>
+
+
+		    <h3 class="orange-accent">4. Feature Engineering</h3>
+		    <p>Creating new features can improve model performance.</p>
+
+		    <h4 class="orange-accent">Creating New Features</h4>
+		    <p>We can derive new insights by combining or transforming existing features.</p>
+
+<pre class="python-terminal"><code>
+# Creating a price per square foot feature
+df['price_per_sqft'] = df['price'] / df['area']
+</code></pre>
+
+		    <h4 class="orange-accent">Binning</h4>
+		    <p>Binning groups continuous values into discrete bins.</p>
+
+<pre class="python-terminal"><code>
+df['price_category'] = pd.cut(df['price'], bins=[0, 100000, 300000, 500000], labels=['Low', 'Medium', 'High'])
+</code></pre>
+
+
+		    <h4 class="orange-accent">Date-Time Feature Extraction</h4>
+		    <p>Extracting useful features from date-time columns.</p>
+
+<pre class="python-terminal"><code>
+df['year'] = pd.to_datetime(df['date']).dt.year
+df['month'] = pd.to_datetime(df['date']).dt.month
+</code></pre>
+
+		    <h3 class="orange-accent">Conclusion</h3>
+		    <p>Data transformation ensures that our dataset is clean, well-structured, and optimized for machine learning models. The next step is **analyzing a sample dataset** to see how preprocessing impacts results.</p>
+		   </div>`,
+
+
+
+
+
+                'sub16': `<h2 class="blue-bolt">Analyzing a Sample Dataset</h2>
+			  <div class="content-block">
+	                  <p>In this section, we will analyze a sample dataset using Pandas, Seaborn, and Matplotlib. The Titanic dataset is widely used for exploratory data analysis (EDA).</p>
+
+			  <h3 class="orange-accent">1. Loading the Dataset</h3>
+			  <p>We will load the Titanic dataset directly from Seaborn.</p>
+
+<pre class="python-terminal"><code>
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = sns.load_dataset('titanic')
+
+# Display first few rows
+print(df.head())
+</code></pre>
+
+    			  <h3 class="orange-accent">2. Basic Data Exploration</h3>
+		          <p>Check dataset information and missing values.</p>
+
+<pre class="python-terminal"><code>
+# Dataset summary
+print(df.info())
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Statistical summary
+print(df.describe())
+</code></pre>
+
+		    <h3 class="orange-accent">3. Visualizing the Data</h3>
+		    <p>Let's explore survival rates based on gender using Seaborn.</p>
+
+<pre class="python-terminal"><code>
+# Count plot of survival by gender
+sns.countplot(x='sex', hue='survived', data=df)
+plt.title('Survival Rate by Gender')
+plt.show()
+</code></pre>
+
+		    <p>Visualizing passenger class distribution.</p>
+
+<pre class="python-terminal"><code>
+# Bar plot of passenger class distribution
+sns.barplot(x='pclass', y='survived', data=df)
+plt.title('Survival Rate by Passenger Class')
+plt.show()
+</code></pre>
+
+		    <h3 class="orange-accent">4. Handling Missing Data</h3>
+		    <p>We will fill missing age values with the median.</p>
+
+<pre class="python-terminal"><code>
+df['age'].fillna(df['age'].median(), inplace=True)
+</code></pre>
+
+		    <h3 class="orange-accent">5. Feature Engineering</h3>
+		    <p>We can create a new feature called **family_size**.</p>
+
+<pre class="python-terminal"><code>
+df['family_size'] = df['sibsp'] + df['parch'] + 1
+</code></pre>
+
+		    <h3 class="orange-accent">Conclusion</h3>
+		    <p>The Titanic dataset is a great way to practice data exploration, missing data handling, and visualization. These skills are essential for any data science project.</p>
+		</div>`,
 
 
 
@@ -1013,6 +1434,23 @@ print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------- Other Section  ----------------------------------------------------------------*/
 
                 'sub99': `<h3> Page Under Development !!! </h3>
                          <div class="content-block">
@@ -1022,6 +1460,7 @@ print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
             };
             contentDiv.innerHTML = contentData[subtopic] || '<h2>update Content soon</h2>';
         }
+
         function showWelcome() {
     		document.getElementById('content').innerHTML = `
         	<h1>Welcome!</h1>
