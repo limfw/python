@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master - Machine Learning with SAS Viya & Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"> 
+	            <p>Master - Machine Learning Techniques for Data Mining</p>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2 class="orange-accent">Course Content</h2>
+			<div class="menu-item"><a href="index.html" style="text-decoration: none; color: inherit;">Basic Python</a></div>
+			<div class="menu-item"><a href="ml.html" style="text-decoration: none; color: inherit;">Basic Machine Learning</a></div>			
+            <div class="menu-item" onclick="showContent('welcome')">Intermediate - Overview</div>
+			
+            <div class="menu-item" onclick="toggleSubMenu('ml_inter')">Machine Learning - Intermediate</div>
+            <div id="ml_inter" class="sub-menu">
+                <div class="menu-item" onclick="toggleSubMenu('ml_foundt')">Foundation of Machine Learning </div>
+                <div id="ml_foundt" class="sub-menu">
+                    <div onclick="showContent('ml_history')">Historical Development of ML</div>
+                    <div onclick="showContent('ml_math')">Mathematical Foundations</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_arch')">Model Architecture</div>
+                <div id="ml_arch" class="sub-menu">
+                    <div onclick="showContent('ml_decision_trees')">Decision Trees and Ensemble Methods</div>
+                    <div onclick="showContent('ml_neural_networks')">Neural Networks and Universal Approximation</div>
+					<div onclick="showContent('ml_svmss')">Support Vector Machines</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_anl')">Model Analysis</div>
+                <div id="ml_anl" class="sub-menu">
+                    <div onclick="showContent('ml_fs')">Feature Selection and Dimensionality Reduction</div>
+                    <div onclick="showContent('ml_ce')">Cross-Validation and Model Evaluation</div>
+                    <div onclick="showContent('ml_pm')">Performance Metrics and Statistical Tests</div>					
+                    <div onclick="showContent('ml_ord')">Overfitting, Regularization and Data Imbalance</div>
+                </div>
+
+                <div class="menu-item" onclick="toggleSubMenu('ml_modell')">Applications and Implementation</div>
+                <div id="ml_modell" class="sub-menu">
+                    <div onclick="showContent('ml_bench')">Benchmark ML Problems</div>
+                    <div onclick="showContent('ml_science')">ML for Scientific & Engineering Applications</div>
+                </div>
+                                           
+            </div>
+			<div class="menu-item" onclick="toggleSubMenu('sas_ml')">SAS Viya for ML</div>
+            <div id="sas_ml" class="sub-menu">
+                    <div onclick="showContent('sas_viya_intro')">Introduction to SAS Viya : Master</div>
+						<div onclick="showContent('viyaP1')">Practical 1</div>
+						<div onclick="showContent('viyaP2')">Practical 2</div>
+						<div onclick="showContent('viyaP3')">Practical 3</div>
+						<div onclick="showContent('viyaP4')">Practical 4</div>
+						<div onclick="showContent('viyaP5')">Practical 5</div>
+						<div onclick="showContent('viyaP6')">Practical 6</div>
+						<div onclick="showContent('viyaP7')">Practical 7</div>	
+                </div>
+			<div class="menu-item" onclick="toggleSubMenu('python_ml')">Python for ML</div>
+            <div id="python_ml" class="sub-menu">
+                    <div onclick="showContent('python_libraries')">Python Libraries for ML : Master</div>
+						<div onclick="showContent('pythonP1')">Practical 1</div>
+						<div onclick="showContent('pythonP2')">Practical 2</div>
+						<div onclick="showContent('pythonP3')">Practical 3</div>
+						<div onclick="showContent('pythonP4')">Practical 4</div>
+						<div onclick="showContent('pythonP5')">Practical 5</div>
+						<div onclick="showContent('pythonP6')">Practical 6</div>
+						<div onclick="showContent('pythonP7')">Practical 7</div>
+                </div>			
+			<div class="menu-item" onclick="toggleSubMenu('Others')">Others</div>
+			<div id="Others" class="sub-menu">
+					<div onclick="showContent('decoding_regression')">Decoding Regression</div>
+					<div onclick="showContent('geometric_deep_learning')">Geometric Deep Learning</div>
+					<div onclick="showContent('feature_crosses')">Feature Crosses</div>
+					<div onclick="showContent('embeddings')">Embeddings</div>
+					<div onclick="showContent('genetic_algorithms')">Genetic Algorithms</div>		
+                </div>	
+
+        </div>
+		
+		
+        <div class="content" id="content-area">
+            <h1 class="blue-bolt">Master Machine Learning Techniques for Data Mining</h1>
+				<p>
+					This course focuses on the theoretical foundations and practical applications of machine learning. 
+					The aim is to provide you with a deep understanding of ML principles, mathematical frameworks, and research methodologies
+					while equipping you with hands-on skills to implement ML models in various domains.
+				</p>
+
+				<p>
+					The main topics that will be discussed include:
+					model selection and evaluation, feature selection, supervised and unsupervised learning, neural networks, 
+					Bayesian learning, support vector machines, clustering, density estimation, ensemble learning, 
+					reinforcement learning, and deep learning architectures.
+				</p>
+
+				<p>
+					This course also emphasizes practical implementation and research-focused analysis using 
+					<strong>Python</strong> and <strong>SAS Viya</strong>. You will learn how to design, analyze, and optimize ML models using 
+					Scikit-learn, TensorFlow, PyTorch, and SAS Viya’s advanced ML tools for large-scale processing.
+				</p>
+
+				<p>
+					By the end of this course, you will be able to critically evaluate ML models, optimize performance, 
+					and apply ML techniques to both real-world problems and research-driven innovations. 
+					You will also gain a strong foundation in machine learning theory, enabling you to contribute to ML research and advancements.
+				</p>
+        </div>
+    </div>
+    
+        <div class="footer">
+            <p>Prepare by 😀 version 1.0 - 2025 ! &  Build a Better Future - 2025 ! </p>
+        </div>
+    <script>
+	function toggleSubMenu(id) {
+		var submenu = document.getElementById(id);
+		if (submenu) {
+			submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+		}
+	}
+
+	function showContent(topic, element) {
+		let contentArea = document.getElementById('content-area');
+
+		let content = {
+			'welcome': `
+					<h1 class="blue-bolt">📌 Course Overview</h1>
+
+					<div class="content-box">
+						<p><strong>Course Objective:</strong> This course is designed to provide a practical yet research-oriented approach to machine learning, leveraging the power of Python and SAS Viya.</p>
+						<p>You will explore advanced ML concepts, model architectures, and evaluation techniques, with an emphasis on both theoretical foundations and real-world applications.</p>
+					</div>
+
+					<h2 class="blue-bolt">🔍 Key Topics Covered</h2>
+
+					<div class="content-box">
+						<p>Throughout this course, we will cover essential topics, including:</p>
+						<ul>
+							<li>✔ Supervised & Unsupervised Learning(Classification, Regression, Clustering).</li>
+							<li>✔ Decision Trees & Neural Networks (MLP, Deep Learning Architectures).</li>
+							<li>✔ Ensemble Methods (Bagging, Boosting, Random Forests).</li>
+							<li>✔ Reinforcement Learning & Markov Decision Processes.</li>
+							<li>✔ Model Selection, Validation & Robustness in Research.</li>
+							<li>✔ Hands-on implementation using Python & SAS Viya.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">🛠 Practical Implementation</h2>
+
+					<div class="content-box">
+						<p>This course combines theoretical depth with practical applications, allowing students to:</p>
+						<ul>
+							<li>✔ Work with Python libraries like Scikit-learn, TensorFlow, and PyTorch.</li>
+							<li>✔ Use SAS Viya for large-scale ML model building.</li>
+							<li>✔ Implement end-to-end ML workflows from data preprocessing to model deployment.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">🎯 Learning Outcomes</h2>
+
+					<div class="content-box">
+						<p>By the end of this course, you will have the skills to:</p>
+						<ul>
+							<li>✔ Build, train, and evaluate ML models for real-world applications.</li>
+							<li>✔ Understand ML model reliability and robustness for scientific research.</li>
+							<li>✔ Deploy AI-powered solutions in diverse domains (business, engineering, and research).</li>
+							<li>✔ Apply theoretical concepts to advance ML research and innovation.</li>
+						</ul>
+					</div>
+			`,
+					
+			'ml_history': `
+				<h1 class="blue-bolt">📌 Historical Development of Machine Learning</h1>
+
+				<div class="content-box">
+					<p><strong>Objective:</strong> This lecture explores how Machine Learning (ML) has evolved over time, identifying key breakthroughs, algorithms, and trends that have shaped modern ML research and applications.</p>
+					<ul>
+						<li>✔ Understand the historical milestones in ML.</li>
+						<li>✔ Recognize how statistical learning and deep learning evolved.</li>
+						<li>✔ Examine the impact of AI Winters and breakthroughs in computing power.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">1️⃣ Introduction to Machine Learning History</h2>
+
+				<div class="content-box">
+					<p><strong>Definition:</strong> Machine Learning is a field of artificial intelligence (AI) that enables computers to learn from data and make decisions without explicit programming.</p>
+					<p><strong>Relationship with AI & Data Science:</strong></p>
+					<ul>
+						<li>✔ Artificial Intelligence (AI): A broader concept including ML, deep learning, and expert systems.</li>
+						<li>✔ Data Science: The process of extracting insights from data, often using ML algorithms.</li>
+					</ul>
+					<p><strong>ML Paradigms:</strong></p>
+					<ul>
+						<li>✔ Supervised Learning: Trains models on labeled data (e.g., regression, classification).</li>
+						<li>✔ Unsupervised Learning: Identifies patterns in unlabeled data (e.g., clustering, dimensionality reduction).</li>
+						<li>✔ Reinforcement Learning: Uses rewards and penalties to train decision-making models.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">2️⃣ Early Foundations (1950s - 1970s): Birth of AI & ML</h2>
+
+				<div class="content-box">
+					<p><strong>Milestones:</strong></p>
+					<ul>
+						<li>✔ Alan Turing (1950): Proposed the "Turing Test" to measure machine intelligence.</li>
+						<li>✔ 1952 - Checkers AI (Arthur Samuel): The first self-learning program.</li>
+						<li>✔ 1957 - Perceptron (Frank Rosenblatt):
+							<ul>
+								<li>✅ First ML model inspired by biological neurons.</li>
+								<li>✅ Introduced weights and learning via updates.</li>
+								<li>⚠ Limitation: Failed to solve the XOR problem (linear separability issue).</li>
+							</ul>
+						</li>
+						<li>✔ 1960s - Symbolic AI vs. Statistical AI:
+							<ul>
+								<li>✅ Symbolic AI: Rule-based expert systems.</li>
+								<li>✅ Statistical AI: Early probabilistic models.</li>
+							</ul>
+						</li>
+						<li>✔ 1970s - AI Winter #1: High expectations but limited computing power led to disillusionment.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">3️⃣ Statistical Learning & Rise of Practical ML (1980s - 1990s)</h2>
+
+				<div class="content-box">
+					<p><strong>Breakthroughs:</strong></p>
+					<ul>
+						<li>✔ 1986 - Backpropagation Algorithm (Rumelhart, Hinton, Williams):
+							<ul>
+								<li>✅ Solved the XOR problem.</li>
+								<li>✅ Enabled training of multi-layer perceptrons (MLP).</li>
+							</ul>
+						</li>
+						<li>✔ 1989 - Support Vector Machines (SVMs) (Vapnik & Cortes):
+							<ul>
+								<li>✅ Introduced the kernel trick for non-linear classification.</li>
+								<li>✅ Maximized the decision margin for better generalization.</li>
+							</ul>
+						</li>
+						<li>✔ Ensemble Learning:
+							<ul>
+								<li>✅ 1995 - Random Forests (Breiman): Multiple decision trees for better accuracy.</li>
+								<li>✅ 1997 - AdaBoost (Freund & Schapire): Improved weak classifiers iteratively.</li>
+							</ul>
+						</li>
+						<li>✔ 1990s - AI Winter #2: Computational limits slowed deep learning progress.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">4️⃣ The Rise of Machine Learning & Data Revolution (2000s - 2010s)</h2>
+
+				<div class="content-box">
+					<p><strong>Key Advancements:</strong></p>
+					<ul>
+						<li>✔ 2006 - Deep Learning Revolution (Hinton, Bengio, LeCun):
+							<ul>
+								<li>✅ Introduced unsupervised pre-training for deep networks.</li>
+								<li>✅ Developed Restricted Boltzmann Machines (RBMs) & Autoencoders.</li>
+							</ul>
+						</li>
+						<li>✔ 2009 - ImageNet Dataset (Fei-Fei Li):** Enabled large-scale deep learning research.</li>
+						<li>✔ 2012 - AlexNet (Krizhevsky, Sutskever, Hinton):
+							<ul>
+								<li>✅ Demonstrated superiority of deep CNNs.</li>
+								<li>✅ Marked the beginning of deep learning dominance.</li>
+							</ul>
+						</li>
+						<li>✔ 2014 - Generative Adversarial Networks (GANs) (Goodfellow et al.): Enabled AI-generated media.</li>
+						<li>✔ 2017 - Transformers & Attention Mechanism (Vaswani et al.):
+							<ul>
+								<li>✅ Replaced CNNs & RNNs with self-attention**.</li>
+								<li>✅ Led to models like GPT, BERT, and modern LLMs.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">5️⃣ Modern AI: Deep Learning, Foundation Models & Beyond (2020s - Present)</h2>
+
+				<div class="content-box">
+					<p><strong>Recent Trends:</strong></p>
+					<ul>
+						<li>✔ Self-Supervised Learning (SimCLR, MoCo, BYOL): Learning representations without labels.</li>
+						<li>✔ Large Language Models (GPT, BERT, DeepSeek, OpenAI models): Scaling ML for text understanding.</li>
+						<li>✔ Multimodal AI (CLIP, DALL-E, Sora): Combining vision, text, and speech.</li>
+						<li>✔ AI for Scientific Discovery (AlphaFold, AI in healthcare & physics): ML-driven research acceleration.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">6️⃣ Ethical Considerations & Future of ML</h2>
+
+				<div class="content-box">
+					<p><strong>Challenges & Research Directions:</strong></p>
+					<ul>
+						<li>✔ Bias & Fairness: Avoiding discrimination in AI models.</li>
+						<li>✔ Explainability & Trustworthiness: SHAP, LIME, XAI techniques.</li>
+						<li>✔ AI Alignment & Safety: Reinforcement Learning with Human Feedback (RLHF).</li>
+						<li>✔ Future Research Areas: Neuromorphic computing, Quantum AI, Causal ML.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🔍 Lecture Summary & Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ ML evolved from rule-based AI to statistical learning to deep learning.</li>
+						<li>✔ Breakthroughs like backpropagation, SVMs, and transformers shaped modern ML.</li>
+						<li>✔ Trends focus on large-scale AI, self-supervised learning, and ethical AI.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">📚 Recommended Readings</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>📖 <strong>The Perceptron</strong> - F. Rosenblatt (1958).</li>
+						<li>📖 <strong>A Training Algorithm for Optimal Margin Classifiers</strong> - Cortes & Vapnik (1995).</li>
+						<li>📖 <strong>Deep Learning</strong> - Ian Goodfellow, Yoshua Bengio, Aaron Courville (2016).</li>
+					</ul>
+				</div>		
+			`,
+
+			'ml_math': `
+				<h1 class="blue-bolt">📌 Mathematical Foundations for Machine Learning</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> A strong mathematical foundation is crucial for understanding the inner workings of machine learning models.</p>
+					<p>This section covers key mathematical concepts required to build, optimize, and analyze ML models.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Calculus: Derivatives, Gradients & Hessians</h2>
+
+				<div class="content-box">
+					<p><strong>Importance in ML:</strong> Calculus is the backbone of optimization techniques used in training machine learning models.</p>
+					<ul>
+						<li>✔ <strong>Derivatives</strong> – Measure the rate of change; used in gradient-based optimization.</li>
+						<li>✔ <strong>Gradients</strong> – Multi-dimensional derivatives used in <strong>Gradient Descent</strong>.</li>
+						<li>✔ <strong>Hessians</strong> – Second-order derivatives used in advanced optimization (Newton’s method).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Linear Algebra: Vector Spaces, Eigenvalues & Eigenvectors</h2>
+
+				<div class="content-box">
+					<p><strong>Why it matters:</strong> Linear algebra is fundamental for data transformations, dimensionality reduction, and ML algorithms.</p>
+					<ul>
+						<li>✔ <strong>Vector Spaces</strong> – Foundation of numerical data representation in ML.</li>
+						<li>✔ <strong>Eigenvalues & Eigenvectors</strong> – Core concepts in <strong>Principal Component Analysis (PCA)</strong> and <strong>Singular Value Decomposition (SVD)</strong>.</li>
+						<li>✔ <strong>Matrix Operations</strong> – Crucial for <strong>neural networks, covariance matrices, and transformations</strong>.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Probability & Statistics: Bayes’ Theorem, Distributions & Hypothesis Testing</h2>
+
+				<div class="content-box">
+					<p><strong>Why it matters:</strong> ML models make decisions based on probabilities and statistical reasoning.</p>
+					<ul>
+						<li>✔ <strong>Bayes' Theorem</strong> – Key concept for probabilistic models (e.g., Naïve Bayes classifier).</li>
+						<li>✔ <strong>Probability Distributions</strong> – Normal, Bernoulli, Poisson distributions (used in modeling uncertainty).</li>
+						<li>✔ <strong>Hypothesis Testing</strong> – Used to validate ML model performance (e.g., t-tests, p-values).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Information Theory: Entropy & KL Divergence</h2>
+
+				<div class="content-box">
+					<p><strong>Application in ML:</strong> Information theory helps in feature selection, model regularization, and compression.</p>
+					<ul>
+						<li>✔ <strong>Entropy</strong> – Measures uncertainty in probability distributions.</li>
+						<li>✔ <strong>KL Divergence</strong> – Measures the difference between two probability distributions (used in <strong>model selection and variational inference</strong>).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Optimization Methods: Gradient Descent, Newton’s Method & Lagrange Multipliers</h2>
+
+				<div class="content-box">
+					<p><strong>Core to ML training:</strong> Optimization methods help minimize loss functions and improve model accuracy.</p>
+					<ul>
+						<li>✔ <strong>Gradient Descent</strong> – Most common optimization method in <strong>deep learning</strong>.</li>
+						<li>✔ <strong>Newton’s Method</strong> – Second-order optimization for convex problems.</li>
+						<li>✔ <strong>Lagrange Multipliers</strong> – Used in constrained optimization (e.g., <strong>SVMs</strong> and <strong>regularization</strong>).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>Understanding derivatives, gradients, and Hessians</strong> is essential for optimizing ML models.</li>
+						<li>✔ <strong>Linear algebra underpins PCA, SVD, and neural network computations.</strong></li>
+						<li>✔ <strong>Probability & statistics provide a framework for uncertainty modeling and inference.</strong></li>
+						<li>✔ <strong>Information theory concepts like entropy and KL divergence aid in model evaluation.</strong></li>
+						<li>✔ <strong>Optimization techniques drive model training efficiency and performance.</strong></li>
+					</ul>
+				</div>
+				`,
+				
+			'ml_decision_trees': `
+				<h1 class="blue-bolt">📌 Decision Trees & Ensemble Methods</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Decision trees are fundamental supervised learning models that make predictions using <strong>hierarchical, rule-based structures</strong>. Ensemble methods enhance decision trees by combining multiple weak learners to achieve <strong>higher accuracy and robustness</strong>.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Key Concepts in Decision Trees</h2>
+
+				<div class="content-box">
+					<p><strong>How Decision Trees Work:</strong> A tree structure is formed where internal nodes represent decision rules, branches represent outcomes, and leaves represent final predictions.</p>
+					<ul>
+						<li>✔ <strong>Information Gain</strong> – Measures reduction in uncertainty when splitting nodes.</li>
+						<li>✔ <strong>Gini Impurity</strong> – Measures impurity of a node (used in CART).</li>
+						<li>✔ <strong>Entropy</strong> – Measures randomness in data (used in ID3 algorithm).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Preventing Overfitting: Pruning Techniques</h2>
+
+				<div class="content-box">
+					<p><strong>Overfitting occurs when a decision tree becomes too complex</strong> and memorizes noise instead of generalizing.</p>
+					<ul>
+						<li>✔ <strong>Pre-pruning (Early Stopping)</strong> – Limits tree depth to prevent unnecessary splits.</li>
+						<li>✔ <strong>Post-pruning</strong> – Removes weak branches <strong>after training</strong> to improve generalization.</li>
+						<li>✔ <strong>Minimum Split Criterion</strong> – Requires a node to have a minimum number of samples before splitting.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Ensemble Methods: Boosting & Bagging</h2>
+
+				<div class="content-box">
+					<p><strong>Why Ensembles?</strong> Instead of relying on a <strong>single decision tree</strong>, ensemble methods combine multiple models to enhance predictive power and reduce variance.</p>
+					<ul>
+						<li>✔ <strong>Random Forest</strong> – Builds multiple trees using <strong>bootstrap aggregation (bagging)</strong>.</li>
+						<li>✔ <strong>AdaBoost (Adaptive Boosting)</strong> – Assigns <strong>higher weights to misclassified instances</strong>, focusing on difficult cases.</li>
+						<li>✔ <strong>XGBoost (Extreme Gradient Boosting)</strong> – A highly optimized gradient boosting algorithm for structured data.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>Decision trees split data using entropy, information gain, and Gini impurity.</strong></li>
+						<li>✔ <strong>Pruning helps prevent overfitting by simplifying tree structures.</strong></li>
+						<li>✔ <strong>Ensemble methods like Random Forest, AdaBoost, and XGBoost improve accuracy and robustness.</strong></li>
+						<li>✔ <strong>Boosting algorithms focus on difficult examples to enhance learning efficiency.</strong></li>
+					</ul>
+				</div>
+			`,
+
+			'ml_neural_networks': `
+				<h1 class="blue-bolt">📌 Neural Networks & Universal Approximation</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Neural networks are a class of machine learning models inspired by the human brain, capable of learning complex patterns from data.</p>
+					<p>This lecture covers the **universal approximation theorem**, fundamental neural network architectures, optimization strategies, and techniques to address training challenges.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Multilayer Perceptron (MLP)</h2>
+
+				<div class="content-box">
+					<p><strong>What is an MLP?</strong> A fully connected neural network where each layer consists of neurons connected to all neurons in the next layer.</p>
+					<ul>
+						<li>✔ <strong>Activation Functions:</strong> Introduce non-linearity into the network.</li>
+						<li>✔ <strong>Common Activation Functions:</strong>
+							<ul>
+								<li>▶ <strong>Sigmoid</strong> – Used in early neural networks but suffers from vanishing gradients.</li>
+								<li>▶ <strong>ReLU (Rectified Linear Unit)</strong> – Helps mitigate vanishing gradients.</li>
+								<li>▶ <strong>Leaky ReLU & ELU</strong> – Alternative to ReLU that allows small negative outputs.</li>
+							</ul>
+						</li>
+						<li>✔ <strong>Backpropagation:</strong> Algorithm for training neural networks by computing gradients using chain rule differentiation.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Radial-Basis Function Networks (RBFN)</h2>
+
+				<div class="content-box">
+					<p><strong>What is RBFN?</strong> A neural network model that uses radial basis functions as activation functions.</p>
+					<ul>
+						<li>✔ <strong>Role in Function Approximation:</strong> Can approximate any continuous function.</li>
+						<li>✔ <strong>Key Features:</strong>
+							<ul>
+								<li>▶ Uses <strong>Gaussian kernels</strong> to compute distance-based activations.</li>
+								<li>▶ More interpretable than deep networks.</li>
+								<li>▶ Effective for regression and classification tasks.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Deep Neural Networks (DNNs)</h2>
+
+				<div class="content-box">
+					<p><strong>What makes a network "deep"?</strong> A DNN consists of multiple hidden layers that allow hierarchical feature extraction.</p>
+					<p><strong>Challenges in Deep Learning:</strong></p>
+					<ul>
+						<li>✔ <strong>Vanishing Gradient Problem:</strong> Gradients diminish as they propagate backward, slowing learning.</li>
+						<li>✔ <strong>Solutions:</strong>
+							<ul>
+								<li>▶ <strong>Batch Normalization:</strong> Normalizes activations to stabilize learning.</li>
+								<li>▶ <strong>ReLU:</strong> Helps prevent gradients from shrinking.</li>
+								<li>▶ <strong>Residual Connections (ResNets):</strong> Allow gradients to bypass multiple layers.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Optimization Techniques</h2>
+
+				<div class="content-box">
+					<p><strong>Gradient-based optimization algorithms improve convergence and performance.</strong></p>
+					<ul>
+						<li>✔ <strong>Adam (Adaptive Moment Estimation):</strong> Uses first and second moments of gradients for adaptive learning.</li>
+						<li>✔ <strong>RMSProp (Root Mean Square Propagation):</strong> Maintains a moving average of squared gradients to adjust learning rates.</li>
+						<li>✔ <strong>Nesterov Momentum:</strong> Improves momentum-based gradient descent by looking ahead at future gradients.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>MLPs use backpropagation and activation functions to learn representations.</strong></li>
+						<li>✔ <strong>RBFNs are effective function approximators using radial basis functions.</strong></li>
+						<li>✔ <strong>DNNs require techniques like BatchNorm and ReLU to mitigate vanishing gradients.</strong></li>
+						<li>✔ <strong>Optimization techniques like Adam and RMSProp improve training efficiency.</strong></li>
+					</ul>
+				</div>
+			`,
+
+			'ml_svmss': `
+				<h1 class="blue-bolt">📌 Support Vector Machines (SVMs)</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Support Vector Machines (SVMs) are powerful supervised learning models used for classification and regression.</p>
+					<p>SVMs are based on the principle of <strong>finding the optimal hyperplane</strong> that best separates data points into different classes.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Hard-Margin vs. Soft-Margin SVM</h2>
+
+				<div class="content-box">
+					<p><strong>What is the Margin?</strong> The margin is the distance between the decision boundary (hyperplane) and the nearest data points.</p>
+					<ul>
+						<li>✔ <strong>Hard-Margin SVM:</strong>
+							<ul>
+								<li>▶ Assumes data is <strong>linearly separable</strong> (no overlap between classes).</li>
+								<li>▶ Finds a hyperplane that <strong>maximizes the margin</strong> with no tolerance for misclassification.</li>
+								<li>▶ Not suitable for noisy or non-linearly separable data.</li>
+							</ul>
+						</li>
+						<li>✔ <strong>Soft-Margin SVM:</strong>
+							<ul>
+								<li>▶ Allows <strong>some misclassification</strong> by introducing a penalty term (C-parameter).</li>
+								<li>▶ Useful when data is <strong>not perfectly separable</strong>.</li>
+								<li>▶ Balances margin maximization and classification error.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Kernel Trick: Polynomial, RBF, and Sigmoid</h2>
+
+				<div class="content-box">
+					<p><strong>What is the Kernel Trick?</strong> The kernel trick allows SVMs to operate in <strong>higher-dimensional spaces</strong> without explicitly computing transformations.</p>
+					<ul>
+						<li>✔ <strong>Polynomial Kernel:</strong>
+							<ul>
+								<li>▶ Extends linear SVMs to capture curved decision boundaries.</li>
+								<li>▶ Useful when data has polynomial relationships.</li>
+							</ul>
+						</li>
+						<li>✔ <strong>Radial Basis Function (RBF) Kernel:</strong>
+							<ul>
+								<li>▶ Maps data into an <strong>infinite-dimensional space<>/strong>.</li>
+								<li>▶ Effective for handling <strong>non-linearly separable data</strong>.</li>
+							</ul>
+						</li>
+						<li>✔ <strong>Sigmoid Kernel:</strong>
+							<ul>
+								<li>▶ Mimics behavior of a <strong>neural network activation function</strong>.</li>
+								<li>▶ Used in <strong>some classification problems but less common than RBF</strong>.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Connection to Maximum Margin Classifiers</h2>
+
+				<div class="content-box">
+					<p><strong>Why SVMs are Maximum Margin Classifiers?</strong></p>
+					<ul>
+						<li>✔ SVMs aim to <strong>maximize the margin</strong> between data points from different classes.</li>
+						<li>✔ A <strong>wider margin</strong> reduces overfitting and improves generalization.</li>
+						<li>✔ Works best with <strong>high-dimensional feature spaces</strong>.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Dual Formulation with Lagrangian Optimization</h2>
+
+				<div class="content-box">
+					<p><strong>Mathematical Foundation:</strong> The SVM optimization problem can be solved using the <strong>dual formulation</strong> with <strong>Lagrange multipliers</strong>.</p>
+					<ul>
+						<li>✔ The <strong>primal problem</strong> involves finding a hyperplane that separates data while maximizing margin.</li>
+						<li>✔ The <strong>dual problem</strong> reformulates the objective function using <strong>Lagrange multipliers</strong> to simplify computations.</li>
+						<li>✔ The <strong>kernel trick</strong> applies directly in the dual formulation, allowing computation in high-dimensional spaces.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>Hard-margin SVM works only for linearly separable data, while soft-margin SVM handles noise.</strong></li>
+						<li>✔ <strong>The kernel trick enables SVMs to handle non-linear classification tasks.</strong></li>
+						<li>✔ <strong>Maximum margin classifiers improve generalization by maximizing decision boundaries.</strong></li>
+						<li>✔ <strong>Dual formulation with Lagrangian optimization makes SVMs computationally efficient.</strong></li>
+					</ul>
+				</div>
+			`,
+
+			'ml_fs': `
+				<h1 class="blue-bolt">📌 Feature Selection & Dimensionality Reduction</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Feature selection and dimensionality reduction techniques help improve model performance by eliminating irrelevant or redundant features.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), Independent Component Analysis (ICA)</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>PCA:</strong> Uses eigenvectors and eigenvalues to project data onto principal components for variance maximization.</li>
+						<li>✔ <strong>LDA:</strong> Maximizes class separability by finding a linear combination of features.</li>
+						<li>✔ <strong>ICA:</strong> Extracts statistically independent signals from mixed data.</li>
+						<li>✔ <strong>Whitening:</strong> Standardizes features to remove correlations before applying PCA or ICA.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Autoencoders as Feature Extractors</h2>
+
+				<div class="content-box">
+					<p><strong>What are Autoencoders?</strong> Neural networks trained to encode data into lower-dimensional representations.</p>
+					<ul>
+						<li>✔ Useful for **unsupervised feature learning**.</li>
+						<li>✔ Reduces dimensionality while preserving **non-linear structures** in data.</li>
+						<li>✔ Common in **deep learning applications**.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Recursive Feature Elimination (RFE)</h2>
+
+				<div class="content-box">
+					<p><strong>What is RFE?</strong> An iterative process to remove least important features and retrain the model.</p>
+					<ul>
+						<li>✔ Helps in improving **model efficiency and interpretability**.</li>
+						<li>✔ Commonly used with **tree-based models and linear models**.</li>
+					</ul>
+				</div>
+			`,
+			'ml_ce': `
+				<h1 class="blue-bolt">📌 Cross-Validation & Model Evaluation</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Cross-validation techniques help evaluate machine learning models to ensure robustness and avoid overfitting.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ k-Fold Cross-Validation & Bias-Variance Tradeoff</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>k-Fold Cross-Validation:</strong> Splits data into k subsets and trains models k times to estimate performance.</li>
+						<li>✔ Bias-Variance Tradeoff: Balances model flexibility and generalization.</li>
+						<li>✔ Common k values: 5-fold, 10-fold.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Train-Test Split: Why and How?</h2>
+
+				<div class="content-box">
+					<p><strong>Importance of Train-Test Splits:</strong> Prevents models from memorizing training data and ensures generalization.</p>
+					<ul>
+						<li>✔ Common splits: 70/30, 80/20, 90/10.</li>
+						<li>✔ <strong>Stratified Splitting:</strong> Ensures class distribution remains consistent.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Bootstrapping & Monte Carlo Methods</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>Bootstrapping:</strong> Creates multiple datasets by resampling with replacement.</li>
+						<li>✔ <strong>Monte Carlo Methods:</strong> Uses repeated random sampling to estimate model performance.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_pm': `
+				<h1 class="blue-bolt">📌 Performance Metrics & Statistical Tests</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Proper evaluation metrics ensure models are correctly assessed for classification and regression tasks.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Precision, Recall, F1-Score, and AUC-ROC</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>Precision:</strong> Measures true positive rate among predicted positives.</li>
+						<li>✔ <strong>Recall:</strong> Measures ability to detect actual positives.</li>
+						<li>✔ <strong>F1-Score:</strong> Harmonic mean of precision and recall.</li>
+						<li>✔ <strong>AUC-ROC:</strong> Evaluates classifier performance at different thresholds.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Confusion Matrices & Misclassification Costs</h2>
+
+				<div class="content-box">
+					<p><strong>Confusion Matrix:</strong> Provides insights into false positives and false negatives.</p>
+					<ul>
+						<li>✔ Useful for imbalanced datasets.</li>
+						<li>✔ Helps in identifying misclassification patterns.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Statistical Significance Tests for ML Models</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>t-Test:</strong> Determines if two means are statistically different.</li>
+						<li>✔ <strong>Chi-Square Test:</strong> Checks for independence between categorical variables.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_ord': `
+				<h1 class="blue-bolt">📌 Overfitting, Regularization & Data Imbalance</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Overfitting occurs when models learn noise instead of patterns. Regularization and data balancing techniques help improve generalization.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ L1 vs. L2 Regularization (Lasso vs. Ridge Regression)</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>L1 Regularization (Lasso):</strong> Shrinks coefficients to zero, useful for feature selection.</li>
+						<li>✔ <strong>L2 Regularization (Ridge):</strong> Penalizes large coefficients but does not force them to zero.</li>
+						<li>✔ Elastic Net: Combination of L1 and L2 for best of both worlds.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Dropout & Early Stopping in Neural Networks</h2>
+
+				<div class="content-box">
+					<p><strong>Why Regularization in Deep Learning?</strong> Prevents networks from memorizing training data.</p>
+					<ul>
+						<li>✔ <strong>Dropout:</strong> Randomly disables neurons during training to force robustness.</li>
+						<li>✔ <strong>Early Stopping:</strong> Stops training once validation loss stops improving.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Techniques for Handling Imbalanced Data</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ <strong>SMOTE (Synthetic Minority Over-sampling Technique):</strong> Generates synthetic minority samples.</li>
+						<li>✔ <strong>Weighted Loss Functions:</strong> Assigns higher penalty for misclassified minority class samples.</li>
+						<li>✔ <strong>Undersampling:</strong> Removes excess majority class samples to balance dataset.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_bench': `
+				<h1 class="blue-bolt">📌 Benchmark ML Problems</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Benchmark ML problems help evaluate algorithms by testing their ability to solve well-known challenges.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ XOR Problem: Why Perceptron Fails & Solving with MLP</h2>
+
+				<div class="content-box">
+					<p><strong>The XOR problem is a classic example where single-layer perceptrons fail.</strong></p>
+					<ul>
+						<li>✔ <strong>Why Perceptron Fails?</strong> Perceptron is a linear classifier, while XOR is not linearly separable.</li>
+						<li>✔ <strong>Solution:</strong> Using Multilayer Perceptron (MLP) with hidden layers introduces non-linearity.</li>
+						<li>✔ Activation functions like ReLU and Sigmoid enable learning complex decision boundaries.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Iris Flower Classification: Linear Separability & Decision Boundaries</h2>
+
+				<div class="content-box">
+					<p><strong>The Iris dataset is a fundamental classification problem in ML.</strong></p>
+					<ul>
+						<li>✔ Classes: Setosa, Versicolor, and Virginica.</li>
+						<li>✔ Key Challenge: Understanding linear vs. non-linear separability.</li>
+						<li>✔ Decision Boundaries: Logistic Regression for linear separation, SVM or neural networks for complex cases.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Function Approximation: Using ML to Model Complex Functions</h2>
+
+				<div class="content-box">
+					<p><strong>ML models can approximate continuous functions, a core concept in regression and deep learning.</strong></p>
+					<ul>
+						<li>✔ Polynomial Regression: Models non-linear relationships with polynomial features.</li>
+						<li>✔ Neural Networks: Universal approximators capable of modeling arbitrary functions.</li>
+						<li>✔ Gaussian Processes: Bayesian approach to function approximation with uncertainty estimation.</li>
+					</ul>
+				</div>
+			`,
+			'ml_science': `
+				<h1 class="blue-bolt">📌 Machine Learning for Scientific & Engineering Applications</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> ML is increasingly used in scientific and engineering domains to analyze data, predict trends, and optimize systems.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Time-Series Forecasting in Engineering</h2>
+
+				<div class="content-box">
+					<p><strong>ML plays a key role in predictive maintenance, energy forecasting, and system modeling.</strong></p>
+					<ul>
+						<li>✔ ARIMA & Exponential Smoothing: Traditional statistical models.</li>
+						<li>✔ LSTMs & Transformer Networks: Advanced models for capturing sequential dependencies.</li>
+						<li>✔ Applications: Load forecasting, traffic prediction, failure detection.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ ML in Physics, Biology, and Medicine</h2>
+
+				<div class="content-box">
+					<p><strong>ML accelerates discoveries in physics, genomics, and healthcare.</strong></p>
+					<ul>
+						<li>✔ Physics: Identifying patterns in high-energy particle collisions.</li>
+						<li>✔ Biology: Analyzing genetic sequences, protein folding (e.g., AlphaFold).</li>
+						<li>✔ Medicine: Disease diagnosis, medical image processing, drug discovery.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ ML in Material Discovery, Climate Modeling, and Finance</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>✔ Material Discovery: Predicting new materials with optimal properties using ML models.</li>
+						<li>✔ Climate Modeling: Analyzing weather patterns and predicting climate change impacts.</li>
+						<li>✔ Finance: Risk assessment, fraud detection, and algorithmic trading.</li>
+					</ul>
+				</div>
+			`,
+
+			'sas_viya_intro': `
+				<div class="ml-section">
+					<h2>📌 Introduction to SAS Viya</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ What is SAS Viya?</h3>
+						<p><strong>Definition:</strong> SAS Viya is a cloud-enabled, scalable, and high-performance analytics platform designed for data science, machine learning, and artificial intelligence.</p>
+						<p>It supports a variety of programming languages, including **SAS, Python, R, and REST APIs**, making it a flexible tool for **big data processing and model deployment**.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Why Use SAS Viya for Machine Learning?</h3>
+						<ul>
+							<li>✔ <strong>High-Performance Computing:</strong> Supports in-memory distributed processing.</li>
+							<li>✔ <strong>Automated Machine Learning (AutoML):</strong> Quickly builds models with optimized hyperparameters.</li>
+							<li>✔ <strong>Seamless Integration:</strong> Works with Python, R, and cloud-based services.</li>
+							<li>✔ <strong>Interactive Interface:</strong> Provides both GUI-based (SAS Studio) and code-based solutions.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers gain hands-on experience, we provide 7 practical exercises that demonstrate how to use SAS Viya for machine learning tasks.</p>
+						<p>Each practical focuses on different aspects of data handling, preprocessing, modeling, and evaluation in SAS Viya.</p>
+					</div>
+
+				</div>
+			`,
+
+
+			'python_libraries': `
+				<div class="ml-section">
+					<h2>📌 Introduction to Python for Machine Learning</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Why Use Python for Machine Learning?</h3>
+						<p><strong>Definition:</strong> Python is the most widely used programming language for machine learning due to its simplicity, extensive libraries, and strong community support.</p>
+						<p>Python provides powerful libraries such as NumPy, Pandas, Scikit-Learn, TensorFlow, and PyTorch, making it a go-to language for data processing, model building, and deep learning applications.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Key Features of Python for ML</h3>
+						<ul>
+							<li>✔ <strong>Easy-to-Use Syntax:</strong> Allows quick prototyping and experimentation.</li>
+							<li>✔ <strong>Rich Ecosystem:</strong> Comes with numerous ML/DL libraries (Scikit-Learn, TensorFlow, PyTorch, etc.).</li>
+							<li>✔ <strong>Visualization Capabilities:</strong> Matplotlib and Seaborn for detailed data analysis.</li>
+							<li>✔ <strong>Scalability & Performance:</strong> Compatible with cloud and distributed computing platforms.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers gain hands-on experience, we provide 7 practical exercises demonstrating Python's capabilities in machine learning.</p>
+						<p>Each practical covers different aspects of data preprocessing, modeling, optimization, and evaluation in Python.</p>
+					</div>
+
+				</div>
+			`,
+			
+			
+		};
+
+		contentArea.innerHTML = content[topic] || `<p>⏳ <strong>Under Processing...</strong> Stay tuned! 🚀</p>`;
+
+		document.querySelectorAll('.sub-menu div').forEach(item => {
+			item.classList.remove('active');
+		});
+		if (element) {
+			element.classList.add('active');
+		}
+	}
+    </script>
+</body>
+</html>

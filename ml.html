@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Machine Learning with SAS Viya & Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"> 
+	            <p>Basic - Machine Learning Techniques for Data Mining</p>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2 class="orange-accent">Course Content</h2>
+			<div class="menu-item"><a href="index.html" style="text-decoration: none; color: inherit;">Basic Python</a></div>
+            <div class="menu-item" onclick="showContent('welcome')">Basic - Overview</div>
+			
+            <div class="menu-item" onclick="toggleSubMenu('ml_basics')">Machine Learning Basics</div>
+            <div id="ml_basics" class="sub-menu">
+                <div class="menu-item" onclick="toggleSubMenu('intro_ml')">Introduction to Machine Learning</div>
+                <div id="intro_ml" class="sub-menu">
+                    <div onclick="showContent('ml_overview')">What is Machine Learning?</div>
+                    <div onclick="showContent('ml_types')">Types of Machine Learning</div>
+                    <div onclick="showContent('ml_applications')">ML Applications</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_workflow')">Machine Learning Workflow</div>
+                <div id="ml_workflow" class="sub-menu">
+                    <div onclick="showContent('ml_pipeline')">ML Pipeline</div>
+                    <div onclick="showContent('data_preprocessing')">Data Preprocessing</div>
+                    <div onclick="showContent('feature_engineering')">Feature Engineering</div>
+					<div onclick="showContent('model_selection')">Model Selection</div>
+					<div onclick="showContent('model_evaluation')">Model Evaluation</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_algorithms')">Key Machine Learning Algorithms</div>
+                <div id="ml_algorithms" class="sub-menu">
+                    <div onclick="showContent('regression')">Regression</div>
+                    <div onclick="showContent('knn')">k-Nearest Neighbors (k-NN)</div>
+                    <div onclick="showContent('svm')">Support Vector Machines (SVM)</div>
+                    <div onclick="showContent('kernel_regression')">Kernel Regression</div>
+                    <div onclick="showContent('expectation_maximization')">Expectation Maximization</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('decision_trees')">Decision Tree Learning</div>
+                <div id="decision_trees" class="sub-menu">
+                    <div onclick="showContent('entropy')">Entropy Measures</div>
+                    <div onclick="showContent('id3')">ID3 Algorithm</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ensemble_learning')">Ensemble Learning & Advanced ML</div>
+                <div id="ensemble_learning" class="sub-menu">
+                    <div onclick="showContent('bootstraping')">Bootstraping</div>
+                    <div onclick="showContent('bagging')">Bagging</div>
+                    <div onclick="showContent('random_forest')">Random Forest</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ann')">Artificial Neural Networks (ANN)</div>
+                <div id="ann" class="sub-menu">
+                    <div onclick="showContent('mlp')">Multilayer Networks</div>
+                    <div onclick="showContent('backpropagation')">Backpropagation Algorithm</div>
+                    <div onclick="showContent('gradient_descent')">Gradient Descent</div>
+                    <div onclick="showContent('rbf')">Radial Basis Function Network</div>
+                    <div onclick="showContent('autoregressive_ann')">Autoregressive Time Series Using ANN</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('reinforcement_learning')">Reinforcement Learning</div>
+                <div id="reinforcement_learning" class="sub-menu">
+                    <div onclick="showContent('reward_signal')">Reward Signal</div>
+                    <div onclick="showContent('action_policy')">Action Policy</div>
+                    <div onclick="showContent('mdp')">Markov Decision Process</div>
+                    <div onclick="showContent('q_learning')">Q-Learning</div>
+                </div>
+            </div>
+			<div class="menu-item" onclick="toggleSubMenu('sas_ml')">SAS Viya for ML</div>
+            <div id="sas_ml" class="sub-menu">
+                    <div onclick="showContent('sas_viya_intro')">Introduction to SAS Viya</div>
+						<div onclick="showContent('viyaP1')">Practical 1</div>
+						<div onclick="showContent('viyaP2')">Practical 2</div>
+						<div onclick="showContent('viyaP3')">Practical 3</div>
+						<div onclick="showContent('viyaP4')">Practical 4</div>
+						<div onclick="showContent('viyaP5')">Practical 5</div>
+						<div onclick="showContent('viyaP6')">Practical 6</div>
+						<div onclick="showContent('viyaP7')">Practical 7</div>
+						<div onclick="showContent('viyaP8')">Practical 8</div>
+						<div onclick="showContent('viyaP9')">Practical 9</div>
+						<div onclick="showContent('viyaP10')">Practical 10</div>
+						<div onclick="showContent('viyaP11')">Practical 11</div>
+						<div onclick="showContent('viyaP12')">Practical 12</div>
+						<div onclick="showContent('viyaP13')">Practical 13</div>
+						<div onclick="showContent('viyaP14')">Practical 14</div>						
+                </div>
+			<div class="menu-item" onclick="toggleSubMenu('python_ml')">Python for ML</div>
+            <div id="python_ml" class="sub-menu">
+                    <div onclick="showContent('python_libraries')">Python Libraries for ML</div>
+						<div onclick="showContent('pythonP1')">Practical 1</div>
+						<div onclick="showContent('pythonP2')">Practical 2</div>
+						<div onclick="showContent('pythonP3')">Practical 3</div>
+						<div onclick="showContent('pythonP4')">Practical 4</div>
+						<div onclick="showContent('pythonP5')">Practical 5</div>
+						<div onclick="showContent('pythonP6')">Practical 6</div>
+						<div onclick="showContent('pythonP7')">Practical 7</div>
+						<div onclick="showContent('pythonP8')">Practical 8</div>
+						<div onclick="showContent('pythonP9')">Practical 9</div>
+						<div onclick="showContent('pythonP10')">Practical 10</div>
+						<div onclick="showContent('pythonP11')">Practical 11</div>
+						<div onclick="showContent('pythonP12')">Practical 12</div>
+						<div onclick="showContent('pythonP13')">Practical 13</div>
+						<div onclick="showContent('pythonP14')">Practical 14</div>					
+                </div>			
+			<div class="menu-item" onclick="toggleSubMenu('Others')">Others</div>
+			<div id="Others" class="sub-menu">
+					<div onclick="showContent('decoding_regression')">Decoding Regression</div>
+					<div onclick="showContent('geometric_deep_learning')">Geometric Deep Learning</div>
+					<div onclick="showContent('feature_crosses')">Feature Crosses</div>
+					<div onclick="showContent('embeddings')">Embeddings</div>
+					<div onclick="showContent('genetic_algorithms')">Genetic Algorithms</div>		
+                </div>	
+			<div class="menu-item"><a href="master_ml.html" style="text-decoration: none; color: inherit;">Machine Learning : Intermediate</a></div>
+        </div>
+		
+		
+        <div class="content" id="content-area">
+            <h1 class="blue-bolt">Basic Machine Learning Techniques for Data Mining</h1>
+				<p>
+					The course focuses on the application of machine learning techniques to extracting information from data.
+					The aim is to provide you with a set of practical tools that can be applied to solve real-world problems.
+				</p>
+
+				<p>
+					The main topics that will be discussed include:
+					decision tree learning, artificial neural networks, Bayesian learning, clustering, density estimation,
+					ensemble learners, boosting, bagging, random forest, and reinforcement learning.
+				</p>
+
+				<p>
+					This course also emphasizes practical implementation using <strong>Python</strong> and <strong>SAS Viya</strong>.
+					You will learn how to apply machine learning techniques using Python's powerful libraries (such as 
+					Scikit-learn, TensorFlow, and Pandas) and SAS Viya’s advanced analytics tools for large-scale data processing.
+				</p>
+
+				<p>
+					By the end of this course, you will be able to leverage <strong>Python</strong> and <strong>SAS Viya</strong> to build, train, and deploy 
+					machine learning models efficiently.
+				</p>
+        </div>
+    </div>
+    
+        <div class="footer">
+            <p>Prepare by 😀 version 1.0 - 2025 ! &  Build a Better Future - 2025 ! </p>
+        </div>
+    <script>
+	function toggleSubMenu(id) {
+		var submenu = document.getElementById(id);
+		if (submenu) {
+			submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+		}
+	}
+
+	function showContent(topic, element) {
+		let contentArea = document.getElementById('content-area');
+
+		let content = {
+			'welcome': `
+				<h1 class="blue-bolt">Course Overview</h1>
+				<p>This course is designed to provide a practical approach to machine learning by leveraging the power of 
+				   <strong>Python</strong> and <strong>SAS Viya</strong>. You will learn key techniques used in real-world applications, 
+				   including data preprocessing, model training, and performance evaluation.</p>
+				<p>Throughout this course, we will cover essential topics such as:</p>
+				<ul>
+					<li>Supervised and Unsupervised Learning</li>
+					<li>Decision Trees and Neural Networks</li>
+					<li>Ensemble Methods like Bagging & Boosting</li>
+					<li>Reinforcement Learning & Markov Decision Processes</li>
+					<li>Hands-on implementation using Python & SAS Viya</li>
+				</ul>
+				<p>By the end of this course, you will have the skills to build and deploy machine learning models, 
+				   extract insights from data, and apply AI techniques to solve business problems.</p>
+				<p>🚀 Get ready to explore the world of Machine Learning with <strong>Python & SAS Viya</strong>!</p>
+			`,
+			
+			'ml_overview': `
+				<div class="definition-box">
+					💡 <strong class="blue-bolt">Simple Definition:</strong><br>
+					<p>
+					Machine Learning is a process where computers learn from experience (data) to perform tasks automatically, 
+					without human intervention. 
+					</p>
+				</div>
+				
+				<p>
+				Machine learning is used in many industries. Here are some applications:
+				</p>
+					<table class="styled-table">
+						<thead>
+							<tr>
+								<th> 🌍 Examples of Machine Learning:</th>
+								<th> Usage </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>📧 Email Spam Detection</td>
+								<td>Identifies and filters out spam emails.</td>
+							</tr>
+							<tr>
+								<td>💳 Fraud Detection</td>
+								<td>Banks use ML to detect fraudulent transactions.</td>
+							</tr>
+							<tr>
+								<td>🏥 Medical Diagnosis</td>
+								<td>ML helps in detecting diseases like cancer from medical images.</td>
+							</tr>
+							<tr>
+								<td>🎥 Recommendation Systems</td>
+								<td>Netflix, YouTube, and Spotify suggest content based on user behavior.</td>
+							</tr>
+							<tr>
+								<td>🚗 Self-Driving Cars</td>
+								<td>Tesla uses ML to recognize objects and make driving decisions.</td>
+							</tr>
+							<tr>
+								<td>📞 Customer Support AI</td>
+								<td>Chatbots analyze text and voice to provide automated support.</td>
+							</tr>
+						</tbody>
+					</table>
+								
+				<h2> ML Related Topics in AI 🤖</h2>
+				<p> Machine Learning is a subset of AI, here are certain topics related to it:</p>
+					<div class="related-topics">
+						<div class="topic-box">
+							<h3>&#x31;&#xFE0F;&#x20E3; Artificial Intelligence (AI) 🧠</h3>
+							<p>The broader field that includes <strong>machine learning, deep learning, robotics, and expert systems.</strong></p>
+							<p>AI systems can simulate <strong>human reasoning, problem-solving, and decision-making.</strong></p>
+						</div>
+
+						<div class="topic-box">
+							<h3>&#x32;&#xFE0F;&#x20E3; Deep Learning (DL) 🏗️</h3>
+							<p>A specialized type of ML that uses <strong>artificial neural networks (ANNs)</strong> to learn from large amounts of data.</p>
+							<p>Example: Facial recognition in smartphones (<strong>Face ID 📱</strong>).</p>
+						</div>
+
+						<div class="topic-box">
+							<h3>&#x33;&#xFE0F;&#x20E3; Natural Language Processing (NLP) 💬</h3>
+							<p>A branch of AI that helps machines <strong>understand, interpret, and generate human language.</strong></p>
+							<p>Example: <strong>ChatGPT, Gemini, Copilot</strong>, and voice assistants like <strong>Siri and Alexa</strong>.</p>
+						</div>
+
+						<div class="topic-box">
+							<h3>&#x34;&#xFE0F;&#x20E3; Generative AI 🎨📝</h3>
+							<p>A field in AI where models can <strong>create new content</strong> (text, images, music, etc.).</p>
+							<p>Example: <strong>ChatGPT</strong> generates human-like text; <strong>DALL·E</strong> creates images from text descriptions.</p>
+						</div>
+					</div>
+			`,
+
+
+
+
+			'ml_types': `
+					<div class="ml-types">
+						<h1 class='blue-bolt'> Types of Machine Learning</h1>
+
+						<div class="ml-box">
+							<h3>Supervised Learning 🏫</h3>
+
+							<p><strong>Definition:</strong> Supervised learning is a type of ML where the model is trained on <strong>labeled data</strong>. 
+							The algorithm learns by mapping input data to known output labels.</p>
+
+							<p><strong>💡 Example Applications:</strong></p>
+							<ul>
+								<li> <strong>Spam Email Detection 📧</strong> (Label: Spam or Not Spam)</li>
+								<li> <strong>Fraud Detection 💳</strong> (Label: Fraudulent or Legitimate Transaction)</li>
+								<li> <strong>Disease Prediction 🏥</strong> (Label: "Positive" or "Negative" diagnosis)</li>
+							</ul>
+
+							<p><strong>🔹 How It Works:</strong></p>
+							<ul>
+								<li>The model is given <strong>input data (X)</strong> and the <strong>correct output (Y)</strong>.</li>
+								<li>It <strong>learns the relationship</strong> between input and output.</li>
+								<li>When given <strong>new data</strong>, it predicts the output.</li>
+							</ul>
+
+							<p><strong>🚀 Example: Predicting House Prices 🏡</strong></p>
+							<p>If trained with data like <strong>house size, location, and price</strong>, the model can predict <strong>the price of a new house</strong>.</p>
+						</div>
+
+						<div class="ml-box">
+							<h3>Unsupervised Learning 🔍</h3>
+
+							<p><strong>Definition:</strong> Unsupervised learning is used when there are <strong>no labels in the data</strong>. 
+							The algorithm tries to <strong>find patterns, clusters, or relationships</strong> in the dataset.</p>
+
+							<p><strong>💡 Example Applications:</strong></p>
+							<ul>
+								<li> <strong>Customer Segmentation 🎯</strong> (Grouping similar customers for marketing)</li>
+								<li> <strong>Anomaly Detection 🚨</strong> (Detecting unusual patterns in network security)</li>
+								<li> <strong>Image Compression 🖼️</strong> (Grouping similar pixels to reduce file size)</li>
+							</ul>
+
+							<p><strong>🔹 How It Works:</strong></p>
+							<ul>
+								<li>The algorithm explores the structure of the data <strong>without predefined labels</strong>.</li>
+								<li>It identifies <strong>hidden patterns</strong> and groups data points accordingly.</li>
+							</ul>
+
+							<p><strong>🚀 Example: Clustering Customers 🎯</strong></p>
+							<p>If a shopping website has <strong>customer data (age, purchase history, location)</strong>, an unsupervised model can 
+							group them into <strong>different customer segments</strong>.</p>
+						</div>
+
+						<div class="ml-box">
+							<h3>Reinforcement Learning 🎮</h3>
+
+							<p><strong>Definition:</strong> Reinforcement learning (RL) is <strong>learning by interaction</strong>. 
+							The model learns from <strong>rewards and punishments</strong> to make better decisions over time.</p>
+
+							<p><strong>💡 Example Applications:</strong></p>
+							<ul>
+								<li> <strong>Self-Driving Cars 🚗</strong> (Learning how to drive by trial and error)</li>
+								<li> <strong>Game AI 🕹️</strong> (AI learning to play chess or video games)</li>
+								<li> <strong>Robotics 🤖</strong> (Training a robot to pick up objects efficiently)</li>
+							</ul>
+
+							<p><strong>🔹 How It Works:</strong></p>
+							<ul>
+								<li>An <strong>agent</strong> interacts with an <strong>environment</strong>.</li>
+								<li>It performs <strong>actions</strong> and receives <strong>rewards or penalties</strong>.</li>
+								<li>It <strong>learns from experience</strong> to maximize rewards over time.</li>
+							</ul>
+
+							<p><strong>🚀 Example: Training a Robot 🤖</strong></p>
+							<p>A robot in a factory learns <strong>the best way to pick up and place objects</strong> by receiving 
+							<strong>positive rewards</strong> for correct actions and <strong>penalties for mistakes</strong>.</p>
+						</div>
+					</div>
+			`,			
+
+			'ml_applications': `
+					<div class="ml-application">
+						<h1 class='blue-bolt'>1. Spam Email Detection 📧</h1>
+
+						<!-- Background Section -->
+						<div class="ml-box">
+							<h3>Background: How Spam Detection Works?</h3>
+							<p><strong>Definition:</strong> Spam email detection is a classification problem in ML where the system learns to differentiate between 
+							   <strong>spam (junk)</strong> and <strong>non-spam (legitimate)</strong> emails.</p>
+							
+							<p><strong>💡 How It Works:</strong></p>
+							<ul>
+								<li>The system analyzes <strong>content, metadata, and sender details</strong>.</li>
+								<li>It assigns <strong>probability scores</strong> to classify emails.</li>
+								<li>If the probability exceeds a threshold (e.g., <strong>80% spam</strong>), the email is sent to the spam folder.</li>
+							</ul>
+
+							<p><strong>🔹 Algorithms Used:</strong></p>
+							<ul>
+								<li>✔ <strong>Naïve Bayes Classifier</strong> (Probabilistic text classification)</li>
+								<li>✔ <strong>Decision Trees</strong> (Pattern recognition from training data)</li>
+								<li>✔ <strong>Neural Networks (ANNs & LSTMs)</strong> (Deep Learning for spam detection)</li>
+							</ul>
+						</div>
+
+						<!-- Code Section -->
+						<div class="ml-box">
+							<h3> Idea Demonstration : Spam Detection in Python</h3>
+							<pre class="code-block">
+		import pandas as pd
+		import numpy as np
+		from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+		from sklearn.model_selection import train_test_split
+		from sklearn.naive_bayes import MultinomialNB
+		from sklearn.pipeline import Pipeline
+		from sklearn.metrics import accuracy_score, classification_report
+
+		df = pd.read_csv("spam_dataset.csv")
+		df['label'] = df['label'].map({'spam': 1, 'ham': 0})
+
+		X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], test_size=0.2, random_state=42)
+
+		spam_detector = Pipeline([
+			('vectorizer', CountVectorizer()),  
+			('tfidf', TfidfTransformer()),     
+			('classifier', MultinomialNB())     
+		])
+
+		spam_detector.fit(X_train, y_train)
+		y_pred = spam_detector.predict(X_test)
+
+		print("Accuracy:", accuracy_score(y_test, y_pred))
+		print("Classification Report:", classification_report(y_test, y_pred))
+							</pre>
+						</div>
+
+						<!-- Results Section -->
+						<div class="ml-box">
+							<h3> Results Analysis</h3>
+							<p><strong>Expected Output:</strong></p>
+							<pre class="code-block">
+		Accuracy: 97.5%
+		Classification Report:
+					  precision    recall  f1-score   support
+			   0       0.98      0.99      0.98       882
+			   1       0.96      0.94      0.95       118
+							</pre>
+
+							<p><strong>🔹 Key Findings:</strong></p>
+							<ul>
+								<li>✔ <strong>High accuracy (~97%)</strong> shows effective spam filtering.</li>
+								<li>✔ <strong>Precision (0.96 for spam)</strong> means few false positives.</li>
+								<li>✔ <strong>Recall (0.94 for spam)</strong> means most actual spam is detected.</li>
+							</ul>
+						</div>
+
+						<!-- Discussion Section -->
+						<div class="ml-box">
+							<h3> Spam Detection - Current Trends</h3>
+							<p><strong>Modern email systems use hybrid AI techniques to improve spam detection.</strong></p>
+
+							<p><strong>🔹 Trends in Spam Detection:</strong></p>
+							<ul>
+								<li>✔ <strong>Deep Learning (LSTMs, Transformers)</strong> → Helps detect <strong>phishing emails</strong>.</li>
+								<li>✔ <strong>AI-based Personalized Spam Filters</strong> → Tailors spam detection for each user.</li>
+								<li>✔ <strong>Real-time Spam Filtering</strong> → Uses <strong>cloud AI services</strong>.</li>
+								<li>✔ <strong>Adversarial AI Attacks</strong> → Spammers create emails that "trick" spam classifiers.</li>
+							</ul>
+
+							<p><strong>🔹 Challenges:</strong></p>
+							<ul>
+								<li>❌ <strong>Evolving Spam Techniques</strong> → Spammers use <strong>mimicked human writing</strong>.</li>
+								<li>❌ <strong>False Positives</strong> → Important emails sometimes land in <strong>Spam folders</strong>.</li>
+								<li>❌ <strong>Privacy Issues</strong> → ML models must scan email <strong>content</strong>, raising ethical concerns.</li>
+							</ul>
+						</div>
+
+						<!-- Research & Future Trends -->
+						<div class="ml-box">
+							<h3> Research Potential & Future Improvements</h3>
+							<p><strong>Future research in spam detection focuses on improving accuracy, security, and adaptability.</strong></p>
+
+							<p><strong>🔹 Research Areas:</strong></p>
+							<ul>
+								<li>📌 <strong>Deep Learning + NLP</strong>: Using <strong>BERT, GPT-based AI models</strong> to understand <strong>email context</strong>.</li>
+								<li>📌 <strong>Blockchain for Email Security</strong>: Prevents email <strong>spoofing & phishing attacks</strong>.</li>
+								<li>📌 <strong>Federated Learning</strong>: Trains spam models <strong>without sharing user emails</strong> (preserving privacy).</li>
+								<li>📌 <strong>Multi-layer AI Defense</strong>: Combining <strong>AI + Heuristics + Human Feedback</strong>.</li>
+							</ul>
+						</div>
+					</div>			
+			`,	
+			
+			'ml_pipeline': `
+				<h1 class="blue-bolt">Machine Learning Workflow</h1>
+				<div class="workflow-box">
+					<h3>&#x31;&#xFE0F;&#x20E3 ML Pipeline</h3>
+					<p><strong>Definition:</strong> The ML pipeline is a structured process for building, training, and deploying models.</p>
+					<p><strong>Steps:</strong></p>
+					<ul>
+						<li>✔ Data Collection</li>
+						<li>✔ Data Preprocessing</li>
+						<li>✔ Feature Engineering</li>
+						<li>✔ Model Selection & Training</li>
+						<li>✔ Model Evaluation</li>
+						<li>✔ Model Deployment</li>
+					</ul>
+				</div>			
+				<div class="workflow-box">
+					<h3>&#x32;&#xFE0F;&#x20E3 Data Preprocessing</h3>
+					<p><strong>Definition:</strong> Prepares raw data by handling missing values, duplicates, and outliers.</p>
+					<p><strong>Key Techniques:</strong></p>
+					<ul>
+						<li>✔ Handling missing values (mean/mode imputation, dropping)</li>
+						<li>✔ Normalization & Standardization (Min-Max Scaling, Z-score)</li>
+						<li>✔ Categorical Encoding (One-hot encoding, Label encoding)</li>
+					</ul>
+				</div>
+
+				<div class="workflow-box">
+					<h3>&#x33;&#xFE0F;&#x20E3 Feature Engineering</h3>
+					<p><strong>Definition:</strong> Extracts, transforms, and selects relevant features to improve model performance.</p>
+					<p><strong>Common Techniques:</strong></p>
+					<ul>
+						<li>✔ Feature Selection (Filter, Wrapper, Embedded methods)</li>
+						<li>✔ Feature Transformation (PCA, Polynomial Features)</li>
+						<li>✔ Text & Image Feature Extraction (TF-IDF, Word Embeddings)</li>
+					</ul>
+				</div>
+
+
+				<div class="workflow-box">
+					<h3>&#x34;&#xFE0F;&#x20E3 Model Selection & Training</h3>
+					<p><strong>Definition:</strong> Choosing the right algorithm and training it on labeled data.</p>
+					<p><strong>Common ML Models:</strong></p>
+					<ul>
+						<li>✔ Supervised Learning (Decision Trees, SVM, Neural Networks)</li>
+						<li>✔ Unsupervised Learning (k-Means, DBSCAN, Autoencoders)</li>
+						<li>✔ Reinforcement Learning (Q-Learning, Deep Q Networks)</li>
+					</ul>
+				</div>
+
+
+				<div class="workflow-box">
+					<h3>&#x35;&#xFE0F;&#x20E3 Model Evaluation</h3>
+					<p><strong>Definition:</strong> Measures how well the model performs using test data.</p>
+					<p><strong>Key Metrics:</strong></p>
+					<ul>
+						<li>✔ Classification: Accuracy, Precision, Recall, F1-score</li>
+						<li>✔ Regression: RMSE, MAE, R-squared</li>
+						<li>✔ Overfitting Prevention: Cross-validation, Regularization</li>
+					</ul>
+				</div>
+
+
+				<div class="workflow-box">
+					<h3>&#x36;&#xFE0F;&#x20E3 Model Deployment</h3>
+					<p><strong>Definition:</strong> Deploys the trained model for real-world use.</p>
+					<p><strong>Deployment Methods:</strong></p>
+					<ul>
+						<li>✔ API Deployment (Flask, FastAPI, Django)</li>
+						<li>✔ Cloud Deployment (AWS SageMaker, Google AI, Azure ML)</li>
+						<li>✔ Edge Deployment (Embedded AI in mobile devices, IoT)</li>
+					</ul>
+				</div>				
+			`,	
+			
+			'data_preprocessing': `
+					<h1 class="blue-bolt">📌 Data Preprocessing</h1>
+					
+					<div class="content-box">
+						<h3>&#x31;&#xFE0F;&#x20E3  Handling Missing Values</h3>
+						<p><strong>Definition:</strong> Missing values can distort the dataset and reduce model accuracy. Common techniques include:</p>
+						<ul>
+							<li>✔ <strong>Mean/Median/Mode Imputation</strong> (Filling missing values with statistical values)</li>
+							<li>✔ <strong>Dropping Rows/Columns</strong> (Removing data points with too many missing values)</li>
+							<li>✔ <strong>Interpolation & Predictive Imputation</strong> (Using ML models to estimate missing values)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>&#x32;&#xFE0F;&#x20E3  Normalization & Standardization</h3>
+						<p><strong>Definition:</strong> Scaling numerical data helps improve model stability and performance.</p>
+						<p><strong>Techniques:</strong></p>
+						<ul>
+							<li>✔ <strong>Min-Max Scaling</strong> (Scales values between 0 and 1)</li>
+							<li>✔ <strong>Z-Score Standardization</strong> (Centers data to mean=0, variance=1)</li>
+							<li>✔ <strong>Robust Scaling</strong> (Handles outliers by using percentiles instead of mean/variance)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>&#x33;&#xFE0F;&#x20E3  Categorical Data Encoding</h3>
+						<p><strong>Definition:</strong> ML models require numerical input, so categorical features must be converted.</p>
+						<p><strong>Encoding Methods:</strong></p>
+						<ul>
+							<li>✔ <strong>One-Hot Encoding</strong> (Creates binary columns for each category)</li>
+							<li>✔ <strong>Label Encoding</strong> (Assigns numbers to categories, e.g., Red → 1, Blue → 2)</li>
+							<li>✔ <strong>Target Encoding</strong> (Replaces categories with mean target value for that category)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>&#x34;&#xFE0F;&#x20E3  Handling Outliers</h3>
+						<p><strong>Definition:</strong> Outliers can skew model predictions. Common detection techniques include:</p>
+						<ul>
+							<li>✔ <strong>Z-Score Method</strong> (Detects values beyond ±3 standard deviations)</li>
+							<li>✔ <strong>IQR (Interquartile Range) Method</strong> (Filters extreme values outside Q1-Q3 range)</li>
+							<li>✔ <strong>Winsorization & Transformation</strong> (Replacing outliers or applying log transformations)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>&#x35;&#xFE0F;&#x20E3  Splitting Data for Training & Testing</h3>
+						<p><strong>Definition:</strong> To evaluate model performance, data is split into:</p>
+						<ul>
+							<li>✔ <strong>Training Set</strong> (Used for model learning, typically 70-80%)</li>
+							<li>✔ <strong>Validation Set</strong> (Fine-tunes hyperparameters, typically 10-15%)</li>
+							<li>✔ <strong>Test Set</strong> (Evaluates final performance, typically 10-20%)</li>
+						</ul>
+					</div>
+			`,	
+
+			'feature_engineering': `
+					<div class="ml-section">
+						<h2 class="blue-bolt"> Feature Engineering</h2>
+
+						<div class="content-box">
+							<h3> Feature Extraction</h3>
+							<p><strong>Definition:</strong> Extracting useful information from raw data.</p>
+							<p><strong>Common Techniques:</strong></p>
+							<ul>
+								<li>✔ <strong>TF-IDF (Term Frequency-Inverse Document Frequency)</strong> – Extracts important words from text.</li>
+								<li>✔ <strong>Edge Detection in Images</strong> – Detects objects and boundaries.</li>
+								<li>✔ <strong>Fourier Transform</strong> – Extracts frequency components in signal processing.</li>
+								<li>✔ <strong>Statistical Features</strong> – Mean, variance, skewness, etc., from numerical data.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Feature Selection</h3>
+							<p><strong>Definition:</strong> Selecting the most relevant features to reduce noise and improve model efficiency.</p>
+							<p><strong>Techniques:</strong></p>
+							<ul>
+								<li>✔ <strong>Filter Methods</strong> – Uses statistical tests (e.g., Chi-square, ANOVA, Mutual Information).</li>
+								<li>✔ <strong>Wrapper Methods</strong> – Uses model performance (e.g., Recursive Feature Elimination - RFE).</li>
+								<li>✔ <strong>Embedded Methods</strong> – Feature selection within model training (e.g., LASSO Regression).</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Feature Transformation</h3>
+							<p><strong>Definition:</strong> Modifying existing features to better fit the model.</p>
+							<p><strong>Methods:</strong></p>
+							<ul>
+								<li>✔ <strong>Logarithmic Transformation</strong> – Reduces impact of extreme values.</li>
+								<li>✔ <strong>Box-Cox Transformation</strong> – Normalizes skewed data.</li>
+								<li>✔ <strong>Polynomial Features</strong> – Creates interaction terms for better representation.</li>
+								<li>✔ <strong>Embedding Layers in Neural Networks</strong> – Converts words into numerical vectors.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Dimensionality Reduction</h3>
+							<p><strong>Definition:</strong> Reducing the number of features while retaining important information.</p>
+							<p><strong>Techniques:</strong></p>
+							<ul>
+								<li>✔ <strong>Principal Component Analysis (PCA)</strong> – Identifies important data dimensions.</li>
+								<li>✔ <strong>t-SNE (t-Distributed Stochastic Neighbor Embedding)</strong> – Reduces dimensions for visualization.</li>
+								<li>✔ <strong>Autoencoders</strong> – Neural networks for feature compression.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Feature Engineering in Time-Series Data</h3>
+							<p><strong>Definition:</strong> Creating meaningful features from time-dependent data.</p>
+							<p><strong>Common Features:</strong></p>
+							<ul>
+								<li>✔ <strong>Lag Features</strong> – Uses previous time steps as input.</li>
+								<li>✔ <strong>Rolling Window Statistics</strong> – Moving averages, standard deviation over time.</li>
+								<li>✔ <strong>Fourier Transforms</strong> – Extracts frequency components from time-series data.</li>
+								<li>✔ <strong>Seasonality Indicators</strong> – Identifies cyclic patterns (e.g., hourly, daily, monthly trends).</li>
+							</ul>
+						</div>
+					</div>
+			
+			`,	
+			
+			'model_selection': `
+					<div class="ml-section">
+						<h1 class="blue-bolt">Model Selection</h1>
+
+						<div class="content-box">
+							<h3>Choosing Between Supervised & Unsupervised Learning</h3>
+							<p><strong>Definition:</strong> The first step is determining if the dataset has labeled outputs.</p>
+							<p><strong>Categories:</strong></p>
+							<ul>
+								<li>✔ <strong>Supervised Learning</strong> → When the dataset has labels (e.g., spam detection, price prediction).</li>
+								<li>✔ <strong>Unsupervised Learnig</strong> → When the dataset has no labels (e.g., customer segmentation, anomaly detection).</li>
+							</ul>
+						</div>
+
+
+						<div class="content-box">
+							<h3>Comparing ML Models</h3>
+							<p><strong>Definition:</strong> Different algorithms perform better depending on the dataset size, feature types, and complexity.</p>
+							<p><strong>Model Selection Based on Problem Type:</strong></p>
+							<ul>
+								<li>✔ <strong>Regression</strong> (Predict continuous values) → Linear Regression, Random Forest, Neural Networks.</li>
+								<li>✔ <strong>Classification</strong> (Predict categories) → Logistic Regression, SVM, Decision Trees, Naïve Bayes.</li>
+								<li>✔ <strong>Clustering</strong> (Group similar items) → k-Means, DBSCAN, Gaussian Mixture Models.</li>
+							</ul>
+						</div>
+
+
+						<div class="content-box">
+							<h3>Using Cross-Validation</h3>
+							<p><strong>Definition:</strong> Cross-validation prevents overfitting by testing models on multiple data splits.</p>
+							<p><strong>Common Methods:</strong></p>
+							<ul>
+								<li>✔ <strong>K-Fold Cross-Validation</strong> – Splits data into k subsets and trains on different combinations.</li>
+								<li>✔ <strong>Stratified Cross-Validation</strong> – Ensures class distribution remains balanced.</li>
+								<li>✔ <strong>Leave-One-Out (LOO) Cross-Validation</strong> – Uses one sample as a test set and the rest for training.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Example: Choosing a Model for Predicting House Prices 🏡</h3>
+							<p><strong>Scenario:</strong> You have a dataset containing house prices, square footage, number of bedrooms, and location.</p>
+							<p><strong>Steps:</strong></p>
+							<ul>
+								<li>✔ <strong>Step 1:</strong> Identify the task → <strong>Regression Problem</strong>.</li>
+								<li>✔ <strong>Step 2:</strong> Choose a few candidate models → <strong>Linear Regression, Decision Trees, Random Forest.</strong></li>
+								<li>✔ <strong>Step 3:</strong> Perform cross-validation → Choose the model with the lowest error.</li>
+							</ul>
+						</div>
+					</div>
+			`,	
+			'model_evaluation': `
+					<div class="ml-section">
+						<h1 class="blue-bolt"> Model Evaluation</h1>
+						
+						<div class="content-box">
+							<h3>Evaluating Classification Models</h3>
+							<p><strong>Definition:</strong> Classification models are measured based on accuracy, precision, recall, and F1-score.</p>
+							<p><strong>Common Metrics:</strong></p>
+							<ul>
+								<li>✔ <strong>Accuracy</strong> – Percentage of correctly predicted labels.</li>
+								<li>✔ <strong>Precision</strong> – Measures how many predicted positives were actually correct.</li>
+								<li>✔ <strong>Recall</strong> – Measures how many actual positives were correctly identified.</li>
+								<li>✔ <strong>F1-Score</strong> – Harmonic mean of precision and recall.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Evaluating Regression Models</h3>
+							<p><strong>Definition:</strong> Regression models are evaluated using error metrics.</p>
+							<p><strong>Common Metrics:</strong></p>
+							<ul>
+								<li>✔ <strong>Mean Absolute Error (MAE)</strong> – Average absolute difference between predicted and actual values.</li>
+								<li>✔ <strong>Mean Squared Error (MSE)</strong> – Average squared difference between predicted and actual values.</li>
+								<li>✔ <strong>R-squared (R²)</strong> – Explains the proportion of variance captured by the model.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Example: Evaluating a Spam Detection Model 📧</h3>
+							<p><strong>Scenario:</strong> A classifier is predicting whether an email is spam or not.</p>
+							<p><strong>Confusion Matrix:</strong></p>
+							<table>
+								<tr>
+									<th></th>
+									<th>Actual Spam</th>
+									<th>Actual Not Spam</th>
+								</tr>
+								<tr>
+									<td><strong>Predicted Spam</strong></td>
+									<td>TP (True Positives)</td>
+									<td>FP (False Positives)</td>
+								</tr>
+								<tr>
+									<td><strong>Predicted Not Spam</strong></td>
+									<td>FN (False Negatives)</td>
+									<td>TN (True Negatives)</td>
+								</tr>
+							</table>
+							<p><strong>Calculation:</strong></p>
+							<ul>
+								<li>✔ <strong>Precision</strong> = TP / (TP + FP)</li>
+								<li>✔ <strong>Recall</strong> = TP / (TP + FN)</li>
+								<li>✔ <strong>F1-Score</strong> = 2 × (Precision × Recall) / (Precision + Recall)</li>
+							</ul>
+						</div>
+					</div>
+			`,	
+
+			'regression': `	
+					<div class="ml-section">
+						<h2>📌 Linear Regression</h2>
+
+						<div class="content-box">
+							<h3>Introduction</h3>
+							<p><strong>Definition:</strong> Linear Regression is a supervised learning algorithm used for predicting continuous values by modeling a linear relationship between input variables and output.</p>
+							<p><strong>Mathematical Formula:</strong></p>
+							<p class="math-formula">\( y = mx + b \)</p>
+							<ul>
+								<li>✔ \( y \) → Predicted output (dependent variable)</li>
+								<li>✔ \( x \) → Input feature (independent variable)</li>
+								<li>✔ \( m \) → Slope of the line</li>
+								<li>✔ \( b \) → Intercept</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Python Implementation</h3>
+							<p>We will use **Scikit-Learn** to implement Linear Regression.</p>
+							<pre class="code-block">
+	import numpy as np
+	import matplotlib.pyplot as plt
+	from sklearn.linear_model import LinearRegression
+	from sklearn.model_selection import train_test_split
+
+	# 📌 Generate synthetic data
+	np.random.seed(42)
+	X = 2 * np.random.rand(100, 1)
+	y = 4 + 3 * X + np.random.randn(100, 1)  # y = 4 + 3x + noise
+
+	# 📌 Split data into training and testing sets
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+	# 📌 Train Linear Regression Model
+	model = LinearRegression()
+	model.fit(X_train, y_train)
+
+	# 📌 Make predictions
+	y_pred = model.predict(X_test)
+
+	# 📌 Plot the results
+	plt.scatter(X_test, y_test, color="blue", label="Actual Data")
+	plt.plot(X_test, y_pred, color="red", linewidth=2, label="Predicted Line")
+	plt.xlabel("Input Feature (X)")
+	plt.ylabel("Target Output (y)")
+	plt.legend()
+	plt.show()
+							</pre>
+						</div>
+
+						<div class="content-box">
+							<h3>Advanced Concepts & Research Extensions</h3>
+							<ul>
+								<li>✔ **Limitations:** Assumes a linear relationship, sensitive to outliers.</li>
+								<li>✔ **Advanced Improvements:** 
+									<ul>
+										<li>✔ **Ridge Regression (L2 Regularization):** Adds penalty for large coefficients.</li>
+										<li>✔ **LASSO Regression (L1 Regularization):** Shrinks coefficients to zero for feature selection.</li>
+										<li>✔ **Polynomial Regression:** Extends linear regression for non-linear data.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>Pros & Cons</h3>
+							<table>
+								<tr>
+									<th>Pros ✅</th>
+									<th>Cons ❌</th>
+								</tr>
+								<tr>
+									<td>✔ Simple and easy to interpret</td>
+									<td>❌ Assumes linearity between input and output</td>
+								</tr>
+								<tr>
+									<td>✔ Computationally efficient</td>
+									<td>❌ Sensitive to outliers</td>
+								</tr>
+								<tr>
+									<td>✔ Works well with small datasets</td>
+									<td>❌ Cannot capture complex relationships</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+			`,	
+			
+			'knn': `
+					<div class="ml-section">
+						<h2>📌 k-Nearest Neighbors (k-NN)</h2>
+
+						<div class="content-box">
+							<h3>1️⃣ Introduction</h3>
+							<p><strong>Definition:</strong> k-NN is a simple, non-parametric supervised learning algorithm that classifies data points based on their similarity to nearby neighbors.</p>
+							<p><strong>Mathematical Formula:</strong> The distance between two points is calculated using Euclidean Distance:</p>
+							<p class="math-formula">\( d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2} \)</p>
+						</div>
+
+						<div class="content-box">
+				<h3>2️⃣ Python Implementation</h3>
+				<pre class="code-block">
+		from sklearn.neighbors import KNeighborsClassifier
+		from sklearn.model_selection import train_test_split
+		from sklearn.datasets import load_iris
+		from sklearn.metrics import accuracy_score
+
+		# 📌 Load dataset
+		iris = load_iris()
+		X, y = iris.data, iris.target
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train k-NN Model
+		knn = KNeighborsClassifier(n_neighbors=3)
+		knn.fit(X_train, y_train)
+
+		# 📌 Make predictions
+		y_pred = knn.predict(X_test)
+
+		# 📌 Evaluate model
+		print("Accuracy:", accuracy_score(y_test, y_pred))
+							</pre>
+						</div>
+
+						<div class="content-box">
+							<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+							<ul>
+								<li>✔ **Limitations:** Computationally expensive for large datasets.</li>
+								<li>✔ **Advanced Improvements:**
+									<ul>
+										<li>✔ **KD-Tree & Ball-Tree:** Faster search for high-dimensional data.</li>
+										<li>✔ **Weighted k-NN:** Assigns different weights to neighbors based on distance.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>4️⃣ Pros & Cons</h3>
+							<table>
+								<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+								<tr><td>✔ Simple and effective</td><td>❌ Slow for large datasets</td></tr>
+								<tr><td>✔ No training phase required</td><td>❌ Sensitive to irrelevant features</td></tr>
+								<tr><td>✔ Works well with non-linear data</td><td>❌ Requires tuning of 'k' parameter</td></tr>
+							</table>
+						</div>
+					</div>
+								
+			`,	
+			'svm': `
+				<div class="ml-section">
+					<h2>📌 Support Vector Machines (SVM)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> SVM is a supervised learning algorithm that finds the optimal hyperplane to separate different classes in high-dimensional space.</p>
+						<p><strong>Mathematical Formula:</strong> The decision boundary is given by:</p>
+						<p class="math-formula">\( w^T x + b = 0 \)</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+		from sklearn.svm import SVC
+		from sklearn.datasets import make_classification
+		from sklearn.model_selection import train_test_split
+		from sklearn.metrics import accuracy_score
+
+		# 📌 Generate synthetic dataset
+		X, y = make_classification(n_samples=100, n_features=2, random_state=42)
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train SVM Model
+		svm = SVC(kernel='linear')
+		svm.fit(X_train, y_train)
+
+		# 📌 Make predictions
+		y_pred = svm.predict(X_test)
+
+		# 📌 Evaluate model
+		print("Accuracy:", accuracy_score(y_test, y_pred))
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ **Limitations:** Computationally expensive for large datasets.</li>
+							<li>✔ **Advanced Improvements:**
+								<ul>
+									<li>✔ **Kernel Trick:** Enables SVM to handle non-linear data.</li>
+									<li>✔ **Soft Margin SVM:** Allows some misclassification for better generalization.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table>
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Works well with high-dimensional data</td><td>❌ Slow for large datasets</td></tr>
+							<tr><td>✔ Effective with small sample sizes</td><td>❌ Sensitive to parameter selection</td></tr>
+						</table>
+					</div>
+				</div>
+			`,	
+
+			'kernel_regression': `	
+					<div class="ml-section">
+						<h2>📌 Kernel Regression</h2>
+
+						<div class="content-box">
+							<h3>1️⃣ Introduction</h3>
+							<p><strong>Definition:</strong> Kernel Regression is a non-parametric technique that estimates the relationship between variables using kernel functions.</p>
+							<p><strong>Mathematical Formula:</strong></p>
+							<p class="math-formula">\( f(x) = \sum_{i=1}^{n} K(x, x_i) y_i \)</p>
+							<ul>
+								<li>✔ \( K(x, x_i) \) → Kernel function measuring similarity.</li>
+								<li>✔ \( y_i \) → Observed values.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>2️⃣ Python Implementation</h3>
+							<pre class="code-block">
+		import numpy as np
+		import matplotlib.pyplot as plt
+		from sklearn.neighbors import KernelDensity
+
+		# 📌 Generate synthetic data
+		np.random.seed(42)
+		X = np.linspace(-3, 3, 100)[:, np.newaxis]
+		y = np.sin(X).ravel() + np.random.normal(0, 0.1, X.shape[0])
+
+		# 📌 Fit Kernel Regression
+		kde = KernelDensity(kernel='gaussian', bandwidth=0.5)
+		kde.fit(X)
+
+		# 📌 Predict and plot
+		X_pred = np.linspace(-3, 3, 100)[:, np.newaxis]
+		log_density = kde.score_samples(X_pred)
+
+		plt.plot(X_pred, np.exp(log_density), color="red", label="Kernel Regression Fit")
+		plt.scatter(X, y, color="blue", alpha=0.5, label="Data Points")
+		plt.legend()
+		plt.show()
+							</pre>
+						</div>
+
+						<div class="content-box">
+							<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+							<ul>
+								<li>✔ **Limitations:** Sensitive to bandwidth selection, computationally expensive.</li>
+								<li>✔ **Advanced Improvements:**
+									<ul>
+										<li>✔ **Adaptive Kernel Regression:** Adjusts bandwidth dynamically.</li>
+										<li>✔ **Gaussian Process Regression:** Extends Kernel Regression using probability distributions.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>4️⃣ Pros & Cons</h3>
+							<table>
+								<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+								<tr><td>✔ Works well with non-linear data</td><td>❌ Slow for large datasets</td></tr>
+								<tr><td>✔ No assumption about data distribution</td><td>❌ Requires careful bandwidth tuning</td></tr>
+							</table>
+						</div>
+					</div>
+			`,	
+			'expectation_maximization': `
+					<div class="ml-section">
+						<h2>📌 Expectation Maximization Algorithm</h2>
+
+						<div class="content-box">
+							<h3>1️⃣ Introduction</h3>
+							<p><strong>Definition:</strong> Expectation Maximization (EM) is an iterative algorithm used to estimate missing or latent variables in probabilistic models.</p>
+							<p><strong>Mathematical Formula:</strong></p>
+							<p class="math-formula">\( Q(\theta | \theta^{(t)}) = E[ \log P(X, Z | \theta) | X, \theta^{(t)}] \)</p>
+							<ul>
+								<li>✔ **Expectation Step (E-Step):** Estimates missing data based on current parameters.</li>
+								<li>✔ **Maximization Step (M-Step):** Updates model parameters to maximize likelihood.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>2️⃣ Python Implementation</h3>
+							<pre class="code-block">
+		import numpy as np
+		from sklearn.mixture import GaussianMixture
+
+		# 📌 Generate synthetic data
+		np.random.seed(42)
+		X = np.concatenate([np.random.normal(-2, 1, 100), np.random.normal(2, 1, 100)]).reshape(-1, 1)
+
+		# 📌 Fit Gaussian Mixture Model (EM Algorithm)
+		gmm = GaussianMixture(n_components=2, covariance_type='full')
+		gmm.fit(X)
+
+		# 📌 Predict clusters
+		clusters = gmm.predict(X)
+		print("Cluster Assignments:", clusters)
+							</pre>
+						</div>
+
+						<div class="content-box">
+							<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+							<ul>
+								<li>✔ **Limitations:** Sensitive to initial parameters, may converge to local optima.</li>
+								<li>✔ **Advanced Improvements:**
+									<ul>
+										<li>✔ **Variational Bayes EM:** Incorporates Bayesian priors for robust estimation.</li>
+										<li>✔ **Hidden Markov Models (HMMs):** Uses EM for sequential data.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>4️⃣ Pros & Cons</h3>
+							<table>
+								<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+								<tr><td>✔ Works with incomplete data</td><td>❌ Prone to local optima</td></tr>
+								<tr><td>✔ Handles probabilistic models</td><td>❌ Requires good initialization</td></tr>
+							</table>
+						</div>
+					</div>
+
+			`,				
+			'entropy': `
+				<div class="ml-section">
+					<h2>📌 Entropy & Information Gain</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Entropy is a measure of randomness or impurity in a dataset. It is used in decision tree algorithms to determine the best feature splits.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( H(S) = -\sum_{i=1}^{c} p_i \log_2 p_i \)</p>
+						<ul>
+							<li>✔ \( H(S) \) → Entropy of dataset \( S \).</li>
+							<li>✔ \( p_i \) → Probability of class \( i \).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+				import numpy as np
+				from scipy.stats import entropy
+
+				# 📌 Calculate entropy for a simple dataset
+				labels = np.array([0, 0, 1, 1, 1, 1, 0, 0, 0, 1])
+				values, counts = np.unique(labels, return_counts=True)
+
+				# 📌 Compute entropy
+				entropy_value = entropy(counts, base=2)
+				print("Entropy:", entropy_value)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ **Limitations:** Entropy may not work well with highly imbalanced data.</li>
+							<li>✔ **Advanced Improvements:**
+								<ul>
+									<li>✔ **Gini Impurity:** An alternative to entropy for decision tree splitting.</li>
+									<li>✔ **Mutual Information:** Used in feature selection techniques.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table>
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Helps in feature selection</td><td>❌ May bias toward attributes with more values</td></tr>
+							<tr><td>✔ Forms the basis for decision trees</td><td>❌ Computationally expensive for large datasets</td></tr>
+						</table>
+					</div>
+				</div>				
+			`,	
+			
+			
+			'id3': `
+				<div class="ml-section">
+					<h2>📌 ID3 Algorithm (Decision Trees)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> ID3 (Iterative Dichotomiser 3) is a decision tree learning algorithm that builds a tree using entropy and information gain.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( IG(S, A) = H(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} H(S_v) \)</p>
+						<ul>
+							<li>✔ \( IG(S, A) \) → Information Gain when splitting on attribute \( A \).</li>
+							<li>✔ \( H(S) \) → Entropy of dataset \( S \).</li>
+							<li>✔ \( S_v \) → Subset of \( S \) where attribute \( A \) has value \( v \).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+		from sklearn.tree import DecisionTreeClassifier
+		from sklearn.datasets import load_iris
+		from sklearn.model_selection import train_test_split
+		from sklearn import tree
+
+		# 📌 Load dataset
+		iris = load_iris()
+		X, y = iris.data, iris.target
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train Decision Tree (ID3 Algorithm)
+		clf = DecisionTreeClassifier(criterion='entropy')
+		clf.fit(X_train, y_train)
+
+		# 📌 Visualize the tree
+		tree.plot_tree(clf, filled=True)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ **Limitations:** ID3 tends to overfit when dealing with noisy data.</li>
+							<li>✔ **Advanced Improvements:**
+								<ul>
+									<li>✔ **C4.5 Algorithm:** An improvement over ID3 that handles continuous attributes.</li>
+									<li>✔ **Random Forests:** Uses multiple decision trees to improve accuracy.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table>
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Simple and easy to understand</td><td>❌ Overfits small datasets</td></tr>
+							<tr><td>✔ Works with categorical and numerical data</td><td>❌ Biased toward attributes with many values</td></tr>
+						</table>
+					</div>
+				</div>
+
+			`,	
+
+
+			'bootstraping': `
+				<div class="ml-section">
+					<h2>📌 Boosting (AdaBoost & Gradient Boosting)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Boosting is an ensemble learning method that improves model accuracy by training sequential weak learners and adjusting their weights to focus on hard-to-classify instances.</p>
+						<p><strong>Mathematical Concept:</strong> Given dataset \( D \), boosting assigns weights \( w_i \) to samples and updates them iteratively:</p>
+						<p class="math-formula">\( w_i^{(t+1)} = w_i^{(t)} e^{-\alpha_t y_i h_t(x_i)} \)</p>
+						<ul>
+							<li>✔ \( \alpha_t \) → Model weight.</li>
+							<li>✔ \( y_i \) → True label.</li>
+							<li>✔ \( h_t(x_i) \) → Prediction from weak learner.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+				<pre class="code-block">
+		from sklearn.ensemble import AdaBoostClassifier
+		from sklearn.tree import DecisionTreeClassifier
+		from sklearn.datasets import make_classification
+		from sklearn.model_selection import train_test_split
+
+		# 📌 Generate synthetic data
+		X, y = make_classification(n_samples=1000, random_state=42)
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train AdaBoost Classifier
+		adaboost = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1), n_estimators=50, random_state=42)
+		adaboost.fit(X_train, y_train)
+
+		# 📌 Evaluate Model
+		print("Accuracy:", adaboost.score(X_test, y_test))
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ **Limitations:** Sensitive to noisy data.</li>
+							<li>✔ **Advanced Improvements:**
+								<ul>
+									<li>✔ **Gradient Boosting (XGBoost, LightGBM):** Optimizes using gradient descent.</li>
+									<li>✔ **CatBoost:** Efficient for categorical features.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table>
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Improves weak learners</td><td>❌ Computationally expensive</td></tr>
+							<tr><td>✔ Works well on imbalanced data</td><td>❌ Prone to overfitting</td></tr>
+						</table>
+					</div>
+				</div>
+			`,	
+
+
+		
+			'bagging': `
+				<div class="ml-section">
+					<h2>📌 Bagging (Bootstrap Aggregating)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Bagging is an ensemble learning method that improves accuracy by training multiple models on different subsets of data and averaging their predictions.</p>
+						<p><strong>Mathematical Concept:</strong> Given dataset \( D \), bagging creates \( B \) bootstrap samples \( D_1, D_2, ..., D_B \), trains models \( f_1, f_2, ..., f_B \), and averages the predictions:</p>
+						<p class="math-formula">\( \hat{y} = \frac{1}{B} \sum_{b=1}^{B} f_b(x) \)</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+		from sklearn.ensemble import BaggingClassifier
+		from sklearn.tree import DecisionTreeClassifier
+		from sklearn.datasets import make_classification
+		from sklearn.model_selection import train_test_split
+
+		# 📌 Generate synthetic data
+		X, y = make_classification(n_samples=1000, random_state=42)
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train Bagging Classifier
+		bagging = BaggingClassifier(base_estimator=DecisionTreeClassifier(), n_estimators=50, random_state=42)
+		bagging.fit(X_train, y_train)
+
+		# 📌 Evaluate Model
+		print("Accuracy:", bagging.score(X_test, y_test))
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ **Limitations:** Works poorly if base learners are too weak.</li>
+							<li>✔ **Advanced Improvements:**
+								<ul>
+									<li>✔ **Random Forest:** Uses bagging with feature selection.</li>
+									<li>✔ **Boosting (Adaboost, Gradient Boosting):** Focuses on misclassified samples.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table>
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Reduces variance & overfitting</td><td>❌ Computationally expensive</td></tr>
+							<tr><td>✔ Works well with complex datasets</td><td>❌ Doesn't improve weak base models</td></tr>
+						</table>
+					</div>
+				</div>
+			
+			`,	
+			'random_forest': `
+					<div class="ml-section">
+						<h2>📌 Random Forest</h2>
+
+						<div class="content-box">
+							<h3>1️⃣ Introduction</h3>
+							<p><strong>Definition:</strong> Random Forest is an ensemble learning method that builds multiple decision trees and combines their results to improve accuracy and reduce overfitting.</p>
+							<p><strong>Mathematical Concept:</strong> Random Forest aggregates predictions from \( n \) decision trees:</p>
+							<p class="math-formula">\( \hat{y} = \frac{1}{n} \sum_{i=1}^{n} f_i(x) \)</p>
+							<ul>
+								<li>✔ \( f_i(x) \) → Prediction from individual decision tree.</li>
+								<li>✔ \( \hat{y} \) → Final averaged prediction.</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>2️⃣ Python Implementation</h3>
+							<pre class="code-block">
+		from sklearn.ensemble import RandomForestClassifier
+		from sklearn.datasets import make_classification
+		from sklearn.model_selection import train_test_split
+
+		# 📌 Generate synthetic data
+		X, y = make_classification(n_samples=1000, random_state=42)
+
+		# 📌 Split data
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+		# 📌 Train Random Forest Classifier
+		rf = RandomForestClassifier(n_estimators=100, random_state=42)
+		rf.fit(X_train, y_train)
+
+		# 📌 Evaluate Model
+		print("Accuracy:", rf.score(X_test, y_test))
+							</pre>
+						</div>
+
+						<div class="content-box">
+							<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+							<ul>
+								<li>✔ **Limitations:** Computationally expensive for large datasets.</li>
+								<li>✔ **Advanced Improvements:**
+									<ul>
+										<li>✔ **Extra Trees (Extremely Randomized Trees):** Uses more randomness for feature splits.</li>
+										<li>✔ **Feature Importance:** Helps in feature selection by ranking important attributes.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="content-box">
+							<h3>4️⃣ Pros & Cons</h3>
+							<table>
+								<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+								<tr><td>✔ Reduces overfitting compared to a single decision tree</td><td>❌ Slow training on large datasets</td></tr>
+								<tr><td>✔ Works well with both classification & regression</td><td>❌ Requires tuning of hyperparameters</td></tr>
+							</table>
+						</div>
+					</div>
+			`,	
+
+			'mlp': `
+				<div class="ml-section">
+					<h2>📌 Multilayer Perceptron (MLP)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> A Multilayer Perceptron (MLP) is a type of artificial neural network that consists of an input layer, one or more hidden layers, and an output layer.</p>
+						<p><strong>Mathematical Formula:</strong> \( y = f(WX + b) \)</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import tensorflow as tf
+			from tensorflow.keras.models import Sequential
+			from tensorflow.keras.layers import Dense
+
+			# 📌 Define MLP Model
+			model = Sequential([
+				Dense(32, activation='relu', input_shape=(10,)),
+				Dense(16, activation='relu'),
+				Dense(1, activation='sigmoid')
+			])
+
+			# 📌 Compile the model
+			model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+			# 📌 Print Model Summary
+			model.summary()
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Dropout Regularization:</strong> Prevents overfitting.</li>
+							<li>✔ <strong>Batch Normalization:</strong> Speeds up training.</li>
+							<li>✔ <strong>Optimization Algorithms:</strong> Adam, RMSprop.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Can model complex relationships</td><td>❌ Requires large datasets</td></tr>
+							<tr><td>✔ Works well for structured data</td><td>❌ Computationally expensive</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Financial Fraud Detection 💳</strong></li>
+							<li>✔ <strong>Medical Diagnosis 🏥</strong></li>
+							<li>✔ <strong>Stock Market Prediction 📈</strong></li>
+							<li>✔ <strong>Chatbots & NLP 🤖</strong></li>
+						</ul>
+					</div>
+				</div>
+			`,
+			
+			'backpropagation': `
+				<div class="ml-section">
+					<h2>📌 Backpropagation Algorithm</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Backpropagation is a supervised learning algorithm used to train artificial neural networks by adjusting weights based on the error.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( W_{new} = W_{old} - \eta \frac{\partial L}{\partial W} \)</p>
+						<ul>
+							<li>✔ \( L \) → Loss function (e.g., Mean Squared Error)</li>
+							<li>✔ \( W \) → Weights of the network</li>
+							<li>✔ \( \eta \) → Learning rate (step size for weight updates)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+		import numpy as np
+
+		# 📌 Sigmoid activation function
+		def sigmoid(x):
+			return 1 / (1 + np.exp(-x))
+
+		# 📌 Derivative of Sigmoid
+		def sigmoid_derivative(x):
+			return x * (1 - x)
+
+		# 📌 Training Data (AND Gate)
+		X = np.array([[0,0], [0,1], [1,0], [1,1]])
+		y = np.array([[0], [0], [0], [1]])
+
+		# 📌 Initialize Weights
+		weights = np.random.rand(2,1)
+		bias = np.random.rand(1)
+		learning_rate = 0.1
+
+		# 📌 Training Backpropagation for 10000 iterations
+		for epoch in range(10000):
+			# Forward Propagation
+			hidden = sigmoid(np.dot(X, weights) + bias)
+			
+			# Compute Error
+			error = y - hidden
+			
+			# Backpropagation
+			adjustment = error * sigmoid_derivative(hidden)
+			weights += np.dot(X.T, adjustment) * learning_rate
+			bias += np.sum(adjustment) * learning_rate
+
+		# 📌 Output Final Weights
+		print("Final Weights:", weights)
+		print("Final Bias:", bias)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Gradient Vanishing Problem:</strong> Deep networks struggle with very small gradients.</li>
+							<li>✔ <strong>Batch Normalization:</strong> Speeds up training and stabilizes learning.</li>
+							<li>✔ <strong>Adaptive Learning Rates:</strong> Optimizers like Adam and RMSprop improve training speed.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Efficient for training deep networks</td><td>❌ Prone to vanishing gradients</td></tr>
+							<tr><td>✔ Works well with non-linear data</td><td>❌ Computationally expensive</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Image Recognition 📷</strong> – Used in deep CNN models.</li>
+							<li>✔ <strong>Speech Recognition 🎙️</strong> – Powers voice assistants like Siri & Alexa.</li>
+							<li>✔ <strong>Autonomous Driving 🚗</strong> – Helps AI systems learn driving behavior.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+			
+			'gradient_descent': `
+				<div class="ml-section">
+					<h2>📌 Gradient Descent</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Gradient Descent is an optimization algorithm used to minimize the loss function in machine learning models by iteratively adjusting parameters.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( W_{new} = W_{old} - \eta \nabla L(W) \)</p>
+						<ul>
+							<li>✔ \( L(W) \) → Loss function</li>
+							<li>✔ \( W \) → Model parameters (weights, biases)</li>
+							<li>✔ \( \eta \) → Learning rate (step size for updates)</li>
+							<li>✔ \( \nabla L(W) \) → Gradient of loss function with respect to \( W \)</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+					<pre class="code-block">
+		import numpy as np
+
+		# 📌 Define a simple loss function (Mean Squared Error)
+		def loss_function(W, X, y):
+			y_pred = np.dot(X, W)
+			return np.mean((y - y_pred) ** 2)
+
+		# 📌 Compute gradient
+		def compute_gradient(W, X, y):
+			y_pred = np.dot(X, W)
+			return -2 * np.dot(X.T, (y - y_pred)) / len(y)
+
+		# 📌 Gradient Descent Algorithm
+		def gradient_descent(X, y, lr=0.01, epochs=1000):
+			W = np.random.rand(X.shape[1], 1)  # Initialize weights randomly
+			for epoch in range(epochs):
+				grad = compute_gradient(W, X, y)
+				W -= lr * grad  # Update weights
+			return W
+
+		# 📌 Generate synthetic data
+		np.random.seed(42)
+		X = np.random.rand(100, 2)
+		y = 3 * X[:, 0] + 5 * X[:, 1] + np.random.randn(100) * 0.1  # True relation
+
+		# 📌 Train using Gradient Descent
+		W_final = gradient_descent(X, y.reshape(-1, 1))
+		print("Final Weights:", W_final)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Momentum-based Gradient Descent:</strong> Uses past gradients to accelerate updates.</li>
+							<li>✔ <strong>Adaptive Learning Rate Methods:</strong> Adam, RMSprop, and AdaGrad dynamically adjust the learning rate.</li>
+							<li>✔ <strong>Stochastic Gradient Descent (SGD):</strong> Uses mini-batches instead of full dataset updates.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Simple and effective optimization method</td><td>❌ Can get stuck in local minima</td></tr>
+							<tr><td>✔ Works well for differentiable functions</td><td>❌ Choosing the right learning rate is difficult</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Neural Network Training 🤖</strong> – Used in deep learning models.</li>
+							<li>✔ <strong>Linear & Logistic Regression 📊</strong> – Optimization for regression models.</li>
+							<li>✔ <strong>Recommender Systems 🎥</strong> – Fine-tuning collaborative filtering algorithms.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+
+			'rbf': `
+				<div class="ml-section">
+					<h2>📌 Radial Basis Function (RBF) Network</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> A Radial Basis Function (RBF) Network is a type of artificial neural network that uses radial basis functions as activation functions. It is particularly useful for function approximation and pattern recognition.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( y(x) = \sum_{i=1}^{N} w_i \phi(||x - c_i||) \)</p>
+						<ul>
+							<li>✔ \( \phi(||x - c_i||) \) → Radial basis function (commonly Gaussian).</li>
+							<li>✔ \( w_i \) → Weights associated with each basis function.</li>
+							<li>✔ \( c_i \) → Centers of the basis functions.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+			from sklearn.cluster import KMeans
+			from scipy.spatial.distance import cdist
+			from sklearn.metrics.pairwise import rbf_kernel
+			from sklearn.linear_model import Ridge
+
+			# 📌 Generate synthetic data
+			np.random.seed(42)
+			X = np.linspace(-1, 1, 100).reshape(-1, 1)
+			y = np.sin(3 * X) + np.random.randn(100, 1) * 0.1  # True function with noise
+
+			# 📌 Select RBF centers using K-Means clustering
+			kmeans = KMeans(n_clusters=10, random_state=42).fit(X)
+			centers = kmeans.cluster_centers_
+
+			# 📌 Compute RBF Kernel
+			gamma = 1.0  # Defines the spread of RBF function
+			X_rbf = rbf_kernel(X, centers, gamma=gamma)
+
+			# 📌 Train a Linear Model on RBF-transformed data
+			model = Ridge(alpha=0.1)
+			model.fit(X_rbf, y)
+
+			# 📌 Make Predictions
+			y_pred = model.predict(X_rbf)
+
+			# 📌 Display Results
+			print("Final Model Weights:", model.coef_)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Hybrid RBF Networks:</strong> Combining RBF with deep learning architectures.</li>
+							<li>✔ <strong>Adaptive RBF Centers:</strong> Dynamically selecting basis function centers.</li>
+							<li>✔ <strong>Support Vector Regression (SVR) with RBF:</strong> Using RBF kernels in SVR for high-dimensional regression.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Excellent for function approximation</td><td>❌ Sensitive to the number of basis functions</td></tr>
+							<tr><td>✔ Works well with non-linear data</td><td>❌ Computationally expensive with many centers</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Handwriting Recognition ✍️</strong> – Used in OCR systems.</li>
+							<li>✔ <strong>Medical Diagnosis 🏥</strong> – Pattern recognition in medical imaging.</li>
+							<li>✔ <strong>Time-Series Forecasting 📊</strong> – Modeling non-linear trends in financial data.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+			
+			'autoregressive_ann': `
+				<div class="ml-section">
+					<h2>📌 Autoregressive Time Series Using ANN</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Autoregressive (AR) time series modeling using Artificial Neural Networks (ANN) is a technique where past values of a time series are used to predict future values.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( y_t = f(y_{t-1}, y_{t-2}, ..., y_{t-p}) \)</p>
+						<ul>
+							<li>✔ \( y_t \) → Value at time \( t \).</li>
+							<li>✔ \( f \) → Neural network function.</li>
+							<li>✔ \( p \) → Number of lag observations.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+			import tensorflow as tf
+			from tensorflow.keras.models import Sequential
+			from tensorflow.keras.layers import Dense, LSTM
+			from sklearn.preprocessing import MinMaxScaler
+
+			# 📌 Generate synthetic time-series data
+			np.random.seed(42)
+			time = np.arange(0, 100, 0.1)
+			y = np.sin(time) + np.random.randn(len(time)) * 0.1  # Noisy sine wave
+
+			# 📌 Prepare Data for ANN
+			def create_sequences(data, lookback=5):
+				X, y = [], []
+				for i in range(len(data) - lookback):
+					X.append(data[i:i+lookback])
+					y.append(data[i+lookback])
+				return np.array(X), np.array(y)
+
+			lookback = 10
+			X, y_data = create_sequences(y, lookback)
+
+			# 📌 Normalize Data
+			scaler = MinMaxScaler()
+			X = scaler.fit_transform(X)
+			y_data = scaler.fit_transform(y_data.reshape(-1, 1))
+
+			# 📌 Split Data into Training & Test
+			train_size = int(len(X) * 0.8)
+			X_train, X_test = X[:train_size], X[train_size:]
+			y_train, y_test = y_data[:train_size], y_data[train_size:]
+
+			# 📌 Define ANN Model for Time Series Forecasting
+			model = Sequential([
+				Dense(16, activation='relu', input_shape=(lookback,)),
+				Dense(8, activation='relu'),
+				Dense(1)  # Output layer for forecasting
+			])
+
+			# 📌 Compile & Train Model
+			model.compile(optimizer='adam', loss='mse')
+			model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_test, y_test))
+
+			# 📌 Evaluate Model
+			loss = model.evaluate(X_test, y_test)
+			print(f"Test Loss: {loss:.4f}")
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Recurrent Neural Networks (RNNs):</strong> Using RNNs like LSTM for sequential forecasting.</li>
+							<li>✔ <strong>Attention Mechanism:</strong> Enhancing ANN models for better long-term forecasting.</li>
+							<li>✔ <strong>Hybrid Models:</strong> Combining AR models with deep learning architectures.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Captures non-linear dependencies</td><td>❌ Needs large amounts of data for accuracy</td></tr>
+							<tr><td>✔ Works well with complex time-series data</td><td>❌ Computationally expensive for real-time predictions</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Stock Market Prediction 📈</strong> – Predicting future stock prices.</li>
+							<li>✔ <strong>Weather Forecasting 🌦️</strong> – Forecasting temperature trends.</li>
+							<li>✔ <strong>Energy Consumption Forecasting ⚡</strong> – Predicting electricity demand.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+			
+			'reward_signal': `
+				<div class="ml-section">
+					<h2>📌 Reward Signal in Reinforcement Learning</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> A reward signal in reinforcement learning is a numerical value given to an agent as feedback for its actions. The goal of the agent is to maximize the cumulative reward over time.</p>
+						<p><strong>Mathematical Formula:</strong></p>
+						<p class="math-formula">\( R_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k} \)</p>
+						<ul>
+							<li>✔ \( R_t \) → Total reward at time \( t \).</li>
+							<li>✔ \( \gamma \) → Discount factor (between 0 and 1).</li>
+							<li>✔ \( r_t \) → Instantaneous reward at time \( t \).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+
+			# 📌 Define a simple reward function
+			def reward_function(action):
+				rewards = {0: -1, 1: 1, 2: 5}  # Action 2 gives the highest reward
+				return rewards.get(action, 0)
+
+			# 📌 Simulate an agent taking actions
+			actions = [0, 1, 2, 2, 0, 1, 2]
+			total_reward = 0
+			gamma = 0.9  # Discount factor
+
+			# 📌 Compute total discounted reward
+			for t, action in enumerate(actions):
+				total_reward += (gamma ** t) * reward_function(action)
+
+			print(f"Total Discounted Reward: {total_reward:.2f}")
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Shaped Rewards:</strong> Designing more informative rewards to speed up learning.</li>
+							<li>✔ <strong>Sparse Rewards:</strong> Handling cases where rewards are infrequent (e.g., games like chess).</li>
+							<li>✔ <strong>Multi-Objective Rewards:</strong> Optimizing for multiple reward functions simultaneously.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Direct feedback for learning optimal policies</td><td>❌ Sparse rewards make learning difficult</td></tr>
+							<tr><td>✔ Can encode complex goals in reinforcement learning</td><td>❌ Reward hacking (agent exploits poorly designed rewards)</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Game AI 🎮</strong> – Used in Deep Q-Learning for playing Atari games.</li>
+							<li>✔ <strong>Robotics 🤖</strong> – Training robots to perform tasks efficiently.</li>
+							<li>✔ <strong>Self-Driving Cars 🚗</strong> – Reward functions help vehicles make optimal driving decisions.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+			'action_policy': `
+				<div class="ml-section">
+					<h2>📌 Action Policy in Reinforcement Learning</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> An action policy in reinforcement learning defines how an agent selects actions based on its current state. Policies can be deterministic or stochastic.</p>
+						<p><strong>Mathematical Representation:</strong></p>
+						<p class="math-formula">\( \pi(a | s) = P(A_t = a | S_t = s) \)</p>
+						<ul>
+							<li>✔ \( \pi(a | s) \) → Probability of taking action \( a \) in state \( s \).</li>
+							<li>✔ \( A_t \) → Action chosen at time \( t \).</li>
+							<li>✔ \( S_t \) → Current state at time \( t \).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+
+			# 📌 Define a simple stochastic policy (Softmax)
+			def softmax_policy(Q_values, temperature=1.0):
+				exp_values = np.exp(Q_values / temperature)
+				return exp_values / np.sum(exp_values)
+
+			# 📌 Q-values for three actions
+			Q_values = np.array([1.2, 2.5, 0.8])
+
+			# 📌 Compute action probabilities
+			action_probabilities = softmax_policy(Q_values)
+			print("Action Probabilities:", action_probabilities)
+
+			# 📌 Choose action based on probability
+			action = np.random.choice(len(Q_values), p=action_probabilities)
+			print("Selected Action:", action)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Exploration vs Exploitation:</strong> Balancing between trying new actions (exploration) and using known good actions (exploitation).</li>
+							<li>✔ <strong>ε-Greedy Policy:</strong> Selects the best action with probability \( 1 - \epsilon \), but explores randomly with probability \( \epsilon \).</li>
+							<li>✔ <strong>Policy Gradient Methods:</strong> Learning policies directly using deep learning (e.g., REINFORCE algorithm).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Enables decision-making in complex environments</td><td>❌ Can get stuck in suboptimal policies</td></tr>
+							<tr><td>✔ Works well in deep reinforcement learning</td><td>❌ Balancing exploration and exploitation is challenging</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Game AI 🎮</strong> – Policies help AI agents make optimal moves in games like chess and Go.</li>
+							<li>✔ <strong>Autonomous Vehicles 🚗</strong> – Policies dictate how self-driving cars navigate roads.</li>
+							<li>✔ <strong>Healthcare AI 🏥</strong> – Used in treatment recommendation systems.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+
+			'mdp': `
+				<div class="ml-section">
+					<h2>📌 Markov Decision Process (MDP)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> A Markov Decision Process (MDP) is a mathematical framework used to model decision-making problems where outcomes are partly random and partly under the control of an agent.</p>
+						<p><strong>Mathematical Representation:</strong></p>
+						<p class="math-formula">\( MDP = (S, A, P, R, \gamma) \)</p>
+						<ul>
+							<li>✔ \( S \) → Set of states.</li>
+							<li>✔ \( A \) → Set of actions.</li>
+							<li>✔ \( P(s' | s, a) \) → Transition probability of reaching state \( s' \) from state \( s \) after action \( a \).</li>
+							<li>✔ \( R(s, a) \) → Reward function.</li>
+							<li>✔ \( \gamma \) → Discount factor (0 ≤ γ ≤ 1).</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+
+			# 📌 Define MDP Components
+			states = ["S1", "S2", "S3"]
+			actions = ["A1", "A2"]
+
+			# 📌 Transition Probability Matrix (P[s, a, s'])
+			P = {
+				"S1": {"A1": {"S1": 0.2, "S2": 0.8}, "A2": {"S1": 0.5, "S3": 0.5}},
+				"S2": {"A1": {"S1": 0.1, "S3": 0.9}, "A2": {"S2": 1.0}},
+				"S3": {"A1": {"S3": 1.0}, "A2": {"S1": 0.3, "S2": 0.7}},
+			}
+
+			# 📌 Reward Function
+			R = {"S1": {"A1": 5, "A2": 2}, "S2": {"A1": 3, "A2": -1}, "S3": {"A1": 0, "A2": 4}}
+
+			# 📌 Discount Factor
+			gamma = 0.9
+
+			# 📌 Value Iteration Algorithm
+			V = {s: 0 for s in states}  # Initialize values
+
+			for _ in range(100):  # Iterate until convergence
+				V_new = V.copy()
+				for s in states:
+					V_new[s] = max(sum(P[s][a][s_prime] * (R[s][a] + gamma * V[s_prime]) for s_prime in P[s][a]) for a in actions)
+				V = V_new
+
+			print("Optimal Value Function:", V)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Partially Observable MDPs (POMDPs):</strong> When states are not fully observable.</li>
+							<li>✔ <strong>Deep MDPs:</strong> Using deep learning models to approximate MDP solutions.</li>
+							<li>✔ <strong>Multi-Agent MDPs:</strong> Extending MDPs for multi-agent environments.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Provides a formal framework for decision-making</td><td>❌ Requires accurate transition probabilities</td></tr>
+							<tr><td>✔ Used in AI planning and robotics</td><td>❌ Computationally expensive for large state spaces</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Robotics 🤖</strong> – MDPs help in robot motion planning.</li>
+							<li>✔ <strong>Healthcare 🏥</strong> – Optimizing treatment strategies for patients.</li>
+							<li>✔ <strong>Finance 📈</strong> – Modeling stock market decision processes.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+			
+			'q_learning': `
+				<div class="ml-section">
+					<h2>📌 Q-Learning (Reinforcement Learning)</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Introduction</h3>
+						<p><strong>Definition:</strong> Q-Learning is an off-policy reinforcement learning algorithm that learns an optimal action-selection policy for an agent by iteratively updating Q-values.</p>
+						<p><strong>Mathematical Representation:</strong></p>
+						<p class="math-formula">\( Q(s, a) = Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] \)</p>
+						<ul>
+							<li>✔ \( Q(s, a) \) → Q-value for taking action \( a \) in state \( s \).</li>
+							<li>✔ \( \alpha \) → Learning rate.</li>
+							<li>✔ \( \gamma \) → Discount factor (0 ≤ γ ≤ 1).</li>
+							<li>✔ \( r \) → Reward received after taking action \( a \).</li>
+							<li>✔ \( s' \) → Next state after action \( a \).</li>
+							<li>✔ \( \max_{a'} Q(s', a') \) → Best Q-value for the next state.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Python Implementation</h3>
+						<pre class="code-block">
+			import numpy as np
+
+			# 📌 Initialize Environment
+			states = ["S1", "S2", "S3", "S4"]
+			actions = ["A1", "A2"]
+			Q = np.zeros((len(states), len(actions)))  # Initialize Q-table
+
+			# 📌 Define Reward Table
+			rewards = np.array([
+				[0, 10],  # S1: Reward for A1 and A2
+				[-10, 20],  # S2
+				[5, 15],  # S3
+				[0, 0]  # S4 (Terminal State)
+			])
+
+			alpha = 0.1  # Learning rate
+			gamma = 0.9  # Discount factor
+			episodes = 1000  # Number of training episodes
+
+			# 📌 Q-Learning Algorithm
+			for episode in range(episodes):
+				state = np.random.choice(len(states))  # Start at a random state
+				while state != 3:  # Loop until reaching terminal state
+					action = np.random.choice(len(actions))  # Choose random action
+					next_state = np.random.choice(len(states))  # Move to next state
+					reward = rewards[state, action]
+					
+					# Q-value update formula
+					Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state]) - Q[state, action])
+					state = next_state  # Move to next state
+
+			print("Final Q-Table:")
+			print(Q)
+						</pre>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Advanced Concepts & Research Extensions</h3>
+						<ul>
+							<li>✔ <strong>Deep Q-Networks (DQN):</strong> Using deep learning instead of Q-tables.</li>
+							<li>✔ <strong>Double Q-Learning:</strong> Reduces overestimation bias in Q-learning.</li>
+							<li>✔ <strong>Multi-Agent Q-Learning:</strong> Extends Q-learning for multi-agent environments.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>4️⃣ Pros & Cons</h3>
+						<table class="styled-table">
+							<tr><th>Pros ✅</th><th>Cons ❌</th></tr>
+							<tr><td>✔ Simple and effective for small environments</td><td>❌ Inefficient for large state spaces</td></tr>
+							<tr><td>✔ Can handle stochastic environments</td><td>❌ Requires extensive exploration</td></tr>
+						</table>
+					</div>
+
+					<div class="content-box">
+						<h3>5️⃣ Real-World Applications</h3>
+						<ul>
+							<li>✔ <strong>Game AI 🎮</strong> – Training agents to play games like Atari & Chess.</li>
+							<li>✔ <strong>Robotics 🤖</strong> – Reinforcement learning in robotic control systems.</li>
+							<li>✔ <strong>Finance & Trading 📈</strong> – Q-learning applied in algorithmic trading.</li>
+						</ul>
+					</div>
+				</div>
+			`,
+
+			'sas_viya_intro': `
+				<div class="ml-section">
+					<h2>📌 Introduction to SAS Viya</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ What is SAS Viya?</h3>
+						<p><strong>Definition:</strong> SAS Viya is a cloud-enabled, scalable, and high-performance analytics platform designed for data science, machine learning, and artificial intelligence.</p>
+						<p>It supports a variety of programming languages, including **SAS, Python, R, and REST APIs**, making it a flexible tool for **big data processing and model deployment**.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Why Use SAS Viya for Machine Learning?</h3>
+						<ul>
+							<li>✔ <strong>High-Performance Computing:</strong> Supports in-memory distributed processing.</li>
+							<li>✔ <strong>Automated Machine Learning (AutoML):</strong> Quickly builds models with optimized hyperparameters.</li>
+							<li>✔ <strong>Seamless Integration:</strong> Works with Python, R, and cloud-based services.</li>
+							<li>✔ <strong>Interactive Interface:</strong> Provides both GUI-based (SAS Studio) and code-based solutions.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers **gain hands-on experience**, we provide **14 practical exercises** that demonstrate how to use SAS Viya for machine learning tasks.</p>
+						<p>Each practical focuses on different aspects of **data handling, preprocessing, modeling, and evaluation** in SAS Viya.</p>
+					</div>
+
+				</div>
+			`,
+
+
+			'python_libraries': `
+				<div class="ml-section">
+					<h2>📌 Introduction to Python for Machine Learning</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Why Use Python for Machine Learning?</h3>
+						<p><strong>Definition:</strong> Python is the most widely used programming language for machine learning due to its simplicity, extensive libraries, and strong community support.</p>
+						<p>Python provides powerful libraries such as **NumPy, Pandas, Scikit-Learn, TensorFlow, and PyTorch**, making it a go-to language for **data processing, model building, and deep learning applications**.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Key Features of Python for ML</h3>
+						<ul>
+							<li>✔ <strong>Easy-to-Use Syntax:</strong> Allows quick prototyping and experimentation.</li>
+							<li>✔ <strong>Rich Ecosystem:</strong> Comes with numerous ML/DL libraries (Scikit-Learn, TensorFlow, PyTorch, etc.).</li>
+							<li>✔ <strong>Visualization Capabilities:</strong> Matplotlib and Seaborn for detailed data analysis.</li>
+							<li>✔ <strong>Scalability & Performance:</strong> Compatible with cloud and distributed computing platforms.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers **gain hands-on experience**, we provide **14 practical exercises** demonstrating Python's capabilities in machine learning.</p>
+						<p>Each practical covers different aspects of **data preprocessing, modeling, optimization, and evaluation** in Python.</p>
+					</div>
+
+				</div>
+			`,
+
+			'viyaP1': `
+				<h1 class="blue-bolt">📌 Linear Regression – Predicting Diabetes Progression</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.DIABETES</p>
+					<p><strong>Problem Statement:</strong> Predict disease progression based on patient health metrics using <strong>Linear Regression</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train a <strong>Linear Regression model</strong> using <code>PROC REG</code>.</li>
+						<li>✔ Evaluate the model using <strong>MSE</strong> and <strong>R² score</strong>.</li>
+						<li>✔ Compare model performance when using standardized vs. raw data.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP2': `
+				<h1 class="blue-bolt">📌 Logistic Regression – Classifying Breast Cancer Tumors</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.BCANCER</p>
+					<p><strong>Problem Statement:</strong> Classify tumors as <strong>benign</strong> or <strong>malignant</strong> using <strong>Logistic Regression</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train a <strong>Logistic Regression model</strong> using <code>PROC LOGISTIC</code>.</li>
+						<li>✔ Analyze the <strong>confusion matrix</strong>, precision, and recall.</li>
+						<li>✔ Compare logistic regression with <strong>SVM</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP3': `
+				<h1 class="blue-bolt">📌 Decision Trees – Classifying Iris Flower Species</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.IRIS</p>
+					<p><strong>Problem Statement:</strong> Classify <strong>Iris flower species</strong> using a <strong>Decision Tree Classifier</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train a <strong>Decision Tree</strong> using <code>PROC HPSPLIT</code>.</li>
+						<li>✔ Tune <strong>max_depth</strong> and <strong>min_samples_split</strong> to prevent overfitting.</li>
+						<li>✔ Visualize the tree structure.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP4': `
+				<h1 class="blue-bolt">📌 Random Forest – Wine Quality Prediction</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.WINE</p>
+					<p><strong>Problem Statement:</strong> Classify wines into <strong>three quality categories</strong> using <strong>Random Forest</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train a <strong>Random Forest Classifier</strong> using <code>PROC HPFOREST</code>.</li>
+						<li>✔ Compare performance with a <strong>Decision Tree</strong>.</li>
+						<li>✔ Identify important features in classification.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP5': `
+				<h1 class="blue-bolt">📌 Support Vector Machines (SVM) – Handwritten Digit Recognition</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.DIGITS</p>
+					<p><strong>Problem Statement:</strong> Train an <strong>SVM classifier</strong> to recognize handwritten digits using SAS Viya.</p>
+					<ul>
+						<li>✔ Train an <strong>SVM model</strong> using <code>PROC SVM</code>.</li>
+						<li>✔ Experiment with different <strong>kernel types</strong> (linear, RBF, polynomial).</li>
+						<li>✔ Compare results with <strong>Decision Trees</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP6': `
+				<h1 class="blue-bolt">📌 K-Means Clustering – Clustering Handwritten Digits</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.DIGITS</p>
+					<p><strong>Problem Statement:</strong> Cluster handwritten digit images into 10 groups using <strong>K-Means Clustering</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train a <strong>K-Means model</strong> using <code>PROC FASTCLUS</code>.</li>
+						<li>✔ Evaluate cluster quality using <strong>Adjusted Rand Index (ARI)</strong>.</li>
+						<li>✔ Visualize the clustering results.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP13': `
+				<h1 class="blue-bolt">📌 Generative Adversarial Networks (GANs) – Image Generation</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.MNIST</p>
+					<p><strong>Problem Statement:</strong> Train a <strong>Generative Adversarial Network (GAN)</strong> in SAS Viya to generate realistic handwritten digits.</p>
+					<ul>
+						<li>✔ Implement a <strong>basic GAN architecture</strong> with a <strong>generator</strong> and <strong>discriminator</strong>.</li>
+						<li>✔ Train the model using <code>PROC DNN</code> in SAS Viya.</li>
+						<li>✔ Visualize generated digits and analyze model convergence.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP7': `
+				<h1 class="blue-bolt">📌 Principal Component Analysis (PCA) – Dimensionality Reduction</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.DIGITS</p>
+					<p><strong>Problem Statement:</strong> Reduce the dimensionality of the <strong>Digits dataset</strong> using <strong>PCA</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Perform <strong>PCA</strong> using <code>PROC PRINCOMP</code>.</li>
+						<li>✔ Determine the minimum number of components needed to retain <strong>95% variance</strong>.</li>
+						<li>✔ Visualize the reduced dataset in <strong>2D scatter plots</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP8': `
+				<h1 class="blue-bolt">📌 XGBoost – Predicting Wine Quality</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.WINE</p>
+					<p><strong>Problem Statement:</strong> Use <strong>XGBoost</strong> in SAS Viya to classify wine quality.</p>
+					<ul>
+						<li>✔ Train a <strong>Gradient Boosting model</strong> using <code>PROC GRADBOOST</code>.</li>
+						<li>✔ Compare <strong>XGBoost</strong> with <strong>Random Forest</strong> and <strong>Decision Trees</strong>.</li>
+						<li>✔ Perform <strong>hyperparameter tuning</strong> for better accuracy.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP9': `
+				<h1 class="blue-bolt">📌 Artificial Neural Networks (ANN) – Fashion Item Classification</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.FASHION</p>
+					<p><strong>Problem Statement:</strong> Train an <strong>Artificial Neural Network (ANN)</strong> in SAS Viya.</p>
+					<ul>
+						<li>✔ Train an ANN model using <code>PROC NNET</code>.</li>
+						<li>✔ Tune hyperparameters such as <strong>number of hidden layers</strong> and <strong>neurons</strong>.</li>
+						<li>✔ Compare with a simple <strong>Logistic Regression model</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP10': `
+				<h1 class="blue-bolt">📌 Convolutional Neural Networks (CNN) – CIFAR-10 Image Classification</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.CIFAR10</p>
+					<p><strong>Problem Statement:</strong> Train a <strong>Convolutional Neural Network (CNN)</strong> in SAS Viya to classify images.</p>
+					<ul>
+						<li>✔ Train a <strong>CNN model</strong> using <code>PROC DNN</code>.</li>
+						<li>✔ Experiment with architectures like <strong>ResNet</strong> and <strong>VGG</strong>.</li>
+						<li>✔ Apply <strong>data augmentation</strong> to improve generalization.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP11': `
+				<h1 class="blue-bolt">📌 Recurrent Neural Networks (RNN) – Sentiment Analysis</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.IMDB</p>
+					<p><strong>Problem Statement:</strong> Train an <strong>RNN model</strong> in SAS Viya for sentiment analysis.</p>
+					<ul>
+						<li>✔ Train an <strong>LSTM-based RNN</strong> using <code>PROC DNN</code>.</li>
+						<li>✔ Use <strong>word embeddings</strong> for better text representation.</li>
+						<li>✔ Compare RNN with <strong>Logistic Regression</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP12': `
+				<h1 class="blue-bolt">📌 Transformer Model (BERT) – Fake News Detection</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.FAKENEWS</p>
+					<p><strong>Problem Statement:</strong> Fine-tune a <strong>pre-trained BERT model</strong> in SAS Viya for fake news detection.</p>
+					<ul>
+						<li>✔ Train a <strong>BERT model</strong> using <code>PROC NLP</code> in SAS Viya.</li>
+						<li>✔ Use <strong>transfer learning</strong> for text classification.</li>
+						<li>✔ Compare BERT performance with <strong>traditional NLP models</strong>.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP13': `
+				<h1 class="blue-bolt">📌 Generative Adversarial Networks (GANs) – Image Generation</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> SASHELP.MNIST</p>
+					<p><strong>Problem Statement:</strong> Train a <strong>Generative Adversarial Network (GAN)</strong> in SAS Viya to generate realistic handwritten digits.</p>
+					<ul>
+						<li>✔ Implement a <strong>basic GAN architecture</strong> with a <strong>generator</strong> and <strong>discriminator</strong>.</li>
+						<li>✔ Train the model using <code>PROC DNN</code> in SAS Viya.</li>
+						<li>✔ Visualize generated digits and analyze model convergence.</li>
+					</ul>
+				</div>
+			`,
+
+			'viyaP14': `
+				<h1 class="blue-bolt">📌 Reinforcement Learning – Training an AI to Play CartPole</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> OpenAI Gym – CartPole-v1 (Integrated with SAS Viya)</p>
+					<p><strong>Problem Statement:</strong> Train a <strong>Deep Q-Network (DQN)</strong> in SAS Viya to balance a pole on a moving cart.</p>
+					<ul>
+						<li>✔ Integrate SAS Viya with <strong>OpenAI Gym</strong> for Reinforcement Learning.</li>
+						<li>✔ Implement a <strong>Deep Q-Network (DQN)</strong> using <code>PROC DNN</code>.</li>
+						<li>✔ Optimize agent performance through hyperparameter tuning.</li>
+					</ul>
+				</div>
+			`,
+
+
+			'pythonP1': `
+				<h1 class="blue-bolt">📌 Linear Regression – Predicting Diabetes Progression</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_diabetes()</p>
+					<p><strong>Problem Statement:</strong> Predict disease progression based on patient health metrics using **Linear Regression**.</p>
+					<ul>
+						<li>✔ Evaluate the model using **MSE** and **R² score**.</li>
+						<li>✔ Compare model performance when using standardized vs. raw data.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> Linear regression assumes a **linear relationship** between features and the target variable, which is often unrealistic for complex medical data.</p>
+					<p><strong>Research Inspiration:</strong> How can we integrate **deep learning regression models** to capture non-linearity? Can we use **graph-based regression** for medical datasets?</p>
+				</div>
+			`,
+
+			'pythonP2': `
+				<h1 class="blue-bolt">📌 Logistic Regression – Classifying Breast Cancer Tumors</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_breast_cancer()</p>
+					<p><strong>Problem Statement:</strong> Classify tumors as **benign** or **malignant** using **Logistic Regression**.</p>
+					<ul>
+						<li>✔ Analyze the **confusion matrix**, precision, and recall.</li>
+						<li>✔ Compare logistic regression with **SVM** for classification performance.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> Logistic regression struggles with **imbalanced datasets**, which is common in medical diagnosis where malignant cases are rare.</p>
+					<p><strong>Research Inspiration:</strong> How can **cost-sensitive learning** or **meta-learning techniques** be used to handle class imbalance in medical AI?</p>
+				</div>
+			`,
+
+			'pythonP3': `
+				<h1 class="blue-bolt">📌 Decision Trees – Classifying Iris Flower Species</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_iris()</p>
+					<p><strong>Problem Statement:</strong> Classify **Iris flower species** using a **Decision Tree Classifier**.</p>
+					<ul>
+						<li>✔ Visualize the tree using **graphviz**.</li>
+						<li>✔ Tune **max_depth** and **min_samples_split** to prevent overfitting.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> Decision trees tend to **overfit**, making them unreliable for high-dimensional data.</p>
+					<p><strong>Research Inspiration:</strong> Can we develop **adaptive tree-based models** that dynamically prune based on **active learning techniques**?</p>
+				</div>
+			`,
+
+			'pythonP4': `
+				<h1 class="blue-bolt">📌 Random Forest – Wine Quality Prediction</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_wine()</p>
+					<p><strong>Problem Statement:</strong> Classify wines into **three quality categories** using **Random Forest Classifier**.</p>
+					<ul>
+						<li>✔ Compare performance with a **Decision Tree**.</li>
+						<li>✔ Identify important features in classification.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> Random forests are **computationally expensive** and difficult to interpret.</p>
+					<p><strong>Research Inspiration:</strong> Can we improve model efficiency using **quantum computing** or **Neuro-Symbolic AI** to improve interpretability?</p>
+				</div>
+			`,
+
+			'pythonP5': `
+				<h1 class="blue-bolt">📌 Support Vector Machines (SVM) – Handwritten Digit Recognition</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_digits()</p>
+					<p><strong>Problem Statement:</strong> Train an **SVM classifier** to recognize handwritten digits.</p>
+					<ul>
+						<li>✔ Experiment with different **kernel types** (linear, RBF, polynomial).</li>
+						<li>✔ Compare results with a simple **KNN classifier**.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> SVM scales **poorly with large datasets**, making it unsuitable for real-time applications.</p>
+					<p><strong>Research Inspiration:</strong> Can **quantized SVMs** or **memory-efficient kernel approximations** enable SVM to compete with deep learning?</p>
+				</div>
+			`,
+
+			'pythonP6': `
+				<h1 class="blue-bolt">📌 K-Means Clustering – Clustering Handwritten Digits</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_digits()</p>
+					<p><strong>Problem Statement:</strong> Cluster handwritten digit images into 10 groups using **K-Means Clustering**.</p>
+					<ul>
+						<li>✔ Visualize cluster centroids and compare with actual labels.</li>
+						<li>✔ Evaluate cluster purity using **Adjusted Rand Index (ARI)**.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> K-Means requires **manual selection of k**, and struggles with **non-spherical clusters**.</p>
+					<p><strong>Research Inspiration:</strong> Can **self-supervised learning** or **autoencoder-assisted clustering** improve cluster quality in real-world, high-dimensional data?</p>
+				</div>
+			`,
+
+			'pythonP7': `
+				<h1 class="blue-bolt">📌 Principal Component Analysis (PCA) – Dimensionality Reduction</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_digits()</p>
+					<p><strong>Problem Statement:</strong> Reduce the dimensionality of the **Digits dataset** from 64 to 2 using **PCA**.</p>
+					<ul>
+						<li>✔ Determine the minimum number of components needed to retain **95% variance**.</li>
+						<li>✔ Visualize the reduced dataset in **2D scatter plots**.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> PCA assumes **linear relationships**, which fails to capture complex non-linear structures.</p>
+					<p><strong>Research Inspiration:</strong> How can **non-linear alternatives** like **Kernel PCA, t-SNE, or UMAP** improve dimensionality reduction for deep learning?</p>
+				</div>
+			`,
+
+			'pythonP8': `
+				<h1 class="blue-bolt">📌 XGBoost – Predicting Wine Quality</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> sklearn.datasets.load_wine()</p>
+					<p><strong>Problem Statement:</strong> Use **XGBoost** to classify wines into three categories and optimize hyperparameters.</p>
+					<ul>
+						<li>✔ Compare XGBoost with **Random Forest** and **Decision Trees**.</li>
+						<li>✔ Perform hyperparameter tuning using **GridSearchCV**.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> XGBoost models are prone to **overfitting** on small datasets and require **fine-tuning**.</p>
+					<p><strong>Research Inspiration:</strong> Can **Neural Boosting** or **Hybrid DL-XGBoost models** help bridge the gap between tree-based models and deep learning?</p>
+				</div>
+			`,
+
+			'pythonP9': `
+				<h1 class="blue-bolt">📌 Artificial Neural Networks (ANN) – Fashion Item Classification</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> tensorflow.keras.datasets.fashion_mnist</p>
+					<p><strong>Problem Statement:</strong> Train an **ANN model** on Fashion-MNIST for clothing classification.</p>
+					<ul>
+						<li>✔ Tune the number of hidden layers and neurons.</li>
+						<li>✔ Compare with logistic regression.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> ANN models struggle with **vanishing gradients** and require **large datasets** for generalization.</p>
+					<p><strong>Research Inspiration:</strong> How can **attention mechanisms** or **self-supervised learning** make ANNs more data-efficient?</p>
+				</div>
+			`,
+
+			'pythonP10': `
+				<h1 class="blue-bolt">📌 Convolutional Neural Networks (CNN) – CIFAR-10 Image Classification</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> tensorflow.keras.datasets.cifar10</p>
+					<p><strong>Problem Statement:</strong> Train a **CNN** to classify images into 10 categories.</p>
+					<ul>
+						<li>✔ Experiment with different architectures like **ResNet and VGG**.</li>
+						<li>✔ Use data augmentation for better generalization.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> CNNs require **huge labeled datasets** and are prone to **adversarial attacks**.</p>
+					<p><strong>Research Inspiration:</strong> Can **self-supervised CNNs** or **transformer-based vision models** (ViT) reduce data dependency?</p>
+				</div>
+			`,
+
+			'pythonP11': `
+				<h1 class="blue-bolt">📌 Recurrent Neural Networks (RNN) – IMDB Sentiment Analysis</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> tensorflow.keras.datasets.imdb</p>
+					<p><strong>Problem Statement:</strong> Train an **RNN model (LSTM/GRU)** to classify IMDB movie reviews as **positive or negative**.</p>
+					<ul>
+						<li>✔ Use **word embeddings** for better text representation.</li>
+						<li>✔ Compare **RNN with logistic regression**.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> RNNs struggle with **long-term dependencies** and suffer from **vanishing gradients**.</p>
+					<p><strong>Research Inspiration:</strong> How do **transformer-based models** (GPT, BERT) overcome these limitations, and what’s next beyond transformers?</p>
+				</div>
+			`,
+
+
+			'pythonP12': `
+				<h1 class="blue-bolt">📌 Transformer Model (BERT) – Fake News Detection</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> Hugging Face datasets: "fake_news"</p>
+					<p><strong>Problem Statement:</strong> Fine-tune **BERT** to classify news articles as real or fake.</p>
+					<ul>
+						<li>✔ Compare BERT with traditional NLP models.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> BERT is **computationally expensive**, requiring **high-end GPUs** for real-time inference.</p>
+					<p><strong>Research Inspiration:</strong> How can **low-rank approximation** and **knowledge distillation** reduce BERT’s computational footprint while maintaining accuracy?</p>
+				</div>
+			`,
+
+			'pythonP13': `
+				<h1 class="blue-bolt">📌 Generative Adversarial Networks (GANs) – Image Generation</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> tensorflow.keras.datasets.mnist</p>
+					<p><strong>Problem Statement:</strong> A research team wants to generate realistic handwritten digits using **GANs**. Train a **Generative Adversarial Network (GAN)** on the **MNIST dataset**.</p>
+					<ul>
+						<li>✔ Implement a **basic GAN architecture** with a **generator** and **discriminator**.</li>
+						<li>✔ Train the model and visualize generated digits.</li>
+						<li>✔ Experiment with **DCGAN (Deep Convolutional GANs)** for better results.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> GANs suffer from **mode collapse**, where the generator produces limited variations of outputs.</p>
+					<p><strong>Research Inspiration:</strong> How can **diffusion models** (e.g., Stable Diffusion) or **self-supervised GAN training** improve the quality and diversity of generated samples?</p>
+				</div>
+			`,
+
+			'pythonP14': `
+				<h1 class="blue-bolt">📌 Reinforcement Learning – Training an AI to Play CartPole</h1>
+				<div class="content-box">
+					<p><strong>Dataset:</strong> OpenAI Gym – CartPole-v1</p>
+					<p><strong>Problem Statement:</strong> Train a **Deep Q-Network (DQN)** to balance a pole on a moving cart.</p>
+					<ul>
+						<li>✔ Implement **Q-learning** and improve with **Deep Q-Learning**.</li>
+						<li>✔ Compare **policy-based** and **value-based** RL methods.</li>
+					</ul>
+					<h3>📢 Discussion Topic</h3>
+					<p><strong>Key Limitation:</strong> RL models require **massive training** and are **data inefficient**.</p>
+					<p><strong>Research Inspiration:</strong> Can **meta-learning** or **self-supervised reinforcement learning** enable RL agents to generalize across environments?</p>
+				</div>
+			`,
+
+			'decoding_regression': `
+				<h1 class="blue-bolt">📌 Decoding-Based Regression</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Decoding-based regression is a technique where we reconstruct (decode) the original data or target variable using a learned representation.</p>
+					<p><strong>Concept:</strong> Instead of directly predicting the target, the model learns a hidden representation and then "decodes" it back to predict values.</p>
+					<ul>
+						<li>✔ Used in **autoencoders**, where an encoder compresses data and a decoder reconstructs it.</li>
+						<li>✔ Helps in cases where the relationship between inputs and outputs is **complex and nonlinear**.</li>
+						<li>✔ Common in **image processing**, **speech recognition**, and **medical diagnosis**.</li>
+					</ul>
+					<p><strong>Example:</strong> In **brain-computer interfaces (BCI)**, brain signals are **encoded** into features, and a **decoder** predicts movement.</p>
+				</div>
+			`,
+
+			'geometric_deep_learning': `
+				<h1 class="blue-bolt">📌 Geometric Deep Learning</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Geometric deep learning extends traditional deep learning to **non-Euclidean data** like graphs, manifolds, and 3D structures.</p>
+					<p><strong>Concept:</strong> Instead of processing flat data (images, text, tables), the model understands **complex spatial relationships** in data.</p>
+					<ul>
+						<li>✔ Used in **graph neural networks (GNNs)**, which analyze social networks, molecules, and recommendation systems.</li>
+						<li>✔ Works well in **3D modeling**, such as **protein folding** and **autonomous driving**.</li>
+						<li>✔ Helps AI learn **structural patterns**, improving interpretability and generalization.</li>
+					</ul>
+					<p><strong>Example:</strong> A **GNN** can predict how a **drug molecule** interacts with proteins, leading to better drug discovery.</p>
+				</div>
+			`,
+
+			'feature_crosses': `
+				<h1 class="blue-bolt">📌 Feature Crosses</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Feature crossing is a technique where multiple input features are combined to create **new, more informative features**.</p>
+					<p><strong>Concept:</strong> Instead of treating features separately, **crossing them** captures **interactions** that improve predictions.</p>
+					<ul>
+						<li>✔ Used in **logistic regression, decision trees, and deep learning models**.</li>
+						<li>✔ Helps models **detect hidden patterns** that individual features may not reveal.</li>
+						<li>✔ Improves performance in **recommendation systems, fraud detection, and ad targeting**.</li>
+					</ul>
+					<p><strong>Example:</strong> In predicting house prices, crossing **number of bedrooms** with **square footage** gives a better idea of **living space efficiency**.</p>
+				</div>
+			`,
+
+			'embeddings': `
+				<h1 class="blue-bolt">📌 Embeddings</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Embeddings are **dense vector representations** of data, transforming high-dimensional inputs (like words, users, or items) into **lower-dimensional space**.</p>
+					<p><strong>Concept:</strong> Instead of treating data as raw numbers or categories, embeddings capture **relationships and similarities** between items.</p>
+					<ul>
+						<li>✔ Used in **natural language processing (NLP)** for understanding words and sentences.</li>
+						<li>✔ Powers **recommendation engines**, where similar users or products are placed close together in embedding space.</li>
+						<li>✔ Helps models learn **structured information** in a compact, efficient way.</li>
+					</ul>
+					<p><strong>Example:</strong> In **Word2Vec**, words like "king" and "queen" have similar embeddings, allowing models to understand relationships like **gender, roles, and hierarchy**.</p>
+				</div>
+			`,
+
+			'genetic_algorithms': `
+				<h1 class="blue-bolt">📌 Genetic Algorithms</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Genetic algorithms (GAs) are **optimization techniques inspired by natural evolution**, used to solve problems by mimicking **selection, mutation, and crossover**.</p>
+					<p><strong>Concept:</strong> Instead of brute-force searching, GAs evolve solutions over generations, selecting the "fittest" candidates to improve results.</p>
+					<ul>
+						<li>✔ Used in **machine learning hyperparameter tuning, robotics, and game AI**.</li>
+						<li>✔ Finds **optimal solutions** when traditional algorithms struggle.</li>
+						<li>✔ Can be combined with **deep learning** to create more adaptive models.</li>
+					</ul>
+					<p><strong>Example:</strong> In **neural architecture search (NAS)**, GAs evolve different **neural network structures** to find the most efficient model.</p>
+				</div>
+			`,
+
+
+
+
+		};
+
+		contentArea.innerHTML = content[topic] || `<p>⏳ <strong>Under Processing...</strong> Stay tuned! 🚀</p>`;
+
+		document.querySelectorAll('.sub-menu div').forEach(item => {
+			item.classList.remove('active');
+		});
+		if (element) {
+			element.classList.add('active');
+		}
+	}
+    </script>
+</body>
+</html>
