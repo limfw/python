@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master - Machine Learning with SAS Viya & Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"> 
+	            <p>Master - Machine Learning Techniques for Data Mining</p>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2 class="orange-accent">Course Content</h2>
+			<div class="menu-item"><a href="index.html" style="text-decoration: none; color: inherit;">Basic Python</a></div>
+			<div class="menu-item"><a href="ml.html" style="text-decoration: none; color: inherit;">Basic Machine Learning</a></div>			
+            <div class="menu-item" onclick="showContent('welcome')">Course Overview</div>
+			
+            <div class="menu-item" onclick="toggleSubMenu('ml_inter')">Intermediate Machine Learning </div>
+            <div id="ml_inter" class="sub-menu">
+                <div class="menu-item" onclick="toggleSubMenu('ml_foundt')">Foundation of Machine Learning </div>
+                <div id="ml_foundt" class="sub-menu">
+                    <div onclick="showContent('ml_history')">Historical Development of ML</div>
+                    <div onclick="showContent('ml_math')">Mathematical Foundations</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_arch')">Model Architecture</div>
+                <div id="ml_arch" class="sub-menu">
+                    <div onclick="showContent('ml_decision_trees')">Decision Trees and Ensemble Methods</div>
+                    <div onclick="showContent('ml_neural_networks')">Neural Networks and Universal Approximation</div>
+					<div onclick="showContent('ml_svmss')">Support Vector Machines</div>
+                </div>
+                
+                <div class="menu-item" onclick="toggleSubMenu('ml_anl')">Model Analysis</div>
+                <div id="ml_anl" class="sub-menu">
+                    <div onclick="showContent('ml_fs')">Feature Selection and Dimensionality Reduction</div>
+                    <div onclick="showContent('ml_ce')">Cross-Validation and Model Evaluation</div>
+                    <div onclick="showContent('ml_pm')">Performance Metrics and Statistical Tests</div>					
+                    <div onclick="showContent('ml_ord')">Overfitting, Regularization and Data Imbalance</div>
+                </div>
+
+                <div class="menu-item" onclick="toggleSubMenu('ml_modell')">Applications and Implementation</div>
+                <div id="ml_modell" class="sub-menu">
+                    <div onclick="showContent('ml_bench')">Benchmark ML Problems</div>
+                    <div onclick="showContent('ml_science')">ML for Scientific & Engineering Applications</div>
+                </div>
+
+
+
+                <div class="menu-item" onclick="toggleSubMenu('ml_hybrid')"> Discussion & Self Study </div>
+                <div id="ml_hybrid" class="sub-menu">
+                    <div onclick="showContent('ml_d1')">AI Agent </div>
+					<div onclick="showContent('ml_d2')">How a machine understand your questions? </div>
+					<div onclick="showContent('ml_d3')">Sandbox: Build a model to Understand AI Agents  </div>
+					<div onclick="showContent('ml_d4')">Sandbox: Build Your Own GPT Model with Your Data </div>
+					<div onclick="showContent('ml_d5')">Sandbox: coming soon ! </div>
+					<div onclick="showContent('ml_d6')">Sandbox: coming soon ! </div>
+					<div onclick="showContent('ml_d7')">Sandbox: coming soon ! </div>
+                </div>
+
+
+            </div>
+			<div class="menu-item" onclick="toggleSubMenu('sas_ml')">SAS Viya </div>
+            <div id="sas_ml" class="sub-menu">
+                    <div onclick="showContent('sas_viya_intro')">Practice with SAS Viya</div>
+						<div onclick="showContent('viyaP1')">Practical 1</div>
+						<div onclick="showContent('viyaP2')">Practical 2</div>
+						<div onclick="showContent('viyaP3')">Practical 3</div>
+						<div onclick="showContent('viyaP4')">Practical 4</div>
+						<div onclick="showContent('viyaP5')">Practical 5</div>
+						<div onclick="showContent('viyaP6')">Practical 6</div>
+						<div onclick="showContent('viyaP7')">Practical 7</div>	
+                </div>
+			<div class="menu-item" onclick="toggleSubMenu('python_ml')">Python</div>
+            <div id="python_ml" class="sub-menu">
+                    <div onclick="showContent('python_libraries')">Practice with Python</div>
+						<div onclick="showContent('pythonP1')">Practical 1</div>
+						<div onclick="showContent('pythonP2')">Practical 2</div>
+						<div onclick="showContent('pythonP3')">Practical 3</div>
+						<div onclick="showContent('pythonP4')">Practical 4</div>
+						<div onclick="showContent('pythonP5')">Practical 5</div>
+						<div onclick="showContent('pythonP6')">Practical 6</div>
+						<div onclick="showContent('pythonP7')">Practical 7</div>
+                </div>			
+			<div class="menu-item" onclick="toggleSubMenu('Others')">Others</div>
+			<div id="Others" class="sub-menu">
+					<div onclick="showContent('decoding_regression')">Decoding Regression</div>
+					<div onclick="showContent('geometric_deep_learning')">Geometric Deep Learning</div>
+					<div onclick="showContent('feature_crosses')">Feature Crosses</div>
+					<div onclick="showContent('embeddings')">Embeddings</div>
+					<div onclick="showContent('genetic_algorithms')">Genetic Algorithms</div>		
+                </div>	
+
+        </div>
+		
+		
+        <div class="content" id="content-area">
+            <h1 class="blue-bolt">Master Machine Learning Techniques for Data Mining</h1>
+				<p>
+					This course focuses on the theoretical foundations and practical applications of machine learning. 
+					The aim is to provide you with a deep understanding of ML principles, mathematical frameworks, and research methodologies
+					while equipping you with hands-on skills to implement ML models in various domains.
+				</p>
+
+				<p>
+					The main topics that will be discussed include:
+					model selection and evaluation, feature selection, supervised and unsupervised learning, neural networks, 
+					Bayesian learning, support vector machines, clustering, density estimation, ensemble learning, 
+					reinforcement learning, and deep learning architectures.
+				</p>
+
+				<p>
+					This course also emphasizes practical implementation and research-focused analysis using 
+					<strong>Python</strong> and <strong>SAS Viya</strong>. You will learn how to design, analyze, and optimize ML models using 
+					Scikit-learn, TensorFlow, PyTorch, and SAS Viya’s advanced ML tools for large-scale processing.
+				</p>
+
+				<p>
+					By the end of this course, you will be able to critically evaluate ML models, optimize performance, 
+					and apply ML techniques to both real-world problems and research-driven innovations. 
+					You will also gain a strong foundation in machine learning theory, enabling you to contribute to ML research and advancements.
+				</p>
+        </div>
+    </div>
+    
+        <div class="footer">
+            <p>Prepare by 😀 version 1.5 - 2025 ! &  Build a Better Future begin from 2025 ! </p>
+        </div>
+    <script>
+	function toggleSubMenu(id) {
+		var submenu = document.getElementById(id);
+		if (submenu) {
+			submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+		}
+	}
+
+	function showContent(topic, element) {
+		let contentArea = document.getElementById('content-area');
+
+		let content = {
+			'welcome': `
+					<h1 class="blue-bolt">📌 Course Overview</h1>
+
+					<div class="content-box">
+						<p><strong>Course Objective:</strong> This course is designed to provide a practical yet research-oriented approach to machine learning, leveraging the power of Python and SAS Viya.</p>
+						<p>You will explore advanced ML concepts, model architectures, and evaluation techniques, with an emphasis on both theoretical foundations and real-world applications.</p>
+					</div>
+
+					<h2 class="blue-bolt">🔍 Key Topics Covered</h2>
+
+					<div class="content-box">
+						<p>Throughout this course, we will cover essential topics, including:</p>
+						<ul>
+							<li> Supervised & Unsupervised Learning(Classification, Regression, Clustering).</li>
+							<li> Decision Trees & Neural Networks (MLP, Deep Learning Architectures).</li>
+							<li> Ensemble Methods (Bagging, Boosting, Random Forests).</li>
+							<li> Reinforcement Learning & Markov Decision Processes.</li>
+							<li> Model Selection, Validation & Robustness in Research.</li>
+							<li> Hands-on implementation using Python & SAS Viya.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">🛠 Practical Implementation</h2>
+
+					<div class="content-box">
+						<p>This course combines theoretical depth with practical applications, allowing students to:</p>
+						<ul>
+							<li> Work with Python libraries like Scikit-learn, TensorFlow, and PyTorch.</li>
+							<li> Use SAS Viya for large-scale ML model building.</li>
+							<li> Implement end-to-end ML workflows from data preprocessing to model deployment.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">🎯 Learning Outcomes</h2>
+
+					<div class="content-box">
+						<p>By the end of this course, you will have the skills to:</p>
+						<ul>
+							<li> Build, train, and evaluate ML models for real-world applications.</li>
+							<li> Understand ML model reliability and robustness for scientific research.</li>
+							<li> Deploy AI-powered solutions in diverse domains (business, engineering, and research).</li>
+							<li> Apply theoretical concepts to advance ML research and innovation.</li>
+						</ul>
+					</div>
+			`,
+					
+			'ml_history': `
+				<h1 class="blue-bolt">📌 Historical Development of Machine Learning</h1>
+
+				<div class="content-box">
+					<p><strong>Objective:</strong> This lecture explores how Machine Learning (ML) has evolved over time, identifying key breakthroughs, algorithms, and trends that have shaped modern ML research and applications.</p>
+					<ul>
+						<li> Understand the historical milestones in ML.</li>
+						<li> Recognize how statistical learning and deep learning evolved.</li>
+						<li> Examine the impact of AI Winters and breakthroughs in computing power.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">1️⃣ Introduction to Machine Learning History</h2>
+
+				<div class="content-box">
+					<p><strong>Definition:</strong> Machine Learning is a field of artificial intelligence (AI) that enables computers to learn from data and make decisions without explicit programming.</p>
+					<p><strong>Relationship with AI & Data Science:</strong></p>
+					<ul>
+						<li> Artificial Intelligence (AI): A broader concept including ML, deep learning, and expert systems.</li>
+						<li> Data Science: The process of extracting insights from data, often using ML algorithms.</li>
+					</ul>
+					<p><strong>ML Paradigms:</strong></p>
+					<ul>
+						<li> Supervised Learning: Trains models on labeled data (e.g., regression, classification).</li>
+						<li> Unsupervised Learning: Identifies patterns in unlabeled data (e.g., clustering, dimensionality reduction).</li>
+						<li> Reinforcement Learning: Uses rewards and penalties to train decision-making models.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">2️⃣ Early Foundations (1950s - 1970s): Birth of AI & ML</h2>
+
+				<div class="content-box">
+					<p><strong>Milestones:</strong></p>
+					<ul>
+						<li> Alan Turing (1950): Proposed the "Turing Test" to measure machine intelligence.</li>
+						<li> 1952 - Checkers AI (Arthur Samuel): The first self-learning program.</li>
+						<li> 1957 - Perceptron (Frank Rosenblatt):
+							<ul>
+								<li>✅ First ML model inspired by biological neurons.</li>
+								<li>✅ Introduced weights and learning via updates.</li>
+								<li>⚠ Limitation: Failed to solve the XOR problem (linear separability issue).</li>
+							</ul>
+						</li>
+						<li> 1960s - Symbolic AI vs. Statistical AI:
+							<ul>
+								<li>✅ Symbolic AI: Rule-based expert systems.</li>
+								<li>✅ Statistical AI: Early probabilistic models.</li>
+							</ul>
+						</li>
+						<li> 1970s - AI Winter #1: High expectations but limited computing power led to disillusionment.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">3️⃣ Statistical Learning & Rise of Practical ML (1980s - 1990s)</h2>
+
+				<div class="content-box">
+					<p><strong>Breakthroughs:</strong></p>
+					<ul>
+						<li> 1986 - Backpropagation Algorithm (Rumelhart, Hinton, Williams):
+							<ul>
+								<li>✅ Solved the XOR problem.</li>
+								<li>✅ Enabled training of multi-layer perceptrons (MLP).</li>
+							</ul>
+						</li>
+						<li> 1989 - Support Vector Machines (SVMs) (Vapnik & Cortes):
+							<ul>
+								<li>✅ Introduced the kernel trick for non-linear classification.</li>
+								<li>✅ Maximized the decision margin for better generalization.</li>
+							</ul>
+						</li>
+						<li> Ensemble Learning:
+							<ul>
+								<li>✅ 1995 - Random Forests (Breiman): Multiple decision trees for better accuracy.</li>
+								<li>✅ 1997 - AdaBoost (Freund & Schapire): Improved weak classifiers iteratively.</li>
+							</ul>
+						</li>
+						<li> 1990s - AI Winter #2: Computational limits slowed deep learning progress.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">4️⃣ The Rise of Machine Learning & Data Revolution (2000s - 2010s)</h2>
+
+				<div class="content-box">
+					<p><strong>Key Advancements:</strong></p>
+					<ul>
+						<li> 2006 - Deep Learning Revolution (Hinton, Bengio, LeCun):
+							<ul>
+								<li>✅ Introduced unsupervised pre-training for deep networks.</li>
+								<li>✅ Developed Restricted Boltzmann Machines (RBMs) & Autoencoders.</li>
+							</ul>
+						</li>
+						<li> 2009 - ImageNet Dataset (Fei-Fei Li):** Enabled large-scale deep learning research.</li>
+						<li> 2012 - AlexNet (Krizhevsky, Sutskever, Hinton):
+							<ul>
+								<li>✅ Demonstrated superiority of deep CNNs.</li>
+								<li>✅ Marked the beginning of deep learning dominance.</li>
+							</ul>
+						</li>
+						<li> 2014 - Generative Adversarial Networks (GANs) (Goodfellow et al.): Enabled AI-generated media.</li>
+						<li> 2017 - Transformers & Attention Mechanism (Vaswani et al.):
+							<ul>
+								<li>✅ Replaced CNNs & RNNs with self-attention**.</li>
+								<li>✅ Led to models like GPT, BERT, and modern LLMs.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">5️⃣ Modern AI: Deep Learning, Foundation Models & Beyond (2020s - Present)</h2>
+
+				<div class="content-box">
+					<p><strong>Recent Trends:</strong></p>
+					<ul>
+						<li> Self-Supervised Learning (SimCLR, MoCo, BYOL): Learning representations without labels.</li>
+						<li> Large Language Models (GPT, BERT, DeepSeek, OpenAI models): Scaling ML for text understanding.</li>
+						<li> Multimodal AI (CLIP, DALL-E, Sora): Combining vision, text, and speech.</li>
+						<li> AI for Scientific Discovery (AlphaFold, AI in healthcare & physics): ML-driven research acceleration.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">6️⃣ Ethical Considerations & Future of ML</h2>
+
+				<div class="content-box">
+					<p><strong>Challenges & Research Directions:</strong></p>
+					<ul>
+						<li> Bias & Fairness: Avoiding discrimination in AI models.</li>
+						<li> Explainability & Trustworthiness: SHAP, LIME, XAI techniques.</li>
+						<li> AI Alignment & Safety: Reinforcement Learning with Human Feedback (RLHF).</li>
+						<li> Future Research Areas: Neuromorphic computing, Quantum AI, Causal ML.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🔍 Lecture Summary & Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> ML evolved from rule-based AI to statistical learning to deep learning.</li>
+						<li> Breakthroughs like backpropagation, SVMs, and transformers shaped modern ML.</li>
+						<li> Trends focus on large-scale AI, self-supervised learning, and ethical AI.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">📚 Recommended Readings</h2>
+
+				<div class="content-box">
+					<ul>
+						<li>📖 <strong>The Perceptron</strong> - F. Rosenblatt (1958).</li>
+						<li>📖 <strong>A Training Algorithm for Optimal Margin Classifiers</strong> - Cortes & Vapnik (1995).</li>
+						<li>📖 <strong>Deep Learning</strong> - Ian Goodfellow, Yoshua Bengio, Aaron Courville (2016).</li>
+					</ul>
+				</div>		
+			`,
+
+			'ml_math': `
+				<h1 class="blue-bolt">📌 Mathematical Foundations for Machine Learning</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> A strong mathematical foundation is crucial for understanding the inner workings of machine learning models.</p>
+					<p>This section covers key mathematical concepts required to build, optimize, and analyze ML models.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Calculus: Derivatives, Gradients & Hessians</h2>
+
+				<div class="content-box">
+					<p><strong>Importance in ML:</strong> Calculus is the backbone of optimization techniques used in training machine learning models.</p>
+					<ul>
+						<li> <strong>Derivatives</strong> – Measure the rate of change; used in gradient-based optimization.</li>
+						<li> <strong>Gradients</strong> – Multi-dimensional derivatives used in <strong>Gradient Descent</strong>.</li>
+						<li> <strong>Hessians</strong> – Second-order derivatives used in advanced optimization (Newton’s method).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Linear Algebra: Vector Spaces, Eigenvalues & Eigenvectors</h2>
+
+				<div class="content-box">
+					<p><strong>Why it matters:</strong> Linear algebra is fundamental for data transformations, dimensionality reduction, and ML algorithms.</p>
+					<ul>
+						<li> <strong>Vector Spaces</strong> – Foundation of numerical data representation in ML.</li>
+						<li> <strong>Eigenvalues & Eigenvectors</strong> – Core concepts in <strong>Principal Component Analysis (PCA)</strong> and <strong>Singular Value Decomposition (SVD)</strong>.</li>
+						<li> <strong>Matrix Operations</strong> – Crucial for <strong>neural networks, covariance matrices, and transformations</strong>.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Probability & Statistics: Bayes’ Theorem, Distributions & Hypothesis Testing</h2>
+
+				<div class="content-box">
+					<p><strong>Why it matters:</strong> ML models make decisions based on probabilities and statistical reasoning.</p>
+					<ul>
+						<li> <strong>Bayes' Theorem</strong> – Key concept for probabilistic models (e.g., Naïve Bayes classifier).</li>
+						<li> <strong>Probability Distributions</strong> – Normal, Bernoulli, Poisson distributions (used in modeling uncertainty).</li>
+						<li> <strong>Hypothesis Testing</strong> – Used to validate ML model performance (e.g., t-tests, p-values).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Information Theory: Entropy & KL Divergence</h2>
+
+				<div class="content-box">
+					<p><strong>Application in ML:</strong> Information theory helps in feature selection, model regularization, and compression.</p>
+					<ul>
+						<li> <strong>Entropy</strong> – Measures uncertainty in probability distributions.</li>
+						<li> <strong>KL Divergence</strong> – Measures the difference between two probability distributions (used in <strong>model selection and variational inference</strong>).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Optimization Methods: Gradient Descent, Newton’s Method & Lagrange Multipliers</h2>
+
+				<div class="content-box">
+					<p><strong>Core to ML training:</strong> Optimization methods help minimize loss functions and improve model accuracy.</p>
+					<ul>
+						<li> <strong>Gradient Descent</strong> – Most common optimization method in <strong>deep learning</strong>.</li>
+						<li> <strong>Newton’s Method</strong> – Second-order optimization for convex problems.</li>
+						<li> <strong>Lagrange Multipliers</strong> – Used in constrained optimization (e.g., <strong>SVMs</strong> and <strong>regularization</strong>).</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>Understanding derivatives, gradients, and Hessians</strong> is essential for optimizing ML models.</li>
+						<li> <strong>Linear algebra underpins PCA, SVD, and neural network computations.</strong></li>
+						<li> <strong>Probability & statistics provide a framework for uncertainty modeling and inference.</strong></li>
+						<li> <strong>Information theory concepts like entropy and KL divergence aid in model evaluation.</strong></li>
+						<li> <strong>Optimization techniques drive model training efficiency and performance.</strong></li>
+					</ul>
+				</div>
+				`,
+				
+				'ml_decision_trees': `
+					<h1 class="blue-bolt">📌 Decision Trees & Ensemble Methods</h1>
+
+					<div class="content-box">
+						<p><strong>Overview:</strong> Decision trees are foundational supervised learning models that use <strong>hierarchical rule-based logic</strong> to make predictions. While intuitive and interpretable, they face limitations in real-world, high-dimensional problems. This has led to the widespread adoption of ensemble techniques, which aim to overcome individual model weaknesses through collective learning.</p>
+					</div>
+
+					<h2 class="blue-bolt">➤ Limitations of Traditional Decision Trees</h2>
+
+					<div class="content-box">
+						<p>Despite their popularity, decision trees struggle in the following areas:</p>
+						<ul>
+							<li>⚠️ <strong>High Variance:</strong> Small changes in training data can result in completely different trees.</li>
+							<li>⚠️ <strong>Overfitting:</strong> Trees can grow deep and memorize noise without proper regularization or pruning.</li>
+							<li>⚠️ <strong>Poor Generalization on Noisy Data:</strong> Sensitive to outliers and irrelevant features.</li>
+							<li>⚠️ <strong>Greedy Splitting:</strong> Uses local heuristics (e.g., information gain) that may not lead to a globally optimal tree structure.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">➤ Current Solutions: Ensemble Techniques</h2>
+
+					<div class="content-box">
+						<p>To overcome the instability and performance limitations of single trees, ensemble methods were introduced. These include:</p>
+						<ul>
+							<li>✅ <strong>Bagging (e.g., Random Forest):</strong> Reduces variance by averaging predictions from multiple randomized trees.</li>
+							<li>✅ <strong>Boosting (e.g., AdaBoost, XGBoost):</strong> Builds trees sequentially, each focusing on the mistakes of the previous one, leading to stronger performance on complex data.</li>
+							<li>✅ <strong>Gradient Boosting Variants (e.g., CatBoost, LightGBM):</strong> Use sophisticated optimization and handling of categorical variables for improved speed and accuracy.</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">💬 Critical Discussion Points</h2>
+
+					<div class="content-box">
+						<ul>
+							<li>🤔 <strong>Bias-Variance Tradeoff:</strong> How do ensemble methods balance this better than individual trees? Are there cases where ensembles can still overfit?</li>
+							<li>🤔 <strong>Interpretability vs Performance:</strong> As we move from single trees to ensembles, we lose transparency. Can we trust black-box models in critical domains (e.g., finance, healthcare)?</li>
+							<li>🤔 <strong>Data Efficiency:</strong> Ensembles require more data and training time. Are they suitable for small datasets or resource-constrained environments?</li>
+							<li>🤔 <strong>Beyond Trees:</strong> Are tree-based ensembles still optimal when compared to deep learning models on tabular or multimodal data?</li>
+						</ul>
+					</div>
+
+					<h2 class="blue-bolt">📚 Case Study: Credit Scoring with Decision Trees vs XGBoost</h2>
+
+					<div class="content-box">
+						<p>Credit scoring is a classic application where models predict whether a customer is likely to repay a loan.</p>
+						<ul>
+							<li>📊 <strong>Decision Tree:</strong> Easy to explain to regulators but often overfits and performs worse on imbalanced datasets.</li>
+							<li>🚀 <strong>XGBoost:</strong> Handles class imbalance with better accuracy and robustness. Can automatically learn feature interactions (e.g., income + age) that are difficult to express manually.</li>
+						</ul>
+						<p>In one experiment with a loan dataset (e.g., Lending Club), XGBoost outperformed Decision Trees by ~8% in AUC score, while also reducing false positives — critical for avoiding credit risk.</p>
+					</div>
+
+					<h2 class="blue-bolt">📈 Visual Code Example: Render a Simple Decision Tree</h2>
+
+					<div class="content-box">
+						<pre class="code-block">
+	from sklearn.tree import DecisionTreeClassifier, plot_tree
+	import matplotlib.pyplot as plt
+	from sklearn.datasets import load_iris
+
+	X, y = load_iris(return_X_y=True)
+	clf = DecisionTreeClassifier(max_depth=3)
+	clf.fit(X, y)
+
+	plt.figure(figsize=(10, 6))
+	plot_tree(clf, filled=True, feature_names=load_iris().feature_names, class_names=load_iris().target_names)
+	plt.show()
+						</pre>
+						<p>This code visualizes how a decision tree splits data from the Iris dataset. Try changing <code>max_depth</code> or using a different dataset (e.g., Titanic, credit scoring) for discussion.</p>
+					</div>
+
+					<h2 class="blue-bolt">🧪 What If We... (Collapsible Thought Experiments)</h2>
+
+					<div class="content-box">
+						<details>
+							<summary>🔍 What if we replace XGBoost with a simpler model?</summary>
+							<p>Would performance drop significantly? Can we justify simpler models in regulated domains where interpretability is critical?</p>
+						</details>
+						<details>
+							<summary>🔍 What if we treat class imbalance differently?</summary>
+							<p>Would oversampling or cost-sensitive learning improve decision tree accuracy on rare outcomes like loan defaults?</p>
+						</details>
+						<details>
+							<summary>🔍 What if we apply decision trees in high-dimensional data (e.g., genomics)?</summary>
+							<p>Would tree depth explode? What methods help manage the curse of dimensionality — PCA, feature selection, or embedded methods?</p>
+						</details>
+					</div>
+
+					<h2 class="blue-bolt">🤖 Real-World Challenge: Scaling Models in Large Systems</h2>
+
+					<div class="content-box">
+						<p>Large systems like ChatGPT face challenges that mirror decision tree problems at scale:</p>
+						<ul>
+							<li>⚙️ <strong>Interpretability:</strong> Unlike decision trees, transformer models are not inherently explainable. Techniques like SHAP, LIME, and attention visualization are used to bridge this gap.</li>
+							<li>⚙️ <strong>Overfitting:</strong> ChatGPT models are trained with millions of parameters. They rely on regularization techniques (dropout, early stopping, and large diverse datasets) to generalize well.</li>
+							<li>⚙️ <strong>Efficiency:</strong> Tree ensembles like XGBoost are fast on tabular data. In contrast, ChatGPT must optimize for token-based generation and use techniques like quantization and MoE (Mixture of Experts) to scale responses.</li>
+							<li>⚙️ <strong>Handling edge cases:</strong> In both trees and transformers, misclassification on rare inputs (outliers, adversarial queries) remains a major challenge.</li>
+						</ul>
+						<p><strong>Takeaway:</strong> Though different in architecture, decision tree models and large-scale LLMs like ChatGPT share common challenges in generalization, interpretability, and trust — and offer mutual inspiration across problem domains.</p>
+					</div>
+
+					<h2 class="blue-bolt">🎯 Summary for Master-Level Discussion</h2>
+
+					<div class="content-box">
+						<ul>
+							<li>✅ <strong>Decision trees offer simplicity but suffer from variance and lack of robustness.</strong></li>
+							<li>✅ <strong>Ensemble methods solve many issues but trade off interpretability and scalability.</strong></li>
+							<li>✅ <strong>Credit scoring is a real-world domain where these trade-offs are evident and measurable.</strong></li>
+							<li>✅ <strong>Critical thinking and hands-on experimentation are essential for understanding these techniques deeply.</strong></li>
+						</ul>
+					</div>
+				`,
+
+
+
+			'ml_neural_networks': `
+				<h1 class="blue-bolt">📌 Neural Networks & Universal Approximation</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Neural networks are a class of machine learning models inspired by the human brain, capable of learning complex patterns from data.</p>
+					<p>This lecture covers the **universal approximation theorem**, fundamental neural network architectures, optimization strategies, and techniques to address training challenges.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Multilayer Perceptron (MLP)</h2>
+
+				<div class="content-box">
+					<p><strong>What is an MLP?</strong> A fully connected neural network where each layer consists of neurons connected to all neurons in the next layer.</p>
+					<ul>
+						<li> <strong>Activation Functions:</strong> Introduce non-linearity into the network.</li>
+						<li> <strong>Common Activation Functions:</strong>
+							<ul>
+								<li>▶ <strong>Sigmoid</strong> – Used in early neural networks but suffers from vanishing gradients.</li>
+								<li>▶ <strong>ReLU (Rectified Linear Unit)</strong> – Helps mitigate vanishing gradients.</li>
+								<li>▶ <strong>Leaky ReLU & ELU</strong> – Alternative to ReLU that allows small negative outputs.</li>
+							</ul>
+						</li>
+						<li> <strong>Backpropagation:</strong> Algorithm for training neural networks by computing gradients using chain rule differentiation.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Radial-Basis Function Networks (RBFN)</h2>
+
+				<div class="content-box">
+					<p><strong>What is RBFN?</strong> A neural network model that uses radial basis functions as activation functions.</p>
+					<ul>
+						<li> <strong>Role in Function Approximation:</strong> Can approximate any continuous function.</li>
+						<li> <strong>Key Features:</strong>
+							<ul>
+								<li>▶ Uses <strong>Gaussian kernels</strong> to compute distance-based activations.</li>
+								<li>▶ More interpretable than deep networks.</li>
+								<li>▶ Effective for regression and classification tasks.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Deep Neural Networks (DNNs)</h2>
+
+				<div class="content-box">
+					<p><strong>What makes a network "deep"?</strong> A DNN consists of multiple hidden layers that allow hierarchical feature extraction.</p>
+					<p><strong>Challenges in Deep Learning:</strong></p>
+					<ul>
+						<li> <strong>Vanishing Gradient Problem:</strong> Gradients diminish as they propagate backward, slowing learning.</li>
+						<li> <strong>Solutions:</strong>
+							<ul>
+								<li>▶ <strong>Batch Normalization:</strong> Normalizes activations to stabilize learning.</li>
+								<li>▶ <strong>ReLU:</strong> Helps prevent gradients from shrinking.</li>
+								<li>▶ <strong>Residual Connections (ResNets):</strong> Allow gradients to bypass multiple layers.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Optimization Techniques</h2>
+
+				<div class="content-box">
+					<p><strong>Gradient-based optimization algorithms improve convergence and performance.</strong></p>
+					<ul>
+						<li> <strong>Adam (Adaptive Moment Estimation):</strong> Uses first and second moments of gradients for adaptive learning.</li>
+						<li> <strong>RMSProp (Root Mean Square Propagation):</strong> Maintains a moving average of squared gradients to adjust learning rates.</li>
+						<li> <strong>Nesterov Momentum:</strong> Improves momentum-based gradient descent by looking ahead at future gradients.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>MLPs use backpropagation and activation functions to learn representations.</strong></li>
+						<li> <strong>RBFNs are effective function approximators using radial basis functions.</strong></li>
+						<li> <strong>DNNs require techniques like BatchNorm and ReLU to mitigate vanishing gradients.</strong></li>
+						<li> <strong>Optimization techniques like Adam and RMSProp improve training efficiency.</strong></li>
+					</ul>
+				</div>
+			`,
+
+			'ml_svmss': `
+				<h1 class="blue-bolt">📌 Support Vector Machines (SVMs)</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Support Vector Machines (SVMs) are powerful supervised learning models used for classification and regression.</p>
+					<p>SVMs are based on the principle of <strong>finding the optimal hyperplane</strong> that best separates data points into different classes.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Hard-Margin vs. Soft-Margin SVM</h2>
+
+				<div class="content-box">
+					<p><strong>What is the Margin?</strong> The margin is the distance between the decision boundary (hyperplane) and the nearest data points.</p>
+					<ul>
+						<li> <strong>Hard-Margin SVM:</strong>
+							<ul>
+								<li>▶ Assumes data is <strong>linearly separable</strong> (no overlap between classes).</li>
+								<li>▶ Finds a hyperplane that <strong>maximizes the margin</strong> with no tolerance for misclassification.</li>
+								<li>▶ Not suitable for noisy or non-linearly separable data.</li>
+							</ul>
+						</li>
+						<li> <strong>Soft-Margin SVM:</strong>
+							<ul>
+								<li>▶ Allows <strong>some misclassification</strong> by introducing a penalty term (C-parameter).</li>
+								<li>▶ Useful when data is <strong>not perfectly separable</strong>.</li>
+								<li>▶ Balances margin maximization and classification error.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Kernel Trick: Polynomial, RBF, and Sigmoid</h2>
+
+				<div class="content-box">
+					<p><strong>What is the Kernel Trick?</strong> The kernel trick allows SVMs to operate in <strong>higher-dimensional spaces</strong> without explicitly computing transformations.</p>
+					<ul>
+						<li> <strong>Polynomial Kernel:</strong>
+							<ul>
+								<li>▶ Extends linear SVMs to capture curved decision boundaries.</li>
+								<li>▶ Useful when data has polynomial relationships.</li>
+							</ul>
+						</li>
+						<li> <strong>Radial Basis Function (RBF) Kernel:</strong>
+							<ul>
+								<li>▶ Maps data into an <strong>infinite-dimensional space<>/strong>.</li>
+								<li>▶ Effective for handling <strong>non-linearly separable data</strong>.</li>
+							</ul>
+						</li>
+						<li> <strong>Sigmoid Kernel:</strong>
+							<ul>
+								<li>▶ Mimics behavior of a <strong>neural network activation function</strong>.</li>
+								<li>▶ Used in <strong>some classification problems but less common than RBF</strong>.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Connection to Maximum Margin Classifiers</h2>
+
+				<div class="content-box">
+					<p><strong>Why SVMs are Maximum Margin Classifiers?</strong></p>
+					<ul>
+						<li> SVMs aim to <strong>maximize the margin</strong> between data points from different classes.</li>
+						<li> A <strong>wider margin</strong> reduces overfitting and improves generalization.</li>
+						<li> Works best with <strong>high-dimensional feature spaces</strong>.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Dual Formulation with Lagrangian Optimization</h2>
+
+				<div class="content-box">
+					<p><strong>Mathematical Foundation:</strong> The SVM optimization problem can be solved using the <strong>dual formulation</strong> with <strong>Lagrange multipliers</strong>.</p>
+					<ul>
+						<li> The <strong>primal problem</strong> involves finding a hyperplane that separates data while maximizing margin.</li>
+						<li> The <strong>dual problem</strong> reformulates the objective function using <strong>Lagrange multipliers</strong> to simplify computations.</li>
+						<li> The <strong>kernel trick</strong> applies directly in the dual formulation, allowing computation in high-dimensional spaces.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🎯 Key Takeaways</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>Hard-margin SVM works only for linearly separable data, while soft-margin SVM handles noise.</strong></li>
+						<li> <strong>The kernel trick enables SVMs to handle non-linear classification tasks.</strong></li>
+						<li> <strong>Maximum margin classifiers improve generalization by maximizing decision boundaries.</strong></li>
+						<li> <strong>Dual formulation with Lagrangian optimization makes SVMs computationally efficient.</strong></li>
+					</ul>
+				</div>
+			`,
+
+			'ml_fs': `
+				<h1 class="blue-bolt">📌 Feature Selection & Dimensionality Reduction</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Feature selection and dimensionality reduction techniques help improve model performance by eliminating irrelevant or redundant features.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), Independent Component Analysis (ICA)</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>PCA:</strong> Uses eigenvectors and eigenvalues to project data onto principal components for variance maximization.</li>
+						<li> <strong>LDA:</strong> Maximizes class separability by finding a linear combination of features.</li>
+						<li> <strong>ICA:</strong> Extracts statistically independent signals from mixed data.</li>
+						<li> <strong>Whitening:</strong> Standardizes features to remove correlations before applying PCA or ICA.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Autoencoders as Feature Extractors</h2>
+
+				<div class="content-box">
+					<p><strong>What are Autoencoders?</strong> Neural networks trained to encode data into lower-dimensional representations.</p>
+					<ul>
+						<li> Useful for **unsupervised feature learning**.</li>
+						<li> Reduces dimensionality while preserving **non-linear structures** in data.</li>
+						<li> Common in **deep learning applications**.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Recursive Feature Elimination (RFE)</h2>
+
+				<div class="content-box">
+					<p><strong>What is RFE?</strong> An iterative process to remove least important features and retrain the model.</p>
+					<ul>
+						<li> Helps in improving **model efficiency and interpretability**.</li>
+						<li> Commonly used with **tree-based models and linear models**.</li>
+					</ul>
+				</div>
+			`,
+			'ml_ce': `
+				<h1 class="blue-bolt">📌 Cross-Validation & Model Evaluation</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Cross-validation techniques help evaluate machine learning models to ensure robustness and avoid overfitting.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ k-Fold Cross-Validation & Bias-Variance Tradeoff</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>k-Fold Cross-Validation:</strong> Splits data into k subsets and trains models k times to estimate performance.</li>
+						<li> Bias-Variance Tradeoff: Balances model flexibility and generalization.</li>
+						<li> Common k values: 5-fold, 10-fold.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Train-Test Split: Why and How?</h2>
+
+				<div class="content-box">
+					<p><strong>Importance of Train-Test Splits:</strong> Prevents models from memorizing training data and ensures generalization.</p>
+					<ul>
+						<li> Common splits: 70/30, 80/20, 90/10.</li>
+						<li> <strong>Stratified Splitting:</strong> Ensures class distribution remains consistent.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Bootstrapping & Monte Carlo Methods</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>Bootstrapping:</strong> Creates multiple datasets by resampling with replacement.</li>
+						<li> <strong>Monte Carlo Methods:</strong> Uses repeated random sampling to estimate model performance.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_pm': `
+				<h1 class="blue-bolt">📌 Performance Metrics & Statistical Tests</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Proper evaluation metrics ensure models are correctly assessed for classification and regression tasks.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Precision, Recall, F1-Score, and AUC-ROC</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>Precision:</strong> Measures true positive rate among predicted positives.</li>
+						<li> <strong>Recall:</strong> Measures ability to detect actual positives.</li>
+						<li> <strong>F1-Score:</strong> Harmonic mean of precision and recall.</li>
+						<li> <strong>AUC-ROC:</strong> Evaluates classifier performance at different thresholds.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Confusion Matrices & Misclassification Costs</h2>
+
+				<div class="content-box">
+					<p><strong>Confusion Matrix:</strong> Provides insights into false positives and false negatives.</p>
+					<ul>
+						<li> Useful for imbalanced datasets.</li>
+						<li> Helps in identifying misclassification patterns.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Statistical Significance Tests for ML Models</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>t-Test:</strong> Determines if two means are statistically different.</li>
+						<li> <strong>Chi-Square Test:</strong> Checks for independence between categorical variables.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_ord': `
+				<h1 class="blue-bolt">📌 Overfitting, Regularization & Data Imbalance</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Overfitting occurs when models learn noise instead of patterns. Regularization and data balancing techniques help improve generalization.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ L1 vs. L2 Regularization (Lasso vs. Ridge Regression)</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>L1 Regularization (Lasso):</strong> Shrinks coefficients to zero, useful for feature selection.</li>
+						<li> <strong>L2 Regularization (Ridge):</strong> Penalizes large coefficients but does not force them to zero.</li>
+						<li> Elastic Net: Combination of L1 and L2 for best of both worlds.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Dropout & Early Stopping in Neural Networks</h2>
+
+				<div class="content-box">
+					<p><strong>Why Regularization in Deep Learning?</strong> Prevents networks from memorizing training data.</p>
+					<ul>
+						<li> <strong>Dropout:</strong> Randomly disables neurons during training to force robustness.</li>
+						<li> <strong>Early Stopping:</strong> Stops training once validation loss stops improving.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Techniques for Handling Imbalanced Data</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>SMOTE (Synthetic Minority Over-sampling Technique):</strong> Generates synthetic minority samples.</li>
+						<li> <strong>Weighted Loss Functions:</strong> Assigns higher penalty for misclassified minority class samples.</li>
+						<li> <strong>Undersampling:</strong> Removes excess majority class samples to balance dataset.</li>
+					</ul>
+				</div>
+			`,
+
+			'ml_bench': `
+				<h1 class="blue-bolt">📌 Benchmark ML Problems</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Benchmark ML problems help evaluate algorithms by testing their ability to solve well-known challenges.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ XOR Problem: Why Perceptron Fails & Solving with MLP</h2>
+
+				<div class="content-box">
+					<p><strong>The XOR problem is a classic example where single-layer perceptrons fail.</strong></p>
+					<ul>
+						<li> <strong>Why Perceptron Fails?</strong> Perceptron is a linear classifier, while XOR is not linearly separable.</li>
+						<li> <strong>Solution:</strong> Using Multilayer Perceptron (MLP) with hidden layers introduces non-linearity.</li>
+						<li> Activation functions like ReLU and Sigmoid enable learning complex decision boundaries.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Iris Flower Classification: Linear Separability & Decision Boundaries</h2>
+
+				<div class="content-box">
+					<p><strong>The Iris dataset is a fundamental classification problem in ML.</strong></p>
+					<ul>
+						<li> Classes: Setosa, Versicolor, and Virginica.</li>
+						<li> Key Challenge: Understanding linear vs. non-linear separability.</li>
+						<li> Decision Boundaries: Logistic Regression for linear separation, SVM or neural networks for complex cases.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ Function Approximation: Using ML to Model Complex Functions</h2>
+
+				<div class="content-box">
+					<p><strong>ML models can approximate continuous functions, a core concept in regression and deep learning.</strong></p>
+					<ul>
+						<li> Polynomial Regression: Models non-linear relationships with polynomial features.</li>
+						<li> Neural Networks: Universal approximators capable of modeling arbitrary functions.</li>
+						<li> Gaussian Processes: Bayesian approach to function approximation with uncertainty estimation.</li>
+					</ul>
+				</div>
+			`,
+			
+			
+			'ml_science': `
+				<h1 class="blue-bolt">📌 Machine Learning for Scientific & Engineering Applications</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> ML is increasingly used in scientific and engineering domains to analyze data, predict trends, and optimize systems.</p>
+				</div>
+
+				<h2 class="blue-bolt">➤ Time-Series Forecasting in Engineering</h2>
+
+				<div class="content-box">
+					<p><strong>ML plays a key role in predictive maintenance, energy forecasting, and system modeling.</strong></p>
+					<ul>
+						<li> ARIMA & Exponential Smoothing: Traditional statistical models.</li>
+						<li> LSTMs & Transformer Networks: Advanced models for capturing sequential dependencies.</li>
+						<li> Applications: Load forecasting, traffic prediction, failure detection.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ ML in Physics, Biology, and Medicine</h2>
+
+				<div class="content-box">
+					<p><strong>ML accelerates discoveries in physics, genomics, and healthcare.</strong></p>
+					<ul>
+						<li> Physics: Identifying patterns in high-energy particle collisions.</li>
+						<li> Biology: Analyzing genetic sequences, protein folding (e.g., AlphaFold).</li>
+						<li> Medicine: Disease diagnosis, medical image processing, drug discovery.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">➤ ML in Material Discovery, Climate Modeling, and Finance</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> Material Discovery: Predicting new materials with optimal properties using ML models.</li>
+						<li> Climate Modeling: Analyzing weather patterns and predicting climate change impacts.</li>
+						<li> Finance: Risk assessment, fraud detection, and algorithmic trading.</li>
+					</ul>
+				</div>
+			`,
+
+
+        'ml_d1': `
+            <h1 class="blue-bolt">📌 Understanding AI Agents</h1>
+
+            <div class="content-box">
+                <p><strong>Overview:</strong> AI agents are intelligent systems that perceive their environment, process information, and take actions to achieve specific goals. They vary in complexity, from simple rule-based systems to advanced autonomous decision-makers.</p>
+            </div>
+
+            <h2 class="blue-bolt">➤ Types of AI Agents</h2>
+
+            <div class="content-box">
+                <p><strong>AI agents are classified based on their level of intelligence, adaptability, and reasoning.</strong></p>
+                <ul>
+                    <li> <strong>Narrow AI Agent:</strong> Specializes in a single task, like detecting pneumonia in X-rays or answering customer support queries.</li>
+                    <li> <strong>Intermediate AI Agent:</strong> Combines multiple data sources, preprocesses information, and enhances decision-making before utilizing an LLM.</li>
+                    <li> <strong>Advanced AI Agent (Super AI):</strong> Hypothetical AI that autonomously learns, reasons, and even creates new knowledge without human intervention.</li>
+                </ul>
+            </div>
+
+            <h2 class="blue-bolt">➤ Scenario: AI in Medical Diagnosis</h2>
+
+            <h3 class="blue-bolt">1️⃣ Narrow AI (Current State)</h3>
+            <div class="content-box">
+                <p><strong>Example:</strong> A narrow AI system is trained to detect pneumonia from chest X-rays.</p>
+                <ul>
+                    <li> It can only analyze chest X-rays for pneumonia.</li>
+                    <li> It struggles with variations in image quality or patient anatomy.</li>
+                    <li> It cannot integrate other patient data (blood tests, symptoms).</li>
+                    <li> It cannot reason about other possible diagnoses.</li>
+                    <li> It is only good at one specific task.</li>
+                </ul>
+                <p><strong>Generalization/Adaptability:</strong> Very limited.</p>
+            </div>
+
+            <h3 class="blue-bolt">2️⃣ Intermediate AI Agent (Hybrid AI Approach)</h3>
+            <div class="content-box">
+                <p><strong>Example:</strong> Your CAIRA agent is integrated into the diagnostic system.</p>
+                <ul>
+                    <li> It can preprocess chest X-rays, enhance image quality, and extract relevant features.</li>
+                    <li> It can also process patient medical records, including blood test results and symptom descriptions.</li>
+                    <li> It uses a knowledge graph to understand relationships between symptoms, diseases, and test results.</li>
+                    <li> It can provide the LLM with a structured summary of the patient's condition, highlighting key findings and potential diagnoses.</li>
+                    <li> It can adapt to different types of medical imaging and different data formats.</li>
+                    <li> It can reason about the probability of different diagnoses.</li>
+                </ul>
+                <p><strong>Improvements:</strong></p>
+                <ul>
+                    <li> Improved accuracy in pneumonia detection.</li>
+                    <li> Ability to consider other possible diagnoses (e.g., bronchitis, lung cancer).</li>
+                    <li> Enhanced understanding of the patient's overall health.</li>
+                    <li> Better adaptation to new kinds of patient data.</li>
+                </ul>
+                <p><strong>Generalization/Adaptability/Reasoning:</strong> Significantly improved compared to Narrow AI.</p>
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>❌ It still relies on predefined knowledge and algorithms.</li>
+                    <li>❌ It cannot independently discover new medical knowledge.</li>
+                    <li>❌ It cannot handle situations outside its training data without human intervention.</li>
+                    <li>❌ It still needs an LLM to provide the final output.</li>
+                    <li>❌ It cannot decide to perform actions outside of its programming.</li>
+                </ul>
+            </div>
+
+            <h3 class="blue-bolt">3️⃣ Super AI Agent (Hypothetical Future AI)</h3>
+            <div class="content-box">
+                <p><strong>Example:</strong> A Super AI agent is a fully autonomous medical expert.</p>
+                <ul>
+                    <li> It can independently analyze all available medical data.</li>
+                    <li> It can discover new disease patterns and develop novel treatments.</li>
+                    <li> It can conduct medical research and publish findings.</li>
+                    <li> It can interact with patients and provide personalized care.</li>
+                    <li> It can decide to take actions that are not preprogrammed.</li>
+                </ul>
+                <p><strong>Generalization/Adaptability/Reasoning:</strong> Complete autonomy and versatility.</p>
+            </div>
+
+            <h2 class="blue-bolt">➤ Summary of the Progression</h2>
+            <div class="content-box">
+                <table>
+                    <tr>
+                        <th>Aspect</th>
+						<th></th>
+                        <th>Narrow AI</th>
+						<th></th>
+                        <th>Intermediate AI</th>
+						<th></th>
+                        <th>Super AI</th>
+                    </tr>
+					<tr>
+					</tr>					
+                    <tr>
+                        <td><strong>Scope</strong></td>
+						<td></td>
+                        <td>Single task (e.g., detect pneumonia)</td>
+						<td></td>
+                        <td>Multiple related tasks (e.g., analyze multiple patient data points)</td>
+						<td></td>
+                        <td>Any intellectual task</td>
+                    </tr>
+					<tr>
+					</tr>					
+                    <tr>
+                        <td><strong>Generalization</strong></td>
+						<td></td>
+                        <td>None</td>
+						<td></td>
+                        <td>Limited to a domain</td>
+						<td></td>
+                        <td>Full generalization across domains</td>
+                    </tr>
+					<tr>
+					</tr>					
+                    <tr>
+                        <td><strong>Adaptability</strong></td>
+						<td></td>
+                        <td>None</td>
+						<td></td>
+                        <td>Learns from interactions</td>
+						<td></td>
+                        <td>Self-improves and sets own goals</td>
+                    </tr>
+					<tr>
+					</tr>
+                    <tr>
+                        <td><strong>Reasoning</strong></td>
+						<td></td>
+                        <td>Pattern matching</td>
+						<td></td>
+                        <td>Contextual understanding</td>
+						<td></td>
+                        <td>Abstract and creative reasoning</td>
+                    </tr>
+					<tr>
+					</tr>
+                    <tr>
+                        <td><strong>Autonomy</strong></td>
+						<td></td>
+                        <td>Fully dependent on programming</td>
+						<td></td>
+                        <td>Semi-autonomous</td>
+						<td></td>
+                        <td>Fully autonomous</td>
+                    </tr>
+                </table>
+            </div>
+        `,
+
+		'ml_d2': `
+			<h1 class="blue-bolt">📌 How a Machine Understands Your Question?</h1>
+
+			<div class="content-box">
+				<p><strong>Overview:</strong> When you ask a question to an AI like ChatGPT, there's a lot going on behind the scenes. The system processes your words, interprets your intent, understands the context, and generates a coherent response — all in a matter of milliseconds. Let’s break down how this happens step-by-step.</p>
+			</div>
+
+			<h2 class="blue-bolt">➤ 🧠 Part 1: How AI Agents Understand a Prompt</h2>
+
+			<div class="content-box">
+				<p><strong>Natural Language Understanding (NLU):</strong> This is the AI’s first job — figuring out what you mean. It involves several key steps:</p>
+				<ul>
+					<li> <strong>1. Tokenization:</strong> Your input is split into smaller pieces called tokens. These can be full words, subwords (like “un-” and “-derstand”), or characters.</li>
+					<li> <strong>2. Contextual Encoding:</strong> Tokens are converted into numerical representations called embeddings. Transformers help capture the context — understanding each word not in isolation, but in relation to others using attention mechanisms.</li>
+					<li> <strong>Example:</strong> When you say "I got one technical question to ask you...", the AI doesn’t just see words — it understands you're about to ask an informal but important question.</li>
+					<li> <strong>3. Intent Recognition + Context Awareness:</strong> AI models use deep learning to figure out what you're asking, your tone, and any past conversation. For example:</li>
+					<ul>
+						<li>Input: "Why does my model overfit on small datasets?"</li>
+						<li>Topic: Machine Learning</li>
+						<li>Keywords: overfit, small datasets</li>
+						<li>Intent: You’re looking for an explanation or solution</li>
+					</ul>
+				</ul>
+				<p><strong>Takeaway:</strong> The AI isn't guessing — it builds a layered understanding of your message.</p>
+			</div>
+
+			<h2 class="blue-bolt">➤ 🔁 Part 2: How I Generate a Response</h2>
+
+			<div class="content-box">
+				<p><strong>Once the AI has processed your question, it moves into the response generation phase using language modeling.</strong></p>
+				<ul>
+					<li> <strong>1. Probability Prediction with Transformers:</strong> The model predicts one word at a time, using the previous tokens to choose the most likely next word. It doesn’t just guess — it evaluates all possibilities and scores them.</li>
+					<li> <strong>2. Sampling Methods:</strong> To make responses feel human and not robotic, it uses advanced sampling techniques:</li>
+					<ul>
+						<li>Top-k sampling: Picks from the top k likely words</li>
+						<li>Nucleus sampling (top-p): Selects words that cover the top p% of the total probability mass</li>
+						<li>Temperature control: Higher temperature means more randomness (creative replies), while lower means more focused and predictable output</li>
+					</ul>
+					<li> <strong>3. Trained Knowledge:</strong> The AI pulls from vast training data — books, websites, code, papers — not a fixed database. It recognizes patterns and uses that knowledge to construct answers in real time.</li>
+				</ul>
+				<p><strong>Important Note:</strong> The AI doesn’t “know” things in a human sense. It generates answers based on patterns and likelihoods learned during training.</p>
+			</div>
+
+			<h2 class="blue-bolt">➤ Summary Table: From Question to Response</h2>
+
+			<div class="content-box">
+				<table>
+					<tr>
+						<th>Stage</th>
+						<th></th>
+						<th>Description</th>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Tokenization</strong></td>
+						<td></td>
+						<td>Splits your question into meaningful chunks (tokens)</td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Embedding + Attention</strong></td>
+						<td></td>
+						<td>Understands each token in relation to the entire input (contextual understanding)</td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Intent Recognition</strong></td>
+						<td></td>
+						<td>Figures out what you're asking and what kind of answer you want</td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Language Modeling</strong></td>
+						<td></td>
+						<td>Predicts the next token in a sequence to generate a coherent response</td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Sampling & Tuning</strong></td>
+						<td></td>
+						<td>Applies techniques like top-k, top-p, and temperature to make responses more natural</td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><strong>Output</strong></td>
+						<td></td>
+						<td>The final response is delivered to you based on all previous steps</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="content-box">
+				<p><strong>If you're inspired by how AI understands and responds, here are some exciting areas and tools you can explore to build your own intelligent agent:</strong></p>
+				<ul>
+					<li> <strong>Transformers:</strong> Study the <a href="https://arxiv.org/abs/1706.03762" target="_blank">"Attention Is All You Need"</a> paper — it’s the foundation of modern language models.</li>
+					<li> <strong>Hugging Face Transformers Library:</strong> A powerful Python library to build and use pre-trained LLMs like BERT, GPT-2, and more.</li>
+					<li> <strong>Tokenization & Embedding Layers:</strong> Learn how models break down and encode text as numerical vectors for processing.</li>
+					<li> <strong>Fine-Tuning:</strong> Customize pre-trained models like GPT-2, LLaMA, or Mistral on your own data.</li>
+					<li> <strong>Prompt Engineering & RLHF:</strong> Refine how prompts are framed to get better answers and understand Reinforcement Learning with Human Feedback (used in fine-tuning models like ChatGPT).</li>
+				</ul>
+				<p>With the right tools and data, you can experiment with building your own version of an AI agent tailored to your needs!</p>
+			</div>
+		`,
+
+
+		'ml_d3': `
+			<h1 class="blue-bolt">🧪 Sandbox: Build a Model to Understand AI Agents</h1>
+
+			<div class="content-box">
+				<p><strong>Overview:</strong> Want to play with the same building blocks that power AI models like ChatGPT? This sandbox shows you how to build a simple transformer-based chatbot using Hugging Face’s Transformers library. It's a fun, hands-on way to explore how AI agents understand and respond to your questions.</p>
+			</div>
+
+			<h2 class="blue-bolt">🚀 Step 1: Setting Up a Basic Transformer Model</h2>
+
+			<div class="content-box">
+				<p>We’ll use Hugging Face’s <code>transformers</code> library to access pre-trained models like GPT-2, GPT-3, and LLaMA. Let's start simple.</p>
+				<p><strong>📌 Install Dependencies:</strong></p>
+				<pre><code>pip install transformers torch</code></pre>
+			</div>
+
+			<h2 class="blue-bolt">🛠 Step 2: Load a Pretrained Language Model</h2>
+
+			<div class="content-box">
+				<p>We’ll use GPT-2 since it's lightweight and easy to run locally.</p>
+				<pre class="python-terminal">
+from transformers import AutoModelForCausalLM, AutoTokenizer
+# Load GPT-2 tokenizer & model
+model_name = "gpt2"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+				</pre>
+				<ul>
+					<li> <strong>tokenizer</strong> converts your text into numerical tokens.</li>
+					<li> <strong>model</strong> is the neural network that generates responses.</li>
+				</ul>
+			</div>
+
+			<h2 class="blue-bolt">🔄 Step 3: Processing Input (Understanding the Question)</h2>
+
+			<div class="content-box">
+				<p>Here’s a simple function that takes user input and generates a response:</p>
+<pre class="python-terminal">
+def generate_response(prompt, max_length=100):
+# Convert text to model-readable tokens
+inputs = tokenizer(prompt, return_tensors="pt")
+
+# Generate output using the model
+output = model.generate(**inputs, max_length=max_length, pad_token_id=tokenizer.eos_token_id)
+
+# Decode the generated tokens back into text
+response = tokenizer.decode(output[0], skip_special_tokens=True)
+
+return response
+</pre>
+			</div>
+
+			<h2 class="blue-bolt">📝 Step 4: Test It!</h2>
+
+			<div class="content-box">
+				<p>Let’s ask a question and see how GPT-2 replies:</p>
+<pre class="python-terminal">
+user_input = "How does machine learning work?"
+response = generate_response(user_input)
+print(response)
+</pre>
+				<p><strong>Expected Output:</strong> <em>"Machine learning works by training models on large datasets using algorithms that adjust weights based on errors..."</em></p>
+				<p>Each response may vary slightly due to the probabilistic nature of generation.</p>
+			</div>
+
+			<h2 class="blue-bolt">🎨 Step 5: Making Responses Smarter</h2>
+
+			<div class="content-box">
+				<p>We can fine-tune how the model responds by adding more control:</p>
+<pre class="python-terminal">
+def generate_response(prompt, max_length=100, temperature=0.7, top_p=0.9):
+inputs = tokenizer(prompt, return_tensors="pt")
+
+output = model.generate(
+**inputs,
+max_length=max_length,
+temperature=temperature,
+top_p=top_p,
+pad_token_id=tokenizer.eos_token_id
+)
+
+return tokenizer.decode(output[0], skip_special_tokens=True)
+</pre>
+				<ul>
+					<li> <strong>temperature:</strong> controls creativity (higher = more random).</li>
+					<li> <strong>top-p:</strong> controls sampling diversity by focusing on most probable words.</li>
+					<li> <strong>max_length:</strong> limits the response length.</li>
+				</ul>
+			</div>
+
+			<h2 class="blue-bolt">🔥 Bonus: Fine-Tune on Your Own Data</h2>
+
+			<div class="content-box">
+				<p>If you want to create your own AI assistant, train it on a custom dataset!</p>
+				<ul>
+					<li> <strong>Collect a Dataset:</strong> Use Q&A-style text or support transcripts.</li>
+					<li> <strong>Fine-Tune a Model:</strong> Use Hugging Face’s Trainer to train GPT-2 or LLaMA on your data.</li>
+					<li> <strong>Deploy:</strong> Use tools like Flask or FastAPI to build an API for your chatbot.</li>
+					<li> <strong>Extend:</strong> Add memory to your chatbot or use embeddings for retrieval-augmented generation (RAG).</li>
+				</ul>
+			</div>
+		`,
+
+			'ml_d4': `
+				<h1 class="blue-bolt">🧠 Build Your Own GPT Model with Your Data</h1>
+
+				<div class="content-box">
+					<p><strong>Overview:</strong> Fine-tuning a GPT-style model like GPT-2 on your own dataset allows you to create a personalized AI assistant that understands your domain, tone, and context. Whether you're building a customer support bot or an educational tutor, this sandbox walks you through the full process.</p>
+				</div>
+
+				<h2 class="blue-bolt">🎯 What Can You Do With Fine-Tuning?</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> <strong>Create a chatbot</strong> that sounds like you or your brand.</li>
+						<li> <strong>Specialize the bot</strong> in a specific domain (finance, healthcare, education, etc.).</li>
+						<li> <strong>Answer questions</strong> using internal knowledge or proprietary documents.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🔧 Step 1: Prepare Your Data</h2>
+
+				<div class="content-box">
+					<p>The best format for fine-tuning is a simple JSON file with prompt-response pairs:</p>
+					<div class="code-frame">
+[
+  {
+	"prompt": "What is AI?",
+	"response": "AI stands for Artificial Intelligence. It refers to machines that mimic human cognitive functions."
+  },
+  {
+	"prompt": "How does machine learning work?",
+	"response": "Machine learning uses algorithms to learn from data and make predictions or decisions."
+  }
+]
+			</div>
+					<p>✅ Convert this into plain text for training:</p>
+					<p>💾 Save it as <code>training_data.txt</code>.</p>
+			</div>
+
+				<h2 class="blue-bolt"> 🧠 What is <code><|startoftext|> </code> ? </h2>
+				<div>
+				<p>It’s a custom token added to the tokenizer during fine-tuning to clearly indicate:<p>
+				<p>Where the prompt/question begins.<p>
+				<p>Helps the model differentiate between multiple examples in a dataset.<p>
+				<p>Works together with <code><|endoftext|></code> which marks the end of the response<p>
+				</div>
+
+				<h2 class="blue-bolt">📦 Step 2: Install Required Libraries</h2>
+
+				<div class="content-box">
+					<p>Install Hugging Face Transformers and training tools:</p>
+					<div class="code-frame">pip install datasets transformers accelerate</div>
+				</div>
+
+				<h2 class="blue-bolt">⚙️ Step 3: Fine-Tune GPT-2 Using Hugging Face</h2>
+
+				<div class="content-box">
+					<p>Use the following script to fine-tune GPT-2 on your dataset:</p>
+<div class="python-terminal">from transformers import GPT2Tokenizer, GPT2LMHeadModel, TextDataset, DataCollatorForLanguageModeling, Trainer, TrainingArguments
+# Load GPT-2 and tokenizer
+model_name = "gpt2"
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+model = GPT2LMHeadModel.from_pretrained(model_name)
+
+# Add special tokens
+tokenizer.add_special_tokens({
+	"bos_token": "<|startoftext|>",
+	"eos_token": "<|endoftext|>",
+	"pad_token": "<|pad|>"
+})
+model.resize_token_embeddings(len(tokenizer))
+
+# Load the dataset
+def load_dataset(file_path):
+	return TextDataset(
+		tokenizer=tokenizer,
+		file_path=file_path,
+		block_size=128
+	)
+
+train_dataset = load_dataset("training_data.txt")
+data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+
+# Training arguments
+training_args = TrainingArguments(
+	output_dir="./gpt2-finetuned",
+	overwrite_output_dir=True,
+	num_train_epochs=3,
+	per_device_train_batch_size=2,
+	save_steps=500,
+	save_total_limit=2,
+	logging_dir="./logs",
+)
+
+# Fine-tuning
+trainer = Trainer(
+	model=model,
+	args=training_args,
+	train_dataset=train_dataset,
+	data_collator=data_collator,
+)
+trainer.train()</div>
+					<p>✅ After training, your fine-tuned model will be saved to <code>./gpt2-finetuned</code>.</p>
+				</div>
+
+				<h2 class="blue-bolt">💬 Step 4: Generate Responses Using Your Model</h2>
+
+				<div class="content-box">
+					<p>Test your fine-tuned model with this script:</p>
+<div class="code-frame">from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+model = GPT2LMHeadModel.from_pretrained("./gpt2-finetuned")
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+
+def chat(prompt):
+input_ids = tokenizer.encode(prompt, return_tensors="pt")
+output = model.generate(input_ids, max_length=100, temperature=0.7, top_p=0.9)
+return tokenizer.decode(output[0], skip_special_tokens=True)
+
+print(chat("How does machine learning work?"))</div>
+				</div>
+
+				<h2 class="blue-bolt">🔥 Optional: Build a Web Chatbot</h2>
+
+				<div class="content-box">
+					<p>Want to interact with your model via a web interface? Try:</p>
+					<ul>
+						<li> <strong>Streamlit:</strong> Super easy for quick demos and local UIs.</li>
+						<li> <strong>Flask / FastAPI:</strong> For deploying as production APIs.</li>
+						<li> <strong>Gradio:</strong> Instant GUI demos with zero frontend coding.</li>
+					</ul>
+				</div>
+
+				<h2 class="blue-bolt">🚀 Final Tips</h2>
+
+				<div class="content-box">
+					<ul>
+						<li> Start with a small dataset (20–50 examples) to test the flow.</li>
+						<li> Use Google Colab or Kaggle notebooks if you don’t have a GPU.</li>
+						<li> Explore LoRA or PEFT methods for parameter-efficient fine-tuning.</li>
+						<li> You can reuse this approach for any GPT-style model, not just GPT-2!</li>
+					</ul>
+				</div>
+			`,
+
+			'decoding_regression': `
+				<h1 class="blue-bolt"> Decoding-Based Regression</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Decoding-based regression is a technique where we reconstruct (decode) the original data or target variable using a learned representation.</p>
+					<p><strong>Concept:</strong> Instead of directly predicting the target, the model learns a hidden representation and then "decodes" it back to predict values.</p>
+					<ul>
+						<li>✅ Used in autoencoders, where an encoder compresses data and a decoder reconstructs it.</li>
+						<li>✅ Helps in cases where the relationship between inputs and outputs is complex and nonlinear.</li>
+						<li>✅ Common in image processing, speech recognition, and medical diagnosis.</li>
+					</ul>
+					<p><strong>Example:</strong> In brain-computer interfaces (BCI), brain signals are encoded into features, and a decoder predicts movement.</p>
+				</div>
+			`,
+
+			'geometric_deep_learning': `
+				<h1 class="blue-bolt"> Geometric Deep Learning</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Geometric deep learning extends traditional deep learning to non-Euclidean data like graphs, manifolds, and 3D structures.</p>
+					<p><strong>Concept:</strong> Instead of processing flat data (images, text, tables), the model understands complex spatial relationships in data.</p>
+					<ul>
+						<li>✅ Used in graph neural networks (GNNs), which analyze social networks, molecules, and recommendation systems.</li>
+						<li>✅ Works well in 3D modeling, such as protein folding and autonomous driving.</li>
+						<li>✅ Helps AI learn structural patterns, improving interpretability and generalization.</li>
+					</ul>
+					<p><strong>Example:</strong> A GNN can predict how a drug molecule interacts with proteins, leading to better drug discovery.</p>
+				</div>
+			`,
+
+			'feature_crosses': `
+				<h1 class="blue-bolt"> Feature Crosses</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Feature crossing is a technique where multiple input features are combined to create new, more informative features.</p>
+					<p><strong>Concept:</strong> Instead of treating features separately, crossing them captures interactions that improve predictions.</p>
+					<ul>
+						<li>✅ Used in logistic regression, decision trees, and deep learning models.</li>
+						<li>✅ Helps models detect hidden patterns that individual features may not reveal.</li>
+						<li>✅ Improves performance in recommendation systems, fraud detection, and ad targeting.</li>
+					</ul>
+					<p><strong>Example:</strong> In predicting house prices, crossing number of bedrooms with square footage gives a better idea of living space efficiency.</p>
+				</div>
+			`,
+
+			'embeddings': `
+				<h1 class="blue-bolt"> Embeddings</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Embeddings are dense vector representations of data, transforming high-dimensional inputs (like words, users, or items) into lower-dimensional space.</p>
+					<p><strong>Concept:</strong> Instead of treating data as raw numbers or categories, embeddings capture relationships and similarities between items.</p>
+					<ul>
+						<li>✅ Used in natural language processing (NLP) for understanding words and sentences.</li>
+						<li>✅ Powers recommendation engines, where similar users or products are placed close together in embedding space.</li>
+						<li>✅ Helps models learn structured information in a compact, efficient way.</li>
+					</ul>
+					<p><strong>Example:</strong> In Word2Vec, words like "king" and "queen" have similar embeddings, allowing models to understand relationships like gender, roles, and hierarchy.</p>
+				</div>
+			`,
+
+			'genetic_algorithms': `
+				<h1 class="blue-bolt"> Genetic Algorithms</h1>
+				<div class="content-box">
+					<p><strong>Definition:</strong> Genetic algorithms (GAs) are optimization techniques inspired by natural evolution, used to solve problems by mimicking selection, mutation, and crossover.</p>
+					<p><strong>Concept:</strong> Instead of brute-force searching, GAs evolve solutions over generations, selecting the "fittest" candidates to improve results.</p>
+					<ul>
+						<li>✅ Used in machine learning hyperparameter tuning, robotics, and game AI.</li>
+						<li>✅ Finds optimal solutions when traditional algorithms struggle.</li>
+						<li>✅ Can be combined with deep learning to create more adaptive models.</li>
+					</ul>
+					<p><strong>Example:</strong> In neural architecture search (NAS), GAs evolve different neural network structures to find the most efficient model.</p>
+				</div>
+			`,
+
+			'sas_viya_intro': `
+				<div class="ml-section">
+					<h2>📌 Introduction to SAS Viya</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ What is SAS Viya?</h3>
+						<p><strong>Definition:</strong> SAS Viya is a cloud-enabled, scalable, and high-performance analytics platform designed for data science, machine learning, and artificial intelligence.</p>
+						<p>It supports a variety of programming languages, including **SAS, Python, R, and REST APIs**, making it a flexible tool for **big data processing and model deployment**.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Why Use SAS Viya for Machine Learning?</h3>
+						<ul>
+							<li> <strong>High-Performance Computing:</strong> Supports in-memory distributed processing.</li>
+							<li> <strong>Automated Machine Learning (AutoML):</strong> Quickly builds models with optimized hyperparameters.</li>
+							<li> <strong>Seamless Integration:</strong> Works with Python, R, and cloud-based services.</li>
+							<li> <strong>Interactive Interface:</strong> Provides both GUI-based (SAS Studio) and code-based solutions.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers gain hands-on experience, we provide 7 practical exercises that demonstrate how to use SAS Viya for machine learning tasks.</p>
+						<p>Each practical focuses on different aspects of data handling, preprocessing, modeling, and evaluation in SAS Viya.</p>
+					</div>
+
+				</div>
+			`,
+
+
+			'python_libraries': `
+				<div class="ml-section">
+					<h2>📌 Introduction to Python for Machine Learning</h2>
+
+					<div class="content-box">
+						<h3>1️⃣ Why Use Python for Machine Learning?</h3>
+						<p><strong>Definition:</strong> Python is the most widely used programming language for machine learning due to its simplicity, extensive libraries, and strong community support.</p>
+						<p>Python provides powerful libraries such as NumPy, Pandas, Scikit-Learn, TensorFlow, and PyTorch, making it a go-to language for data processing, model building, and deep learning applications.</p>
+					</div>
+
+					<div class="content-box">
+						<h3>2️⃣ Key Features of Python for ML</h3>
+						<ul>
+							<li> <strong>Easy-to-Use Syntax:</strong> Allows quick prototyping and experimentation.</li>
+							<li> <strong>Rich Ecosystem:</strong> Comes with numerous ML/DL libraries (Scikit-Learn, TensorFlow, PyTorch, etc.).</li>
+							<li> <strong>Visualization Capabilities:</strong> Matplotlib and Seaborn for detailed data analysis.</li>
+							<li> <strong>Scalability & Performance:</strong> Compatible with cloud and distributed computing platforms.</li>
+						</ul>
+					</div>
+
+					<div class="content-box">
+						<h3>3️⃣ Overview of Practical Exercises</h3>
+						<p>To help readers gain hands-on experience, we provide 7 practical exercises demonstrating Python's capabilities in machine learning.</p>
+						<p>Each practical covers different aspects of data preprocessing, modeling, optimization, and evaluation in Python.</p>
+					</div>
+
+				</div>
+			`,
+
+				'pythonP1': `
+				<h1 class="blue-bolt">📧 Python Project 1: Spam Detection with Naïve Bayes</h1>
+				<div class="content-box">
+					<p>Use the SMS Spam Collection dataset to build a spam classifier using <strong>CountVectorizer</strong> and <strong>MultinomialNB</strong>.</p>
+					<ul>
+						<li>✅ Load and preprocess text data.</li>
+						<li>✅ Apply TF-IDF transformation.</li>
+						<li>✅ Train a Naïve Bayes classifier.</li>
+						<li>✅ Evaluate precision, recall, and f1-score.</li>
+					</ul>
+				</div>
+				`,
+
+				'pythonP2': `
+				<h1 class="blue-bolt">🛍 Python Project 2: Customer Segmentation with K-Means</h1>
+				<div class="content-box">
+					<p>Use a shopping mall dataset to perform segmentation using <strong>K-Means clustering</strong>.</p>
+					<ul>
+						<li>✅ Normalize features.</li>
+						<li>✅ Choose the optimal k using the Elbow method.</li>
+						<li>✅ Visualize clusters.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'pythonP3': `
+				<h1 class="blue-bolt">🔍 Python Project 3: Credit Risk Prediction</h1>
+				<div class="content-box">
+					<p>Use the Lending Club dataset to predict loan defaults using <strong>XGBoost</strong>.</p>
+					<ul>
+						<li>✅ Handle class imbalance with weighting or SMOTE.</li>
+						<li>✅ Hyperparameter tuning via GridSearchCV.</li>
+						<li>✅ Explain model with SHAP values.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'pythonP4': `
+				<h1 class="blue-bolt">🏥 Python Project 4: Medical Diagnosis Using Decision Trees</h1>
+				<div class="content-box">
+					<p>Use the Breast Cancer Wisconsin dataset to build a decision tree model for tumor classification.</p>
+					<ul>
+						<li>✅ Visualize decision paths using <code>plot_tree()</code>.</li>
+						<li>✅ Apply pre-pruning techniques.</li>
+						<li>✅ Compare with Random Forest.</li>
+					</ul>
+				</div>
+				`,
+
+				'pythonP5': `
+				<h1 class="blue-bolt">🚗 Python Project 5: RL in Self-Driving Simulation</h1>
+				<div class="content-box">
+					<p>Use OpenAI Gym's CarRacing-v2 to demonstrate RL basics.</p>
+					<ul>
+						<li>✅ Train a random agent and observe reward trends.</li>
+						<li>✅ Replace with a DQN or PPO agent.</li>
+						<li>✅ Analyze the exploration vs exploitation trade-off.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'pythonP6': `
+				<h1 class="blue-bolt">📊 Python Project 6: Sales Forecasting with ARIMA</h1>
+				<div class="content-box">
+					<p>Use retail sales data to forecast future demand.</p>
+					<ul>
+						<li>✅ Perform stationarity checks (ADF test).</li>
+						<li>✅ Fit ARIMA or SARIMA model.</li>
+						<li>✅ Forecast and visualize confidence intervals.</li>
+					</ul>
+				</div>
+				`,
+
+				'pythonP7': `
+				<h1 class="blue-bolt">🔐 Python Project 7: Fraud Detection in Transactions</h1>
+				<div class="content-box">
+					<p>Use anonymized credit card transaction data to detect outliers.</p>
+					<ul>
+						<li>✅ Fit Isolation Forest and compare with Local Outlier Factor.</li>
+						<li>✅ Evaluate precision-recall curve.</li>
+						<li>✅ Visualize fraud clusters using PCA or t-SNE.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'viyaP1': `
+				<h1 class="blue-bolt">📧 SAS Viya Project 1: Spam Detection Using Text Analytics</h1>
+				<div class="content-box">
+					<p>Use SAS Viya’s <code>cas.textParse</code> to tokenize and score email text data from the <strong>SpamAssassin</strong> dataset.</p>
+					<ul>
+						<li>✅ Build a logistic regression spam classifier.</li>
+						<li>✅ Visualize top word importance.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'viyaP2': `
+				<h1 class="blue-bolt">🛍 SAS Viya Project 2: Clustering Customers</h1>
+				<div class="content-box">
+					<p>Segment customer behavior using k-means with <code>proc kclus</code> in Viya.</p>
+					<ul>
+						<li>✅ Standardize spending and visit features.</li>
+						<li>✅ Analyze results with cluster profiles.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'viyaP3': `
+				<h1 class="blue-bolt">🔍 SAS Viya Project 3: Credit Scoring Model</h1>
+				<div class="content-box">
+					<p>Use <strong>hmeq.sas7bdat</strong> to predict loan default risk with gradient boosting via <code>proc gradboost</code>.</p>
+					<ul>
+						<li>✅ Handle missing values with imputation.</li>
+						<li>✅ Generate lift charts and ROC curves.</li>
+					</ul>
+				</div>
+				`,
+
+
+
+				'viyaP4': `
+				<h1 class="blue-bolt">🏥 SAS Viya Project 4: Hospital Readmission Analysis</h1>
+				<div class="content-box">
+					<p>Predict patient readmission using EHR data and <code>proc forest</code>.</p>
+					<ul>
+						<li>✅ Feature selection using information gain.</li>
+						<li>✅ Model tuning with cross-validation.</li>
+					</ul>
+				</div>
+				`,
+
+				'viyaP5': `
+				<h1 class="blue-bolt">🚗 SAS Viya Project 5: Simulated Autonomous Driving</h1>
+				<div class="content-box">
+					<p>Build an API bridge from SAS Viya to a Python RL agent controlling a driving simulator.</p>
+					<ul>
+						<li>✅ Connect SAS model scoring endpoint to control actions.</li>
+						<li>✅ Analyze rewards vs policy iterations.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'viyaP6': `
+				<h1 class="blue-bolt">📊 SAS Viya Project 6: Time Series Forecasting</h1>
+				<div class="content-box">
+					<p>Use <strong>retail_sales.sas7bdat</strong> to forecast product demand using ARIMA.</p>
+					<ul>
+						<li>✅ Plot trends, seasonality.</li>
+						<li>✅ Use PROC ESM or TIMESERIES for forecasting.</li>
+					</ul>
+				</div>
+				`,
+
+
+				'viyaP7': `
+				<h1 class="blue-bolt">🔐 SAS Viya Project 7: Fraud Detection with Outlier Detection</h1>
+				<div class="content-box">
+					<p>Detect fraudulent transactions in <strong>transaction_log.sas7bdat</strong> using PROC HPFOREST and outlier detection.</p>
+					<ul>
+						<li>✅ Score data in CAS.</li>
+						<li>✅ Evaluate precision-recall trade-offs.</li>
+					</ul>
+				</div>
+				`,
+							
+			
+		};
+
+		contentArea.innerHTML = content[topic] || `<p>⏳ <strong>Under Processing...</strong> Stay tuned! 🚀</p>`;
+
+		document.querySelectorAll('.sub-menu div').forEach(item => {
+			item.classList.remove('active');
+		});
+		if (element) {
+			element.classList.add('active');
+		}
+	}
+    </script>
+</body>
+</html>

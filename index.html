@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Basic Python</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <p>Quick start with Basic Python Programming</p>
+        </div>
+        <div class="main-container">
+            <div class="sidebar">
+                <h2 onclick="showWelcome()" style="cursor: pointer;">Course Content</h2>
+                <div class="menu-item" onclick="toggleSubMenu('basic_python')">Basic Python</div>
+                <div id="basic_python" class="sub-menu">
+                    <div onclick="toggleSubMenu('Installation')">Installation</div>
+                    <div id="Installation" class="sub-menu">
+                        <div onclick="showContent('sub1')">Installation Guide</div>
+                        <div onclick="showContent('sub2')">Python Package Setup</div>
+                        <div onclick="showContent('sub3')">Setting Up a Code Editor</div>
+                        <div onclick="showContent('sub4')">Running Python Code</div>
+                        <div onclick="showContent('sub5')">Troubleshooting Common Issues</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Getting Started with Coding')">Getting Started with Coding</div>
+                    <div id="Getting Started with Coding" class="sub-menu">
+                        <div onclick="showContent('sub6')">Basic Data Types</div>
+                        <div onclick="showContent('sub7')">Sequence Data Types</div>
+                        <div onclick="showContent('sub8')">Set Data Types</div>
+                        <div onclick="showContent('sub9')">Mapping Data Types</div>
+                        <div onclick="showContent('sub10')">Binary Data Types</div>
+                        <div onclick="showContent('sub11')">User-Defined & Advanced Data Types</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Python for Basic Data Analysis')">Basic Data Analysis</div>
+                    <div id="Python for Basic Data Analysis" class="sub-menu">
+                        <div onclick="showContent('sub12')">Getting Started with Data in Python</div>
+                        <div onclick="showContent('sub13')">Data Cleaning and Preprocessing</div>
+                        <div onclick="showContent('sub14')">Exploratory Data Analysis</div>
+                        <div onclick="showContent('sub15')">Basic Data Transformation</div>
+                        <div onclick="showContent('sub16')">Analyzing a Sample Dataset</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('SQL & Database Handling')">SQL & Database Handling</div>
+                    <div id="SQL & Database Handling" class="sub-menu">
+                        <div onclick="showContent('sub17')">SQL Basics</div>
+                        <div onclick="showContent('sub18')">Data Manipulation, Aggregation & Grouping</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Natural Language Processing')">Natural Language Processing</div>
+                    <div id="Natural Language Processing" class="sub-menu">
+                        <div onclick="showContent('sub19')">Text Preprocessing & Representation</div>
+                        <div onclick="showContent('sub20')">Syntactic & Semantic Analysis</div>
+                        <div onclick="showContent('sub21')">Machine Translation & Text Generation</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Quiz')">Quiz</div>
+                    <div id="Quiz" class="sub-menu">
+                        <div onclick="showContent('Quiz')">Basic Python</div>
+                    </div>
+                </div>
+
+                <div class="menu-item"><a href="ml.html" style="text-decoration: none; color: inherit;">Basic Machine Learning</a></div>
+                <div class="menu-item"><a href="master_ml.html" style="text-decoration: none; color: inherit;">Intermediate Machine Learning</a></div>
+            </div>
+            <div class="content" id="content">
+                <h1>Welcome!</h1>
+                <div class="quote">
+                    "Python is a programming language that lets you work quickly and integrate systems more effectively."
+                    <span class="quote-source">- Python.org</span>
+                </div>
+                <p><strong class="orange-accent">Why Learn Python?</strong></p>
+                <p>
+                    Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to
+                    analyze data efficiently and build scalable solutions.
+                </p>
+                <p><strong class="orange-accent">What You’ll Gain</strong></p>
+                <p>
+                    This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our
+                    curriculum will guide you step by step through the essentials of Python for data science.
+                </p>
+                <p><strong class="orange-accent">Start Your Python Journey Today!</strong></p>
+                <p>
+                    Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your
+                    future!
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Prepare by 😀 version 1.5 - 2025 ! &  Build a Better Future begin from 2025 !</p>
+        </div>
+        <script>
+            function toggleSubMenu(id) {
+                var submenu = document.getElementById(id);
+                submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+            }
+            function showContent(subtopic) {
+                var contentDiv = document.getElementById("content");
+                var contentData = {
+                    sub1: `
+			<div class="content-block">
+				<h3  class="blue-bolt">Installation Guide for Python Data Science Development</h3>
+				<p>For data science, we strongly recommend using the <strong>Anaconda Distribution</strong>. Anaconda provides a fully integrated environment for data analysis, machine learning, and scientific computing, offering a streamlined setup with essential libraries and tools.</p>
+				<h3  class="blue-bolt">Why Anaconda?</h3>
+				<ul>
+				   <li>Pre-installed libraries: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scikit-learn</code>, and more.</li>
+				<li></li>
+				   <li>Jupyter Notebook for interactive data analysis.</li>
+				   <li>Conda package manager for easy library management.</li>
+				   <li>Compatible with Windows, Mac, and Linux.</li>
+				 </ul>
+				
+				<h3 class="orange-accent">Step 1: Download & Install Anaconda</h3>
+				<p>1. Visit the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda Official Website</a>.</p>
+					<p>2. Download the latest version of Anaconda for Python 3.x (64-bit).</p>
+				<p>3. Run the installer and follow the on-screen instructions.</p>
+				  <p>4. Ensure you select the option to "Add Anaconda to PATH" during installation.</p>
+				
+				<h3 class="orange-accent">Step 2: Verify Installation</h3>
+				<p>Once installed, open the Anaconda Prompt or Terminal and type:</p>
+				<pre><code>conda --version</code></pre>
+				<p>If the version appears, the installation was successful.</p>
+				
+				<h3 class="orange-accent">Step 3: Launch Jupyter Notebook</h3>
+				<p>Jupyter Notebook is an essential tool for data scientists. To start it, enter:</p>
+				<pre><code>jupyter notebook</code></pre>
+				<p>This will open Jupyter Notebook in your web browser, allowing you to write and execute Python code interactively.</p>
+				
+				<h3 class="orange-accent">Step 4: Install Additional Libraries (If Needed)</h3>
+				<p>While Anaconda includes most essential libraries, you can install others using:</p>
+				<pre><code>conda install library_name</code></pre>
+				<p>For example, to install TensorFlow:</p>
+				<pre><code>conda install tensorflow</code></pre>
+				
+				<h3 class="orange-accent">Conclusion</h3>
+				<p>With Anaconda, you have a complete, ready-to-use Python environment for data science. It simplifies package management, ensures compatibility, and accelerates your workflow.</p>
+				</div>
+			`,
+
+                    sub2: `
+				<h2 class="blue-bolt">Python Package Setup</h2>
+				<div class="content-block">
+				<h3 class="orange-accent">Step 1: Understanding Python Packages in Anaconda</h3>
+				<p>Python packages are collections of modules that provide additional functionalities for data science, machine learning, and software development. In Anaconda, package management is handled through <strong>Conda</strong>, a powerful tool that allows you to install, update, and manage dependencies effortlessly.</p>
+				
+				<h3 class="orange-accent">Step 2: Checking Installed Packages</h3>
+				<p>To see the list of all installed packages in your Anaconda environment, open the <strong>Anaconda Prompt</strong> or <strong>Terminal</strong> and type:</p>
+				   <pre><code>conda list</code></pre>
+				   <p>This command will display all installed packages along with their versions.</p>
+				
+				<h3 class="orange-accent">Step 3: Installing a New Package</h3>
+				<p>To install a new package, use the <code>conda install</code> command followed by the package name. For example, to install the pandas library, enter:</p>
+				<pre><code>conda install pandas</code></pre>
+				<p>Conda will automatically resolve dependencies and install the correct version.</p>
+				
+				<h3 class="orange-accent">Step 4: Updating an Existing Package</h3>
+				<p>To update a package to the latest version, use:</p>
+				<pre><code>conda update package_name</code></pre>
+				<p>For example, to update NumPy:</p>
+				<pre><code>conda update numpy</code></pre>
+				
+				<h3 class="orange-accent">Step 5: Removing a Package</h3>
+				<p>If you no longer need a package, you can remove it with:</p>
+				<pre><code>conda remove package_name</code></pre>
+				<p>For example, to remove Matplotlib:</p>
+				<pre><code>conda remove matplotlib</code></pre>
+				
+				<h3 class="orange-accent">Step 6: Managing Virtual Environments (Optional)</h3>
+				<p>To keep your projects organized, it's best to use virtual environments. You can create a new environment with a specific Python version using:</p>
+				<pre><code>conda create --name my_env python=3.9</code></pre>
+				<p>Activate the environment:</p>
+				<pre><code>conda activate my_env</code></pre>
+				<p>To install packages inside this environment:</p>
+				<pre><code>conda install numpy pandas</code></pre>
+				<p>To deactivate the environment, use:</p>
+				<pre><code>conda deactivate</code></pre>
+				
+				<h3 class="orange-accent">Conclusion</h3>
+				<p>With Conda, package management in Anaconda is efficient and reliable. It allows seamless installation, updating, and environment management, making Python development for data science easier.</p>
+				</div>
+			`,
+
+                    sub3: `
+			<h2 class="blue-bolt">Setting Up a Code Editor</h2>
+				<div class="content-block">
+				<p>To efficiently write and execute Python code, a good code editor is essential. Anaconda provides built-in editors, and you can also use external IDEs for an optimized development experience.</p>
+				<h3 class="orange-accent">Step 1: Understanding Code Editors</h3>
+				<p>Code editors help developers write, debug, and run Python programs with ease. Features like syntax highlighting, debugging tools, and extensions improve productivity.</p>
+				<h3 class="orange-accent">Step 2: Recommended Code Editors</h3>
+				<table>
+				  <tr>
+				<th>Code Editor</th>
+				<th>Why Use It?</th>
+					</tr>
+					<tr>
+						<td><span>Jupyter Notebook </span> </td>
+						<td>Best for data analysis & visualization, interactive coding.</td>
+					</tr>
+					<tr>
+						<td><span>Spyder</span> </td>
+						<td>Great for scientific computing (MATLAB-like interface).</td>
+					</tr>
+					<tr>
+						<td><span>VS Code</span></td>
+						<td>Lightweight, supports Jupyter & Conda.</td>
+					</tr>
+					<tr>
+						<td><span>PyCharm</span></td>
+						<td>Powerful, best for large Python projects.</td>
+					</tr>
+				</table>
+				
+				<h3 class="orange-accent">Step 3: Launching Jupyter Notebook (Recommended for Beginners)</h3>
+				<p>Jupyter Notebook is widely used for data science and machine learning projects.</p>
+				<p>To start Jupyter Notebook:</p>
+				<ol>
+				   <li>Open <strong>Anaconda Navigator</strong>.</li>
+				   <li>Click <strong>"Launch"</strong> under <strong>Jupyter Notebook</strong>.</li>
+				   <li>A browser window will open. Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+				  </ol>
+				<p>Alternatively, launch Jupyter from the <strong>Anaconda Prompt</strong>:</p>
+				<pre><code>jupyter notebook</code></pre>
+		
+				  <h3 class="orange-accent">Step 4: Setting Up Spyder (For Scientific Computing)</h3>
+				  <p>Spyder is another popular code editor included in Anaconda, preferred by researchers and scientists.</p>
+				  <ol>
+				   <li>Open <strong>Anaconda Navigator</strong>.</li>
+				   <li>Click <strong>"Launch"</strong> under <strong>Spyder</strong>.</li>
+				   <li>The Spyder IDE will open, featuring a code editor and an interactive Python console.</li>
+				 </ol>
+				 <p>To manually open Spyder, use:</p>
+				 <pre><code>spyder</code></pre>
+				
+					 <h3 class="orange-accent">Step 5: Installing & Configuring VS Code for Anaconda (optional)</h3>
+				 <p>If you prefer a modern and lightweight editor, VS Code is a great choice.</p>
+				 <ol>
+				   <li>Download <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> and install it.</li>
+				   <li>Inside VS Code, install the <strong>Python Extension</strong>.</li>
+				   <li>Set Anaconda as the default Python interpreter in VS Code.</li>
+				</ol>
+				<p>Activate Anaconda in VS Code using:</p>
+				<pre><code>conda activate base</code></pre>
+				<p>If working with Jupyter Notebook files, install the <strong>Jupyter Notebook extension</strong> inside VS Code.</p>
+				
+				
+				<h3 class="orange-accent">Conclusion</h3>
+				<p>Choosing the right code editor depends on your needs:</p>
+				<ul>
+						<li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive data science workflows.</li>
+				<li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Ideal for scientific computing.</li>
+				<li class="list-item"><span class="list-label blue-bolt">VS Code,PyCharm</span>: Great for advanced development,large projects.</li>
+				</ul>
+				</div>
+			`,
+
+                    sub4: `<h2 class="blue-bolt">Running Python Code</h2>
+                             <div class="content-block">
+            <p>Python code can be executed in multiple ways, depending on the environment you are working in. Below are the recommended methods for running Python scripts efficiently.</p>
+            
+            <h3 class="orange-accent">Step 1: Running Python Code in Jupyter Notebook (Recommended for Data Science)</h3>
+               <p>Jupyter Notebook allows interactive execution, making it ideal for data science projects.</p>
+            <ol>
+               <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Jupyter Notebook</strong>.</li>
+               <li>Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+               <li>Type the following code in a cell and press <strong>Shift + Enter</strong> to execute:</li>
+              </ol>
+            <pre><code>print("Hello, Python for Data Science!")</code></pre>
+            
+            <h3 class="orange-accent">Step 2: Running Python Code in Spyder</h3>
+            
+            <p>Spyder is another great environment for running Python scripts.</p>
+            <ol>
+               <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Spyder</strong>.</li>
+               <li>Write the following code in the editor:</li>
+            </ol>
+            <pre><code>print("Running Python in Spyder!")</code></pre>
+            <p>Click the <strong>Run</strong> button (green play icon) or press <strong>F5</strong> to execute.</p>
+            
+               <h3 class="orange-accent">Step 3: Running Python Code in VS Code</h3>
+            <p>VS Code is a modern and lightweight editor for Python development.</p>
+            <ol>
+               <li>Open <strong>VS Code</strong> and install the <strong>Python extension</strong> (if not already installed).</li>
+               <li>Create a new <code class="code-inline">.py</code> file and write:</li>
+            </ol>
+            
+            <pre><code>print("Hello world!")</code></pre>
+            <p>Press <strong>Ctrl + Shift + P</strong>, type <strong>Run Python File</strong>, and select it to execute.</p>
+            
+             <h3 class="orange-accent">Step 4: Running Python Code in Anaconda Prompt (Command Line)</h3>
+            <p>If you prefer the command line, you can run Python scripts directly.</p>
+            <ol>
+            <li>Open <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (Mac/Linux).</li>
+               <li>Navigate to the folder where your script is saved using:</li>
+            </ol>
+            
+            <pre><code>cd path/to/folder</code></pre>
+            <p>Then, run your script with:</p>
+            <pre><code>python script.py</code></pre>
+            
+            <h3 class="orange-accent">Step 5: Running Python Interactively in the Python Shell</h3>
+            <p>The Python shell allows you to run commands interactively.</p>
+            <ol>
+               <li>Open <strong>Anaconda Prompt</strong> or <strong>Terminal</strong>.</li>
+               <li>Type <code class="code-inline">python</code> and hit <strong>Enter</strong> to open the interactive shell.</li>
+               <li>Run Python code directly, like:</li>
+            </ol>
+            <pre><code>print("This is the Python shell!")</code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <ul>
+               <li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive execution & data science workflows.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Great for scientific computing & debugging.</li>
+               <li class="list-item"><span class="list-label blue-bolt">VS Code</span>: Ideal for coding large projects efficiently.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Command Line / Shell</span>: Quick execution for scripts.</li>
+            </ul>
+                             </div>`,
+
+                    sub5: `<h2 class="blue-bolt">Troubleshooting Common Issues</h2>
+            <div class="content-block">
+               <p>Encountering errors while using Python or Anaconda? Below are common issues and solutions to keep your development smooth.</p>
+            
+            <h3 class="orange-accent">Issue 1: 'conda' or 'python' Command Not Found</h3>
+            <p><strong>Cause:</strong> Anaconda might not be added to the system’s PATH.</p>
+                             <p><strong>Solution:</strong></p>
+            <ol>
+            			<li>Reinstall Anaconda and select <strong>"Add Anaconda to PATH environment variable"</strong> during installation.</li>
+               <li>Alternatively, manually add it by running:</li>
+            </ol>
+            <pre><code> # Windows (Run in Anaconda Prompt) setx PATH "%PATH%;C:\ProgramData\Anaconda3"</code></pre>
+               			 
+            <pre><code> # macOS/Linux (Run in Terminal) export PATH="$HOME/anaconda3/bin:$PATH" </code></pre>
+            
+            <h3 class="orange-accent">Issue 2: Jupyter Notebook Won't Launch</h3>
+            <p><strong>Cause:</strong> Missing or outdated Jupyter installation.</p>
+              <p><strong>Solution:</strong></p>
+            <ol>
+               <li>Update Jupyter by running:</li>
+            </ol>
+              <pre><code>conda update jupyter</code></pre>
+            <ol start="2">
+               <li>Then, restart Jupyter Notebook:</li>
+              </ol>
+              <pre><code>jupyter notebook</code></pre>
+            
+            <h3 class="orange-accent">Issue 3: ImportError - 'Module Not Found'</h3>
+            <p><strong>Cause:</strong> The required library is missing or installed in the wrong environment.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+            			<li>First, check installed packages:</li>
+              </ol>
+            <pre><code>conda list</code></pre>
+              <ol start="2">
+               <li>If the package is missing, install it using:</li>
+              </ol>
+            <pre><code>conda install package_name</code></pre>
+            <p>For example, to install NumPy:</p>
+            <pre><code>conda install numpy</code></pre>
+            
+            <h3 class="orange-accent">Issue 4: Kernel Error in Jupyter Notebook</h3>
+            <p><strong>Cause:</strong> The Python environment is corrupted or missing dependencies.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+               <li>Activate the correct environment:</li>
+            </ol>
+            <pre><code>conda activate base</code></pre>
+            
+            <ol start="2">
+               <li>Reinstall the Jupyter kernel:</li>
+            </ol>
+            <pre><code>conda install ipykernel</code></pre>
+            <ol start="3">
+               <li>Restart Jupyter Notebook.</li>
+            </ol>
+            
+            <h3 class="orange-accent">Issue 5: Conda Fails to Install Packages</h3>
+               <p><strong>Cause:</strong> Internet issues, outdated Conda, or broken dependencies.</p>
+               <p><strong>Solution:</strong></p>
+               <ol>
+               <li>Update Conda:</li>
+              </ol>
+            <pre><code>conda update conda</code></pre>
+            <ol start="2">
+               <li>If package installation fails, try using:</li>
+            </ol>
+            <pre><code>conda clean --all</code></pre>
+            <ol start="3">
+               <li>Then, retry the installation.</li>
+            </ol>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <ul>
+            <li class="list-item"><span class="list-label blue-bolt">Check Error Message</span>: It often provides useful hints.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Verify Environment</span>: Ensure using the correct Conda environment.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Update Packages</span>: Keep Conda and libraries updated prevents many issues.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Restart Jupyter/ Python</span>: Sometimes, a simple restart fixes the problem.</li>
+              </ul>
+                            </div>`,
+
+                    /*---------Section Basic Data type & Function --------------------------------------*/
+
+                    sub6: `<h2 class="blue-bolt">Getting Started with Data in Python </h2>
+            <h1 class="orange-accent">Basic Data Types </h1>
+            <div class="content-block">
+            <p>Python provides several built-in data types that are fundamental for handling data in data science and programming.</p>
+            <h3 class="orange-accent">1. Numeric Data Types</h3>
+            <p>Numeric data types in Python include integers, floating-point numbers, and complex numbers.</p>
+            
+            <pre><code class="python-terminal">
+# Integer
+x = 10
+print(type(x))  # Output: &lt;class 'int'&gt;
+
+# Float
+y = 10.5
+print(type(y))  # Output: &lt;class 'float'&gt;
+
+# Complex
+z = 2 + 3j
+print(type(z))  # Output: &lt;class 'complex'&gt;
+            </code></pre>
+            
+            <h3 class="orange-accent">2. String Data Type</h3>
+            <p>Strings are used to store text data and can be enclosed in single or double quotes.</p>
+            
+            <pre><code class="python-terminal">
+# String Example
+text = "Hello, Python!"
+print(type(text))  # Output: &lt;class 'String'&gt;
+            </code></pre>
+            
+            
+              <h3 class="orange-accent">3. Boolean Data Type</h3>
+            <p>Boolean values represent truth values: <code>True</code> or <code>False</code>.</p>
+            
+            <pre><code class="python-terminal">
+# Boolean Example
+is_python_fun = True
+print(type(is_python_fun)) # Output: &lt;class 'bool'&gt 
+              </code></pre>
+            
+            
+            <h3 class="orange-accent">4. List Data Type</h3>
+              <p>Lists are ordered collections of items, which can hold different data types.</p>
+            
+            <pre><code class="python-terminal">
+# List Example
+my_list = [1, 2, 3, "Python", True]
+print(type(my_list))  # Output: &lt;class 'list'&gt 
+            </code></pre>
+            
+            <h3 class="orange-accent">5. Tuple Data Type</h3>
+            <p>Tuples are similar to lists but are immutable (cannot be changed).</p>
+            
+            <pre><code class="python-terminal">
+# Tuple Example
+my_tuple = (10, 20, 30, "Data Science")
+print(type(my_tuple))  # Output: &lt;class 'tuple'&gt
+              </code></pre>
+            
+            
+            <h3 class="orange-accent">6. Dictionary Data Type</h3>
+            <p>Dictionaries store data in key-value pairs and are useful for structured data.</p>
+            
+            <pre><code class="python-terminal">
+# Dictionary Example
+student = {"name": "Alice", "age": 25, "course": "Python"}
+print(type(student))  # Output: &lt;class 'dict'&gt
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">7. Set Data Type</h3>
+            <p>Sets are unordered collections of unique items.</p>
+            
+            <pre><code class="python-terminal">
+# Set Example
+my_set = {1, 2, 3, 4, 4, 5}
+print(type(my_set))  # Output: &lt;class 'set'&gt
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>Understanding Python's basic data types is essential for data manipulation and analysis. Mastering these will help in working efficiently with data in Python.</p>
+                     </div>`,
+
+                    sub7: `<h2 class="blue-bolt">Sequence Data Types </h2>
+            <div class="content-block">
+            <p>Python provides several built-in ordered collection types that allow you to store multiple items in a single variable. These include:</p>
+            <h3 class="orange-accent">1. Lists</h3>
+              <p>Lists are mutable, ordered collections that can contain elements of different data types.</p>
+            <pre class="python-terminal"><code>
+# Creating a List
+numbers = [10, 20, 30, 40, 50]
+print(numbers)  # Output: [10, 20, 30, 40, 50]
+
+# Accessing Elements
+print(numbers[0])  # Output: 10
+
+# Modifying Elements
+numbers[2] = 100
+print(numbers)  # Output: [10, 20, 100, 40, 50]
+
+# Adding Elements
+numbers.append(60)
+print(numbers)  # Output: [10, 20, 100, 40, 50, 60]
+
+# Removing Elements
+numbers.remove(40)
+print(numbers)  # Output: [10, 20, 100, 50, 60]
+            </code></pre>
+            
+            <h3 class="orange-accent">2. Tuples</h3>
+            <p>Tuples are immutable, ordered collections. Once created, their elements cannot be modified.</p>
+            <pre class="python-terminal"><code>
+# Creating a Tuple
+coordinates = (5, 10, 15)
+print(coordinates)  # Output: (5, 10, 15)
+
+# Accessing Elements
+print(coordinates[1])  # Output: 10
+
+# Tuples are immutable, so this will cause an error:
+# coordinates[1] = 20  # TypeError: 'tuple' object does not support item assignment
+            </code></pre>
+            
+            <h3 class="orange-accent">3. Strings</h3>
+            <p>Strings are immutable sequences of characters used to store text.</p>
+            <pre class="python-terminal"><code>
+# Creating a String
+text = "Hello, Python!"
+print(text)  # Output: Hello, Python!
+
+# Accessing Characters
+print(text[0])  # Output: H
+
+# Strings are immutable, so this will cause an error:
+# text[0] = "h"  # TypeError: 'str' object does not support item assignment
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>Python's ordered collection types allow for efficient data storage and manipulation. Lists are best when elements need to be changed, while tuples are useful for fixed data. Strings provide powerful text manipulation features.</p>
+                             </div>`,
+
+                    sub8: `<h2 class="blue-bolt">Set Data Types - Unordered Collections </h2>
+            <div class="content-block">
+            		<p>In Python, a <strong>set</strong> is an <strong>unordered collection</strong> of unique elements. Sets are useful when you need to store items without duplicates and perform operations like union, intersection, and difference.</p>
+            
+              <h3 class="orange-accent">1. Creating a Set</h3>
+                     <p>Sets are defined using curly braces <code>{}</code> or the <code>set()</code> function.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a Set
+fruits = {"apple", "banana", "cherry"}
+print(fruits)  # Output: {'apple', 'banana', 'cherry'}
+
+# Creating an Empty Set
+empty_set = set()  # {} creates an empty dictionary, not a set.
+print(type(empty_set))  # Output: <class 'set'>
+            </code></pre>
+            
+            <h3 class="orange-accent">2. Adding and Removing Elements</h3>
+            <p>Elements can be added using <code>.add()</code>  and removed using <code>.remove()</code>  or <code>.discard()</code> .</p>
+            
+            <pre class="python-terminal"><code>
+# Adding an Element
+fruits.add("orange")
+print(fruits)  # Output: {'apple', 'banana', 'cherry', 'orange'}
+
+# Removing an Element
+fruits.remove("banana")  # Raises KeyError if item is not found
+print(fruits)  # Output: {'apple', 'cherry', 'orange'}
+
+# Using discard() (No error if element is missing)
+fruits.discard("banana")  # No error
+            </code></pre>
+            
+            <h3 class="orange-accent">3. Set Operations</h3>
+            <p>Python sets support <strong>union, intersection, and difference</strong> operations.</p>
+            <pre class="python-terminal"><code>
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# Union (Combine all unique elements)
+print(A | B)  # Output: {1, 2, 3, 4, 5, 6}
+
+# Intersection (Common elements)
+print(A & B)  # Output: {3, 4}
+
+# Difference (Elements in A but not in B)
+print(A - B)  # Output: {1, 2}
+
+# Symmetric Difference (Elements in A or B, but not both)
+print(A ^ B)  # Output: {1, 2, 5, 6}
+            </code></pre>
+            
+            <h3 class="orange-accent">4. Checking Membership</h3>
+            <p>Use the <code>in</code> keyword to check if an element exists in a set.</p>
+            
+            <pre class="python-terminal"><code>
+numbers = {10, 20, 30, 40}
+
+print(20 in numbers)  # Output: True
+print(50 in numbers)  # Output: False
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            	    <p>Sets provide an efficient way to handle <strong>unique unordered data</strong>. They are useful for <strong>removing duplicates</strong>, performing <strong>mathematical set operations</strong>,and checking <strong>membership efficiently</strong>.</p>
+                        </div>`,
+
+                    sub9: `<h2 class="blue-bolt">Mapping Data Type - Dictionaries</h2>
+            <div class="content-block">
+               <p>In Python, a <strong>dictionary</strong> is a collection of key-value pairs. It is an efficient way to store and retrieve data based on a unique key.</p>
+            
+              <h3 class="orange-accent">1. Creating a Dictionary</h3>
+              <p>Dictionaries are created using curly braces <code>{}</code> or the <code>dict()</code> function.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a Dictionary
+student = {"name": "Alice", "age": 20, "grade": "A"}
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A'}
+
+# Using dict() function
+employee = dict(id=101, name="John", role="Engineer")
+print(employee)  # Output: {'id': 101, 'name': 'John', 'role': 'Engineer'}
+            </code></pre>
+            
+             <h3 class="orange-accent">2. Accessing Dictionary Values</h3>
+             <p>Dictionary values can be accessed using keys.</p>
+            
+            <pre class="python-terminal"><code>
+# Accessing Dictionary Values
+print(student["name"])  # Output: Alice
+print(employee["role"])  # Output: Engineer
+
+# Using .get() to avoid KeyError
+print(student.get("age"))  # Output: 20
+            </code></pre>
+            
+             <h3 class="orange-accent">3. Adding & Updating Values</h3>
+             <p>You can add new key-value pairs or update existing values.</p>
+            
+            <pre class="python-terminal"><code>
+# Adding a New Key-Value Pair
+student["city"] = "New York"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A', 'city': 'New York'}
+
+# Updating a Value
+student["grade"] = "A+"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+', 'city': 'New York'}
+            </code></pre>
+            
+            <h3 class="orange-accent">4. Removing Items from a Dictionary</h3>
+            <p>You can remove dictionary items using <code>del</code> or <code>pop()</code>.</p>
+            
+            <pre class="python-terminal"><code>
+# Removing a Key-Value Pair
+del student["city"]
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+'}
+
+# Using pop()
+grade = student.pop("grade")
+print(grade)  # Output: A+
+print(student)  # Output: {'name': 'Alice', 'age': 20}
+            </code></pre>
+            
+            		<h3 class="orange-accent">Conclusion</h3>
+            		<p>Dictionaries are powerful data structures in Python that allow efficient data storage and retrieval using keys. They are widely used in data science for storing metadata, configurations, and structured data mappings.</p>
+            </div>`,
+
+                    sub10: `<h2 class="blue-bolt">Binary Data Types </h2>
+            <div class="content-block">
+                <p>Python provides support for handling binary data using the <code>bytes</code>, <code>bytearray</code>, and <code>memoryview</code> types.</p>
+            
+              <h3 class="orange-accent">1. Bytes: Immutable Binary Data</h3>
+              <p>A <code>bytes</code> object is an immutable sequence of bytes.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a Bytes Object
+binary_data = b"Hello"
+print(binary_data)  # Output: b'Hello'
+
+# Accessing Individual Bytes
+print(binary_data[0])  # Output: 72 (ASCII value of 'H')
+            </code></pre>
+            
+                   <h3 class="orange-accent">2. Bytearray: Mutable Binary Data</h3>
+                   <p>The <code>bytearray</code> type is a mutable sequence of bytes.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a Bytearray
+mutable_data = bytearray([65, 66, 67])
+print(mutable_data)  # Output: bytearray(b'ABC')
+
+# Modifying a Byte
+mutable_data[0] = 97  # Change 'A' (65) to 'a' (97)
+print(mutable_data)  # Output: bytearray(b'aBC')
+            </code></pre>
+            
+                   <h3 class="orange-accent">3. MemoryView: Access Binary Data</h3>
+                          <p>The <code>memoryview</code> function allows direct access to an object’s binary data without copying it.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a MemoryView
+mem_view = memoryview(b'Python')
+print(mem_view[0])  # Output: 80 (ASCII value of 'P')
+
+# Slicing MemoryView
+print(mem_view[1:4].tobytes())  # Output: b'yth'
+            </code></pre>
+            
+            	    <h3 class="orange-accent">Conclusion</h3>
+                 <p>Binary data types are useful for handling files, images, and low-level memory operations. They enable efficient storage, transmission, and processing of binary information in Python.</p>
+                         </div>`,
+
+                    sub11: `<h2 class="blue-bolt">User-Defined & Advanced Data Types</h2>
+            <div class="content-block">
+                <p>Python allows users to define their own custom data types using classes and advanced structures like named tuples, enumerations, and dataclasses. These data types help in organizing complex data structures efficiently.</p>
+            
+                <h3 class="orange-accent">1. Classes: Custom Data Structures</h3>
+                <p>In Python, a class is a blueprint for creating objects with specific properties and methods.</p>
+            
+            <pre class="python-terminal"><code>
+# Defining a Custom Class
+class Student:
+def __init__(self, name, age, grade):
+self.name = name
+self.age = age
+self.grade = grade
+
+def get_details(self):
+return f"{self.name}, Age: {self.age}, Grade: {self.grade}"
+
+# Creating an Instance
+student1 = Student("Alice", 21, "A")
+print(student1.get_details())  # Output: Alice, Age: 21, Grade: A
+            </code></pre>
+            
+              <h3 class="orange-accent">2. Named Tuples: Lightweight Data Structures</h3>
+              <p>A named tuple is an immutable data structure that allows accessing fields by name, improving code readability.</p>
+            
+            <pre class="python-terminal"><code>
+from collections import namedtuple
+
+# Defining a Named Tuple
+Person = namedtuple("Person", ["name", "age", "city"])
+
+# Creating an Instance
+p1 = Person(name="John", age=30, city="New York")
+print(p1.name, p1.city)  # Output: John New York
+            </code></pre>
+            
+              <h3 class="orange-accent">3. Enumerations (Enums)</h3>
+              <p>Enumerations help define a set of named constants that improve code clarity.</p>
+            
+            <pre class="python-terminal"><code>
+from enum import Enum
+
+# Defining an Enum Class
+class Status(Enum):
+ACTIVE = 1
+INACTIVE = 0
+PENDING = -1
+
+print(Status.ACTIVE)  # Output: Status.ACTIVE
+print(Status.ACTIVE.value)  # Output: 1
+            </code></pre>
+            
+            		<h3 class="orange-accent">4. DataClasses: Simplified Data Storage</h3>
+              <p>DataClasses provide an efficient way to define structured objects without manually writing boilerplate code.</p>
+            
+            <pre class="python-terminal"><code>
+from dataclasses import dataclass
+
+# Defining a DataClass
+@dataclass
+class Employee:
+id: int
+name: str
+department: str
+
+# Creating an Instance
+e1 = Employee(101, "Alice", "HR")
+print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
+            </code></pre>
+            
+            		<h3 class="orange-accent">Conclusion</h3>
+            		<p>User-defined and advanced data types like classes, named tuples, enums, and dataclasses help in designing scalable, structured, and maintainable Python programs. They are widely used in data modeling, API development, and object-oriented programming.</p>
+              </div>`,
+
+                    /*--------------------------------------------------------------Section Data analysis ----------------------------------------------------------------*/
+
+                    sub12: `<h2 class="blue-bolt">Getting Started with Data in Python</h2>
+            <div class="content-block">
+            <p>Data is the backbone of any analysis, and Python provides powerful libraries to work with structured and unstructured data. Whether handling CSV files, Excel sheets, databases, or web data, Python makes data manipulation simple and efficient.</p>
+            
+            <h3 class="orange-accent">1. Why Use Python for Data Analysis?</h3>
+            <p>Python is widely used in data science and analytics due to its simplicity and robust libraries like <code class="code-inline">pandas</code>, <code class="code-inline">numpy</code>, and <code class="code-inline">matplotlib</code>. Some key benefits include:</p>
+            
+            <ul>
+               <li class="list-item"><span class="list-label blue-bolt">Easy-to-Use</span>: Python syntax is beginner-friendly and intuitive.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Extensive Libraries</span>: Ready-to-use tools for data processing and visualization.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Scalability</span>: Can handle small and large datasets efficiently.</li>
+            </ul>
+            
+            
+            <h3 class="orange-accent">2. Installing Essential Data Libraries</h3>
+            <p>We use Anaconda for a complete data science environment. If not installed, refer to the <a href="#">Installation Guide</a>.</p>
+            <p>To install key data libraries, open Anaconda Prompt or Terminal and run:</p>
+            <pre class="python-terminal"><code>
+# Install Pandas for data handling
+conda install pandas
+
+# Install NumPy for numerical computing
+conda install numpy
+
+# Install Matplotlib for data visualization
+conda install matplotlib
+</code></pre>
+
+<h3 class="orange-accent">3. Loading and Viewing Data with Pandas</h3>
+<p>Once installed, we can use pandas to load and explore datasets.</p>
+
+<pre class="python-terminal"><code>
+import pandas as pd
+
+# Load a CSV file
+df = pd.read_csv("data.csv")
+
+# View first 5 rows
+print(df.head())
+            </code></pre>
+            
+            <h3 class="orange-accent">4. Checking Data Structure</h3>
+            <p>Before analysis, it’s important to check dataset properties.</p>
+            <pre class="python-terminal"><code>
+# Check dataset size
+print(df.shape)  # Output: (rows, columns)
+
+# View column names
+print(df.columns)
+
+# Summary statistics
+print(df.describe())
+</code></pre>
+
+<h3 class="orange-accent">5. Handling Missing Data</h3>
+<p>Data is often incomplete. Use pandas to detect and fill missing values.</p>
+<pre class="python-terminal"><code>
+# Check missing values
+print(df.isnull().sum())
+
+# Fill missing values with mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+            </code></pre>
+            
+            <h3 class="orange-accent">6. Saving Processed Data</h3>
+            <p>After cleaning, save the dataset for future use.</p>
+            <pre class="python-terminal"><code>
+# Save to a new CSV file
+df.to_csv("cleaned_data.csv", index=False)
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>Python offers a flexible and powerful approach to handling data. By using pandas and NumPy, we can efficiently load, explore, and clean datasets, preparing them for further analysis.</p>
+            </div>`,
+
+                    sub13: `<h2 class="blue-bolt">Data Cleaning and Preprocessing</h2>
+            <div class="content-block">
+            <p>Data cleaning is an essential step in any data science project. Raw data often contains missing values, duplicates, and formatting errors. In this section, we will learn how to clean and preprocess datasets using Python’s <code class="code-inline">pandas</code> library.</p>
+            
+               <h3 class="orange-accent">1. Identifying Missing Data</h3>
+               <p>Before analysis, we need to check if there are missing values in our dataset.</p>
+            <pre class="python-terminal"><code>
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+            </code></pre>
+            
+            
+               <h3 class="orange-accent">2. Handling Missing Values</h3>
+            <p>We can fill missing values with mean/median or drop rows with missing data.</p>
+            <pre class="python-terminal"><code>
+# Fill missing values with column mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">3. Removing Duplicates</h3>
+               <p>Sometimes datasets have duplicate records that need to be removed.</p>
+            <pre class="python-terminal"><code>
+# Remove duplicate rows
+df.drop_duplicates(inplace=True)
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">4. Standardizing Column Names</h3>
+            <p>Inconsistent column names can cause issues. Standardize them like this:</p>
+            <pre class="python-terminal"><code>
+# Convert column names to lowercase and remove spaces
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+            </code></pre>
+            
+            
+               <h3 class="orange-accent">5. Converting Data Types</h3>
+            <p>Ensure numerical values are in the correct integer or float format.</p>
+            <pre class="python-terminal"><code>
+# Convert column to numeric
+df['price'] = pd.to_numeric(df['price'], errors='coerce')
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">6. Handling Outliers</h3>
+            <p>Outliers can skew analysis. We can remove or replace them using statistical techniques.</p>
+            <pre class="python-terminal"><code>
+# Remove outliers beyond 3 standard deviations
+df = df[(df['price'] < df['price'].mean() + 3 * df['price'].std())]
+            </code></pre>
+            
+            
+              <h3 class="orange-accent">Conclusion</h3>
+                     <p>By cleaning and preprocessing our data, we ensure that our analysis is accurate and reliable. The next step is to explore the cleaned dataset through Exploratory Data Analysis (EDA) & Visualization.</p>
+                             </div>`,
+
+                    sub14: `<h2 class="blue-bolt">Exploratory Data Analysis (EDA) & Visualization</h2>
+            <div class="content-block">
+            <p>Exploratory Data Analysis (EDA) is a crucial step in understanding dataset patterns, detecting anomalies, and summarizing key insights. We use Python libraries like <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> to create effective visualizations.</p>
+            
+            
+            <h3 class="orange-accent">1. Import Required Libraries</h3>
+            <p>Ensure you have <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> installed. If not, install them using:</p>
+            <pre class="python-terminal"><code>
+# Install matplotlib & seaborn
+pip install matplotlib seaborn
+            </code></pre>
+            
+            <p>Then, import the required libraries:</p>
+            <pre class="python-terminal"><code>
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+            </code></pre>
+            
+            <h3 class="orange-accent">2. Load & Preview the Dataset</h3>
+            <p>We first load the dataset and display basic statistical summaries.</p>
+            <pre class="python-terminal"><code>
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Display first 5 rows
+print(df.head())
+
+# Get summary statistics
+print(df.describe())
+            </code></pre>
+            
+            <h3 class="orange-accent">3. Univariate Analysis (Single Variable)</h3>
+            <p>We analyze the distribution of individual numerical features using histograms and KDE plots.</p>
+            <pre class="python-terminal"><code>
+# Histogram of a numerical column
+plt.figure(figsize=(8,5))
+sns.histplot(df['price'], bins=30, kde=True)
+plt.title("Price Distribution")
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">4. Boxplot to Detect Outliers</h3>
+            <p>Boxplots help identify outliers and data spread.</p>
+            <pre class="python-terminal"><code>
+# Boxplot to detect outliers
+plt.figure(figsize=(8,5))
+sns.boxplot(x=df['price'])
+plt.title("Price Outliers")
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">5. Bivariate Analysis (Two Variables)</h3>
+            <p>Scatter plots and correlation heatmaps help us analyze relationships between variables.</p>
+            
+            <pre class="python-terminal"><code>
+# Scatter plot (Example: Price vs Area)
+plt.figure(figsize=(8,5))
+sns.scatterplot(x=df['area'], y=df['price'])
+plt.title("Area vs Price")
+plt.xlabel("Area (sq ft)")
+plt.ylabel("Price ($)")
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">6. Correlation Heatmap</h3>
+            <p>Heatmaps help visualize how features correlate with each other.</p>
+            <pre class="python-terminal"><code>
+# Correlation heatmap
+plt.figure(figsize=(10,6))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Feature Correlation Heatmap")
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">7. Categorical Data Visualization</h3>
+            <p>Bar plots and count plots are useful for analyzing categorical variables.</p>
+            
+            <pre class="python-terminal"><code>
+# Count plot for a categorical feature
+plt.figure(figsize=(8,5))
+sns.countplot(x=df['category'])
+plt.title("Category Count")
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>EDA helps uncover patterns, trends, and potential issues in the dataset before applying machine learning models. In the next step, we move on to Data Transformation to prepare our data for further analysis.</p>
+                        </div>`,
+
+                    sub15: `<h2 class="blue-bolt">Data Transformation & Feature Engineering</h2>
+            <div class="content-block">
+            <p>Before applying machine learning models, we need to preprocess and transform data for better performance. This includes handling missing values, scaling numerical data, encoding categorical variables, and feature engineering.</p>
+            
+               <h3 class="orange-accent">1. Handling Missing Values</h3>
+            <p>Missing values can affect model performance. We use <code class="code-inline">pandas</code> to handle them.</p>
+            
+            <pre class="python-terminal"><code>
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Fill missing numerical values with the mean
+df['price'].fillna(df['price'].mean(), inplace=True)
+
+# Fill categorical missing values with the most frequent category
+df['category'].fillna(df['category'].mode()[0], inplace=True)
+
+# Drop rows with missing values (if necessary)
+df.dropna(inplace=True)
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">2. Scaling Numerical Features</h3>
+            <p>Feature scaling ensures numerical values are on the same scale, improving model performance.</p>
+            
+            
+            <h4 class="orange-accent">Standardization (Z-score normalization)</h4>
+                   <p>Standardization scales data to have a mean of 0 and a standard deviation of 1.</p>
+            
+            <pre class="python-terminal"><code>
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+            </code></pre>
+            
+            
+            <h4 class="orange-accent">Min-Max Scaling (Normalization)</h4>
+            <p>Normalization scales values between 0 and 1.</p>
+            
+            <pre class="python-terminal"><code>
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+            </code></pre>
+            
+            
+                <h3 class="orange-accent">3. Encoding Categorical Data</h3>
+            <p>Machine learning models work better with numerical data. We convert categorical values using one-hot encoding or label encoding.</p>
+                  <h4 class="orange-accent">One-Hot Encoding</h4>
+            <p>One-hot encoding creates binary columns for each category.</p>
+            
+            <pre class="python-terminal"><code>
+df = pd.get_dummies(df, columns=['category'])
+            </code></pre>
+            
+            <h4 class="orange-accent">Label Encoding</h4>
+            <p>Label encoding assigns numerical values to categories.</p>
+            
+            <pre class="python-terminal"><code>
+from sklearn.preprocessing import LabelEncoder
+
+encoder = LabelEncoder()
+df['category'] = encoder.fit_transform(df['category'])
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">4. Feature Engineering</h3>
+            <p>Creating new features can improve model performance.</p>
+            
+            <h4 class="orange-accent">Creating New Features</h4>
+            <p>We can derive new insights by combining or transforming existing features.</p>
+            
+            <pre class="python-terminal"><code>
+# Creating a price per square foot feature
+df['price_per_sqft'] = df['price'] / df['area']
+            </code></pre>
+            
+            <h4 class="orange-accent">Binning</h4>
+            <p>Binning groups continuous values into discrete bins.</p>
+            
+            <pre class="python-terminal"><code>
+df['price_category'] = pd.cut(df['price'], bins=[0, 100000, 300000, 500000], labels=['Low', 'Medium', 'High'])
+            </code></pre>
+            
+            
+            <h4 class="orange-accent">Date-Time Feature Extraction</h4>
+            <p>Extracting useful features from date-time columns.</p>
+            
+            <pre class="python-terminal"><code>
+df['year'] = pd.to_datetime(df['date']).dt.year
+df['month'] = pd.to_datetime(df['date']).dt.month
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>Data transformation ensures that our dataset is clean, well-structured, and optimized for machine learning models. The next step is analyzing a sample dataset to see how preprocessing impacts results.</p>
+            </div>`,
+
+                    sub16: `<h2 class="blue-bolt">Analyzing a Sample Dataset</h2>
+            <div class="content-block">
+                       <p>In this section, we will analyze a sample dataset using Pandas, Seaborn, and Matplotlib. The Titanic dataset is widely used for exploratory data analysis (EDA).</p>
+            
+            <h3 class="orange-accent">1. Loading the Dataset</h3>
+            <p>We will load the Titanic dataset directly from Seaborn.</p>
+            
+            <pre class="python-terminal"><code>
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = sns.load_dataset('titanic')
+
+# Display first few rows
+print(df.head())
+            </code></pre>
+            
+             <h3 class="orange-accent">2. Basic Data Exploration</h3>
+                <p>Check dataset information and missing values.</p>
+            
+            <pre class="python-terminal"><code>
+# Dataset summary
+print(df.info())
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Statistical summary
+print(df.describe())
+            </code></pre>
+            
+            <h3 class="orange-accent">3. Visualizing the Data</h3>
+            <p>Let's explore survival rates based on gender using Seaborn.</p>
+            
+            <pre class="python-terminal"><code>
+# Count plot of survival by gender
+sns.countplot(x='sex', hue='survived', data=df)
+plt.title('Survival Rate by Gender')
+plt.show()
+            </code></pre>
+            
+            <p>Visualizing passenger class distribution.</p>
+            
+            <pre class="python-terminal"><code>
+# Bar plot of passenger class distribution
+sns.barplot(x='pclass', y='survived', data=df)
+plt.title('Survival Rate by Passenger Class')
+plt.show()
+            </code></pre>
+            
+            <h3 class="orange-accent">4. Handling Missing Data</h3>
+            <p>We will fill missing age values with the median.</p>
+            
+            <pre class="python-terminal"><code>
+df['age'].fillna(df['age'].median(), inplace=True)
+            </code></pre>
+            
+            <h3 class="orange-accent">5. Feature Engineering</h3>
+            <p>We can create a new feature called family_size.</p>
+            
+            <pre class="python-terminal"><code>
+df['family_size'] = df['sibsp'] + df['parch'] + 1
+            </code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <p>The Titanic dataset is a great way to practice data exploration, missing data handling, and visualization. These skills are essential for any data science project.</p>
+            </div>`,
+
+                    sub17: `<h2 class="blue-bolt">SQL Basics with Python</h2>
+            <div class="content-block">
+            <h3 class="orange-accent">🔹 Introduction</h3>
+            <p>SQL is a powerful tool for managing structured data, and Python makes it even more accessible with libraries like <code class="code-inline">sqlite3</code>.</p>
+            <p>SQLite is a lightweight database built into Python, making it ideal for local development and small-scale applications.</p>
+            
+            
+            <h3 class="orange-accent">🔹 Setting Up SQLite</h3>
+            <p>To start working with SQLite in Python, follow these steps:</p>
+            
+            <pre class="python-terminal"><code>
+import sqlite3
+
+# Connect to SQLite database (Creates file if it doesn't exist)
+conn = sqlite3.connect("employees.db")
+
+# Create a cursor object
+cursor = conn.cursor()
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Creating a Table</h3>
+            <p>Define a table with specific columns:</p>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("""CREATE TABLE employees (id INTEGER PRIMARY KEY,name TEXT,	age INTEGER,department TEXT)""")
+conn.commit()
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Inserting Data</h3>
+            <p>We can insert new employee records into our table:</p>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("INSERT INTO employees (name, age, department) VALUES ('Alice', 30, 'HR')")
+conn.commit()
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Querying Data</h3>
+            <p>Retrieve and display all employees:</p>
+            
+            <pre class="python-terminal"><code>
+import pandas as pd
+df = pd.read_sql("SELECT * FROM employees", conn)
+print(df)
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p>SQLite is a great way to store structured data within Python applications without needing a dedicated database server.</p>
+            </div>`,
+
+                    sub18: `<h2 class="blue-bolt">Data Manipulation with SQL in Python</h2>
+                              <div class="content-block">
+            <h3 class="orange-accent">🔹 Updating Records</h3>
+            <p>Modify existing data in the database:</p>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("UPDATE employees SET department = 'Finance' WHERE name = 'Alice'")
+conn.commit()
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Deleting Records</h3>
+            <p>Remove specific data from the table:</p>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("DELETE FROM employees WHERE name = 'Alice'")
+conn.commit()
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Data Aggregation & Grouping</h3>
+            <p>Use SQL functions to analyze data.</p>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("SELECT COUNT(*) FROM employees")
+print(cursor.fetchone()[0])  # Count number of employees
+            </code></pre>
+            
+            <pre class="python-terminal"><code>
+cursor.execute("SELECT department, COUNT(*) FROM employees GROUP BY department")
+print(cursor.fetchall())  # Group by department
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Using Pandas for SQL Queries</h3>
+            <p>Instead of writing raw SQL, Pandas can handle structured queries.</p>
+            
+            <pre class="python-terminal"><code>
+df.query("age > 25")
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p>Using SQL within Python is a powerful way to manipulate structured data efficiently.</p>
+                             </div>`,
+
+                    /*-----------------------------------------------------Section NLP ----------------------------------------------------------------*/
+
+                    sub19: `<h2 class="blue-bolt">Introduction to Natural Language Processing (NLP)</h2>
+                             <div class="content-block">
+            <h3 class="orange-accent">🔹 What is NLP?</h3>
+            <p>Natural Language Processing (NLP) is a field of artificial intelligence that helps computers understand, interpret, and generate human language.</p>
+            <p>It is widely used in applications such as chatbots, machine translation, sentiment analysis, and speech recognition.</p>
+            
+            
+            <h3 class="orange-accent">🔹 Why Learn NLP?</h3>
+            <p>Understanding NLP allows us to build models that process large amounts of textual data, automate responses, and analyze sentiment trends efficiently.</p>
+            
+            <h3 class="orange-accent">🔹 Installing NLP Libraries</h3>
+            <p>To get started, install key NLP libraries:</p>
+            
+            <pre class="python-terminal"><code>
+conda install -c conda-forge spacy
+conda install -c conda-forge textblob
+pip install nltk
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Popular NLP Libraries in Python</h3>
+            <table>
+            <tr>
+            <th>Library</th>
+			<th></th>
+            <th>Purpose</th>
+            </tr>
+            <tr>
+            <td>NLTK</td>
+			<td></td>
+            <td>Comprehensive NLP toolkit for text processing.</td>
+            </tr>
+            <tr>
+            <td>spaCy</td>
+			<td></td>
+            <td>Fast, industrial-strength NLP for tokenization & parsing.</td>
+            </tr>
+            <tr>
+            <td>TextBlob</td>
+			<td></td>
+            <td>Simple NLP tool for sentiment analysis & translation.</td>
+            </tr>
+            </table>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p>Mastering NLP is essential for working with unstructured text data, enabling automation in text analytics and AI-powered applications.</p>
+            
+            
+            <h2 class="blue-bolt">Text Preprocessing & Representation</h2>
+            <h3 class="orange-accent">🔹 Why Preprocess Text?</h3>
+            <p>Raw text often contains noise, variations, and unnecessary information. Preprocessing makes NLP models more efficient.</p>
+            
+            <h3 class="orange-accent">🔹 Common Preprocessing Steps</h3>
+            <p>Text preprocessing involves several key steps:</p>
+            
+            <ol>
+            <li class="list-item"><span class="list-label blue-bolt">Lowercasing:</span> Convert text to lowercase for consistency.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Tokenization:</span> Split sentences into words.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Stopword Removal:</span> Remove common words like "the", "is", "and".</li>
+            <li class="list-item"><span class="list-label blue-bolt">Lemmatization:</span> Convert words to their root form.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Removing Punctuation:</span> Strip out special characters.</li>
+            </ol>
+            
+            <h3 class="orange-accent">🔹 Implementing Preprocessing with NLTK</h3>
+            
+            <pre class="python-terminal"><code>
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from string import punctuation
+
+nltk.download("punkt")
+nltk.download("stopwords")
+
+text = "Natural Language Processing (NLP) allows machines to understand text!"
+tokens = word_tokenize(text.lower())  # Lowercasing & tokenization
+tokens = [word for word in tokens if word not in stopwords.words("english") and word not in punctuation]
+
+print(tokens)
+# Output: ['natural', 'language', 'processing', 'nlp', 'allows', 'machines', 'understand', 'text']
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Text Representation: Bag of Words (BoW) & TF-IDF</h3>
+            <p>After preprocessing, text is converted into numerical format:</p>
+            
+            <ol>
+            <li class="list-item"><span class="list-label blue-bolt">Bag of Words (BoW):</span> Represents text based on word frequency.</li>
+            <li class="list-item"><span class="list-label blue-bolt">TF-IDF:</span> Assigns importance to words based on their frequency and uniqueness.</li>
+            </ol>
+            
+            <h3 class="orange-accent">🔹 Using Scikit-Learn for Text Vectorization</h3>
+            
+            <pre class="python-terminal"><code>
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+
+texts = ["I love NLP", "NLP is amazing", "NLP is the future"]
+vectorizer = CountVectorizer()
+bow_matrix = vectorizer.fit_transform(texts)
+
+print(vectorizer.get_feature_names_out())
+print(bow_matrix.toarray())
+            </code></pre>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p>Text preprocessing and representation are the foundation of any NLP task, ensuring that models interpret text data correctly.</p>
+            </div>`,
+
+                    sub20: `<h2 class="blue-bolt">Syntactic & Semantic Analysis in NLP</h2>
+                             <div class="content-block">
+            <h3 class="orange-accent">🔹 What is Syntactic & Semantic Analysis?</h3>
+            <p>Syntactic and semantic analysis are two key techniques in Natural Language Processing (NLP) that help computers understand the structure and meaning of text.</p>
+            
+            <ul>
+            <li class="item-list"><span class="item-label">Syntactic Analysis (Parsing):</span> Focuses on sentence structure, grammar, and part-of-speech relationships.</li>
+            <li class="item-list"><span class="item-label">Semantic Analysis:</span> Deals with meaning extraction, word relationships, and sentiment.</li>
+            </ul>
+            
+            <h3 class="orange-accent">🔹 1. Syntactic Analysis (Parsing & POS Tagging)</h3>
+            <p> Syntactic analysis examines sentence structure to understand how words relate to one another. This includes Part-of-Speech (POS) Tagging and Dependency Parsing.</p>
+            
+            
+            <h3>👉 POS Tagging with spaCy</h3>
+            <p>Part-of-Speech (POS) tagging assigns grammatical labels like noun, verb, or adjective to words.</p>
+            
+            <pre class="python-terminal"><code>
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+text = "Natural Language Processing is fascinating!"
+
+doc = nlp(text)
+for token in doc:
+print(f"{token.text} --> {token.pos_}")
+</code></pre>
+
+
+<h3>👉 Dependency Parsing in spaCy</h3>
+<p> Dependency parsing helps determine relationships between words in a sentence. This is useful in question answering, machine translation, and grammar checking.</p>
+
+
+<pre class="python-terminal"><code>
+import spacy
+from spacy import displacy
+
+nlp = spacy.load("en_core_web_sm")
+text = "Artificial intelligence is transforming the world."
+doc = nlp(text)
+
+displacy.render(doc, style="dep", jupyter=True)
+            </code></pre>
+            
+            
+            <h3 class="orange-accent">🔹 2. Semantic Analysis (Word Meaning & Sentiment)</h3>
+            <p>Semantic analysis extracts the meaning of words and phrases. It includes named entity recognition (NER), word embeddings, and sentiment analysis.</p>
+            
+            
+            <h3>👉 Named Entity Recognition (NER) with spaCy</h4>
+            <p> NER identifies proper names, dates, organizations, and more within text.</p>
+            
+            <pre class="python-terminal"><code>
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+text = "Google was founded in 1998 by Larry Page and Sergey Brin."
+doc = nlp(text)
+
+for ent in doc.ents:
+print(f"{ent.text} --> {ent.label_}")
+</code></pre>
+
+<ul>
+<li class="item-list"><span class="item-label">Google:</span> ORG (Organization)</li>
+<li class="item-list"><span class="item-label">1998:</span> DATE (Year)</li>
+<li class="item-list"><span class="item-label">Larry Page, Sergey Brin:</span> PERSON (Individuals)</li>
+</ul>
+
+
+<h3>👉 Sentiment Analysis with TextBlob</h3>
+<p> Sentiment analysis determines whether a sentence has a positive, negative, or neutral sentiment.</p>
+
+<pre class="python-terminal"><code>
+from textblob import TextBlob
+
+text = "Python is an amazing programming language!"
+sentiment = TextBlob(text).sentiment
+print(sentiment.polarity)  # Output: Positive sentiment
+            </code></pre>
+            
+            <ul>
+            <li class="item-list"><span class="item-label">Polarity Score:</span> Ranges from -1 (negative) to +1 (positive).</li>
+            <li class="item-list"><span class="item-label">Subjectivity Score:</span> Measures how opinionated the sentence is.</li>
+            </ul>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p> Understanding syntactic and semantic analysis allows NLP models to extract deep insights from text, enabling advanced applications like chatbots, machine translation, and document summarization.</p>
+            
+            </div>`,
+
+                    sub21: `<h2 class="blue-bolt">Machine Translation & Text Generation</h2>
+            <div class="content-block">
+            <h3 class="orange-accent">🔹 1. Introduction</h3>
+            <p>Machine Translation (MT) <strong>automatically translates text between languages</strong>, while Text Generation <strong>creates new text based on input prompts</strong>. These techniques are powered by <strong>Neural Networks, Transformer Models, and Deep Learning</strong>.</p>
+            
+            <ul>
+                <li class="item-list"><span class="item-label">Machine Translation (MT):</span> Converts text from one language to another (e.g., <strong>English → French</strong>).</li>
+                <li class="item-list"><span class="item-label">Text Generation:</span> Generates human-like text (e.g., <strong>chatbots, content creation</strong>).</li>
+            </ul>
+            
+            <h3 class="orange-accent">🔹 2. Machine Translation with Transformers</h3>
+            <p>Modern <strong>Neural Machine Translation (NMT)</strong> models use transformers like <strong>Google’s T5, OpenAI’s GPT, and Facebook’s M2M-100</strong> to perform accurate translations.</p>
+            
+            <h4>👉 Using Hugging Face’s Transformers for Translation</h4>
+            <p>The <code>transformers</code> library provides pre-trained translation models.</p>
+            
+            <pre class="python-terminal"><code>
+from transformers import pipeline
+
+translator = pipeline("translation_en_to_fr")
+text = "Artificial Intelligence is revolutionizing the world."
+translation = translator(text)[0]["translation_text"]
+print(translation)  # Output: \"L'intelligence artificielle révolutionne le monde.\"
+</code></pre>
+
+<ul>
+	<li class="item-list"><span class="item-label">Pre-Trained Model:</span> Uses <strong>transformers</strong> for high-quality translations.</li>
+	<li class="item-list"><span class="item-label">Supported Languages:</span> Supports <strong>multi-language</strong> translation.</li>
+</ul>
+
+<h3 class="orange-accent">🔹 3. Text Generation with GPT Models</h3>
+<p><strong>Text generation</strong> allows AI models to generate <strong>coherent, context-aware sentences</strong> based on input prompts.</p>
+
+<h4>👉 Generating Text with OpenAI's GPT</h4>
+<p>The <code>transformers</code> library also allows for <strong>natural text generation</strong>.</p>
+
+<pre class="python-terminal"><code>
+from transformers import pipeline
+
+generator = pipeline("text-generation", model="gpt2")
+response = generator("Once upon a time, AI transformed", max_length=50)[0]["generated_text"]
+print(response)
+            </code></pre>
+            
+            <ul>
+                <li class="item-list"><span class="item-label">GPT Models:</span> <strong>GPT-2, GPT-3, GPT-4</strong> generate human-like text.</li>
+                <li class="item-list"><span class="item-label">Use Cases:</span> <strong>Chatbots, AI writers, automated responses.</strong></li>
+            </ul>
+            
+            <h3 class="orange-accent">🔹 4. Text Summarization</h3>
+            <p>Text summarization <strong>extracts key information</strong> from large documents, enabling faster content processing.</p>
+            
+            <h4>👉 Summarizing Text with Transformers</h4>
+            
+            <pre class="python-terminal"><code>
+from transformers import pipeline
+
+summarizer = pipeline("summarization")
+text = "Artificial Intelligence is changing the way we interact with technology..."
+summary = summarizer(text, max_length=50, min_length=25, do_sample=False)[0]["summary_text"]
+print(summary)
+            </code></pre>
+            
+            <ul>
+                <li class="item-list"><span class="item-label">Extractive Summarization:</span> Extracts <strong>key phrases from text</strong>.</li>
+                <li class="item-list"><span class="item-label">Abstractive Summarization:</span> Generates <strong>new, concise summaries</strong>.</li>
+            </ul>
+            
+            <h3 class="orange-accent">🔹 Conclusion</h3>
+            <p>Machine Translation and Text Generation <strong>enable AI-powered content automation</strong>. These techniques are widely used in <strong>chatbots, real-time translation, and document summarization</strong>.</p>
+            </div>`,
+
+                    Quiz: `<h2 class="blue-bolt">Quiz Time!</h2>
+			<form id="quizForm">
+			  <div>
+				<p>1. What is the correct way to define a class in Python?</p>
+				<input type="radio" name="q1" value="A" id="q1a"> <label for="q1a">class MyClass:</label><br>
+				<input type="radio" name="q1" value="B" id="q1b"> <label for="q1b">define class MyClass:</label><br>
+				<input type="radio" name="q1" value="C" id="q1c"> <label for="q1c">class = MyClass()</label><br>
+				<input type="radio" name="q1" value="D" id="q1d"> <label for="q1d">def class MyClass:</label><br>
+			  </div>
+			  
+			  <div>
+				<p>2. How do you create an instance of a class in Python?</p>
+				<input type="radio" name="q2" value="A" id="q2a"> <label for="q2a">obj = new MyClass()</label><br>
+				<input type="radio" name="q2" value="B" id="q2b"> <label for="q2b">obj = MyClass</label><br>
+				<input type="radio" name="q2" value="C" id="q2c"> <label for="q2c">obj = MyClass()</label><br>
+				<input type="radio" name="q2" value="D" id="q2d"> <label for="q2d">obj = MyClass.self()</label><br>
+			  </div>
+			  
+			  <div>
+				<p>3. What is the purpose of the __init__ method in a Python class?</p>
+				<input type="radio" name="q3" value="A" id="q3a"> <label for="q3a">It is used to destroy an object.</label><br>
+				<input type="radio" name="q3" value="B" id="q3b"> <label for="q3b">It initializes objects when they are created.</label><br>
+				<input type="radio" name="q3" value="C" id="q3c"> <label for="q3c">It is used to return an object.</label><br>
+				<input type="radio" name="q3" value="D" id="q3d"> <label for="q3d">It is used to define a static method.</label><br>
+			  </div>
+			  
+			  <div>
+				<p>4. How do you inherit a class in Python?</p>
+				<input type="radio" name="q4" value="A" id="q4a"> <label for="q4a">class Child inherits Parent:</label><br>
+				<input type="radio" name="q4" value="B" id="q4b"> <label for="q4b">class Child extends Parent:</label><br>
+				<input type="radio" name="q4" value="C" id="q4c"> <label for="q4c">class Child(Parent):</label><br>
+				<input type="radio" name="q4" value="D" id="q4d"> <label for="q4d">class Child -> Parent:</label><br>
+			  </div>
+			  
+			  <div>
+				<p>5. What is the correct way to call a method from a parent class inside a child class?</p>
+				<input type="radio" name="q5" value="A" id="q5a"> <label for="q5a">Parent.method(self)</label><br>
+				<input type="radio" name="q5" value="B" id="q5b"> <label for="q5b">self.Parent.method()</label><br>
+				<input type="radio" name="q5" value="C" id="q5c"> <label for="q5c">super().method()</label><br>
+				<input type="radio" name="q5" value="D" id="q5d"> <label for="q5d">this.method()</label><br>
+			  </div>
+			  
+			  <div>
+				<p>6. What will be the output of the following code?</p>
+				<pre>
+			class MyClass:
+				class_variable = 10
+				def __init__(self, value):
+					self.instance_variable = value
+			obj1 = MyClass(20)
+			obj2 = MyClass(30)
+			print(obj1.class_variable, obj1.instance_variable)
+				</pre>
+				<input type="radio" name="q6" value="A" id="q6a"> <label for="q6a">10 20</label><br>
+				<input type="radio" name="q6" value="B" id="q6b"> <label for="q6b">20 30</label><br>
+				<input type="radio" name="q6" value="C" id="q6c"> <label for="q6c">30 10</label><br>
+				<input type="radio" name="q6" value="D" id="q6d"> <label for="q6d">None None</label><br>
+			  </div>
+			  
+			  <div>
+				<p>7. How can you add a new key-value pair to a dictionary inside a class?</p>
+				<input type="radio" name="q7" value="A" id="q7a"> <label for="q7a">self.my_dict.add("key", "value")</label><br>
+				<input type="radio" name="q7" value="B" id="q7b"> <label for="q7b">self.my_dict.insert("key", "value")</label><br>
+				<input type="radio" name="q7" value="C" id="q7c"> <label for="q7c">self.my_dict["key"] = "value"</label><br>
+				<input type="radio" name="q7" value="D" id="q7d"> <label for="q7d">self.my_dict.put("key", "value")</label><br>
+			  </div>
+			  
+			  <br>
+			  <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+			</form>
+
+              <div id="quizResult"></div>`,
+                };
+                contentDiv.innerHTML = contentData[subtopic] || "<h2>update Content soon</h2>";
+            }
+
+            function showWelcome() {
+                document.getElementById("content").innerHTML = `
+            	<h1>Welcome!</h1>
+             <div class="quote">
+            "Python is a programming language that lets you work quickly and integrate systems more effectively."
+             	<span class="quote-source">- Python.org</span>
+            	</div>
+             <p><strong  class="orange-accent">Why Learn Python?</strong></p>
+            	<p>Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to analyze data efficiently and build scalable solutions.</p>
+            
+             <p><strong  class="orange-accent">What You’ll Gain</strong></p>
+            	<p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
+            
+             <p><strong  class="orange-accent">Start Your Python Journey Today!</strong></p>
+            	<p>Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your future!</p>`;
+            }
+
+            function checkQuiz() {
+                var score = 0;
+                var total = 7;
+                var form = document.getElementById("quizForm");
+                var q1 = form.q1.value;
+                var q2 = form.q2.value;
+                var q3 = form.q3.value;
+				var q4 = form.q4.value;
+                var q5 = form.q5.value;
+                var q6 = form.q6.value;
+				var q7 = form.q7.value;
+				
+				
+				if (q1 === "A") { // class MyClass:
+					score++;
+				}
+				if (q2 === "C") { // obj = MyClass()
+					score++;
+				}
+				if (q3 === "B") { // It initializes objects when they are created.
+					score++;
+				}
+				if (q4 === "C") { // class Child(Parent):
+					score++;
+				}
+				if (q5 === "C") { // super().method()
+					score++;
+				}
+				if (q6 === "A") { // 10 20
+					score++;
+				}
+				if (q7 === "C") { // self.my_dict["key"] = "value"
+					score++;
+				}
+                document.getElementById("quizResult").innerHTML = "<h3>You scored " + score + " out of " + total + "!</h3>";
+            }
+        </script>
+    </body>
+</html>
