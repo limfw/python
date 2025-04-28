@@ -1,0 +1,4768 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Python Essential</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <p>Python Essentials: From Basics to Coding</p>
+        </div>
+        <div class="main-container">
+            <div class="sidebar">
+                <h2 onclick="showWelcome()" style="cursor: pointer;">Course Content</h2>
+                <div class="menu-item" onclick="toggleSubMenu('py_contents')">Python Essential</div>
+                <div id="py_contents" class="sub-menu">
+                    <div onclick="toggleSubMenu('Installation')">Installation</div>
+                    <div id="Installation" class="sub-menu">
+                        <div onclick="showContent('Setup01')">Installation Guide</div>
+                        <div onclick="showContent('Setup02')">Python Package Setup</div>
+                        <div onclick="showContent('Setup03')">Setting Up a Code Editor</div>
+                        <div onclick="showContent('Setup04')">Running Python Code</div>
+                        <div onclick="showContent('Setup05')">Troubleshooting Common Issues</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Quickstart')">Python Foundations</div>
+                    <div id="Quickstart" class="sub-menu">
+                        <div onclick="showContent('QS01')">Variables & Types</div>
+                        <div onclick="showContent('QS02')">Operators</div>
+                        <div onclick="showContent('QS03')">Data Structures</div>
+                        <div onclick="showContent('QS04')">Control Flows</div>
+                        <div onclick="showContent('QS05')">Functions</div>
+                        <div onclick="showContent('QS06')">Classess & Objects</div>
+						<div onclick="showContent('QS07')">Error & Exceptions</div>
+                        <div onclick="showContent('QS08')">Threads & Processes</div>
+                        <div onclick="showContent('QS09')">Working with Files</div>
+						<div onclick="showContent('QS10')">Python Packages</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Python for Basic Data Analysis')">Python for Data Analysis</div>
+                    <div id="Python for Basic Data Analysis" class="sub-menu">
+                        <div onclick="showContent('da01')">Why Python?</div>
+                        <div onclick="showContent('da02')">Cleaning and Preprocessing</div>
+                        <div onclick="showContent('da03')">Exploratory Data Analysis</div>
+                        <div onclick="showContent('da04')">Data Transformation</div>
+                        <div onclick="showContent('da05')">Practice with Data</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('SQL & Database Handling')">Python for Big Data</div>
+                    <div id="SQL & Database Handling" class="sub-menu">
+                        <div onclick="showContent('bd01')">What is Big Data?</div>
+						<div onclick="showContent('bd02')">SQL for Scalable Data</div>
+						<div onclick="showContent('bd03')">NoSQL and Large File Handling</div>
+						<div onclick="showContent('bd04')">Visualizing Big Data</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Natural Language Processing')">Natural Language Processing</div>
+                    <div id="Natural Language Processing" class="sub-menu">
+                        <div onclick="showContent('nlp01')">Fundamentals and Preprocessing </div>
+                        <div onclick="showContent('nlp02')">Text Preprocessing</div>
+                        <div onclick="showContent('nlp03')">Feature Extraction and Word Embeddings</div>
+                        <div onclick="showContent('nlp04')">Transformers and Attention Mechanism</div>
+						<div onclick="showContent('nlp05')">LLMs and Chatbot Deployment</div>
+						<div onclick="showContent('nlp06')">Other NLP Problems</div>
+                    </div>
+
+                    <div onclick="toggleSubMenu('Quiz')">Quiz</div>
+                    <div id="Quiz" class="sub-menu">
+                        <div onclick="showContent('Quiz')">Basic Python</div>
+                    </div>
+                </div>
+
+                <div class="menu-item"><a href="ml.html" style="text-decoration: none; color: inherit;">Basic Machine Learning</a></div>
+                <div class="menu-item"><a href="master_ml.html" style="text-decoration: none; color: inherit;">Intermediate Machine Learning</a></div>
+            </div>
+            <div class="content" id="content">
+                <h1>Welcome!</h1>
+                <div class="quote">
+                    "Python is a programming language that lets you work quickly and integrate systems more effectively."
+                    <span class="quote-source">- Python.org</span>
+                </div>
+                <p><strong class="orange-accent">Why Learn Python?</strong></p>
+                <p>
+                    Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to
+                    analyze data efficiently and build scalable solutions.
+                </p>
+                <p><strong class="orange-accent">What You’ll Gain</strong></p>
+                <p>
+                    This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our
+                    curriculum will guide you step by step through the essentials of Python for data science.
+                </p>
+                <p><strong class="orange-accent">Start Your Python Journey Today!</strong></p>
+                <p>
+                    Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your
+                    future!
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Prepare by 😀 version 1.5 - 2025 ! &  Build a Better Future begin from 2025 !</p>
+        </div>
+        <script>
+            function toggleSubMenu(id) {
+                var submenu = document.getElementById(id);
+                submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+            }
+            function showContent(subtopic) {
+                var contentDiv = document.getElementById("content");
+                var contentData = {
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*																									   */
+/*								Setup : Python install & debug for installation   					   */
+/*																									   */
+/*-----------------------------------------------------------------------------------------------------*/
+Setup01: `
+		<div class="content-block">
+		<h3  class="blue-bolt">Installation Guide for Python Data Science Development</h3>
+		<p>For data science, we strongly recommend using the <strong>Anaconda Distribution</strong>. Anaconda provides a fully integrated environment for data analysis, machine learning, and scientific computing, offering a streamlined setup with essential libraries and tools.</p>
+		<h3  class="blue-bolt">Why Anaconda?</h3>
+			<ul>
+			   <li>Pre-installed libraries: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scikit-learn</code>, and more.</li>
+			<li></li>
+			   <li>Jupyter Notebook for interactive data analysis.</li>
+			   <li>Conda package manager for easy library management.</li>
+			   <li>Compatible with Windows, Mac, and Linux.</li>
+			 </ul>
+				
+		<h3 class="orange-accent">Step 1: Download & Install Anaconda</h3>
+		<p>1. Visit the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda Official Website</a>.</p>
+		<p>2. Download the latest version of Anaconda for Python 3.x (64-bit).</p>
+		<p>3. Run the installer and follow the on-screen instructions.</p>
+		<p>4. Ensure you select the option to "Add Anaconda to PATH" during installation.</p>
+				
+		<h3 class="orange-accent">Step 2: Verify Installation</h3>
+		<p>Once installed, open the Anaconda Prompt or Terminal and type:</p>
+		<pre><code>conda --version</code></pre>
+		<p>If the version appears, the installation was successful.</p>
+				
+		<h3 class="orange-accent">Step 3: Launch Jupyter Notebook</h3>
+		<p>Jupyter Notebook is an essential tool for data scientists. To start it, enter:</p>
+		<pre><code>jupyter notebook</code></pre>
+		<p>This will open Jupyter Notebook in your web browser, allowing you to write and execute Python code interactively.</p>
+		
+		<h3 class="orange-accent">Step 4: Install Additional Libraries (If Needed)</h3>
+		<p>While Anaconda includes most essential libraries, you can install others using:</p>
+		<pre><code>conda install library_name</code></pre>
+		<p>For example, to install TensorFlow:</p>
+		<pre><code>conda install tensorflow</code></pre>
+		
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>With Anaconda, you have a complete, ready-to-use Python environment for data science. It simplifies package management, ensures compatibility, and accelerates your workflow.</p>
+		</div>`,
+
+
+
+Setup02: `
+		<h2 class="blue-bolt">Python Package Setup</h2>
+		<div class="content-block">
+		<h3 class="orange-accent">Step 1: Understanding Python Packages in Anaconda</h3>
+		<p>Python packages are collections of modules that provide additional functionalities for data science, machine learning, and software development. In Anaconda, package management is handled through <strong>Conda</strong>, a powerful tool that allows you to install, update, and manage dependencies effortlessly.</p>
+		
+		<h3 class="orange-accent">Step 2: Checking Installed Packages</h3>
+		<p>To see the list of all installed packages in your Anaconda environment, open the <strong>Anaconda Prompt</strong> or <strong>Terminal</strong> and type:</p>
+		   <pre><code>conda list</code></pre>
+		   <p>This command will display all installed packages along with their versions.</p>
+		
+		<h3 class="orange-accent">Step 3: Installing a New Package</h3>
+		<p>To install a new package, use the <code>conda install</code> command followed by the package name. For example, to install the pandas library, enter:</p>
+		<pre><code>conda install pandas</code></pre>
+		<p>Conda will automatically resolve dependencies and install the correct version.</p>
+		
+		<h3 class="orange-accent">Step 4: Updating an Existing Package</h3>
+		<p>To update a package to the latest version, use:</p>
+		<pre><code>conda update package_name</code></pre>
+		<p>For example, to update NumPy:</p>
+		<pre><code>conda update numpy</code></pre>
+		
+		<h3 class="orange-accent">Step 5: Removing a Package</h3>
+		<p>If you no longer need a package, you can remove it with:</p>
+		<pre><code>conda remove package_name</code></pre>
+		<p>For example, to remove Matplotlib:</p>
+		<pre><code>conda remove matplotlib</code></pre>
+		
+		<h3 class="orange-accent">Step 6: Managing Virtual Environments (Optional)</h3>
+		<p>To keep your projects organized, it's best to use virtual environments. You can create a new environment with a specific Python version using:</p>
+		<pre><code>conda create --name my_env python=3.9</code></pre>
+		<p>Activate the environment:</p>
+		<pre><code>conda activate my_env</code></pre>
+		<p>To install packages inside this environment:</p>
+		<pre><code>conda install numpy pandas</code></pre>
+		<p>To deactivate the environment, use:</p>
+		<pre><code>conda deactivate</code></pre>
+		
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>With Conda, package management in Anaconda is efficient and reliable. It allows seamless installation, updating, and environment management, making Python development for data science easier.</p>
+		</div>`,
+
+
+
+Setup03: `
+		<h2 class="blue-bolt">Setting Up a Code Editor</h2>
+		<div class="content-block">
+		<p>To efficiently write and execute Python code, a good code editor is essential. Anaconda provides built-in editors, and you can also use external IDEs for an optimized development experience.</p>
+		<h3 class="orange-accent">Step 1: Understanding Code Editors</h3>
+		<p>Code editors help developers write, debug, and run Python programs with ease. Features like syntax highlighting, debugging tools, and extensions improve productivity.</p>
+		<h3 class="orange-accent">Step 2: Recommended Code Editors</h3>
+		<table>
+		  <tr>
+		<th>Code Editor</th>
+		<th>Why Use It?</th>
+			</tr>
+			<tr>
+				<td><span>Jupyter Notebook </span> </td>
+				<td>Best for data analysis & visualization, interactive coding.</td>
+			</tr>
+			<tr>
+				<td><span>Spyder</span> </td>
+				<td>Great for scientific computing (MATLAB-like interface).</td>
+			</tr>
+			<tr>
+				<td><span>VS Code</span></td>
+				<td>Lightweight, supports Jupyter & Conda.</td>
+			</tr>
+			<tr>
+				<td><span>PyCharm</span></td>
+				<td>Powerful, best for large Python projects.</td>
+			</tr>
+		</table>
+		
+		<h3 class="orange-accent">Step 3: Launching Jupyter Notebook (Recommended for Beginners)</h3>
+		<p>Jupyter Notebook is widely used for data science and machine learning projects.</p>
+		<p>To start Jupyter Notebook:</p>
+		<ol>
+		   <li>Open <strong>Anaconda Navigator</strong>.</li>
+		   <li>Click <strong>"Launch"</strong> under <strong>Jupyter Notebook</strong>.</li>
+		   <li>A browser window will open. Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+		  </ol>
+		<p>Alternatively, launch Jupyter from the <strong>Anaconda Prompt</strong>:</p>
+		<pre><code>jupyter notebook</code></pre>
+
+		  <h3 class="orange-accent">Step 4: Setting Up Spyder (For Scientific Computing)</h3>
+		  <p>Spyder is another popular code editor included in Anaconda, preferred by researchers and scientists.</p>
+		  <ol>
+		   <li>Open <strong>Anaconda Navigator</strong>.</li>
+		   <li>Click <strong>"Launch"</strong> under <strong>Spyder</strong>.</li>
+		   <li>The Spyder IDE will open, featuring a code editor and an interactive Python console.</li>
+		 </ol>
+		 <p>To manually open Spyder, use:</p>
+		 <pre><code>spyder</code></pre>
+		
+			 <h3 class="orange-accent">Step 5: Installing & Configuring VS Code for Anaconda (optional)</h3>
+		 <p>If you prefer a modern and lightweight editor, VS Code is a great choice.</p>
+		 <ol>
+		   <li>Download <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> and install it.</li>
+		   <li>Inside VS Code, install the <strong>Python Extension</strong>.</li>
+		   <li>Set Anaconda as the default Python interpreter in VS Code.</li>
+		</ol>
+		<p>Activate Anaconda in VS Code using:</p>
+		<pre><code>conda activate base</code></pre>
+		<p>If working with Jupyter Notebook files, install the <strong>Jupyter Notebook extension</strong> inside VS Code.</p>
+		
+		
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Choosing the right code editor depends on your needs:</p>
+		<ul>
+				<li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive data science workflows.</li>
+		<li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Ideal for scientific computing.</li>
+		<li class="list-item"><span class="list-label blue-bolt">VS Code,PyCharm</span>: Great for advanced development,large projects.</li>
+		</ul>
+		</div>`,
+
+
+Setup04: `
+			<h2 class="blue-bolt">Running Python Code</h2>
+			<div class="content-block">
+            <p>Python code can be executed in multiple ways, depending on the environment you are working in. Below are the recommended methods for running Python scripts efficiently.</p>
+            
+            <h3 class="orange-accent">Step 1: Running Python Code in Jupyter Notebook (Recommended for Data Science)</h3>
+               <p>Jupyter Notebook allows interactive execution, making it ideal for data science projects.</p>
+            <ol>
+               <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Jupyter Notebook</strong>.</li>
+               <li>Create a new notebook by selecting <strong>New → Python 3</strong>.</li>
+               <li>Type the following code in a cell and press <strong>Shift + Enter</strong> to execute:</li>
+              </ol>
+            <pre><code>print("Hello, Python for Data Science!")</code></pre>
+            
+            <h3 class="orange-accent">Step 2: Running Python Code in Spyder</h3>
+            
+            <p>Spyder is another great environment for running Python scripts.</p>
+            <ol>
+               <li>Open <strong>Anaconda Navigator</strong> and launch <strong>Spyder</strong>.</li>
+               <li>Write the following code in the editor:</li>
+            </ol>
+            <pre><code>print("Running Python in Spyder!")</code></pre>
+            <p>Click the <strong>Run</strong> button (green play icon) or press <strong>F5</strong> to execute.</p>
+            
+               <h3 class="orange-accent">Step 3: Running Python Code in VS Code</h3>
+            <p>VS Code is a modern and lightweight editor for Python development.</p>
+            <ol>
+               <li>Open <strong>VS Code</strong> and install the <strong>Python extension</strong> (if not already installed).</li>
+               <li>Create a new <code class="code-inline">.py</code> file and write:</li>
+            </ol>
+            
+            <pre><code>print("Hello world!")</code></pre>
+            <p>Press <strong>Ctrl + Shift + P</strong>, type <strong>Run Python File</strong>, and select it to execute.</p>
+            
+             <h3 class="orange-accent">Step 4: Running Python Code in Anaconda Prompt (Command Line)</h3>
+            <p>If you prefer the command line, you can run Python scripts directly.</p>
+            <ol>
+            <li>Open <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (Mac/Linux).</li>
+               <li>Navigate to the folder where your script is saved using:</li>
+            </ol>
+            
+            <pre><code>cd path/to/folder</code></pre>
+            <p>Then, run your script with:</p>
+            <pre><code>python script.py</code></pre>
+            
+            <h3 class="orange-accent">Step 5: Running Python Interactively in the Python Shell</h3>
+            <p>The Python shell allows you to run commands interactively.</p>
+            <ol>
+               <li>Open <strong>Anaconda Prompt</strong> or <strong>Terminal</strong>.</li>
+               <li>Type <code class="code-inline">python</code> and hit <strong>Enter</strong> to open the interactive shell.</li>
+               <li>Run Python code directly, like:</li>
+            </ol>
+            <pre><code>print("This is the Python shell!")</code></pre>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <ul>
+               <li class="list-item"><span class="list-label blue-bolt">Jupyter Notebook</span>: Best for interactive execution & data science workflows.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Spyder</span>: Great for scientific computing & debugging.</li>
+               <li class="list-item"><span class="list-label blue-bolt">VS Code</span>: Ideal for coding large projects efficiently.</li>
+               <li class="list-item"><span class="list-label blue-bolt">Command Line / Shell</span>: Quick execution for scripts.</li>
+            </ul>
+			</div>`,
+
+
+
+Setup05: `
+		<h2 class="blue-bolt">Troubleshooting Common Issues</h2>
+            <div class="content-block">
+               <p>Encountering errors while using Python or Anaconda? Below are common issues and solutions to keep your development smooth.</p>
+            
+            <h3 class="orange-accent">Issue 1: 'conda' or 'python' Command Not Found</h3>
+            <p><strong>Cause:</strong> Anaconda might not be added to the system’s PATH.</p>
+                             <p><strong>Solution:</strong></p>
+            <ol>
+            			<li>Reinstall Anaconda and select <strong>"Add Anaconda to PATH environment variable"</strong> during installation.</li>
+               <li>Alternatively, manually add it by running:</li>
+            </ol>
+            <pre><code> # Windows (Run in Anaconda Prompt) setx PATH "%PATH%;C:\ProgramData\Anaconda3"</code></pre>
+               			 
+            <pre><code> # macOS/Linux (Run in Terminal) export PATH="$HOME/anaconda3/bin:$PATH" </code></pre>
+            
+            <h3 class="orange-accent">Issue 2: Jupyter Notebook Won't Launch</h3>
+            <p><strong>Cause:</strong> Missing or outdated Jupyter installation.</p>
+              <p><strong>Solution:</strong></p>
+            <ol>
+               <li>Update Jupyter by running:</li>
+            </ol>
+              <pre><code>conda update jupyter</code></pre>
+            <ol start="2">
+               <li>Then, restart Jupyter Notebook:</li>
+              </ol>
+              <pre><code>jupyter notebook</code></pre>
+            
+            <h3 class="orange-accent">Issue 3: ImportError - 'Module Not Found'</h3>
+            <p><strong>Cause:</strong> The required library is missing or installed in the wrong environment.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+            			<li>First, check installed packages:</li>
+              </ol>
+            <pre><code>conda list</code></pre>
+              <ol start="2">
+               <li>If the package is missing, install it using:</li>
+              </ol>
+            <pre><code>conda install package_name</code></pre>
+            <p>For example, to install NumPy:</p>
+            <pre><code>conda install numpy</code></pre>
+            
+            <h3 class="orange-accent">Issue 4: Kernel Error in Jupyter Notebook</h3>
+            <p><strong>Cause:</strong> The Python environment is corrupted or missing dependencies.</p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+               <li>Activate the correct environment:</li>
+            </ol>
+            <pre><code>conda activate base</code></pre>
+            
+            <ol start="2">
+               <li>Reinstall the Jupyter kernel:</li>
+            </ol>
+            <pre><code>conda install ipykernel</code></pre>
+            <ol start="3">
+               <li>Restart Jupyter Notebook.</li>
+            </ol>
+            
+            <h3 class="orange-accent">Issue 5: Conda Fails to Install Packages</h3>
+               <p><strong>Cause:</strong> Internet issues, outdated Conda, or broken dependencies.</p>
+               <p><strong>Solution:</strong></p>
+               <ol>
+               <li>Update Conda:</li>
+              </ol>
+            <pre><code>conda update conda</code></pre>
+            <ol start="2">
+               <li>If package installation fails, try using:</li>
+            </ol>
+            <pre><code>conda clean --all</code></pre>
+            <ol start="3">
+               <li>Then, retry the installation.</li>
+            </ol>
+            
+            <h3 class="orange-accent">Conclusion</h3>
+            <ul>
+            <li class="list-item"><span class="list-label blue-bolt">Check Error Message</span>: It often provides useful hints.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Verify Environment</span>: Ensure using the correct Conda environment.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Update Packages</span>: Keep Conda and libraries updated prevents many issues.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Restart Jupyter/ Python</span>: Sometimes, a simple restart fixes the problem.</li>
+              </ul>
+			</div>`,
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*																									   */
+/*								Python Essesstial - Quick Start								   		   */
+/*																									   */
+/*-----------------------------------------------------------------------------------------------------*/
+QS01: `
+        <h2>Variables & Data Types in Python </h2>
+		<div class="content-block">
+        <p>Python provides several built-in data types that are fundamental for handling data.</p>
+            
+		<h3 class="orange-accent">1. What is a Variable?</h3>
+		<ul>
+		  <li>Definition: A variable is a name that refers to a value stored in memory.</li>
+		  <li>Analogy: Think of it as a labeled box where we store data.</li>
+		  <li>Python is dynamically typed — we don’t need to declare the type explicitly.</li>
+		</ul>
+		
+<div class="ml-box">
+<pre class="code-block">
+# Variable Assignment
+x = 10			# x is an integer
+Name = "Lim"		# name is a string
+
+
+# Multiple Assignments
+a, b, c = 1, 2, 3	# Assign multiple variables
+x = y = z = 0		# All point to the same value
+</pre>
+</div>
+            
+
+		<h3 class="orange-accent">2. Rules for Naming Variables</h3>
+		<ul>
+		  <li>Must start with a letter (a-z, A-Z) or underscore (_)</li>
+		  <li>Can contain numbers, but not start with a number</li>
+		  <li>Can contain letters, numbers, and underscores</li>
+		  <li>Case-sensitive (Age and age are different)</li>
+		  <li>Cannot use Python keywords (if, for, while, etc.).</li>
+		</ul>
+		
+<div class="ml-box">
+<pre class="code-block">
+valid_name = "John"
+Valid_Name = "Jane"   # different from valid_name (capital letter)
+</pre>
+</div>
+
+
+		<h3 class="orange-accent">3. Common Data Types in Python</h3>
+		<p>Python has several built-in data types:</p>
+				<table border="1">
+				  <thead>
+					<tr>
+					  <th align="left">Category</th>
+					  <th align="left">Type</th>
+					  <th align="left">Example</th>
+					  <th align="left">Mutable?</th>
+					  <th align="left">Use Case</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td rowspan="3" align="left">Numeric</td>
+					  <td align="left">int</td>
+					  <td align="left">42</td>
+					  <td align="center">❌</td>
+					  <td align="left">Whole numbers (age, count).</td>
+					</tr>
+					<tr>
+					  <td align="left">float</td>
+					  <td align="left">3.142</td>
+					  <td align="center">❌</td>
+					  <td align="left">Decimal numbers (price).</td>
+					</tr>
+					<tr>
+					  <td align="left">complex</td>
+					  <td align="left">1 + 2j</td>
+					  <td align="center">❌</td>
+					  <td align="left">Scientific calculations.</td>
+					</tr>
+					<tr>
+					  <td align="left">Text</td>
+					  <td align="left">str</td>
+					  <td align="left">"Hello World"</td>
+					  <td align="center">❌</td>
+					  <td align="left">Text data.</td>
+					</tr>
+					<tr>
+					  <td align="left">Boolean</td>
+					  <td align="left">bool</td>
+					  <td align="left">True, False</td>
+					  <td align="center">❌</td>
+					  <td align="left">Logical conditions.</td>
+					</tr>
+					<tr>
+					  <td rowspan="3" align="left">Sequence&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					  <td align="left">list</td>
+					  <td align="left">[1, 2, 3]</td>
+					  <td align="center">✅</td>
+					  <td align="left">Ordered, changeable.</td>
+					</tr>
+					<tr>
+					  <td align="left">tuple</td>
+					  <td align="left">(1, 2, 3)</td>
+					  <td align="center">❌</td>
+					  <td align="left">Immutable lists.</td>
+					</tr>
+					<tr>
+					  <td align="left">range</td>
+					  <td align="left">range(5)</td>
+					  <td align="center">❌</td>
+					  <td align="left">Looping over numbers.</td>
+					</tr>
+					<tr>
+					  <td align="left">Mapping</td>
+					  <td align="left">dict</td>
+					  <td align="left">{"name": "Alice"}</td>
+					  <td align="center">✅</td>
+					  <td align="left">Key-value pairs.</td>
+					</tr>
+					<tr>
+					  <td rowspan="2" align="left">Set</td>
+					  <td align="left">set</td>
+					  <td align="left">{1, 2, 3}</td>
+					  <td align="center">✅</td>
+					  <td align="left">Unique, unordered items.</td>
+					</tr>
+					<tr>
+					  <td align="left">frozenset</td>
+					  <td align="left">frozenset({1, 2})&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					  <td align="center">❌</td>
+					  <td align="left">Immutable set.</td>
+					</tr>
+					<tr>
+					  <td rowspan="2" align="left">Binary</td>
+					  <td align="left">bytes</td>
+					  <td align="left">b"Hello"</td>
+					  <td align="center">❌</td>
+					  <td align="left">Raw binary data.</td>
+					</tr>
+					<tr>
+					  <td align="left">bytearray</td>
+					  <td align="left">bytearray(5)</td>
+					  <td align="center">✅</td>
+					  <td align="left">Mutable bytes.</td>
+					  </tr>
+					<tr>
+					  <td align="left">None</td>
+					  <td align="left">NoneType&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					  <td align="left">None</td>
+					  <td align="center">❌</td>
+					  <td align="left">Represents absence of value.</td>
+					</tr>
+				  </tbody>
+				</table>
+
+	            
+		<h3 class="orange-accent">4. Boolean </h3>
+		<ul>
+		  <li>Represents truth values: True or False (must be capitalized in Python).</li>
+		  <li>Used in logical operations (and, or, not) and conditionals (if statements).</li>
+		  <li>Any value in Python can be converted to a Boolean using bool() .</li>
+		</ul>
+
+<div class="ml-box">
+<pre class="code-block">
+# Boolean Example
+print(bool(0))      # False
+print(bool("Hi"))   # True
+print(bool([]))     # False (empty list)
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">5. Boolean Operations</h3>
+			<table border="1">
+			  <thead>
+				<tr>
+				  <th align="left">Operator</th>
+				  <th align="left">Name</th>
+				  <th align="left">Example</th>
+				  <th align="left">Result</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td align="left">==</td>
+				  <td align="left">Equal to</td>
+				  <td align="left">x == y</td>
+				  <td align="left">Returns True if x is equal to y</td>
+				</tr>
+				<tr>
+				  <td align="left">!=</td>
+				  <td align="left">Not equal to</td>
+				  <td align="left">x != y</td>
+				  <td align="left">Returns True if x is not equal to y</td>
+				</tr>
+				<tr>
+				  <td align="left">&gt;</td>
+				  <td align="left">Greater than</td>
+				  <td align="left">x &gt; y</td>
+				  <td align="left">Returns True if x is greater than y</td>
+				</tr>
+				<tr>
+				  <td align="left">&lt;</td>
+				  <td align="left">Less than</td>
+				  <td align="left">x &lt; y</td>
+				  <td align="left">Returns True if x is less than y</td>
+				</tr>
+				<tr>
+				  <td align="left">&gt;=</td>
+				  <td align="left">Greater than or equal to</td>
+				  <td align="left">x &gt;= y</td>
+				  <td align="left">Returns True if x is greater than or equal to y</td>
+				</tr>
+				<tr>
+				  <td align="left">&lt;=</td>
+				  <td align="left">Less than or equal to</td>
+				  <td align="left">x &lt;= y</td>
+				  <td align="left">Returns True if x is less than or equal to y</td>
+				</tr>
+			  </tbody>
+			</table>
+
+		<h3 class="orange-accent">6. Bytes (bytes) and Bytearray (bytearray) </h3>
+		<ul>
+			<li>Used to store raw binary data (e.g., files, network protocols).</li>
+			<li>Immutable sequence of integers (0-255).</li>
+			<li>Syntax: Prefix with b (e.g., b"Hello").</li>
+		</ul>
+			
+<div class="ml-box">
+<pre class="code-block">
+# Creating Bytes
+
+data = b"Python"  
+print(data)        # b'Python'
+print(data[0])     # 80 (ASCII for 'P')
+
+
+# From a list of integers
+bytes_obj = bytes([65, 66, 67])  # b'ABC'
+
+
+# Bytearray (Mutable Bytes), Like bytes, but mutable (can be modified).
+arr = bytearray(b"Hello")
+arr[0] = 74  # Change 'H' (72) to 'J' (74)
+print(arr)   # bytearray(b'Jello')
+</pre>
+</div>
+
+
+		<h2 class="blue-bolt">Binary Data Types </h2>
+		<div class="content-block">
+        <p>Python provides support for handling binary data using the <code class="code-inline">bytes</code>, <code class="code-inline">bytearray</code>, and <code class="code-inline">memoryview</code> types.</p>
+        <h3 class="orange-accent">1. Bytes: Immutable Binary Data</h3>
+		<p>A <code class="code-inline">bytes</code> object is an immutable sequence of bytes.</p>
+            
+<div class="ml-box">
+<pre class="code-block">
+# Creating a Bytes Object
+binary_data = b"Hello"
+print(binary_data)  # Output: b'Hello'
+
+# Accessing Individual Bytes
+print(binary_data[0])  # Output: 72 (ASCII value of 'H')
+</pre>
+</div>
+            
+        <h3 class="orange-accent">6.2 Bytearray: Mutable Binary Data</h3>
+		<p>The <code class="code-inline">bytearray</code> type is a mutable sequence of bytes.</p>
+<div class="ml-box">
+<pre class="code-block">
+# Creating a Bytearray
+mutable_data = bytearray([65, 66, 67])
+print(mutable_data)  # Output: bytearray(b'ABC')
+
+# Modifying a Byte
+mutable_data[0] = 97  # Change 'A' (65) to 'a' (97)
+print(mutable_data)  # Output: bytearray(b'aBC')
+</pre>
+</div>
+            
+        <h3 class="orange-accent">6.3 MemoryView: Access Binary Data</h3>
+        <p>The <code class="code-inline">memoryview</code> function allows direct access to an object’s binary data without copying it.</p>
+<div class="ml-box">
+<pre class="code-block">
+# Creating a MemoryView
+mem_view = memoryview(b'Python')
+print(mem_view[0])  # Output: 80 (ASCII value of 'P')
+
+# Slicing MemoryView
+print(mem_view[1:4].tobytes())  # Output: b'yth'
+</pre>
+</div>    
+
+		<p>Binary data types are useful for handling files, images, and low-level memory operations. They enable efficient storage, transmission, and processing of binary information in Python.</p>
+		<h3 class="orange-accent">7. Common Pitfalls & Tricks</h3>
+<div class="ml-box">
+<pre class="code-block">
+# Accidental assignment (= vs ==)
+if x = 10:  # wrong, syntaxError (use "==")
+
+if []:      # False,empty list is falsy
+if [0]:     # True,non-empty list is truthy, even if it contains 0
+
+b" python"  #wrong, syntaxError (non-ASCII character)
+" python".encode("utf-8")  # convert string to bytes
+</pre>
+</div>
+
+
+		<h3 class="orange-accent">8. Type Checking & Conversion</h3>
+<div class="ml-box">
+<pre class="code-block">
+# Checking Data Types (type())
+print(type(10))       # return class integer
+print(type(3.14))     # return class float
+print(type("Hi"))     # return class string
+</pre>
+</div>
+         
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Understanding Python variables and data types is the foundation of effective programming. Variables act as containers for storing data, while data types define the kind of values these variables can hold. 
+		From numbers and text to collections like lists and dictionaries, mastering these concepts allows us to organize, process, and analyze data efficiently. As we build more complex programs, a strong grasp of 
+		these basics will make our code more readable, reliable, and adaptable.
+		</p>
+		</div>`,
+
+
+
+QS02: `
+		<h2 class="blue-bolt">Essential Python Operators </h2>
+		<div class="content-block">
+		<h3 class="orange-accent">1. Arithmetic Operators</h3>
+			<table border="1">
+			  <tr>
+				<td><code class="code-inline">+</code></td>
+				<td>Addition</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">-</code></td>
+				<td>Subtraction</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">*</code></td>
+				<td>Multiplication</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">/</code></td>
+				<td>Float division</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">**</code></td>
+				<td>Exponentiation</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">%</code></td>
+				<td>Modulus/remainder</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">//</code></td>
+				<td>Floor division</td>
+			  </tr>
+			</table>
+			
+<div class="ml-box">
+<p>Arithmetic Operators Example</p>
+<pre class="code-block">
+print(5 / 2)    # 2.5 (float division)  
+print(5 // 2)   # 2 (floor division)  
+print(2 ** 3)   # 8 (2^3)  
+</pre>
+</div>
+				
+		<h3 class="orange-accent">2. Comparison Operators</h3>
+			<table border="1">
+			  <tr>
+				<td><code class="code-inline">==</code></td>
+				<td>Equal</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">!=</code></td>
+				<td>Not equal</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">></code></td>
+				<td>Greater than</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline"><</code></td>
+				<td>Less than</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline">>=</code></td>
+				<td>Greater or equa</td>
+			  </tr>
+			  <tr>
+				<td><code class="code-inline"><=</code></td>
+				<td>Less or equal</td>
+			  </tr>
+			</table>
+<div class="ml-box">
+<p>Comparison Operators</p>
+<pre class="code-block">
+print(3 == "3")  # False (type-sensitive!) 
+
+1 < x <= 10
+1 < x and x <= 10
+</pre>
+</div>
+		
+		<h3 class="orange-accent">3. Logical Operators</h3>
+		<p> <code class="code-inline">and</code>, <code class="code-inline">or</code>, <code class="code-inline">not</code> (evaluate to True/False)    </p>
+<div class="ml-box">
+<p>Logical Operators</p>
+<pre class="code-block">
+print(True and False)  # False  
+
+print(0 or "Hello")  # "Hello" (truthy)  
+print([] and 42)     # [] (falsy)  
+</pre>
+</div>		
+		
+		<h3 class="orange-accent">4. Assignment Operators</h3>
+		<p><code class="code-inline"> = </code> (assignment), <code class="code-inline">+=</code>, <code class="code-inline">-=</code>, <code class="code-inline">*=</code> (compound assignments), </p>
+<div class="ml-box">
+<p>Assignment Operators</p>
+<pre class="code-block">
+x = 5  
+x += 3  # x = x + 3 -> 8  
+
+
+if (n := len("Hello")) > 4:  
+    print(f"Length is {n}")  # Length is 5  
+</pre>
+</div>			
+		
+		
+		<h3 class="orange-accent">5. Identity vs. Equality Operators</h3>
+		<ul>
+			<li> <code class="code-inline"> is </code> (identity: same object in memory) vs <code class="code-inline"> == </code> (equality: same value) </li>
+			<li>None, True, False are singletons—always use is for them. </li>
+		</ul>
+<div class="ml-box">
+<p>Identity vs. Equality Operators</p>
+<pre class="code-block">
+a = [1, 2]; b = [1, 2]  
+print(a == b)  # True (same value)  
+print(a is b)  # False (different objects)  
+</pre>
+</div>	
+	
+		<h3 class="orange-accent">6. Membership Operators</h3>
+		<ul>
+			<li>in, not in (check if value exists in iterables) </li>
+		</ul>
+<div class="ml-box">
+<p>Membership Operators</p>
+<pre>
+print(3 in [1, 2, 3])  # True  
+</pre>
+</div>			
+		
+		<h3 class="orange-accent">7. Bitwise Operators</h3>
+		<ul>
+			<li>& (AND), | (OR), ^ (XOR), ~ (NOT), << (left shift), >> (right shift) </li>
+		</ul>		
+<div class="ml-box">
+<p>Bitwise Operators</p>
+<pre>
+print(5 & 3)  # 1 (0101 & 0011 = 0001)  
+</pre>
+</div>		
+			
+		<h3 class="orange-accent">8. Ternary Operator</h3>
+		<ul>
+			<li>Compact if-else in one line. </li>
+		</ul>	
+<div class="ml-box">
+<p>Ternary Operator</p>
+<pre>
+age = 20  
+status = "Adult" if age >= 18 else "Minor"    
+</pre>
+</div>		
+
+		<h3 class="orange-accent">Python Cheat Sheet: Operators </h3>
+			<table border="1">
+			  <thead>
+				<tr>
+				  <th>Category</th>
+				  <th>Operators</th>
+				  <th>Example</th>
+				  <th>Result</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Arithmetic</td>
+				  <td>&nbsp;<code class="code-inline">+</code>, &nbsp;<code class="code-inline">-</code>, &nbsp;<code class="code-inline">*</code>, &nbsp;<code class="code-inline">/</code>, &nbsp;<code class="code-inline">//</code>, &nbsp;<code class="code-inline">%</code></td>
+				  <td>&nbsp;<code class="code-inline">5 // 2</code></td>
+				  <td>2</td>
+				</tr>
+				<tr>
+				  <td>Comparison</td>
+				  <td>&nbsp;<code class="code-inline">==</code>, &nbsp;<code class="code-inline">!=</code>, &nbsp;<code class="code-inline">&gt;</code>, &nbsp;<code class="code-inline">&lt;</code>, &nbsp;<code class="code-inline">&gt;=</code>, &nbsp;<code class="code-inline">&lt;=</code></td>
+				  <td>&nbsp;<code class="code-inline">"a" != "A"</code></td>
+				  <td>True</td>
+				</tr>
+				<tr>
+				  <td>Logical</td>
+				  <td>&nbsp;<code class="code-inline">and</code>, &nbsp;<code class="code-inline">or</code>, &nbsp;<code class="code-inline">not</code></td>
+				  <td>&nbsp;<code class="code-inline">not True</code></td>
+				  <td>False</td>
+				</tr>
+				<tr>
+				  <td>Assignment</td>
+				  <td>&nbsp;<code class="code-inline">=</code>, &nbsp;<code class="code-inline">+=</code>, &nbsp;<code class="code-inline">-=</code>, &nbsp;<code class="code-inline">:=</code></td>
+				  <td>&nbsp;<code class="code-inline">x += 1</code></td>
+				  <td>(Updates the value of x)</td>
+				</tr>
+				<tr>
+				  <td>Identity</td>
+				  <td>&nbsp;<code class="code-inline">is</code>, &nbsp;<code class="code-inline">is not</code></td>
+				  <td>&nbsp;<code class="code-inline">x is None</code></td>
+				  <td>(Returns True or False)</td>
+				</tr>
+				<tr>
+				  <td>Membership</td>
+				  <td>&nbsp;<code class="code-inline">in</code>, &nbsp;<code class="code-inline">not in</code></td>
+				  <td>&nbsp;<code class="code-inline">3 in [1, 2, 3]</code></td>
+				  <td>True</td>
+				</tr>
+				<tr>
+				  <td>Bitwise</td>
+				  <td>&nbsp;<code class="code-inline">&amp;</code>, &nbsp;<code class="code-inline">|</code>, &nbsp;<code class="code-inline">^</code>, &nbsp;<code class="code-inline">~</code>, &nbsp;<code class="code-inline">&lt;&lt;</code>, &nbsp;<code class="code-inline">&gt;&gt;</code></td>
+				  <td>&nbsp;<code class="code-inline">5 &amp; 3</code></td>
+				  <td>1</td>
+				</tr>
+			  </tbody>
+			</table>
+			
+			
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Python operators are the fundamental building blocks that bring our code to life, acting as the "verbs" that drive computation, logic, and data manipulation.</p>
+		</div>`,
+
+
+QS03: `
+		<h2 class="blue-bolt"> Data Structures in Python </h2>
+		<div class="content-block">
+		<p>Python offers versatile built-in data structures like <strong>lists, tuples, dictionaries</strong>, and efficient <strong>comprehensions</strong> for streamlined data handling.</p>
+		<h3 class="orange-accent">1. Lists</h3>
+		<p>A <strong>list</strong> is an ordered, mutable collection of items (can contain duplicates).</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Creating a List
+colors = ["red", "green", "blue"]
+print(colors)  # Output: ['red', 'green', 'blue']
+
+# Modifying a List
+colors.append("yellow")  # Add item
+colors[1] = "black"     # Update item
+print(colors)  # Output: ['red', 'black', 'blue', 'yellow']
+
+# Slicing a List
+print(colors[1:3])  # Output: ['black', 'blue']
+</pre>
+</div>
+
+		<h3 class="orange-accent">2. Tuples</h3>
+		<p>A <strong>tuple</strong> is an ordered, <strong>immutable</strong> sequence (cannot be modified after creation).</p>
+
+<div class="ml-box">
+<pre class="code-block"> 
+# Creating a Tuple
+dimensions = (1920, 1080)
+print(dimensions)  # Output: (1920, 1080)
+
+# Accessing Elements
+print(dimensions[0])  # Output: 1920
+
+# Tuples are immutable (this will raise an error)
+# dimensions[0] = 1280  # TypeError!
+</pre>
+</div>
+		<h3 class="orange-accent">3. Dictionaries</h3>
+		<p>A <strong>dictionary</strong> stores key-value pairs and is unordered (Python 3.7+ preserves insertion order).</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Creating a Dict
+person = {"name": "Alice", "age": 30}
+print(person)  # Output: {'name': 'Alice', 'age': 30}
+
+# Accessing/Modifying Values
+print(person["name"])  # Output: Alice
+person["age"] = 31     # Update value
+person["city"] = "NY"  # Add new key-value pair
+
+# Dictionary Methods
+print(person.keys())   # Output: dict_keys(['name', 'age', 'city'])
+</pre>
+</div>
+
+        <div class="content-block">
+		<p>In Python, a <strong>dictionary</strong> is a collection of key-value pairs. It is an efficient way to store and retrieve data based on a unique key.</p>  
+		<h3 class="orange-accent">3.1 Creating a Dictionary</h3>
+		<p>Dictionaries are created using curly braces <code class="code-inline">{}</code> or the <code class="code-inline">dict()</code> function.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Creating a Dictionary
+student = {"name": "Alice", "age": 20, "grade": "A"}
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A'}
+
+# Using dict() function
+employee = dict(id=101, name="John", role="Engineer")
+print(employee)  # Output: {'id': 101, 'name': 'John', 'role': 'Engineer'}
+</pre>
+</div>
+            
+		<h3 class="orange-accent">3.2 Accessing Dictionary Values</h3>
+		<p>Dictionary values can be accessed using keys.</p>
+            
+<div class="ml-box">
+<pre class="code-block">
+# Accessing Dictionary Values
+print(student["name"])  # Output: Alice
+print(employee["role"])  # Output: Engineer
+
+# Using .get() to avoid KeyError
+print(student.get("age"))  # Output: 20
+</pre>
+</div>
+            
+		<h3 class="orange-accent">3.3 Adding & Updating Values</h3>
+		<p>You can add new key-value pairs or update existing values.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Adding a New Key-Value Pair
+student["city"] = "New York"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A', 'city': 'New York'}
+
+# Updating a Value
+student["grade"] = "A+"
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+', 'city': 'New York'}
+</pre>
+</div>
+            
+		<h3 class="orange-accent">3.4 Removing Items from a Dictionary</h3>
+		<p>You can remove dictionary items using <code class="code-inline">del</code> or <code class="code-inline">pop()</code>.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Removing a Key-Value Pair
+del student["city"]
+print(student)  # Output: {'name': 'Alice', 'age': 20, 'grade': 'A+'}
+
+# Using pop()
+grade = student.pop("grade")
+print(grade)  # Output: A+
+print(student)  # Output: {'name': 'Alice', 'age': 20}
+</pre>
+</div>
+            
+            		
+		<p>Dictionaries are powerful data structures in Python that allow efficient data storage and retrieval using keys. They are widely used in data science for storing metadata, configurations, and structured data mappings.</p>
+		</div>
+		<h3 class="orange-accent">4. List Comprehension</h3>
+		<p>A concise way to create lists with a single line of code.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Example: Squares of numbers 0-9
+squares = [x**2 for x in range(10)]
+print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# With condition (even numbers only)
+evens = [x for x in range(20) if x % 2 == 0]
+print(evens)  # Output: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+</pre>
+</div>
+
+		<h3 class="orange-accent">5. Dictionary Comprehension</h3>
+		<p>Similar to list comprehensions but for creating dictionaries.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Example: Number to its square
+square_dict = {x: x**2 for x in range(5)}
+print(square_dict)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# With condition (filter keys)
+even_squares = {x: x**2 for x in range(10) if x % 2 == 0}
+print(even_squares)  # Output: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+</pre>
+</div>
+
+		
+		<h3 class="orange-accent">6. Creating a Set</h3>
+		<p>Sets are defined using curly braces <code class="code-inline">{}</code> or the <code class="code-inline">set()</code> function.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Creating a Set
+fruits = {"apple", "banana", "cherry"}
+print(fruits)  # Output: {'apple', 'banana', 'cherry'}
+
+# Creating an Empty Set
+empty_set = set()  # {} creates an empty dictionary, not a set.
+print(type(empty_set))  # Output: <class 'set'>
+</pre>
+</div>
+            
+		<h3 class="orange-accent">7. Adding and Removing Elements</h3>
+		<p>Elements can be added using <code class="code-inline">.add()</code>  and removed using <code class="code-inline">.remove()</code>  or <code class="code-inline">.discard()</code> .</p>
+
+<div class="ml-box">
+<pre class="code-block">
+# Adding an Element
+fruits.add("orange")
+print(fruits)  # Output: {'apple', 'banana', 'cherry', 'orange'}
+
+# Removing an Element
+fruits.remove("banana")  # Raises KeyError if item is not found
+print(fruits)  # Output: {'apple', 'cherry', 'orange'}
+
+# Using discard() (No error if element is missing)
+fruits.discard("banana")  # No error
+</pre>
+</div>
+            
+		<h3 class="orange-accent">8. Set Operations</h3>
+        <p>Python sets support <strong>union, intersection, and difference</strong> operations.</p>
+
+<div class="ml-box">
+<pre class="code-block">
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# Union (Combine all unique elements)
+print(A | B)  # Output: {1, 2, 3, 4, 5, 6}
+
+# Intersection (Common elements)
+print(A & B)  # Output: {3, 4}
+
+# Difference (Elements in A but not in B)
+print(A - B)  # Output: {1, 2}
+
+# Symmetric Difference (Elements in A or B, but not both)
+print(A ^ B)  # Output: {1, 2, 5, 6}
+</pre>
+</div>
+                        
+         <h3 class="orange-accent">Conclusion</h3>
+		 <p>Python data structures lists, tuples, dictionaries and comprehensions provide flexibility for storing, accessing, and transforming data efficiently.
+		 </p>
+		</div>`,
+
+
+
+
+QS04: `
+		<h2 class="blue-bolt">Python Control Flow Structures</h2>
+        <div class="content-block">
+        <p>Control flow structures allow us to control the execution of our Python code based on conditions or loops. Here are all the major control flow structures in Python:</p>
+        <h3 class="orange-accent">1. Conditional Statements</h3>
+<div class="ml-box">
+<p> Simple if statement </p>
+<pre class="code-block">
+if condition:
+    # code to execute if condition is True
+</pre>
+</div>
+		
+		
+<div class="ml-box">
+<p> if-else statement </p>
+<pre class="code-block">
+if condition:
+    # code to execute if condition is True
+else:
+    # code to execute if condition is False
+</pre>
+</div>
+
+
+<div class="ml-box">
+<p> if-elif-else statement </p>
+<pre class="code-block">
+if condition1:
+    # code to execute if condition1 is True
+elif condition2:
+    # code to execute if condition2 is True
+else:
+    # code to execute if all above conditions are False
+</pre>
+</div>
+
+		
+		<h3 class="orange-accent">2. Loops </h3>
+<div class="ml-box">
+<p> For loop </p>
+<pre class="code-block">
+for item in iterable:
+    # code to execute for each item
+	
+
+for i in range(5):  # 0 to 4
+    print(i)
+	
+	
+	
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+	
+</pre>
+</div>
+
+<div class="ml-box">
+<p> while loop </p>
+<pre class="code-block">
+while condition:
+    # code to execute while condition is True
+	
+	
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+</pre>
+</div>
+
+
+		<h3 class="orange-accent">3. Loop Control Statements</h3>
+<div class="ml-box">
+<p> break - exits the loop immediately  </p>
+<pre class="code-block">
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+	
+</pre>
+</div>
+
+
+<div class="ml-box">
+<p> continue - skips the rest of the current iteration  </p>
+<pre class="code-block">
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)  # will only print odd numbers
+	
+</pre>
+</div>
+
+
+<div class="ml-box">
+<p> pass - does nothing (placeholder)  </p>
+<pre class="code-block">
+for i in range(5):
+    pass  # TODO: implement later
+
+</pre>
+</div>
+
+		
+		<h3 class="orange-accent">4. Exception Handling : try-except</h3>
+<div class="ml-box">
+<p> pass - does nothing (placeholder)  </p>
+<pre class="code-block">
+
+try:
+    # code that might raise an exception
+except ExceptionType:
+    # code to handle the exception
+else:
+    # code to execute if no exception occurred
+finally:
+    # code that always executes, regardless of exceptions
+	
+
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+else:
+    print("Result is", result)
+finally:
+    print("Execution complete")
+	
+</pre>
+</div>
+
+		
+		<h3 class="orange-accent">5. Match-Case </h3>
+<div class="ml-box">
+<p> Similar to switch-case in other languages </p>
+<pre class="code-block">
+match value:
+    case pattern1:
+        # action for pattern1
+    case pattern2:
+        # action for pattern2
+    case _:
+        # default case
+		
+
+status = 404
+match status:
+    case 200:
+        print("OK")
+    case 404:
+        print("Not found")
+    case _:
+        print("Unknown status")
+		
+</pre>
+</div>	
+
+		<h3 class="orange-accent">6. Additional - Control flows </h3>
+<div class="ml-box">
+<p> clause in loops  </p>
+<pre class="code-block">
+for i in range(3):
+    print(i)
+else:
+    print("Loop finished without break!")
+	
+</pre>
+</div>	
+
+<div class="ml-box">
+<p>  Ternary Operator (Conditional Expression) </p>
+<pre class="code-block">
+x = 10
+y = "Even" if x % 2 == 0 else "Odd"
+
+</pre>
+</div>	
+
+<div class="ml-box">
+<p> List/Dict/Set Comprehensions (Advanced Looping) </p>
+<pre class="code-block">
+
+#List comprehension (compact for loop)
+squares = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]
+
+
+#Dict comprehension
+squares_dict = {x: x**2 for x in range(5)}  # {0:0, 1:1, 2:4, ...}
+
+#Set comprehension
+unique_squares = {x**2 for x in [-2, -1, 0, 1, 2]}  # {0, 1, 4}
+
+
+#Like list comprehension but memory-efficient (uses () instead of [])
+gen = (x**2 for x in range(1000000))  # Doesn't store all values at once
+
+
+#Context Managers (with statement)
+with open("file.txt", "r") as file:
+    content = file.read()  # Automatically closes file after block
+	
+	
+#Walrus Operator (:=)
+while (line := input()) != "quit":
+    print(f"You entered: {line}")
+	
+	
+#Recursion (Function Calling Itself)	
+def factorial(n):
+    return 1 if n == 0 else n * factorial(n-1)
+
+
+# Iterators & Generators (yield)
+def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i  # Returns i but keeps function state
+        i += 1
+</pre>
+</div>	
+
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>These are the fundamental control flow structures in Python that allow us to create complex programs with conditional logic and repetition.</p>
+		</div>`,
+
+
+
+QS05: `
+		<h2 class="blue-bolt">Python Functions </h2>
+        <div class="content-block">
+        <p>Functions are reusable blocks of code that perform a specific task. They help in organizing code, avoiding repetition, and making programs more modular. Here's everything you need to know about functions in Python:</p>
+        <h3 class="orange-accent">1. Basic Function Structure</h3>
+
+<div class="ml-box">
+<p>Defining a Function</p>
+<pre class="code-block">
+def function_name(parameters):
+    """Docstring (optional) - Explains what the function does."""
+    # Function body
+    return result  # Optional
+	
+
+#Calling a Function
+function_name(arguments)  # Execute the function
+
+
+#Example
+def greet(name):
+    """Prints a greeting message."""
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Output: Hello, Alice!
+</pre>
+</div>	
+
+		
+		<h3 class="orange-accent">2. Function Parameters & Arguments</h3>
+<div class="ml-box">
+<p>Arguments - Required</p>
+<pre class="code-block">
+# Positional Arguments - Required
+def add(a, b):
+    return a + b
+
+print(add(3, 5))  # Output: 8
+
+
+#Default Arguments
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet()          # Output: Hello, Guest!
+greet("Bob")     # Output: Hello, Bob!
+
+
+#Keyword Arguments (Named Arguments)
+def describe_person(name, age):
+    print(f"{name} is {age} years old.")
+
+describe_person(age=25, name="Alice")  # Order doesn't matter
+
+
+#Arbitrary Arguments (*args for variable positional args)
+def sum_all(*numbers):
+    return sum(numbers)
+
+print(sum_all(1, 2, 3))  # Output: 6
+
+
+#Arbitrary Keyword Arguments (**kwargs for variable keyword args)
+def person_info(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+person_info(name="Alice", age=30, job="Engineer")
+</pre>
+</div>	
+
+		<h3 class="orange-accent">3.Return Values</h3>
+			<ul>
+				<li>A function can return one or multiple values (as a tuple).</li>
+				<li>If no return is specified, it returns None.</li>
+			</ul>
+
+<div class="ml-box">
+<p>Single Return</p>
+<pre class="code-block">
+def square(x):
+    return x * x
+
+print(square(4))  # Output: 16
+</pre>
+</div>	
+
+<div class="ml-box">
+<p>Multiple Returns (as a tuple)</p>
+<pre class="code-block">
+def min_max(numbers):
+    return min(numbers), max(numbers)
+
+low, high = min_max([3, 1, 4, 1, 5, 9])
+print(low, high)  # Output: 1 9
+</pre>
+</div>	
+
+		<h3 class="orange-accent">4. Variable Scope</h3>
+			<ul>
+				<li>Local variables: Inside a function (only accessible inside).</li>
+				<li>Global variables: Outside functions (accessible everywhere, but need global to modify inside a function).</li>
+			</ul>
+
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+x = 10  # Global variable
+
+def modify_x():
+    global x  # Declare we're modifying the global x
+    x = 20
+
+modify_x()
+print(x)  # Output: 20 (modified globally)
+</pre>
+</div>	
+
+		
+		<h3 class="orange-accent">5. Lambda Functions </h3>
+			<ul>
+				<li>Small, one-line functions defined with lambda.</li>
+				<li>Often used with map(), filter(), sorted().</li>
+			</ul>
+
+<div class="ml-box">
+<p>Use lambda functions when an anonymous function is required for a short period of time.</p>
+<pre class="code-block">
+square = lambda x: x * x
+print(square(5))  # Output: 25
+
+# Using with filter()
+numbers = [1, 2, 3, 4, 5]
+even = list(filter(lambda x: x % 2 == 0, numbers))
+print(even)  # Output: [2, 4]
+</pre>
+</div>	
+
+		<h3 class="orange-accent">6.Recursion (Function Calling Itself)</h3>
+			<ul>
+				<li>Useful for problems like factorial, Fibonacci, etc.</li>
+				<li>Must have a base case to avoid infinite loops.</li>
+			</ul>
+			
+<div class="ml-box">
+<p>Factorial Example</p>
+<pre class="code-block">
+def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+</pre>
+</div>	
+
+		
+		<h3 class="orange-accent">7.Decorators (Modifying Functions Dynamically)</h3>
+			<ul>
+				<li>A function that takes another function and extends its behavior.</li>
+				<li>Used for logging, timing, access control, etc.</li>
+			</ul>
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling {func.__name__} with {args}, {kwargs}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@logger
+def add(a, b):
+    return a + b
+
+print(add(3, 5))  # Output: "Calling add with (3, 5), {}" followed by 8
+</pre>
+</div>	
+
+		<h3 class="orange-accent">8. *args and **kwargs (Flexible Function Arguments)</h3>
+			<ul>
+				<li>*args → collects extra positional args as a tuple.</li>
+				<li>**kwargs → collects extra keyword args as a dictionary.</li>
+			</ul>
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+def show_args(*args, **kwargs):
+    print("Positional args:", args)
+    print("Keyword args:", kwargs)
+
+show_args(1, 2, 3, name="Alice", age=25)
+# Output:
+# Positional args: (1, 2, 3)
+# Keyword args: {'name': 'Alice', 'age': 25}
+</pre>
+</div>	
+	
+		<h3 class="orange-accent">9.Type Hints</h3>
+			<ul>
+				<li>Optional way to specify expected argument & return types.</li>
+				<li>Improves code readability and IDE support.</li>
+			</ul>
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+def greet(name: str, age: int) -> str:
+    return f"{name} is {age} years old."
+
+print(greet("Alice", 30))
+</pre>
+</div>
+
+
+		<h3 class="orange-accent">10.Closures (Nested Functions with Memory)</h3>
+		<ul>
+			<li>Inner functions that remember variables from outer scope even after outer function finishes.</li>
+		</ul>		
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+def make_multiplier(factor):
+    def multiplier(x):
+        return x * factor
+    return multiplier
+
+double = make_multiplier(2)
+print(double(5))  # Output: 10
+</pre>
+</div>	
+
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Python functions are essential for writing clean, modular, and reusable code, allowing us to break complex problems into manageable tasks. </p>
+		</div>`,
+
+
+QS06: `
+		<h2 class="blue-bolt">Python Classess & Object</h2>
+        <div class="content-block">
+        <p>Python allows users to define their own custom data types using classes and advanced structures like named tuples, enumerations, and dataclasses. These data types help in organizing complex data structures efficiently.</p>
+        <h3 class="orange-accent">1. Classes: Custom Data Structures</h3>
+		<p>In Python, a class is a blueprint for creating objects with specific properties and methods.</p>
+            
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+# Defining a Custom Class
+class Student:
+	def __init__(self, name, age, grade):
+		self.name = name
+		self.age = age
+		self.grade = grade
+
+	def get_details(self):
+		return f"{self.name}, Age: {self.age}, Grade: {self.grade}"
+
+# Creating an Instance
+student1 = Student("Alice", 21, "A")
+print(student1.get_details())  # Output: Alice, Age: 21, Grade: A
+</pre>
+</div>   
+
+           
+		<h3 class="orange-accent">2. Named Tuples: Lightweight Data Structures</h3>
+		<p>A named tuple is an immutable data structure that allows accessing fields by name, improving code readability.</p>
+            
+<div class="ml-box">
+<p></p>
+<pre class="code-block">          
+from collections import namedtuple
+
+# Defining a Named Tuple
+Person = namedtuple("Person", ["name", "age", "city"])
+
+# Creating an Instance
+p1 = Person(name="John", age=30, city="New York")
+print(p1.name, p1.city)  # Output: John New York
+</pre>
+</div>   
+
+		<h3 class="orange-accent">3. Enumerations (Enums)</h3>
+		<p>Enumerations help define a set of named constants that improve code clarity.</p>
+            
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+from enum import Enum
+
+# Defining an Enum Class
+class Status(Enum):
+	ACTIVE = 1
+	INACTIVE = 0
+	PENDING = -1
+
+	print(Status.ACTIVE)  # Output: Status.ACTIVE
+	print(Status.ACTIVE.value)  # Output: 1
+</pre>
+</div>   
+            
+		<h3 class="orange-accent">4. DataClasses: Simplified Data Storage</h3>
+		<p>DataClasses provide an efficient way to define structured objects without manually writing boilerplate code.</p>
+            
+<div class="ml-box">
+<p></p>
+<pre class="code-block">
+from dataclasses import dataclass
+
+# Defining a DataClass
+@dataclass
+class Employee:
+	id: int
+	name: str
+	department: str
+
+# Creating an Instance
+e1 = Employee(101, "Alice", "HR")
+print(e1)  # Output: Employee(id=101, name='Alice', department='HR')
+</pre>
+</div>       
+
+        <h3 class="orange-accent">Example : Think the Class like a Database</h3>
+		<ul>
+			<li>Class (Car) : Acts like a database table (blueprint storing attributes)</li>
+			<li>Attributes  : Like database columns (owner, brand, model, etc.)</li>
+			<li>Instances   : Like new rows being inserted into the table </li>
+			<li>Methods     : Like database operations (add, update, or query data)</li>
+		</ul>
+	
+<div class="ml-box">
+<p>Step-by-Step Implementation</p>
+<pre class="code-block">
+
+# 1 : Define the Car Class (Database Table)
+class Car:
+    # Constructor (initializes the "database columns")
+    def __init__(self, owner: str, brand: str, model: str, year: int):
+        self.owner = owner  # Attribute 1 (like a column)
+        self.brand = brand  # Attribute 2
+        self.model = model  # Attribute 3
+        self.year = year    # Attribute 4
+		
+		
+	
+# 2 : Create Instances (Insert Data Rows)	
+# Insert 3 "rows" into the Car "database"
+car1 = Car(owner="Alice", brand="Toyota", model="Corolla", year=2020)
+car2 = Car(owner="Bob", brand="Tesla", model="Model 3", year=2022)
+car3 = Car(owner="Charlie", brand="Ford", model="Mustang", year=1968)	
+		
+	
+		
+# 3 : Add Methods (Database Operations)
+class Car:
+    def __init__(self, owner: str, brand: str, model: str, year: int):
+        self.owner = owner
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    # Method 1: Query car info (like SELECT in SQL)
+    def get_info(self) -> str:
+        return f"{self.owner}'s {self.year} {self.brand} {self.model}"
+
+    # Method 2: Update owner (like UPDATE in SQL)
+    def change_owner(self, new_owner: str):
+        self.owner = new_owner
+
+
+# 4. Usage Example
+
+# Query data
+print(car1.get_info())  # Output: "Alice's 2020 Toyota Corolla"
+
+
+# Update data
+car1.change_owner("David")
+print(car1.get_info())  # Output: "David's 2020 Toyota Corolla"
+
+</pre>
+</div>  	
+		<div>
+			<h2>Key Takeaways:</h2>
+			<ul>
+				<li><strong>Class = Database Table:</strong> Defines the structure (columns/attributes)</li>
+				<li><strong><span class="code">__init__</span> = INSERT Statement:</strong> Adds new rows (instances) with initial data</li>
+				<li><strong>Methods = SQL Operations:</strong> Perform actions on the data (query, update, etc.)</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>What is __init__? (Initialization)</h2>
+			<p>Think of it like setting up a new phone when you first buy it:</p>
+			<ul>
+				<li><strong>Class = </strong> The phone model (e.g., "iPhone 15 Pro")</li>
+				<li><strong>__init__</strong> = The setup screen that asks for your (Name, Language, Wifi-Password</li>
+				<li><strong>Object</strong> = Your actual phone with your settings</li>
+			</ul>
+		</div>
+
+        <h3 class="orange-accent">Conclusion</h3>
+		<p>User-defined and advanced data types like classes, named tuples, enums, and dataclasses help in designing scalable, structured, and maintainable Python programs. They are widely used in data modeling, API development, and object-oriented programming.</p>
+		</div>`,
+
+
+QS07:`
+		<h2 class="blue-bolt">Python Error & Exceptions</h2>
+		<p>Errors and exceptions are a natural part of programming. Instead of fearing them, we should learn how to handle them effectively.</p>
+        <div class="content-block">
+		<h3 class="orange-accent">1. Types of Errors in Python</h3>
+<div class="ml-box">
+<p>A. Syntax Errors</p>
+<p>Occur when the code violates Python’s grammar rules.</p>
+<pre class="code-block">
+# Example
+if True   # Missing colon (:)
+    print("Hello")
+	
+# Error:
+SyntaxError: expected ':'
+
+# Fix
+if True:  
+    print("Hello")  
+</pre>
+
+<p>B. Exceptions</p>
+<p>Errors that occur during execution (even if syntax is correct).</p>
+<pre class="code-block">
+# Example
+print(10 / 0)  # Division by zero
+
+# Error
+ZeroDivisionError: division by zero
+</pre>
+</div>	
+		
+		
+		<h3 class="orange-accent">2. Handling Exceptions with try-except</h3>
+<div class="ml-box">
+<p>Prevent crashes by catching exceptions.</p>
+<pre class="code-block">		
+# Basic try-except
+try:
+    num = int(input("Enter a number: "))
+    print(10 / num)
+except ValueError:
+    print("Invalid input! Enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+
+# Catching Multiple Exceptions
+try:
+    numbers = [1, 2, 3]
+    print(numbers[5])  # IndexError
+except (IndexError, KeyError):
+    print("List index or dictionary key error!")
+		
+</pre>
+</div>	
+				
+		<h3 class="orange-accent">3. Using else and finally</h3>
+<div class="ml-box">
+<p>else Block (Runs if no error occurs).</p>
+<pre class="code-block">	
+# else Block (Runs if no error occurs)
+try:
+    file = open("data.txt", "r")
+except FileNotFoundError:
+    print("File not found!")
+else:
+    print("File read successfully!")
+    file.close()
+	
+# finally Block (Always executes)	
+try:
+    f = open("file.txt", "r")
+    print(f.read())
+except:
+    print("An error occurred!")
+finally:
+    print("This always runs (e.g., close files).")
+	
+</pre>
+</div>	
+	
+
+		<h3 class="orange-accent">4. Raising Custom Exceptions</h3>
+<div class="ml-box">
+<p>Force an error when a condition is violated.</p>
+<pre class="code-block">		
+# example
+age = -5
+if age < 0:
+    raise ValueError("Age cannot be negative!")
+
+# Output
+ValueError: Age cannot be negative!
+
+</pre>
+</div>	
+
+		
+		<h3 class="orange-accent">5. Common Built-in Exceptions</h3>
+			<table border="l">
+				<caption>Common Python Exceptions</caption>
+				<thead>
+					<tr>
+						<th>Exception</th>
+						<th>Cause</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code class="code-inline ">ValueError</code></td>
+						<td>Invalid value (e.g., <code class="code-inline ">int("a")</code>)</td>
+						<td><code class="code-inline ">int("abc")</code></td>
+					</tr>
+					<tr>
+						<td><code class="code-inline ">TypeError</code></td>
+						<td>Wrong data type (e.g., <code class="code-inline ">"5" + 3</code>)</td>
+						<td><code class="code-inline ">"hello" + 5</code></td>
+					</tr>
+					<tr>
+						<td><code class="code-inline ">IndexError</code></td>
+						<td>List index out of range</td>
+						<td><code class="code-inline ">[1,2,3][5]</code></td>
+					</tr>
+					<tr>
+						<td><code class="code-inline ">KeyError</code></td>
+						<td>Dictionary key missing</td>
+						<td><code class="code-inline ">{"a":1}["b"]</code></td>
+					</tr>
+					<tr>
+						<td><code class="code-inline ">FileNotFoundError</code></td>
+						<td>File does not exist</td>
+						<td><code class="code-inline ">open("missing.txt")</code></td>
+					</tr>
+				</tbody>
+			</table>	
+		<h3 class="orange-accent">6. Logging Errors for Debugging</h3>
+		
+<div class="ml-box">
+<p>Instead of just printing, log errors to a file.</p>
+<pre class="code-block">		
+import logging
+
+logging.basicConfig(filename='errors.log', level=logging.ERROR)
+
+try:
+    10 / 0
+except Exception as e:
+    logging.error(f"Error: {e}")
+</pre>
+</div>			
+		</div>`,
+
+
+QS08:`
+		<h2 class="blue-bolt">Python Threads & Processes</h2>
+		<p>Threads and Processes are essential concepts in Python programming, especially when we need to speed up tasks or handle multiple operations simultaneously.</p>
+		<p>Let’s break them down in a structured way so learners can understand and practice them effectively. </p>
+        <div class="content-block">
+		<h3 class="orange-accent">1. Threads vs. Processes - Key Differences</h3>
+			<table border="l">
+				<caption>Comparison of Key Features</caption>
+				<thead>
+					<tr>
+						<th>Feature</th>
+						<th>Threads</th>
+						<th>Processes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="feature">Memory Sharing</td>
+						<td class="threads">Share the same memory</td>
+						<td class="processes">Have separate memory</td>
+					</tr>
+					<tr>
+						<td class="feature">Creation Speed</td>
+						<td class="threads">Faster</td>
+						<td class="processes">Slower (heavier)</td>
+					</tr>
+					<tr class="highlight">
+						<td class="feature">Parallelism</td>
+						<td class="threads">Limited (due to GIL)</td>
+						<td class="processes">True parallel execution</td>
+					</tr>
+					<tr>
+						<td class="feature">Use Case</td>
+						<td class="threads">I/O-bound tasks<br>(e.g., web requests, file operations)</td>
+						<td class="processes">CPU-bound tasks<br>(e.g., math computations)</td>
+					</tr>
+					<tr>
+						<td class="feature">Safety</td>
+						<td class="threads">Risk of race conditions</td>
+						<td class="processes">Safer (isolated)</td>
+					</tr>
+					<tr>
+						<td class="feature">Python Module</td>
+						<td class="threads"><code class='code-inline'>threading</code></td>
+						<td class="processes"><code class='code-inline'>multiprocessing</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h3 class="orange-accent">2. Threads in Python (threading module)</h3>
+		<p>Threads run in the same memory space and are best for I/O-bound tasks (e.g., downloading files, web scraping).</p>
+<div class="ml-box">
+<pre class="code-block">		
+# Example: Running Two Threads
+
+import threading
+import time
+
+def print_numbers():
+    for i in range(5):
+        time.sleep(1)
+        print(i)
+
+def print_letters():
+    for letter in 'ABCDE':
+        time.sleep(1)
+        print(letter)
+
+# Create threads
+t1 = threading.Thread(target=print_numbers)
+t2 = threading.Thread(target=print_letters)
+
+# Start threads
+t1.start()
+t2.start()
+
+# Wait for threads to finish
+t1.join()
+t2.join()
+
+print("Done!")
+
+
+# Output:
+0
+A
+1
+B
+2
+C
+3
+D
+4
+E
+Done!
+</pre>
+</div>
+		<div>
+		<p>Key Points on Threads:</p>
+		<ul>
+			<li> Faster than processes (since they share memory).</li>
+			<li> Limited by Python’s GIL (Global Interpreter Lock) → Only one thread runs at a time in Python.</li>
+			<li> Best for tasks waiting for external resources (e.g., APIs, databases).</li>
+		</ul>
+		</div>
+		
+		<h3 class="orange-accent">3. Processes in Python (<code class='code-inline'>multiprocessing</code> module)</h3>
+<div class="ml-box">
+<p>Processes run in separate memory spaces and are best for CPU-bound tasks (e.g., heavy computations). </p>
+<pre class="code-block">		
+# Example: Running Two Processes
+import multiprocessing
+import time
+
+def square_numbers():
+    for i in range(5):
+        time.sleep(1)
+        print(i * i)
+
+def cube_numbers():
+    for i in range(5):
+        time.sleep(1)
+        print(i * i * i)
+
+# Create processes
+p1 = multiprocessing.Process(target=square_numbers)
+p2 = multiprocessing.Process(target=cube_numbers)
+
+# Start processes
+p1.start()
+p2.start()
+
+# Wait for processes to finish
+p1.join()
+p2.join()
+
+print("Done!")
+
+# Output:
+0
+0
+1
+1
+4
+8
+9
+27
+16
+64
+Done!
+
+</pre>
+</div>
+		<div>
+		<p>Key Points on Processes:</p>
+		<ul>
+			<li> True parallelism (each process runs on a separate CPU core).</li>
+			<li> No GIL limitation → Great for heavy computations..</li>
+			<li> Slower to start (due to separate memory allocation).</li>
+		</ul>
+		</div>
+
+		<h3 class="orange-accent">4. When to Use Threads vs. Processes?</h3>		
+			<table border="l">
+				<thead>
+					<tr>
+						<th>Scenario</th>
+						<th>Use Threads</th>
+						<th>Use Processes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="scenario">Web scraping (multiple URLs)</td>
+						<td class="yes">✅</td>
+						<td class="no">❌</td>
+					</tr>
+					<tr>
+						<td class="scenario">Downloading files</td>
+						<td class="yes">✅</td>
+						<td class="no">❌</td>
+					</tr>
+					<tr>
+						<td class="scenario">Data processing (Pandas, NumPy)</td>
+						<td class="no">❌</td>
+						<td class="yes">✅</td>
+					</tr>
+					<tr>
+						<td class="scenario">Machine Learning training</td>
+						<td class="no">❌</td>
+						<td class="yes">✅</td>
+					</tr>
+					<tr>
+						<td class="scenario">Handling database queries</td>
+						<td class="yes">✅</td>
+						<td class="no">❌</td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h3 class="orange-accent">5. Common Pitfalls & Best Practices</h3>
+		<p>Threading Issues: </p>
+		<p>❌ Race Conditions (when threads modify shared data unpredictably). </p>
+		<p>✅ Solution: Use <code class="code-inline">threading.Lock()</code></p>
+<div class="ml-box">
+<pre class="code-block">		
+
+lock = threading.Lock()
+def safe_increment():
+    global counter
+    with lock:  # Ensures only one thread modifies at a time
+        counter += 1
+</pre>
+</div>
+		<p>Multiprocessing Issues: </p>
+		<p>❌ High memory usage (each process copies Python interpreter).</p>
+		<p>✅ Solution: Use multiprocessing.Pool for efficient task distribution.</p>
+<div class="ml-box">
+<pre>
+from multiprocessing import Pool
+
+def compute(x):
+    return x * x
+
+if __name__ == "__main__":
+    with Pool(4) as p:  # 4 worker processes
+        print(p.map(compute, [1, 2, 3, 4]))  # Output: [1, 4, 9, 16]
+</pre>
+</div>		
+		</div>`,
+
+
+QS09:`
+		<h2 class="blue-bolt">Working with Files in Python.</h2>
+		<p>When working with files in Python, we'll encounter various file types, each requiring specific handling.</p>
+		<p>Here's a structured breakdown of common file operations and formats we should know:</p>
+        <div class="content-block">
+		<h3 class="orange-accent">1. Common File Types & Their Python Modules</h3>
+				<table border='l'>
+					<thead>
+						<tr>
+							<th>File Type</th>
+							<th>Description</th>
+							<th>Python Module</th>
+							<th>Common Use Cases</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="file-type">Text (.txt)</td>
+							<td>Plain text files</td>
+							<td>Built-in <code class='code-inline'>open()</code></td>
+							<td>Logs, configuration, raw data</td>
+						</tr>
+						<tr>
+							<td class="file-type">CSV (.csv)</td>
+							<td>Comma-separated values</td>
+							<td><code class="code-inline"> csv </code></td>
+							<td>Data analysis, spreadsheets</td>
+						</tr>
+						<tr>
+							<td class="file-type">JSON (.json)</td>
+							<td>Lightweight data interchange format</td>
+							<td><code class="code-inline">json</code></td>
+							<td>APIs, config files, web data</td>
+						</tr>
+						<tr>
+							<td class="file-type">Excel (.xlsx, .xls)</td>
+							<td>Spreadsheet files</td>
+							<td><code class="code-inline">openpyxl</span>, <code class="code-inline">pandas</code></td>
+							<td>Business data, reports</td>
+						</tr>
+						<tr>
+							<td class="file-type">Binary Files (.bin, .dat)</td>
+							<td>Non-text files (images, videos)</td>
+							<td><code class="code-inline">open()</code> (binary mode)</td>
+							<td>Media processing</td>
+						</tr>
+						<tr>
+							<td class="file-type">SQLite Databases (.db, .sqlite)</td>
+							<td>Lightweight database</td>
+							<td><code class="code-inline">sqlite3</code></td>
+							<td>Local storage, app data</td>
+						</tr>
+						<tr>
+							<td class="file-type">XML (.xml)</td>
+							<td>Structured markup format</td>
+							<td><code class="code-inline">xml.etree.ElementTree</code></td>
+							<td>Web services, documents</td>
+						</tr>
+						<tr>
+							<td class="file-type">YAML (.yaml, .yml)</td>
+							<td>Human-readable data serialization</td>
+							<td><code class="code-inline">>PyYAML</code></td>
+							<td>Config files, DevOps</td>
+						</tr>
+						<tr>
+							<td class="file-type">Pickle (.pkl)</td>
+							<td>Python object serialization</td>
+							<td><code class="code-inline">pickle</code></td>
+							<td>Machine learning models</td>
+						</tr>
+					</tbody>
+				</table>
+		
+		<h3 class="orange-accent">2. Essential File Operations (Beyond Open/Read/Write)</h3>
+<div class="ml-box">
+<p>A. File Management</p>
+<pre>
+import os
+import shutil
+
+# Check if file exists
+if os.path.exists("file.txt"):
+    print("File exists!")
+
+# Rename a file
+os.rename("old.txt", "new.txt")
+
+# Delete a file
+os.remove("file.txt")
+
+# Copy a file
+shutil.copy("source.txt", "destination.txt")
+
+# List files in a directory
+files = os.listdir("folder/")
+</pre>
+
+
+<p>B. Working with Paths</p>
+<pre>
+from pathlib import Path
+
+# Create a Path object
+file_path = Path("data/file.txt")
+
+# Get file extension
+print(file_path.suffix)  # .txt
+
+# Join paths
+new_path = file_path.parent / "new_folder" / "data.json"
+</pre>
+</div>
+		
+		<h3 class="orange-accent">3. Handling Specific File Formats</h3>
+<div class="ml-box">
+<p>A. CSV Files (Reading & Writing)</p>
+<pre>
+import csv
+
+# Reading CSV
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+# Writing CSV
+with open("output.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age"])
+    writer.writerow(["Alice", 25])
+</pre>
+
+
+<p>B. JSON Files (Parsing & Dumping)</p>
+<pre>
+import json
+
+# Read JSON
+with open("data.json", "r") as file:
+    data = json.load(file)
+    print(data["key"])
+
+# Write JSON
+data = {"name": "Alice", "age": 30}
+with open("output.json", "w") as file:
+    json.dump(data, file, indent=4)
+</pre>
+
+
+
+<p>C. Excel Files (Using openpyxl)</p>
+<pre>
+from openpyxl import Workbook
+
+# Create a new Excel file
+wb = Workbook()
+ws = wb.active
+ws["A1"] = "Hello"
+ws["B1"] = "World"
+wb.save("example.xlsx")
+</pre>
+
+
+<p>D. Binary Files (Images, PDFs)</p>
+<pre>
+# Reading binary data
+with open("image.png", "rb") as file:
+    data = file.read()
+
+# Writing binary data
+with open("copy.png", "wb") as file:
+    file.write(data)
+</pre>
+
+</div>
+		
+		<h3 class="orange-accent">Conclusion</h3>		
+		<p>Python provides powerful tools for working with text, CSV, JSON, Excel, and binary files. Mastering these will help us handle real-world data processing tasks efficiently.</p>
+		</div>`,
+		
+		
+QS10:`
+		<h2 class="blue-bolt">Python Packaging & Distribution</h2>
+		<p>Python Packaging & Distribution is the process of organizing Python code into reusable, installable packages and making them accessible for others. It involves structuring the code properly, managing dependencies, and publishing it on repositories like PyPI (Python Package Index) to facilitate easy installation and use.</p>
+        <div class="content-block">
+		<h3 class="orange-accent">1. Creating Python Modules & Packages</h3>		
+<div class="ml-box">
+<p>Module (Single File)</p>
+<pre>
+# mymodule.py
+def greet(name):
+    return f"Hello, {name}!"
+
+if __name__ == "__main__":
+    print(greet("World"))  # Test code
+
+
+
+# Package (Directory)
+mypackage/
+|
+|---  __init__.py          # Required to make it a package
+|
+|---  utils.py             # Submodule
+|
+|---  calculations.py      # Submodule
+</pre>
+</div>
+		<div>
+			<p>Key Files:</p>
+			<ul>
+				<li><code class="code-inline">__init__.py </code>(Can be empty or contain package initialization code)</li>
+				<li><code class="code-inline">__main__.py </code>(Executed when package is run as python -m mypackage)</li>
+			</ul>
+		</div>
+
+		
+		<h3 class="orange-accent">2. Command-Line Arguments with <code class="code-inline">argparse</code> python.</h3>	
+<div class="ml-box">
+<p>t</p>
+<pre>
+# cli_app.py
+import argparse
+
+parser = argparse.ArgumentParser(description="Process some integers.")
+parser.add_argument("--input", help="Input file path", required=True)
+parser.add_argument("--verbose", action="store_true", help="Increase output verbosity")
+
+args = parser.parse_args()
+if args.verbose:
+    print(f"Processing {args.input}...")
+	
+	
+# Usage:
+python cli_app.py --input data.txt --verbose
+	
+</pre>
+</div>
+		
+		<h3 class="orange-accent">3. Project Structure (Standard Layout)</h3>	
+<div class="ml-box">
+<pre>
+my_project/
+|---   mypackage/           # Your main package
+|
+|   |---  __init__.py
+|   |---  module1.py
+|
+|--- tests/               # Unit tests
+|
+|--- docs/               # Documentation
+|
+|--- setup.py            # Build configuration
+|
+|--- pyproject.toml      # Modern build system config
+|
+|--- requirements.txt    # Dependencies
+|
+|--- README.md           # Project description
+</pre>
+</div>		
+
+		<h3 class="orange-accent">4. Building & Distributing Your Package</h3>		
+<div class="ml-box">
+<p>A. setup.py (Traditional)</p>
+<pre>
+from setuptools import setup, find_packages
+
+setup(
+    name="mypackage",
+    version="0.1",
+    packages=find_packages(),
+    install_requires=["requests>=2.25.0"],  # Dependencies
+    entry_points={
+        "console_scripts": ["mycommand=mypackage.cli:main"],
+    },
+)
+</pre>
+
+
+<p>B. Modern pyproject.toml</p>
+<pre>
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mypackage"
+version = "0.1.0"
+dependencies = ["requests>=2.25.0"]
+</pre>
+		
+<p>Build & Upload:</p>
+<pre>
+# Install build tools
+pip install build twine
+
+# Create distribution
+python -m build
+
+# Upload to PyPI
+twine upload dist/*
+</pre>
+</div>
+		
+		
+		<h3 class="orange-accent">5. Additional Essential Topics</h3>		
+<div class="ml-box">
+<p>A. Virtual Environments</p>
+<pre>
+# Create
+python -m venv venv
+
+# Activate (Linux/Mac)
+source venv/bin/activate
+
+# Activate (Windows)
+.\venv\Scripts\activate
+</pre>
+
+
+
+<p>B. Testing with pytest</p>
+<pre>
+# test_module.py
+def test_addition():
+    assert 1 + 1 == 2
+	
+# Run Test
+pytest
+</pre>
+
+
+<p>C. Documentation with Docstrings</p>
+<pre>
+def calculate(a, b):
+    """
+    Adds two numbers and returns the result.
+    
+    Args:
+        a (int): First number
+        b (int): Second number
+        
+    Returns:
+        int: Sum of a and b
+    """
+    return a + b
+</pre>
+
+
+<p>D. Version Control with Git</p>
+<pre>
+git init
+git add .
+git commit -m "Initial commit"
+</pre>
+
+
+<p>E. Continuous Integration (CI)</p>
+<pre>
+# Example .github/workflows/test.yml for GitHub Actions:
+name: Python CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+    - name: Test with pytest
+      run: |
+        pytest
+</pre>
+</div>
+	
+		
+		<h3 class="orange-accent">6. Others</h3>		
+		<p>6.1 Checklist Before Distribution</p>
+			<ul>
+				<li>1. Write clear docstrings</li>
+				<li>2. Include unit tests (≥80% coverage)</li>
+				<li>3. Choose a license (MIT, Apache 2.0, etc.)</li>
+				<li>4. Write a comprehensive README.md</li>
+				<li>5. Version your package (SemVer recommended)</li>
+				<li>6. Set up CI/CD pipelines</li>
+			</ul>
+		
+		<p>6.2 Where to Share Your Package</p>
+			<ul>
+				<li>PyPI (Public packages): twine upload dist/* </li>
+				<li>Private repositories:</li>
+					<ul>
+						<li>DevPI (self-hosted)</li>
+						<li>GitHub Packages</li>
+						<li>AWS CodeArtifact</li>
+					</ul>
+			</ul>
+		
+		<p>6.3 Checklist Before Distribution</p>
+			<ul>
+				<li>Forgetting  <code class="code-inline">__init__.py </code> in packages</li>
+				<li>Hardcoding paths (use <code class="code-inline"> pathlib) </code> </li>
+				<li>Not pinning dependency versions</li>
+				<li>Ignoring platform differences</li>
+				<li>Skipping CI/CD setup</li>
+			</ul>
+		</div>`,
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*																									   */
+/*								Data analysis												   		   */
+/*																									   */
+/*-----------------------------------------------------------------------------------------------------*/
+da01: `
+		<h2 class="blue-bolt">Getting Started with Data in Python</h2>
+        <div class="content-block">
+        <p>Data is the backbone of any analysis, and Python provides powerful libraries to work with structured and unstructured data. Whether handling CSV files, Excel sheets, databases, or web data, Python makes data manipulation simple and efficient.</p>
+        
+        <h3 class="orange-accent">1. Why Use Python for Data Analysis?</h3>
+        <p>Python is widely used in data science and analytics due to its simplicity and robust libraries like <code class="code-inline">pandas</code>, <code class="code-inline">numpy</code>, and <code class="code-inline">matplotlib</code>. Some key benefits include:</p>
+        <ul>
+            <li class="list-item"><span class="list-label blue-bolt">Easy-to-Use</span>: Python syntax is beginner-friendly and intuitive.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Extensive Libraries</span>: Ready-to-use tools for data processing and visualization.</li>
+            <li class="list-item"><span class="list-label blue-bolt">Scalability</span>: Can handle small and large datasets efficiently.</li>
+        </ul>
+            
+            
+		<h3 class="orange-accent">2. Installing Essential Data Libraries</h3>
+        <p>We use Anaconda for a complete data science environment. If not installed, refer to the <a href="#">Installation Guide</a>.</p>
+        <p>To install key data libraries, open Anaconda Prompt or Terminal and run:</p>
+<div class="ml-box">
+<pre>
+# Install Pandas for data handling
+conda install pandas
+
+# Install NumPy for numerical computing
+conda install numpy
+
+# Install Matplotlib for data visualization
+conda install matplotlib
+</pre>
+</div>
+
+		<h3 class="orange-accent">3. Loading and Viewing Data with Pandas</h3>
+		<p>Once installed, we can use pandas to load and explore datasets.</p>
+<div class="ml-box">
+<pre>
+import pandas as pd
+
+# Load a CSV file
+df = pd.read_csv("data.csv")
+
+# View first 5 rows
+print(df.head())
+</pre>
+</div>
+            
+		<h3 class="orange-accent">4. Checking Data Structure</h3>
+		<p>Before analysis, it’s important to check dataset properties.</p>
+<div class="ml-box">
+<pre>
+# Check dataset size
+print(df.shape)  # Output: (rows, columns)
+
+# View column names
+print(df.columns)
+
+# Summary statistics
+print(df.describe())
+</pre>
+</div>
+
+		<h3 class="orange-accent">5. Handling Missing Data</h3>
+		<p>Data is often incomplete. Use pandas to detect and fill missing values.</p>
+<div class="ml-box">
+<pre>
+# Check missing values
+print(df.isnull().sum())
+
+# Fill missing values with mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+</pre>
+</div>
+            
+		<h3 class="orange-accent">6. Saving Processed Data</h3>
+		<p>After cleaning, save the dataset for future use.</p>
+<div class="ml-box">
+<pre>
+# Save to a new CSV file
+df.to_csv("cleaned_data.csv", index=False)
+</pre>
+</div>
+            
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Python offers a flexible and powerful approach to handling data. By using pandas and NumPy, we can efficiently load, explore, and clean datasets, preparing them for further analysis.</p>
+		</div>`,
+
+
+da02: `
+		<h2 class="blue-bolt">Data Cleaning and Preprocessing</h2>
+		<div class="content-block">
+		<p>Data cleaning is an essential step in any data science project. Raw data often contains missing values, duplicates, and formatting errors. In this section, we will learn how to clean and preprocess datasets using Python’s <code class="code-inline">pandas</code> library.</p>
+		<h3 class="orange-accent">1. Identifying Missing Data</h3>
+		<p>Before analysis, we need to check if there are missing values in our dataset.</p>
+<div class="ml-box">
+<pre>
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+</pre>
+</div>            
+            
+		<h3 class="orange-accent">2. Handling Missing Values</h3>
+		<p>We can fill missing values with mean/median or drop rows with missing data.</p>
+<div class="ml-box">
+<pre>
+# Fill missing values with column mean
+df.fillna(df.mean(), inplace=True)
+
+# Drop rows with missing values
+df.dropna(inplace=True)
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">3. Removing Duplicates</h3>
+		<p>Sometimes datasets have duplicate records that need to be removed.</p>
+<div class="ml-box">
+<pre>            
+# Remove duplicate rows
+df.drop_duplicates(inplace=True)
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">4. Standardizing Column Names</h3>
+		<p>Inconsistent column names can cause issues. Standardize them like this:</p>
+<div class="ml-box">
+<pre>
+# Convert column names to lowercase and remove spaces
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">5. Converting Data Types</h3>
+		<p>Ensure numerical values are in the correct integer or float format.</p>
+<div class="ml-box">
+<pre>
+# Convert column to numeric
+df['price'] = pd.to_numeric(df['price'], errors='coerce')
+</pre>
+</div>
+            
+            
+        <h3 class="orange-accent">6. Handling Outliers</h3>
+        <p>Outliers can skew analysis. We can remove or replace them using statistical techniques.</p>
+<div class="ml-box">
+<pre>
+# Remove outliers beyond 3 standard deviations
+df = df[(df['price'] < df['price'].mean() + 3 * df['price'].std())]
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>By cleaning and preprocessing our data, we ensure that our analysis is accurate and reliable. The next step is to explore the cleaned dataset through Exploratory Data Analysis (EDA) & Visualization.</p>
+		</div>`,
+
+
+da03: `
+		<h2 class="blue-bolt">Exploratory Data Analysis (EDA) & Visualization</h2>
+		<div class="content-block">
+		<p>Exploratory Data Analysis (EDA) is a crucial step in understanding dataset patterns, detecting anomalies, and summarizing key insights. We use Python libraries like <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> to create effective visualizations.</p>
+            
+		<h3 class="orange-accent">1. Import Required Libraries</h3>
+		<p>Ensure you have <code class="code-inline">matplotlib</code> and <code class="code-inline">seaborn</code> installed. If not, install them using:</p>
+
+<div class="ml-box">
+<pre>
+# Install matplotlib & seaborn
+pip install matplotlib seaborn
+</pre>
+</div>
+            
+		<p>Then, import the required libraries:</p>
+<div class="ml-box">
+<pre>
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+</pre>
+</div>
+            
+		<h3 class="orange-accent">2. Load & Preview the Dataset</h3>
+		<p>We first load the dataset and display basic statistical summaries.</p>
+<div class="ml-box">
+<pre>
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Display first 5 rows
+print(df.head())
+
+# Get summary statistics
+print(df.describe())
+</pre>
+</div>
+            
+		<h3 class="orange-accent">3. Univariate Analysis (Single Variable)</h3>
+		<p>We analyze the distribution of individual numerical features using histograms and KDE plots.</p>
+<div class="ml-box">
+<pre>
+# Histogram of a numerical column
+plt.figure(figsize=(8,5))
+sns.histplot(df['price'], bins=30, kde=True)
+plt.title("Price Distribution")
+plt.show()
+</pre>
+</div>
+            
+		<h3 class="orange-accent">4. Boxplot to Detect Outliers</h3>
+		<p>Boxplots help identify outliers and data spread.</p>
+<div class="ml-box">
+<pre>
+# Boxplot to detect outliers
+plt.figure(figsize=(8,5))
+sns.boxplot(x=df['price'])
+plt.title("Price Outliers")
+plt.show()
+</pre>
+</div>
+            
+		<h3 class="orange-accent">5. Bivariate Analysis (Two Variables)</h3>
+		<p>Scatter plots and correlation heatmaps help us analyze relationships between variables.</p>
+<div class="ml-box">
+<pre>            
+# Scatter plot (Example: Price vs Area)
+plt.figure(figsize=(8,5))
+sns.scatterplot(x=df['area'], y=df['price'])
+plt.title("Area vs Price")
+plt.xlabel("Area (sq ft)")
+plt.ylabel("Price ($)")
+plt.show()
+</pre>
+</div>
+            
+
+		<h3 class="orange-accent">6. Correlation Heatmap</h3>
+		<p>Heatmaps help visualize how features correlate with each other.</p>
+<div class="ml-box">
+<pre>  
+# Correlation heatmap
+plt.figure(figsize=(10,6))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Feature Correlation Heatmap")
+plt.show()
+</pre>
+</div>
+            
+		<h3 class="orange-accent">7. Categorical Data Visualization</h3>
+		<p>Bar plots and count plots are useful for analyzing categorical variables.</p>
+<div class="ml-box">
+<pre>  
+# Count plot for a categorical feature
+plt.figure(figsize=(8,5))
+sns.countplot(x=df['category'])
+plt.title("Category Count")
+plt.show()
+</pre>
+</div>
+            
+        <h3 class="orange-accent">Conclusion</h3>
+		<p>EDA helps uncover patterns, trends, and potential issues in the dataset before applying machine learning models. In the next step, we move on to Data Transformation to prepare our data for further analysis.</p>
+        </div>`,
+
+
+da04: `
+		<h2 class="blue-bolt">Data Transformation & Feature Engineering</h2>
+		<div class="content-block">
+		<p>Before applying machine learning models, we need to preprocess and transform data for better performance. This includes handling missing values, scaling numerical data, encoding categorical variables, and feature engineering.</p>
+            
+		<h3 class="orange-accent">1. Handling Missing Values</h3>
+		<p>Missing values can affect model performance. We use <code class="code-inline">pandas</code> to handle them.</p>
+            
+<div class="ml-box">
+<pre>  
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Fill missing numerical values with the mean
+df['price'].fillna(df['price'].mean(), inplace=True)
+
+# Fill categorical missing values with the most frequent category
+df['category'].fillna(df['category'].mode()[0], inplace=True)
+
+# Drop rows with missing values (if necessary)
+df.dropna(inplace=True)
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">2. Scaling Numerical Features</h3>
+		<p>Feature scaling ensures numerical values are on the same scale, improving model performance.</p>
+		<h4 class="orange-accent">Standardization (Z-score normalization)</h4>
+		<p>Standardization scales data to have a mean of 0 and a standard deviation of 1.</p>
+<div class="ml-box">
+<pre>  
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+</pre>
+</div>
+            
+            
+		<h4 class="orange-accent">Min-Max Scaling (Normalization)</h4>
+		<p>Normalization scales values between 0 and 1.</p>     
+<div class="ml-box">
+<pre>  
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+df[['price', 'area']] = scaler.fit_transform(df[['price', 'area']])
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">3. Encoding Categorical Data</h3>
+		<p>Machine learning models work better with numerical data. We convert categorical values using one-hot encoding or label encoding.</p>
+		<h4 class="orange-accent">One-Hot Encoding</h4>
+		<p>One-hot encoding creates binary columns for each category.</p>
+<div class="ml-box">
+<pre>  
+df = pd.get_dummies(df, columns=['category'])
+</pre>
+</div>
+            
+		<h4 class="orange-accent">Label Encoding</h4>
+		<p>Label encoding assigns numerical values to categories.</p>
+<div class="ml-box">
+<pre>  
+from sklearn.preprocessing import LabelEncoder
+
+encoder = LabelEncoder()
+df['category'] = encoder.fit_transform(df['category'])
+</pre>
+</div>
+            
+            
+		<h3 class="orange-accent">4. Feature Engineering</h3>
+		<p>Creating new features can improve model performance.</p>
+		<h4 class="orange-accent">Creating New Features</h4>
+		<p>We can derive new insights by combining or transforming existing features.</p>
+<div class="ml-box">
+<pre>  
+# Creating a price per square foot feature
+df['price_per_sqft'] = df['price'] / df['area']
+</pre>
+</div>
+            
+		<h4 class="orange-accent">Binning</h4>
+		<p>Binning groups continuous values into discrete bins.</p>
+<div class="ml-box">
+<pre> 
+df['price_category'] = pd.cut(df['price'], bins=[0, 100000, 300000, 500000], labels=['Low', 'Medium', 'High'])
+</pre>
+</div>
+            
+		<h4 class="orange-accent">Date-Time Feature Extraction</h4>
+		<p>Extracting useful features from date-time columns.</p>
+<div class="ml-box">
+<pre> 
+df['year'] = pd.to_datetime(df['date']).dt.year
+df['month'] = pd.to_datetime(df['date']).dt.month
+</pre>
+</div>
+            
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Data transformation ensures that our dataset is clean, well-structured, and optimized for machine learning models. The next step is analyzing a sample dataset to see how preprocessing impacts results.</p>
+		</div>`,
+
+
+da05: `
+		<h2 class="blue-bolt">Analyzing a Sample Dataset</h2>
+		<div class="content-block">
+		<p>In this section, we will analyze a sample dataset using Pandas, Seaborn, and Matplotlib. The Titanic dataset is widely used for exploratory data analysis (EDA).</p>
+		<h3 class="orange-accent">1. Loading the Dataset</h3>
+		<p>We will load the Titanic dataset directly from Seaborn.</p>
+<div class="ml-box">
+<pre> 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = sns.load_dataset('titanic')
+
+# Display first few rows
+print(df.head())
+</pre>
+</div>
+            
+		<h3 class="orange-accent">2. Basic Data Exploration</h3>
+		<p>Check dataset information and missing values.</p>
+<div class="ml-box">
+<pre> 
+# Dataset summary
+print(df.info())
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Statistical summary
+print(df.describe())
+</pre>
+</div>
+            
+		<h3 class="orange-accent">3. Visualizing the Data</h3>
+		<p>Let's explore survival rates based on gender using Seaborn.</p>
+<div class="ml-box">
+<pre>
+# Count plot of survival by gender
+sns.countplot(x='sex', hue='survived', data=df)
+plt.title('Survival Rate by Gender')
+plt.show()
+</pre>
+</div>
+		<p>Visualizing passenger class distribution.</p>
+            
+<div class="ml-box">
+<pre>
+# Bar plot of passenger class distribution
+sns.barplot(x='pclass', y='survived', data=df)
+plt.title('Survival Rate by Passenger Class')
+plt.show()
+</pre>
+</div>
+            
+		<h3 class="orange-accent">4. Handling Missing Data</h3>
+		<p>We will fill missing age values with the median.</p>
+<div class="ml-box">
+<pre>
+df['age'].fillna(df['age'].median(), inplace=True)
+</pre>
+</div>
+            
+		<h3 class="orange-accent">5. Feature Engineering</h3>
+		<p>We can create a new feature called family_size.</p>
+<div class="ml-box">
+<pre>
+df['family_size'] = df['sibsp'] + df['parch'] + 1
+</pre>
+</div>
+            
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>The Titanic dataset is a great way to practice data exploration, missing data handling, and visualization. These skills are essential for any data science project.</p>
+		</div>`,
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*																									   */
+/*								SQL - Database : Big Data   								   		   */
+/*																									   */
+/*-----------------------------------------------------------------------------------------------------*/
+bd01: `
+		<h2 class="blue-bolt">What is Big Data?</h2>
+		<div class="content-block">
+		<h3 class="orange-accent"> Definition:</h3>
+		<p>Big Data refers to large, complex datasets that are difficult to process using traditional tools due to their Volume, Variety, Velocity, and Veracity (4Vs).</p>
+		<div>
+		<p>Real-World Examples:</p>
+			<ul>
+				<li>Millions of daily transactions from e-commerce platforms</li>
+				<li>Sensor data from IoT devices in manufacturing</li>
+				<li>Logs from web applications or cloud infrastructure</li>
+				<li>Social media content and interactions</li>
+				<li>Health records and genomic data</li>
+			</ul>
+		</div>
+		
+		
+		<h3 class="orange-accent"> Technical Skills Required for Big Data Analysis </h3> 
+		<div>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Skill Area</th>
+				  <th>Tools / Technologies</th>
+				  <th>Description</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Programming</td>
+				  <td>Python</td>
+				  <td>Main language for data wrangling, automation, and processing</td>
+				</tr>
+				<tr>
+				  <td>Data Manipulation</td>
+				  <td>pandas, Dask, PySpark</td>
+				  <td>Efficient data cleaning and transformation</td>
+				</tr>
+				<tr>
+				  <td>Database Management</td>
+				  <td>SQL, SQLite, PostgreSQL, MongoDB</td>
+				  <td>Access and manage structured/unstructured data</td>
+				</tr>
+				<tr>
+				  <td>Big Data Frameworks</td>
+				  <td>PySpark, Dask</td>
+				  <td>Handle distributed data processing</td>
+				</tr>
+				<tr>
+				  <td>Visualization</td>
+				  <td>Streamlit, Datashader</td>
+				  <td>Display and explore large datasets interactively</td>
+				</tr>
+				<tr>
+				  <td>Cloud Tools</td>
+				  <td>AWS S3, GCP, boto3, gcsfs</td>
+				  <td>Storing and retrieving data in cloud</td>
+				</tr>
+				<tr>
+				  <td>ETL Pipelines</td>
+				  <td>Airflow (optional), Python scripts</td>
+				  <td>Automating data extraction and transformation</td>
+				</tr>
+				<tr>
+				  <td>Machine Learning (basic)</td>
+				  <td>Spark MLlib, XGBoost</td>
+				  <td>Perform scalable predictive analytics</td>
+				</tr>
+			  </tbody>
+			</table>		
+		</div>
+
+		<h3 class="orange-accent"> Why pandas is limited </h3> 		
+		<ul>
+			<li>pandas loads data entirely into RAM.</li>
+			<li>pandas is not parallelized — processes one core at a time.</li>
+			<li>Good for data < 1GB or exploratory analysis.</li>
+		</ul>
+		<h3 class="orange-accent"> Python’s Role in Big Data </h3> 		  
+			<table border="1">
+			  <thead>
+				<tr>
+				  <th>Situation</th>
+				  <th>Tool</th>
+				  <th>Reason</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Small to medium data</td>
+				  <td>pandas</td>
+				  <td>Fast, easy syntax</td>
+				</tr>
+				<tr>
+				  <td>Data too big for memory</td>
+				  <td>Dask</td>
+				  <td>Works like pandas but parallelized</td>
+				</tr>
+				<tr>
+				  <td>Distributed data or cluster processing</td>
+				  <td>PySpark</td>
+				  <td>Designed for huge datasets across many machines</td>
+				</tr>
+			  </tbody>
+			</table>
+        </div>`,
+
+
+bd02: `
+		<h2 class="blue-bolt">SQL for Scalable Data - (Storage and Querying)</h2>
+		<div class="content-block">
+		<h3 class="orange-accent"> Definition:</h3>
+		<p>SQL (Structured Query Language) is a language used to manage and query structured data stored in relational databases.</p>
+		<div>
+			<table border="1" cellpadding="8" cellspacing="0" >
+			  <thead>
+				<tr>
+				  <th>Situation</th>
+				  <th>Tool</th>
+				  <th>Reason</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Small to medium data</td>
+				  <td>pandas</td>
+				  <td>Fast, easy syntax</td>
+				</tr>
+				<tr>
+				  <td>Data too big for memory</td>
+				  <td>Dask</td>
+				  <td>Works like pandas but parallelized</td>
+				</tr>
+				<tr>
+				  <td>Distributed data or cluster processing</td>
+				  <td>PySpark</td>
+				  <td>Designed for huge datasets across many machines</td>
+				</tr>
+			  </tbody>
+			</table>	
+		<div>
+		
+		<h3 class="orange-accent">Getting Started with SQLite (Local SQL Introduction) </h3>
+		<div>
+		<p>Why SQLite?</p>
+			<ul>
+				<li>No server needed — it's file-based.</li>
+				<li>Perfect for beginners.</li>				
+				<li>Used in mobile apps and small projects.</li>
+			</ul>
+		</div>	
+		
+<div class="ml-box">
+<p> Python + SQLite Example: </p>
+<pre>
+import sqlite3
+
+# Connect to a local file (creates it if it doesn’t exist)
+conn = sqlite3.connect("school.db")
+cur = conn.cursor()
+
+# Create a table
+cur.execute("CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, grade REAL)")
+
+# Insert data
+cur.execute("INSERT INTO students (name, grade) VALUES ('Alice', 88.5)")
+cur.execute("INSERT INTO students (name, grade) VALUES ('Bob', 92.0)")
+conn.commit()
+
+# Query data
+cur.execute("SELECT * FROM students")
+print(cur.fetchall())
+</pre>
+</div>
+
+		<h3 class="orange-accent">Core SQL Commands (with Examples)</h3>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Type</th>
+				  <th>SQL</th>
+				  <th>Example</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Create Table</td>
+				  <td><code class="code-inline">CREATE TABLE</code></td>
+				  <td><code class="code-inline">CREATE TABLE users (id INT, name TEXT);</code></td>
+				</tr>
+				<tr>
+				  <td>Insert Data</td>
+				  <td><code class="code-inline">INSERT INTO</code></td>
+				  <td><code class="code-inline">INSERT INTO users VALUES (1, 'Tom');</code></td>
+				</tr>
+				<tr>
+				  <td>Read Data</td>
+				  <td><code class="code-inline">SELECT</code></td>
+				  <td><code class="code-inline">SELECT * FROM users;</code></td>
+				</tr>
+				<tr>
+				  <td>Filter Data</td>
+				  <td><code class="code-inline">WHERE</code></td>
+				  <td><code class="code-inline">SELECT * FROM users WHERE id = 1;</code></td>
+				</tr>
+				<tr>
+				  <td>Update Data</td>
+				  <td><code class="code-inline">UPDATE</code></td>
+				  <td><code class="code-inline">UPDATE users SET name = 'Jerry' WHERE id = 1;</code></td>
+				</tr>
+				<tr>
+				  <td>Delete Data</td>
+				  <td><code class="code-inline">DELETE</code></td>
+				  <td><code class="code-inline">DELETE FROM users WHERE id = 1;</code></td>
+				</tr>
+			  </tbody>
+			</table>
+
+		<h3 class="orange-accent">Scaling Up: From SQLite to PostgreSQL </h3>
+		<ul>
+			<li><h3 class="orange-accent"> Limitations of SQLite </h3></li>
+				<ul>
+					<li>Not ideal for concurrent access (one writer at a time)</li>
+					<li>Lacks advanced performance features like indexing strategies or partitioning</li>
+					<li>Not built for big data workloads</li>
+				</ul>
+			<li><h3 class="orange-accent">Why PostgreSQL? </h3></li>
+				<ul>			
+					<li>Open-source, robust, and scalable</li>
+					<li>Supports advanced queries (window functions, JSON)</li>
+					<li>Great for analytical queries and batch operations</li>
+				</ul>
+		</ul>
+		
+
+		<h3 class="orange-accent">PostgreSQL in Practice (via Python) </h3>
+		<ul>
+			<li><h3 class="orange-accent"> Step-by-step: </h3></li>
+				<ul>
+					<li>1. Install PostgreSQL</li>
+					<li>2. Create database and tables using SQL commands</li>
+					<li>3. Connect from Python using psycopg2 or SQLAlchemy</li>
+				</ul>
+		</ul>
+		
+<div class="ml-box">
+<p> Example using psycopg2: </p>
+<pre>
+import psycopg2
+
+conn = psycopg2.connect("dbname=school user=postgres password=secret")
+cur = conn.cursor()
+cur.execute("SELECT * FROM students WHERE grade > 90;")
+print(cur.fetchall())
+</pre>
+</div>
+
+
+		<h3 class="orange-accent">From SQL to Big Data SQL: Spark SQL </h3>
+		<p>Spark SQL is a component of Apache Spark that allows us to:</p>
+		<ul>
+			<li>Query structured data using SQL syntax</li>
+			<li>Combine SQL and DataFrame operations</li>
+			<li>Run queries at distributed scale — over terabytes of data</li>
+		</ul>
+
+
+		<h3 class="orange-accent">Why Spark SQL for Big Data? </h3>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Feature</th>
+				  <th>Explanation</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Scalable</td>
+				  <td>Runs on clusters (multiple machines) using Spark’s distributed engine</td>
+				</tr>
+				<tr>
+				  <td>Familiar Syntax</td>
+				  <td>Uses standard SQL for queries</td>
+				</tr>
+				<tr>
+				  <td>Flexible Input</td>
+				  <td>Reads data directly from CSV, JSON, Parquet, Hive, etc.</td>
+				</tr>
+				<tr>
+				  <td>Optimized</td>
+				  <td>Uses Catalyst Optimizer to automatically optimize query plans</td>
+				</tr>
+				<tr>
+				  <td>Python Compatible</td>
+				  <td>Easily used with PySpark for Python users</td>
+				</tr>
+			  </tbody>
+			</table>		
+
+
+
+		<h3 class="orange-accent"> How Spark SQL Works (Concept) </h3>
+		<ul>
+			<li>1. Load data using Spark DataFrame.</li>
+			<li>2. Register the DataFrame as a temporary SQL table/view.</li>
+			<li>3. Query the table using SQL.</li>
+			<li>4. Spark distributes the computation across multiple nodes in a cluster.</li>
+		</ul>
+		
+		
+		<h3 class="orange-accent">From pandas to Spark SQL</h3>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Pandas</th>
+				  <th>Spark SQL Equivalent</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td><code class="code-inline">df[df['col'] > 5]</code></td>
+				  <td><code class="code-inline"> SELECT * FROM df WHERE col > 5</code></td>
+				</tr>
+				<tr>
+				  <td><code class="code-inline">df.groupby('col').sum()</code></td>
+				  <td><code class="code-inline">SELECT col, SUM(value) FROM df GROUP BY col</code></td>
+				</tr>
+			  </tbody>
+			</table>		
+		
+		<h3 class="orange-accent">Step-by-Step Example in PySpark </h3>		
+<div class="ml-box">
+<p>Step 1: Initialize Spark Session</p>
+<pre>
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder \
+    .appName("BigDataSQLExample") \
+    .getOrCreate()
+
+</pre>
+		
+
+<p>Step 2: Load Big Data (CSV / Parquet / JSON)</p>
+<pre>
+# CSV
+df = spark.read.csv("big_sales.csv", header=True, inferSchema=True)
+
+# Parquet (columnar and compressed format)
+# df = spark.read.parquet("big_sales.parquet")
+
+# JSON (semi-structured)
+# df = spark.read.json("big_sales.json")
+
+</pre>
+
+<p>Step 3: Register Temporary SQL View</p>
+<pre>
+df.createOrReplaceTempView("sales_data")
+</pre>
+
+
+<p>Step 4: Run SQL Query on Big Data</p>
+<pre>
+result = spark.sql("""
+    SELECT region, SUM(revenue) AS total_revenue
+    FROM sales_data
+    GROUP BY region
+    ORDER BY total_revenue DESC
+""")
+
+result.show()
+</pre>
+</div>
+
+		<h3 class="orange-accent">Notes:</h3>	
+		<ul>
+			<li><code class="code-inline">.createOrReplaceTempView() </code> is essential for running SQL on Spark DataFrames. </li>
+			<li>Spark automatically parallelizes this query, even if the data is gigabytes or terabytes in size.</li>
+			<li>We don’t need to manage threads — Spark handles all that via its cluster manager.</li>
+		</ul>
+
+
+		<h3 class="orange-accent">Why Parquet is Preferred for Big Data</h3>	
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Format</th>
+				  <th>CSV</th>
+				  <th>JSON</th>
+				  <th>Parquet</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Structure</td>
+				  <td>Row-based</td>
+				  <td>Semi-structured</td>
+				  <td>Columnar</td>				  
+				</tr>
+				<tr>
+				  <td>Size</td>
+				  <td>Large</td>
+				  <td>Larger</td>
+				  <td>Small (compressed)</td>				  
+				</tr>
+				<tr>
+				  <td>Speed</td>
+				  <td>Slower</td>
+				  <td>Medium</td>
+				  <td>Fast (optimized for reads)</td>				  
+				</tr>
+				<tr>
+				  <td>Ideal</td>
+				  <td>Small data,readability</td>
+				  <td>Logs, nested structures</td>
+				  <td>Analytical queries in big data</td>				  
+				</tr>				
+			  </tbody>
+			</table>		
+
+<div class="ml-box">
+<p>Sample Output in Spark SQL</p>
+<pre>
++--------+--------------+
+| region | total_revenue|
++--------+--------------+
+| East   |     1824920  |
+| West   |     1583741  |
+| North  |     1394821  |
++--------+--------------+
+</pre>
+</div>
+
+		<h3 class="orange-accent">Repeating the Concept </h3>	
+		<div>
+			<ul>
+				<li>1. Load massive file (CSV, Parquet, etc.)</li>
+				<li>2. Register it as a SQL table</li>
+				<li>3. Run familiar SQL queries</li>
+				<li>4. Spark distributes the job → results are collected and shown</li>
+			</ul>
+		</div>
+		
+		</div>`,
+
+
+bd03: `
+		<h2 class="blue-bolt">3. NoSQL & Large File Handling (Flexibility & Scale) </h2>
+		<div class="content-block">
+		<h3 class="orange-accent">1. What is NoSQL?</h3>		
+		<p>NoSQL (Not Only SQL) databases are used to store and query data that:</p>
+		<ul>
+			<li>Doesn’t fit neatly into rows and columns</li>
+			<li>Is semi-structured or unstructured</li>
+			<li>Needs flexible schema</li>		
+		</ul>
+		
+		
+		<h3 class="orange-accent">Why NoSQL?</h3>		
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Reason</th>
+				  <th>Description</th>
+				  <th>Example</th>				  
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Flexible</td>
+				  <td>No fixed schema</td>
+				  <td>JSON, XML</td>
+				</tr>
+				<tr>
+				  <td>Scalable</td>
+				  <td>Handles millions of reads/writes</td>
+				  <td>Web traffic logs</td>
+				</tr>
+				<tr>
+				  <td>Fast</td>
+				  <td>Ideal for real-time data</td>
+				  <td>Chat apps, IoT, gaming</td>
+				</tr>				
+			  </tbody>
+			</table>				
+		
+
+		<h3 class="orange-accent">2. MongoDB – A Popular NoSQL Database</h3>
+		<ul>
+			<li>Data Format</li>
+				<ul>
+					<li>Uses documents (like JSON) </li>
+				</ul>
+		</ul>
+<div class="ml-box">
+<p>Sample Output in Spark SQL</p>
+<pre>
+{ "_id": 1, "name": "Alice", "age": 25 }
+</pre>
+</div>
+
+		<p>Key Features</p>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Feature</th>
+				  <th>Description</th>  
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Document Store</td>
+				  <td>Each row is a JSON-like object</td>
+				</tr>
+				<tr>
+				  <td>No JOINs</td>
+				  <td>Denormalized data</td>
+				</tr>
+				<tr>
+				  <td>Schema-less</td>
+				  <td>Add new fields anytime</td>
+				</tr>				
+			  </tbody>
+			</table>		
+
+
+		<h3 class="orange-accent">Using MongoDB with Python (pymongo)</h3>
+		<p>Sample Output in Spark SQL</p>
+		
+<div class="ml-box">
+<pre>
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient("mongodb://localhost:27017")
+db = client["school"]
+collection = db["students"]
+
+# Insert document
+collection.insert_one({"name": "Bob", "grade": 88})
+
+# Query
+for student in collection.find({"grade": {"$gt": 80}}):
+    print(student)
+</pre>
+</div>
+		
+		<div>
+		 <p>MongoDB Query Operators:</p>
+			<ul>
+				<li> <code class="code-inline">$gt </code> = greater than</li>
+				<li> <code class="code-inline">$match</code> , <code class="code-inline">$group </code> = used in aggregation pipelines</li>
+			</ul>
+		</div>
+		
+
+		<h3 class="orange-accent">Handling Large Files in Python</h3>
+		<p>Problem:</p>
+		<p><code class="code-inline"> pandas.read_csv() </code> fails when files > RAM </p>
+
+<p>Solution: Chunking</p>
+<div class="ml-box">
+<pre>
+chunks = pd.read_csv("big.csv", chunksize=10000)
+for chunk in chunks:
+    print(chunk['amount'].mean())
+</pre>
+</div>
+
+
+
+<p>Solution: Dask for parallel chunk processing</p>
+<div class="ml-box">
+<pre>
+import dask.dataframe as dd
+
+df = dd.read_csv("big.csv")
+result = df.groupby("region")["sales"].sum().compute()
+</pre>
+</div>
+		
+		<p>Preferred File Formats for Big Data</p>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Format</th>
+				  <th>Type</th>  
+				  <th>Best for</th>  				  
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Parquet</td>
+				  <td>Columnar</td>
+				  <td>Fast analytics</td>
+				</tr>
+				<tr>
+				  <td>CSV</td>
+				  <td>Row-based</td>
+				  <td>Simpler but larger</td>
+				</tr>
+				<tr>
+				  <td>JSON</td>
+				  <td>Semi-structured</td>
+				  <td>Logging, NoSQL</td>
+				</tr>				
+			  </tbody>
+			</table>		
+
+		<p>Understanding NoSQL and large file handling equips us with the skills to manage real-world data that is too large, too fast, or too unstructured for traditional tools—laying a strong foundation for building scalable and flexible data solutions.</p>
+		</div>`,
+
+bd04:`
+		<h2 class="blue-bolt">4. Visualizing Big Data (Dashboards & Plotting)</h2>
+		<div class="content-block">
+		<h3 class="orange-accent">1. Why is Visualization Important in Big Data?</h3>		
+		<p>Big data is often too large to interpret through tables alone. Visualization:</p>
+		<ul>
+			<li>Makes patterns, trends, and outliers easier to understand</li>
+			<li>Helps in data exploration, storytelling, and decision-making</li>
+			<li>Is a critical part of dashboard development for business users</li>
+		</ul>
+
+		
+		<h3 class="orange-accent">2. Tools for Visualization in Python</h3>
+			<table border="1" cellpadding="8" cellspacing="0">
+			  <thead>
+				<tr>
+				  <th>Tool</th>
+				  <th>Description</th>  
+				  <th>Best For</th>  				  
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Streamlit</td>
+				  <td>Build web-based interactive dashboards with Python</td>
+				  <td>Presenting results to users</td>
+				</tr>
+				<tr>
+				  <td>Plotly</td>
+				  <td>Create interactive, zoomable, and exportable plots</td>
+				  <td>Modern UI-friendly plots</td>
+				</tr>
+				<tr>
+				  <td>Matplotlib</td>
+				  <td>Basic plotting library</td>
+				  <td>Quick static visualizations</td>
+				</tr>
+				<tr>
+				  <td>Datashader</td>
+				  <td>Specialized for visualizing millions of data points</td>
+				  <td>Big Data scatter plots</td>
+				</tr>		
+			  </tbody>
+			</table>		
+
+
+		<h3 class="orange-accent">3. Streamlit for Interactive Dashboards</h3>
+		<p>Step-by-Step Example: Build a Basic Dashboard</p>
+		<p><strong>File: app.py</strong></p>
+
+<div class="ml-box">
+<p> What this does: </p>
+<p> Creates an interactive bar chart (you can hover, zoom, export) </p>
+<p> st.plotly_chart() renders it inside the dashboard </p>
+<p>
+<pre>
+import streamlit as st
+import pandas as pd
+
+# Load data
+df = pd.read_csv("sales_data.csv")
+
+# Title
+st.title("📊 Sales Dashboard")
+
+# Show dataset sample
+st.subheader("Preview of the Data")
+st.write(df.head())
+
+# Filter by Region
+region = st.selectbox("Select Region", df["region"].unique())
+filtered = df[df["region"] == region]
+
+# Show average sales
+st.metric("Average Sales", round(filtered["sales"].mean(), 2))
+
+# Show filtered data
+st.write(filtered)
+
+# Caching
+st.write(df.sample(1000))  # Visualize only 1,000 rows
+
+
+
+#  Caching Expensive Operations
+@st.cache_data								@st.cache_data: prevents reloading the same data every time
+def load_data():
+    return pd.read_csv("sales_data.csv")
+
+df = load_data()
+</pre>
+</div>
+
+		<h3 class="orange-accent">4. Interactive Plotting with Plotly</h3>
+		<p>Example: Bar Plot of Sales by Region</p>
+
+<div class="ml-box">
+<pre>
+import plotly.express as px
+
+fig = px.bar(df, x="region", y="sales", title="Total Sales by Region")
+st.plotly_chart(fig)
+
+# Example: Time Series Sales Trend
+fig = px.line(df, x="date", y="sales", color="region", title="Sales Over Time")
+st.plotly_chart(fig)
+
+# Use Aggregation First
+summary = df.groupby("region")["sales"].sum().reset_index()
+fig = px.bar(summary, x="region", y="sales", title="Aggregated Sales by Region")
+st.plotly_chart(fig)
+
+</pre>
+</div>
+
+		<h3 class="orange-accent">Conclusion</h3>
+		<p>Big Data Visualization turns complex numbers into actionable insight. With Streamlit, we can build dashboards quickly. 
+		Plotly provides interaction and export options, while sampling, aggregation, and caching help manage performance for large datasets.</p>
+
+		</div>`,
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*																									   */
+/*								NLP - Natural Language Processing						   		       */
+/*																									   */
+/*-----------------------------------------------------------------------------------------------------*/
+nlp01: `
+		<h2 class="blue-bolt">1. Fundamentals and Preprocessing</h2>
+		<div class="content-block">
+
+		<h3 class="orange-accent">What is Natural Language Processing (NLP)?</h3>
+		<p>
+		NLP is a field of Artificial Intelligence (AI) and Linguistics that enables machines to understand, interpret, generate, and respond to human languages. It allows computers to read and comprehend text, answer questions, translate between languages, and detect sentiment in human communication.
+		</p>
+
+		<h3 class="orange-accent">Real-World Examples of NLP</h3>
+		<p>
+		<strong>Chatbots:</strong> ChatGPT, Siri, Google Assistant<br>
+		<strong>Translation:</strong> Google Translate<br>
+		<strong>Sentiment Analysis:</strong> Product reviews on Amazon<br>
+		<strong>Speech Recognition:</strong> YouTube Auto Captions<br>
+		<strong>Information Extraction:</strong> Resume parsing tools
+		</p>
+
+		<h3 class="orange-accent">Basic NLP Pipeline</h3>
+		<p>Text Input → Text Cleaning → Tokenization → Feature Extraction → Modeling → Prediction</p>
+
+		<div>
+		<p>
+		Example – For sentiment classification:<br>
+		<em>"This phone is amazing!"</em><br>
+		→ Cleaned: "phone amazing"<br>
+		→ Converted to numbers (vectorized)<br>
+		→ Sentiment: Positive
+		</p>
+		</div>
+
+		<h3 class="orange-accent">NLP vs Traditional Data Analysis</h3>
+		<p>
+		Unlike structured numerical data, text data needs to be transformed into a structured format (vectors) before modeling. NLP involves more complex preprocessing steps like tokenization, lemmatization, and embedding.
+		</p>
+
+		<h3 class="orange-accent">Introduction to Text Preprocessing</h3>
+		<p>Preprocessing is the first step to make raw text usable for machine learning algorithms. Common tasks include:</p>
+		<div>
+		<p>
+		- Lowercasing<br>
+		- Removing punctuation<br>
+		- Tokenization<br>
+		- Stopword removal<br>
+		- Lemmatization or stemming
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Example: Basic Text Processing with spaCy</h3>
+<div class="ml-box">
+<pre>
+import spacy
+nlp = spacy.load("en_core_web_sm")
+text = "Natural Language Processing makes machines understand language!"
+doc = nlp(text)
+
+for token in doc:
+    print(f"{token.text:&lt;12} | Lemma: {token.lemma_:&lt;10} | POS: {token.pos_:&lt;6} | Stopword: {token.is_stop}")
+</pre>
+</div>
+
+		<p>This code loads spaCy’s English model, processes a sentence, and displays each token’s lemma, part of speech, and whether it is a stopword.</p>
+
+		<h3 class="orange-accent">Exercise: Analyze Your Own Sentence</h3>
+		<p>
+		Write a Python script that takes a sentence and prints:<br>
+		- All non-stop words<br>
+		- Their lemma forms<br>
+		- Their part of speech tags
+		</p>
+
+<div class="ml-box">
+<pre>
+user_input = "SpaCy is one of the best tools for text analysis!"
+doc = nlp(user_input)
+for token in doc:
+    if not token.is_stop and not token.is_punct:
+        print(f"{token.text:&lt;10} | {token.lemma_:&lt;10} | {token.pos_}")
+</pre>
+</div>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- NLP enables machines to understand human language<br>
+		- Common use cases include chatbots, translation, and text classification<br>
+		- The NLP pipeline begins with preprocessing, a critical step<br>
+		- spaCy is a powerful tool for tokenizing, lemmatizing, and analyzing text<br>
+		</p>
+	</div>`,
+
+
+
+nlp02: `
+		<h2 class="blue-bolt">2. Text Preprocessing</h2>
+		<div class="content-block">
+		
+		<h3 class="orange-accent">Why Text Preprocessing is Important</h3>
+		<p>
+		In NLP, preprocessing prepares unstructured and noisy raw text into a structured and clean format that machine learning models can understand. Without proper cleaning, models may learn misleading patterns or perform poorly.
+		</p>
+
+		<h3 class="orange-accent">Common Preprocessing Techniques</h3>
+		<div>
+		<p>
+		<strong>1. Lowercasing</strong> – Converts all text to lowercase for consistency<br>
+		<strong>2. Removing Punctuation</strong> – Eliminates unnecessary symbols like commas, quotes, etc.<br>
+		<strong>3. Tokenization</strong> – Breaks text into individual words or tokens<br>
+		<strong>4. Stopword Removal</strong> – Removes common but uninformative words like "is", "the", "and"<br>
+		<strong>5. Lemmatization</strong> – Converts words to their root form (e.g., "running" → "run")<br>
+		<strong>6. Stemming</strong> – Another method to reduce words to base form, but less precise than lemmatization
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Real-Life Example</h3>
+		<p>
+		Raw Text: "The quick brown foxes were jumping over the lazy dogs!"<br>
+		→ After preprocessing: ['quick', 'brown', 'fox', 'jump', 'lazy', 'dog']<br>
+		Notice that we removed punctuation, lowercased words, filtered stopwords, and reduced words to their root form.
+		</p>
+
+		<h3 class="orange-accent">Preprocessing with spaCy</h3>
+<div class="ml-box">
+<pre>
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+text = "The quick brown foxes were jumping over the lazy dogs!"
+doc = nlp(text)
+
+tokens = [token.lemma_.lower() for token in doc if not token.is_stop and not token.is_punct]
+print(tokens)
+</pre>
+</div>
+
+		<p>
+		This script loads spaCy’s NLP model, processes the sentence, removes stopwords and punctuation, and lemmatizes each word.
+		</p>
+
+		<h3 class="orange-accent">Using NLTK for Preprocessing</h3>
+<div class="ml-box">
+<pre>
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+import string
+
+nltk.download('punkt')
+nltk.download('stopwords')
+
+text = "Text preprocessing helps models learn better!"
+tokens = word_tokenize(text.lower())
+filtered = [w for w in tokens if w not in stopwords.words('english') and w not in string.punctuation]
+
+stemmer = PorterStemmer()
+stemmed = [stemmer.stem(word) for word in filtered]
+
+print(stemmed)
+</pre>
+</div>
+
+		<p>
+		This example uses NLTK to tokenize text, remove stopwords and punctuation, and apply stemming. The result is a compact, cleaned list of root words.
+		</p>
+
+		<h3 class="orange-accent">When to Use Lemmatization vs. Stemming</h3>
+		<p>
+		<strong>Lemmatization</strong> is more accurate, returns actual dictionary base words, but requires more computation.<br>
+		<strong>Stemming</strong> is faster but often cuts off word endings roughly, which may reduce clarity.
+		</p>
+
+		<h3 class="orange-accent">Exercise: Clean Raw Sentences</h3>
+		<p>
+		Take the following sentences and return a list of clean, lemmatized words:<br>
+		- "I was running late for the meeting."<br>
+		- "Data preprocessing is essential for NLP models."<br><br>
+		Try it using both spaCy and NLTK, then compare the results.
+		</p>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- Preprocessing improves model accuracy by cleaning noisy text<br>
+		- Tokenization, stopword removal, lemmatization, and stemming are essential steps<br>
+		- spaCy and NLTK are powerful libraries for preprocessing tasks<br>
+		- Choosing between stemming and lemmatization depends on speed vs. accuracy
+		</p>
+	</div>`,
+
+
+nlp03: `
+		<h2 class="blue-bolt">3. Feature Extraction and Embeddings</h2>
+		<div class="content-block">
+		
+		<h3 class="orange-accent">Why Convert Text to Numbers?</h3>
+		<p>
+		Machine learning models cannot process raw text directly. Text must be transformed into numeric format, typically vectors, that preserve meaning and allow computation. This transformation is called feature extraction or vectorization.
+		</p>
+
+		<h3 class="orange-accent">Text Vectorization Techniques</h3>
+		<div>
+		<p>
+		<strong>1. Bag of Words (BoW)</strong><br>
+		- Represents each document as a vector of word frequencies<br>
+		- Ignores grammar and word order<br><br>
+
+		<strong>2. TF-IDF (Term Frequency - Inverse Document Frequency)</strong><br>
+		- Adjusts word importance by penalizing common words across documents<br>
+		- Highlights unique, informative terms<br><br>
+
+		<strong>3. Word Embeddings (Word2Vec, GloVe)</strong><br>
+		- Uses dense vector representations<br>
+		- Captures semantic similarity between words<br><br>
+
+		<strong>4. Transformer-based Embeddings (BERT, GPT)</strong><br>
+		- Produces context-aware word representations<br>
+		- Handles sentence-level understanding
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Example: Bag of Words</h3>
+<div class="ml-box">
+<pre>
+from sklearn.feature_extraction.text import CountVectorizer
+
+corpus = [
+    "I love NLP",
+    "NLP loves Python"
+]
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(corpus)
+
+print(vectorizer.get_feature_names_out())
+print(X.toarray())
+</pre>
+</div>
+		<p>
+		This example counts how many times each word appears in each sentence. Output is a matrix where each row is a document, and each column is a word.
+		</p>
+
+		<h3 class="orange-accent">Example: TF-IDF</h3>
+<div class="ml-box">
+<pre>
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+corpus = [
+    "I love NLP",
+    "NLP loves Python"
+]
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(corpus)
+
+print(vectorizer.get_feature_names_out())
+print(X.toarray())
+</pre>
+</div>
+		<p>
+		TF-IDF scores highlight unique words in each document and reduce the weight of common words across all documents. Higher values indicate more importance.
+		</p>
+
+		<h3 class="orange-accent">Example: Word Embeddings (GloVe)</h3>
+<div class="ml-box">
+<pre>
+import gensim.downloader as api
+
+# Load pre-trained GloVe vectors
+model = api.load("glove-wiki-gigaword-50")
+
+# Vector for a word
+print(model['king'])
+
+# Find similar words
+print(model.most_similar('king'))
+</pre>
+</div>
+		<p>
+		GloVe embeddings represent words in a high-dimensional space where similar words (like "king" and "queen") are close together. This captures semantic relationships.
+		</p>
+
+		<h3 class="orange-accent">Example: Contextual Embeddings (BERT)</h3>
+<div class="ml-box">
+<pre>
+from transformers import AutoTokenizer, AutoModel
+import torch
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = AutoModel.from_pretrained("bert-base-uncased")
+
+sentence = "Transformers are powerful."
+inputs = tokenizer(sentence, return_tensors="pt")
+outputs = model(**inputs)
+
+print(outputs.last_hidden_state.shape)  # [batch_size, sequence_length, embedding_dim]
+</pre>
+</div>
+		<p>
+		BERT produces embeddings for each word based on its context. The output shape (e.g., [1, 5, 768]) shows that each word is mapped to a 768-dimensional vector.
+		</p>
+
+		<h3 class="orange-accent">Sparse vs Dense Vectors</h3>
+		<p>
+		<strong>Sparse vectors</strong> like BoW and TF-IDF are high-dimensional and mostly filled with zeros. <br>
+		<strong>Dense vectors</strong> like Word2Vec or BERT embeddings have fewer dimensions and capture deeper semantic meaning. Dense vectors are preferred for deep learning models.
+		</p>
+
+		<h3 class="orange-accent">Exercise: Compare Vectorizers</h3>
+		<p>
+		Use the same small dataset and apply CountVectorizer, TfidfVectorizer, and GloVe embeddings. Compare the output shape, interpretability, and how well they capture similarity between texts.
+		</p>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- Feature extraction converts text into numeric form for ML modeling<br>
+		- Bag of Words and TF-IDF are simple, sparse techniques<br>
+		- Word2Vec and GloVe capture meaning and similarity using dense vectors<br>
+		- Transformer-based models provide context-aware embeddings that enhance performance in downstream NLP tasks
+		</p>
+	</div>`,
+
+
+nlp04: `
+		<h2 class="blue-bolt">4. Transform and Attention Mechanism</h2>
+		<div class="content-block">
+		
+		<h3 class="orange-accent">Limitations of RNNs and LSTMs</h3>
+		<p>
+		Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) models were commonly used for NLP tasks involving sequences. However, they suffer from:<br>
+		- Difficulty in parallel computation (slow training)<br>
+		- Forgetting long-term dependencies<br>
+		- Poor scalability for long text
+		</p>
+
+		<h3 class="orange-accent">Introduction to Attention</h3>
+		<p>
+		Attention allows models to focus on the most relevant parts of an input sequence when making predictions. Instead of treating all words equally, attention mechanisms assign different weights to each word depending on its importance.
+		</p>
+
+		<h3 class="orange-accent">Example of Attention</h3>
+		<p>
+		In the sentence: "The cat sat on the mat because <strong>it</strong> was tired."<br>
+		An attention mechanism helps the model understand that "<strong>it</strong>" refers to "<strong>cat</strong>" by assigning higher attention weight to "cat".
+		</p>
+
+		<h3 class="orange-accent">Transformer Architecture</h3>
+		<p>
+		Transformers were introduced in the paper "Attention is All You Need" (Vaswani et al., 2017). They replaced recurrence with self-attention and enabled parallel training. A basic Transformer block consists of:
+		</p>
+		<div>
+		<p>
+		- Multi-Head Self-Attention<br>
+		- Positional Encoding<br>
+		- Feedforward Neural Networks<br>
+		- Residual Connections + Layer Normalization
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Self-Attention Explained</h3>
+		<p>
+		Self-Attention calculates how important each word is relative to others in a sentence. For each word, it computes a weighted sum of the rest of the words in the sequence. This allows the model to capture contextual meaning.
+		</p>
+
+		<h3 class="orange-accent">Example: Attention Weight Matrix</h3>
+		<p>
+		Sentence: "The animal didn’t cross the street because it was too tired."<br>
+		With self-attention, the word "it" gets a higher score when linked to "animal", guiding correct interpretation.
+		</p>
+
+		<h3 class="orange-accent">Using BERT Transformer Model</h3>
+<div class="ml-box">
+<pre>
+from transformers import AutoTokenizer, AutoModel
+import torch
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = AutoModel.from_pretrained("bert-base-uncased")
+
+sentence = "Transformers are changing NLP."
+inputs = tokenizer(sentence, return_tensors="pt")
+outputs = model(**inputs)
+
+print(outputs.last_hidden_state.shape)  # (1, token_count, 768)
+</pre>
+</div>
+
+		<p>
+		Each token in the sentence is transformed into a 768-dimensional context-aware embedding. These embeddings can be used for classification, summarization, and more.
+		</p>
+
+		<h3 class="orange-accent">Visualization of Attention</h3>
+		<p>
+		Tools like <a href="https://github.com/jessevig/bertviz" target="_blank">bertviz</a> help visualize which words the model is paying attention to. This enhances model interpretability and debugging.
+		</p>
+
+		<h3 class="orange-accent">Exercise: Compare RNN vs Transformer (Conceptual)</h3>
+		<p>
+		Read a paragraph and identify which words you would focus on if summarizing it. Then compare with a transformer-generated attention map using BERT. Discuss how the attention mechanism mimics human comprehension.
+		</p>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- RNNs and LSTMs struggle with long-term dependencies and sequential bottlenecks<br>
+		- Attention enables models to weigh input tokens differently for better understanding<br>
+		- Transformers use self-attention to model context and support parallel computation<br>
+		- BERT and other Transformer models dominate modern NLP due to their efficiency and accuracy
+		</p>
+	</div>`,
+
+
+
+
+nlp05: `
+		<h2 class="blue-bolt">5. LLM – Intro to Chatbot Deployment</h2>
+		<div class="content-block">
+		
+		<h3 class="orange-accent">What is a Large Language Model (LLM)?</h3>
+		<p>
+		LLMs are deep learning models trained on massive text corpora to understand and generate human language. They use architectures like Transformers and are capable of:
+		</p>
+		<div>
+		<p>
+		- Text completion<br>
+		- Summarization<br>
+		- Translation<br>
+		- Question answering<br>
+		- Conversation/dialogue generation
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Popular LLMs</h3>
+		<p>
+		Some well-known LLMs include:<br>
+		- GPT (OpenAI)<br>
+		- BERT (Google)<br>
+		- DeepSeek (China)<br>
+		- LLaMA (Meta)<br>
+		- Claude (Anthropic)
+		</p>
+
+		<h3 class="orange-accent">Pretraining vs Fine-tuning</h3>
+		<p>
+		<strong>Pretraining</strong>: The LLM is trained on large datasets to learn general language patterns (e.g., Wikipedia, Common Crawl).<br>
+		<strong>Fine-tuning</strong>: The pretrained model is further trained on domain-specific or task-specific data (e.g., legal, medical, customer support) to improve performance on that task.
+		</p>
+
+		<h3 class="orange-accent">How Chatbots Use LLMs</h3>
+		<p>
+		Chatbots are powered by LLMs through a process called prompt engineering. A prompt is a carefully designed input given to the model to generate a relevant response.<br><br>
+		Example:<br>
+		Prompt: "What is NLP in simple terms?"<br>
+		Response: "NLP stands for Natural Language Processing. It's a way for computers to understand human language."
+		</p>
+
+		<h3 class="orange-accent">Build a Chatbot with Transformers</h3>
+<div class="ml-box">
+<pre>
+from transformers import pipeline
+
+chatbot = pipeline("text-generation", model="gpt2")
+response = chatbot("Explain natural language processing in simple terms.", max_length=50)
+
+print(response[0]['generated_text'])
+</pre>
+</div>
+
+		<p>
+		This example uses HuggingFace’s GPT-2 model to generate text based on a user input. The model continues the sentence with relevant content.
+		</p>
+
+		<h3 class="orange-accent">Deploying with Streamlit (Simple Web UI)</h3>
+<div class="ml-box">
+<pre>
+import streamlit as st
+from transformers import pipeline
+
+st.title("Mini Chatbot 🤖")
+
+user_input = st.text_input("Ask me anything:")
+if user_input:
+    bot = pipeline("text-generation", model="gpt2")
+    result = bot(user_input, max_length=50)
+    st.write(result[0]['generated_text'])
+</pre>
+</div>
+
+		<p>
+		This code creates a simple interactive chatbot app using Streamlit. Users can type questions, and the model responds in real-time.
+		</p>
+
+		<h3 class="orange-accent">Advanced Chatbot Concepts</h3>
+		<p>
+		Real-world chatbots also include:<br>
+		- Intent classification<br>
+		- Response templates<br>
+		- API/database integration<br>
+		- Memory or session tracking<br>
+		- Ethical filters and guardrails for safe usage
+		</p>
+
+		<h3 class="orange-accent">Exercise: Build and Test Your Own Chatbot</h3>
+		<p>
+		Use the GPT-2 pipeline or choose another pre-trained model from HuggingFace to create a chatbot. Let users input prompts and display dynamic responses. Optionally, deploy using Streamlit or Flask.
+		</p>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- LLMs are pretrained on large corpora and capable of many language tasks<br>
+		- They can be fine-tuned for specific use cases like legal, medical, or customer service chatbots<br>
+		- GPT-2 and other models can be used out-of-the-box for text generation<br>
+		- Tools like Streamlit make it easy to deploy interactive chatbots
+		</p>
+	</div>`,
+
+
+
+nlp06: `
+		<h2 class="blue-bolt">6. Other NLP Problems – Sentiment Analysis, Document Classification, and More</h2>
+		<div class="content-block">
+
+		<h3 class="orange-accent">Overview of Common NLP Tasks</h3>
+		<p>
+		Modern NLP involves solving various text-based problems across industries. These tasks include:
+		</p>
+		<div>
+		<p>
+		- <strong>Sentiment Analysis:</strong> Determine emotional tone (positive, negative, neutral)<br>
+		- <strong>Document Classification:</strong> Categorize news articles, emails, legal documents, etc.<br>
+		- <strong>Named Entity Recognition (NER):</strong> Identify names, dates, locations<br>
+		- <strong>Text Summarization:</strong> Generate concise summaries from large texts<br>
+		- <strong>Question Answering:</strong> Extract answers from context paragraphs<br>
+		- <strong>Topic Modeling:</strong> Discover hidden themes in large corpora
+		</p>
+		</div>
+
+		<h3 class="orange-accent">Example: Sentiment Analysis</h3>
+<div class="ml-box">
+<pre>
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("I absolutely love this product!")
+print(result)
+</pre>
+</div>
+
+		<p>
+		The model returns the sentiment label ("POSITIVE" or "NEGATIVE") along with a confidence score. This is useful for product reviews, social media monitoring, and customer feedback analysis.
+		</p>
+
+		<h3 class="orange-accent">Example: Document Classification</h3>
+<div class="ml-box">
+<pre>
+from transformers import pipeline
+
+classifier = pipeline("zero-shot-classification")
+text = "The stock market showed significant growth this quarter."
+labels = ["finance", "politics", "sports", "technology"]
+result = classifier(text, candidate_labels=labels)
+
+print(result)
+</pre>
+</div>
+
+		<p>
+		Zero-shot classification allows us to classify text without training a custom model. The model ranks labels based on how well they fit the input text.
+		</p>
+
+		<h3 class="orange-accent">Example: Named Entity Recognition (NER)</h3>
+<div class="ml-box">
+<pre>
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+doc = nlp("Apple Inc. is acquiring a startup based in London for $1 billion.")
+
+for ent in doc.ents:
+    print(ent.text, ent.label_)
+</pre>
+</div>
+
+		<p>
+		This script identifies named entities such as organizations, locations, and money. NER is widely used in resume parsing, news analysis, and legal tech.
+		</p>
+
+		<h3 class="orange-accent">Example: Question Answering</h3>
+<div class="ml-box">
+<pre>
+from transformers import pipeline
+
+qa = pipeline("question-answering")
+
+context = "Albert Einstein was born in Ulm in 1879 and developed the theory of relativity."
+question = "Where was Einstein born?"
+
+result = qa(question=question, context=context)
+print(result)
+</pre>
+</div>
+
+		<p>
+		This pipeline extracts the most likely answer span from the context. QA models are useful for building intelligent assistants and search systems.
+		</p>
+
+		<h3 class="orange-accent">Example: Text Summarization</h3>
+<div class="ml-box">
+<pre>
+from transformers import pipeline
+
+summarizer = pipeline("summarization")
+article = "Natural Language Processing is a field of AI that helps machines understand human language. It powers applications like chatbots, translators, and voice assistants."
+
+summary = summarizer(article, max_length=30, min_length=10, do_sample=False)
+print(summary[0]['summary_text'])
+</pre>
+</div>
+
+		<p>
+		Summarization tools help condense lengthy documents, news articles, and reports into shorter, more digestible content.
+		</p>
+
+		<h3 class="orange-accent">Exercise: Try Multiple NLP Tasks</h3>
+		<p>
+		Use the HuggingFace pipelines to perform:<br>
+		- Sentiment analysis on customer reviews<br>
+		- NER on a paragraph from a news article<br>
+		- Zero-shot classification on a blog post<br>
+		Compare the output and discuss strengths and limitations of each task.
+		</p>
+
+		<h3 class="orange-accent">Summary</h3>
+		<p>
+		- NLP offers a wide range of practical applications beyond text generation<br>
+		- HuggingFace pipelines allow you to use state-of-the-art models with minimal code<br>
+		- Sentiment analysis, classification, NER, QA, and summarization are core tasks for business and research<br>
+		- Choosing the right task and model depends on your application domain and data type
+		</p>
+	</div>`,
+
+
+
+
+
+
+Quiz: `
+			<h2 class="blue-bolt">Quiz Time!</h2>
+			<form id="quizForm">
+			  
+			  <div>
+				<p>1. What is the correct way to define a class in Python?</p>
+				<input type="radio" name="q1" value="A" id="q1a"> <label for="q1a">class MyClass:</label><br>
+				<input type="radio" name="q1" value="B" id="q1b"> <label for="q1b">define class MyClass:</label><br>
+				<input type="radio" name="q1" value="C" id="q1c"> <label for="q1c">class = MyClass()</label><br>
+				<input type="radio" name="q1" value="D" id="q1d"> <label for="q1d">def class MyClass:</label><br>
+			  </div>
+
+			  <div>
+				<p>2. Which method is called automatically when an object is created from a class?</p>
+				<input type="radio" name="q2" value="A" id="q2a"> <label for="q2a">__start__()</label><br>
+				<input type="radio" name="q2" value="B" id="q2b"> <label for="q2b">__create__()</label><br>
+				<input type="radio" name="q2" value="C" id="q2c"> <label for="q2c">__init__()</label><br>
+				<input type="radio" name="q2" value="D" id="q2d"> <label for="q2d">__begin__()</label><br>
+			  </div>
+
+			  <div>
+				<p>3. What is the output of: <code class="code-inline">print("Python"[-1])</code>?</p>
+				<input type="radio" name="q3" value="A" id="q3a"> <label for="q3a">P</label><br>
+				<input type="radio" name="q3" value="B" id="q3b"> <label for="q3b">n</label><br>
+				<input type="radio" name="q3" value="C" id="q3c"> <label for="q3c">o</label><br>
+				<input type="radio" name="q3" value="D" id="q3d"> <label for="q3d">h</label><br>
+			  </div>
+
+			  <div>
+				<p>4. What will be the output of: <code class="code-inline">print(type([]))</code>?</p>
+				<input type="radio" name="q4" value="A" id="q4a"> <label for="q4a">&lt;class 'tuple'&gt;</label><br>
+				<input type="radio" name="q4" value="B" id="q4b"> <label for="q4b">&lt;class 'list'&gt;</label><br>
+				<input type="radio" name="q4" value="C" id="q4c"> <label for="q4c">&lt;class 'dict'&gt;</label><br>
+				<input type="radio" name="q4" value="D" id="q4d"> <label for="q4d">&lt;class 'set'&gt;</label><br>
+			  </div>
+
+			  <div>
+				<p>5. Which of the following is a correct way to open a file for reading?</p>
+				<input type="radio" name="q5" value="A" id="q5a"> <label for="q5a">open("file.txt", "r")</label><br>
+				<input type="radio" name="q5" value="B" id="q5b"> <label for="q5b">open.read("file.txt")</label><br>
+				<input type="radio" name="q5" value="C" id="q5c"> <label for="q5c">file.open("file.txt")</label><br>
+				<input type="radio" name="q5" value="D" id="q5d"> <label for="q5d">read.open("file.txt")</label><br>
+			  </div>
+
+			  <div>
+				<p>6. What does the <code class="code-inline">split()</code> method do in Python?</p>
+				<input type="radio" name="q6" value="A" id="q6a"> <label for="q6a">Splits a string into a list</label><br>
+				<input type="radio" name="q6" value="B" id="q6b"> <label for="q6b">Removes whitespace</label><br>
+				<input type="radio" name="q6" value="C" id="q6c"> <label for="q6c">Joins strings</label><br>
+				<input type="radio" name="q6" value="D" id="q6d"> <label for="q6d">Sorts a string</label><br>
+			  </div>
+
+			  <div>
+				<p>7. Which keyword is used for function declaration?</p>
+				<input type="radio" name="q7" value="A" id="q7a"> <label for="q7a">define</label><br>
+				<input type="radio" name="q7" value="B" id="q7b"> <label for="q7b">function</label><br>
+				<input type="radio" name="q7" value="C" id="q7c"> <label for="q7c">def</label><br>
+				<input type="radio" name="q7" value="D" id="q7d"> <label for="q7d">func</label><br>
+			  </div>
+
+			  <div>
+				<p>8. What is the output of: <code class="code-inline">bool([])</code>?</p>
+				<input type="radio" name="q8" value="A" id="q8a"> <label for="q8a">True</label><br>
+				<input type="radio" name="q8" value="B" id="q8b"> <label for="q8b">False</label><br>
+				<input type="radio" name="q8" value="C" id="q8c"> <label for="q8c">None</label><br>
+				<input type="radio" name="q8" value="D" id="q8d"> <label for="q8d">0</label><br>
+			  </div>
+
+			  <div>
+				<p>9. What data type is returned by the function <code class="code-inline">input()</code>?</p>
+				<input type="radio" name="q9" value="A" id="q9a"> <label for="q9a">int</label><br>
+				<input type="radio" name="q9" value="B" id="q9b"> <label for="q9b">str</label><br>
+				<input type="radio" name="q9" value="C" id="q9c"> <label for="q9c">float</label><br>
+				<input type="radio" name="q9" value="D" id="q9d"> <label for="q9d">bool</label><br>
+			  </div>
+
+			  <div>
+				<p>10. Which keyword is used to handle exceptions in Python?</p>
+				<input type="radio" name="q10" value="A" id="q10a"> <label for="q10a">try</label><br>
+				<input type="radio" name="q10" value="B" id="q10b"> <label for="q10b">except</label><br>
+				<input type="radio" name="q10" value="C" id="q10c"> <label for="q10c">catch</label><br>
+				<input type="radio" name="q10" value="D" id="q10d"> <label for="q10d">throw</label><br>
+			  </div>
+
+			  <div>
+				<p>11. Which Python keyword creates a generator?</p>
+				<input type="radio" name="q11" value="A" id="q11a"> <label for="q11a">yield</label><br>
+				<input type="radio" name="q11" value="B" id="q11b"> <label for="q11b">return</label><br>
+				<input type="radio" name="q11" value="C" id="q11c"> <label for="q11c">generate</label><br>
+				<input type="radio" name="q11" value="D" id="q11d"> <label for="q11d">pass</label><br>
+			  </div>
+
+			  <div>
+				<p>12. What is the output of this code: <code class="code-inline">print(2 ** 3 ** 2)</code>?</p>
+				<input type="radio" name="q12" value="A" id="q12a"> <label for="q12a">64</label><br>
+				<input type="radio" name="q12" value="B" id="q12b"> <label for="q12b">512</label><br>
+				<input type="radio" name="q12" value="C" id="q12c"> <label for="q12c">36</label><br>
+				<input type="radio" name="q12" value="D" id="q12d"> <label for="q12d">256</label><br>
+			  </div>
+
+			  <div>
+				<p>13. What does the <code class="code-inline">enumerate()</code> function return?</p>
+				<input type="radio" name="q13" value="A" id="q13a"> <label for="q13a">List of tuples with index and value</label><br>
+				<input type="radio" name="q13" value="B" id="q13b"> <label for="q13b">List of only indexes</label><br>
+				<input type="radio" name="q13" value="C" id="q13c"> <label for="q13c">Dictionary with indexes</label><br>
+				<input type="radio" name="q13" value="D" id="q13d"> <label for="q13d">Set of values</label><br>
+			  </div>
+
+			  <div>
+				<p>14. What is the output of: <code class="code-inline">print(",".join(["a", "b", "c"]))</code>?</p>
+				<input type="radio" name="q14" value="A" id="q14a"> <label for="q14a">abc</label><br>
+				<input type="radio" name="q14" value="B" id="q14b"> <label for="q14b">a, b, c</label><br>
+				<input type="radio" name="q14" value="C" id="q14c"> <label for="q14c">a,b,c</label><br>
+				<input type="radio" name="q14" value="D" id="q14d"> <label for="q14d">['a', 'b', 'c']</label><br>
+			  </div>
+
+			  <div>
+				<p>15. What is the result of <code class="code-inline">set([1,2,2,3,4,4,5])</code>?</p>
+				<input type="radio" name="q15" value="A" id="q15a"> <label for="q15a">[1,2,3,4,5]</label><br>
+				<input type="radio" name="q15" value="B" id="q15b"> <label for="q15b">set(1,2,3,4,5)</label><br>
+				<input type="radio" name="q15" value="C" id="q15c"> <label for="q15c">{1, 2, 3, 4, 5}</label><br>
+				<input type="radio" name="q15" value="D" id="q15d"> <label for="q15d">Error</label><br>
+			  </div>
+
+			  <div>
+				<p>16. Which statement is true about Python dictionaries?</p>
+				<input type="radio" name="q16" value="A" id="q16a"> <label for="q16a">They maintain insertion order from Python 3.7+</label><br>
+				<input type="radio" name="q16" value="B" id="q16b"> <label for="q16b">They allow duplicate keys</label><br>
+				<input type="radio" name="q16" value="C" id="q16c"> <label for="q16c">They are immutable</label><br>
+				<input type="radio" name="q16" value="D" id="q16d"> <label for="q16d">They store values in sorted order</label><br>
+			  </div>
+
+			  <div>
+				<p>17. How do you handle exceptions in Python?</p>
+				<input type="radio" name="q17" value="A" id="q17a"> <label for="q17a">if error: break</label><br>
+				<input type="radio" name="q17" value="B" id="q17b"> <label for="q17b">try-except block</label><br>
+				<input type="radio" name="q17" value="C" id="q17c"> <label for="q17c">function error_catch()</label><br>
+				<input type="radio" name="q17" value="D" id="q17d"> <label for="q17d">None of the above</label><br>
+			  </div>
+
+			  <div>
+				<p>18. Which of the following will create a tuple?</p>
+				<input type="radio" name="q18" value="A" id="q18a"> <label for="q18a">t = (1, 2, 3)</label><br>
+				<input type="radio" name="q18" value="B" id="q18b"> <label for="q18b">t = [1, 2, 3]</label><br>
+				<input type="radio" name="q18" value="C" id="q18c"> <label for="q18c">t = {1, 2, 3}</label><br>
+				<input type="radio" name="q18" value="D" id="q18d"> <label for="q18d">t = tuple[1,2,3]</label><br>
+			  </div>
+
+			  <div>
+				<p>19. What does the <code class="code-inline">lambda</code> keyword define?</p>
+				<input type="radio" name="q19" value="A" id="q19a"> <label for="q19a">A macro</label><br>
+				<input type="radio" name="q19" value="B" id="q19b"> <label for="q19b">An anonymous function</label><br>
+				<input type="radio" name="q19" value="C" id="q19c"> <label for="q19c">A constant</label><br>
+				<input type="radio" name="q19" value="D" id="q19d"> <label for="q19d">A class</label><br>
+			  </div>
+
+			  <div>
+				<p>20. Which library is commonly used for data manipulation in Python?</p>
+				<input type="radio" name="q20" value="A" id="q20a"> <label for="q20a">NumPy</label><br>
+				<input type="radio" name="q20" value="B" id="q20b"> <label for="q20b">pandas</label><br>
+				<input type="radio" name="q20" value="C" id="q20c"> <label for="q20c">matplotlib</label><br>
+				<input type="radio" name="q20" value="D" id="q20d"> <label for="q20d">random</label><br>
+			  </div>
+
+			  <br>
+			  <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+			</form>
+
+              <div id="quizResult"></div>`,
+                };
+                contentDiv.innerHTML = contentData[subtopic] || "<h2>update Content soon</h2>";
+            }
+
+
+            function showWelcome() {
+                document.getElementById("content").innerHTML = `
+            	<h1>Welcome!</h1>
+             <div class="quote">
+            "Python is a programming language that lets you work quickly and integrate systems more effectively."
+             	<span class="quote-source">- Python.org</span>
+            	</div>
+             <p><strong  class="orange-accent">Why Learn Python?</strong></p>
+            	<p>Python is one of the most powerful and versatile programming languages used in data science, automation, and modern software development. With its intuitive syntax and extensive libraries, it enables developers to analyze data efficiently and build scalable solutions.</p>
+            
+             <p><strong  class="orange-accent">What You’ll Gain</strong></p>
+            	<p>This course offers structured lessons, hands-on coding examples, and real-world applications designed to enhance your programming skills. Whether you’re starting from scratch or looking to refine your expertise, our curriculum will guide you step by step through the essentials of Python for data science.</p>
+            
+             <p><strong  class="orange-accent">Start Your Python Journey Today!</strong></p>
+            	<p>Unlock endless possibilities in data science with Python. Learn at your own pace through interactive tutorials, hands-on exercises, and expert guidance. Take the first step today and build the skills that will shape your future!</p>`;
+            }
+
+
+            function checkQuiz() {
+                var score = 0;
+                var total = 20;
+                var form = document.getElementById("quizForm");
+                var q1 = form.q1.value;
+                var q2 = form.q2.value;
+                var q3 = form.q3.value;
+				var q4 = form.q4.value;
+                var q5 = form.q5.value;
+                var q6 = form.q6.value;
+				var q7 = form.q7.value;
+                var q8 = form.q8.value;
+                var q9 = form.q9.value;
+                var q10 = form.q10.value;
+				var q11= form.q11.value;
+                var q12 = form.q12.value;
+                var q13 = form.q13.value;
+				var q14 = form.q14.value;				
+				var q15 = form.q15.value;				
+				var q16 = form.q16.value;				
+				var q17 = form.q17.value;								
+				var q18 = form.q18.value;								
+				var q19 = form.q19.value;				
+				var q20 = form.q20.value;								
+				
+				if (q1 === "A") { // class MyClass:
+					score++;
+				}
+				if (q2 === "C") { // __init__()
+					score++;
+				}
+				if (q3 === "B") { // 'n'
+					score++;
+				}
+				if (q4 === "B") { // <class 'list'>
+					score++;
+				}
+				if (q5 === "A") { // open("file.txt", "r")
+					score++;
+				}
+				if (q6 === "A") { // Splits a string into a list
+					score++;
+				}
+				if (q7 === "C") { // def
+					score++;
+				}
+				if (q8 === "B") { // False
+					score++;
+				}
+				if (q9 === "B") { // str
+					score++;
+				}
+				if (q10 === "A") { // try
+					score++;
+				}
+				if (q11 === "A") { // yield
+					score++;
+				}
+				if (q12 === "B") { // 512
+					score++;
+				}
+				if (q13 === "A") { // List of tuples with index and value
+					score++;
+				}
+				if (q14 === "C") { // a,b,c
+					score++;
+				}
+				if (q15 === "C") { // {1, 2, 3, 4, 5}
+					score++;
+				}
+				if (q16 === "A") { // They maintain insertion order from Python 3.7+
+					score++;
+				}
+				if (q17 === "B") { // try-except block
+					score++;
+				}
+				if (q18 === "A") { // t = (1, 2, 3)
+					score++;
+				}
+				if (q19 === "B") { // An anonymous function
+					score++;
+				}
+				if (q20 === "B") { // pandas
+					score++;
+				}
+
+                document.getElementById("quizResult").innerHTML = "<h3>You scored " + score + " out of " + total + "!</h3>";
+            }
+        </script>
+    </body>
+</html>
+
+
+
